@@ -1,0 +1,11 @@
+.callout.primary.quote {
+	float: right;
+	border: none;
+	font-weight: bold;
+	background: $powderblue;
+	@include breakpoint (medium) {
+		width: 45%;
+		margin-left: 1.25rem;
+	}
+	
+}

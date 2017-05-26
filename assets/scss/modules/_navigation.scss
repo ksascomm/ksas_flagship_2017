@@ -1,0 +1,242 @@
+// Navigation breakpoints
+.desktop-menu, .top-bar-left {
+  @include show-for(medium);
+}
+
+#mobile-menu, .title-bar {
+  @include hide-for(medium);
+}
+
+// Mobile menu
+.off-canvas {
+  > ul.menu {
+    height: 100vh;
+    padding: 1rem;
+
+    a {
+      color: $white;
+      font-weight: 600;
+      font-size: rem-calc(18);
+      opacity: .75;
+    }
+
+    .is-accordion-submenu-parent > a::after {
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 6px;
+      content: '';
+      border-bottom-width: 0;
+      border-top-style: solid;
+      border-color: $white transparent transparent;
+      position: absolute;
+      top: 50%;
+      margin-top: -3px;
+      right: 1rem;
+      }
+  }
+
+  .menu .active > a { background-color: lighten($outer-space, 10%); }
+
+
+}
+
+.title-bar-title {
+  a {
+    font-size: 1rem;
+    color: #B9B9B9;
+  }
+}
+
+// Tablet and desktop menu
+.top-bar {
+  .menu .home a {
+    font-size: 1rem;
+    color: #B9B9B9;
+  }
+
+  .menu a {
+    color: #e6e6e6;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: bold;
+    font-size: 0.8rem;
+    line-height: 1;
+
+    &:hover:not(.button) {
+      background-color: #42525D;
+    }
+  }
+
+  .menu .active > a { background-color: lighten($outer-space, 10%); }
+
+  .menu>li:not(.menu-text)>a { padding: 1rem; }
+  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+
+  .dropdown.menu .submenu { border: 0; }
+  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+}
+
+// Basic styles for post navigation. Nicolas Gallagher's "Micro clearfix"
+// https://css-tricks.com/snippets/css/clear-fix/
+.post-navigation:before,
+.post-navigation:after {
+  content: "";
+  display: table;
+}
+
+.post-navigation:after {
+  clear:both;
+}
+
+.nav-previous { float:left; }
+.nav-next { float:right; }
+
+
+//added by TG 5-17
+.roof {
+  background-color: $blue;
+  width: 100%;
+  padding: 5px 0;
+  li.roof-padding {
+    padding-top: .85rem;
+  }
+  a {
+    color: $white;
+  }
+  li.bar {
+    a:after { 
+      content: "|";
+      color: $black;
+      @include breakpoint (medium) {
+        margin-left: 1em; }
+      }
+  }
+  form { 
+     @include breakpoint (medium) {
+      width: 200px;
+      margin-top: -5px;
+    }
+  }
+  input {
+    height: 1.75rem;
+    &[type="submit"] {
+      font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+  }
+  .button {
+    background-color: $skyblue;
+  }
+}
+
+.roof-menu {
+  font-size: 1rem;
+   @include breakpoint (medium) {
+      float: left;
+    }
+    @include breakpoint (large) {
+       float: right;
+    }
+}
+
+.top-bar, .top-bar ul {
+  background-color: $blue;
+}
+
+.top-bar-title {
+  img {
+    max-width: 70%;
+    padding: .5rem 1rem;
+    margin-left: .5rem;
+    @include breakpoint (medium) {
+      max-width: 75%;
+    }
+    @include breakpoint (large) {
+      max-width: 350px;
+    }
+    @include breakpoint (xlarge) {
+      max-width: 400px;
+    }
+  }
+}
+
+.top-bar-left {
+  //check when menu breaks line!
+  @include breakpoint (723px) {
+    margin-top: 2rem;
+  }
+}
+
+.top-bar {
+  .menu {
+    font-family: $font-stack;
+    font-weight: normal;
+    a:hover:not(.button) {
+      background: darken($blue, 10%);
+    }
+    li:not(:last-child) {
+      border-right: none;
+    }
+  }
+  ul li ul.submenu {
+    background-color: $white;
+    li {
+      a {
+        color: $black;
+        &:hover {
+          background-color: $skyblue;
+          color: $white;
+        }
+      }
+      &:hover {
+        background-color: $skyblue;
+      }
+    }
+  }
+  .menu a {
+    font-size: 1.125rem;
+    color: $white;
+  }
+  ul li ul.submenu li:not(:last-child) {
+    border-bottom: 1px solid $darkgrey;
+  }
+}
+
+/*.page-navigation {
+  margin-top: 1rem;
+}
+
+.pagination {
+  padding: 20px 0;
+  font-size: .75rem;
+  line-height: 1.1;
+  a {
+    margin: 2px 2px 2px 0;
+    padding: 6px 9px 5px 9px;
+    text-decoration: none;
+    color: $white !important;
+    background: $black;
+    &:hover {
+      color: $white;
+      background: $primary-color;
+    }
+  }
+  .current {
+    padding: 6px 9px 5px 9px;
+    background: $primary-color;
+    color: $white;
+  }
+}*/
+
+div#offCanvasTop1 {
+  background-color: $blue;
+}
+
+#global-links .menu {
+  display: inherit;
+  li {
+    display: list-item
+  }
+}

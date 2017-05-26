@@ -1,0 +1,20 @@
+#parent-menu {
+	.card {
+		border:none;
+		.card-section {
+			h1 {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+.centered.entry-content {
+	@include breakpoint(small) {
+    	@include grid-column(12);
+    }
+	@include breakpoint(medium) {
+		@include grid-column(8);
+		
+    }
+}

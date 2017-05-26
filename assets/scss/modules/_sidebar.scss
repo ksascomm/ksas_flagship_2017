@@ -1,0 +1,83 @@
+.sidebar {
+  @include breakpoint(small) {
+    @include grid-column(12);
+  }
+
+  @include breakpoint(medium) {
+    @include grid-column(4);
+    margin-top: 1rem;
+  }
+  padding: 0 1.25rem .1rem 1.25rem;
+		@include breakpoint (large) {
+			margin-top: 1rem;
+			margin-bottom: 1.5rem;	
+		}
+		h5 {
+			padding-left:1rem;
+			margin-top:0;
+			margin-bottom:0;
+			color: $white;
+			font-weight: bold;
+		}
+  ul.nav {
+  	margin-left: inherit;
+  	li {
+  		list-style-type: none;
+  		padding: .5rem 1rem;
+    	border-bottom: 1px solid $darkgrey;
+    	&:hover {
+    		background-color: $skyblue;
+    		color: $white;
+    	}
+    	a {
+    		font-size: 1.25rem;
+    		color: $black;
+    		font-weight: bold;
+    	}
+  	}
+  }
+  #sidebar_header {
+   padding:.75rem .93rem .62rem 1rem;
+	background: $blue;
+  	a, a:hover {
+  		color: $white;
+  	}
+  }
+}
+
+//added by TG 5-17
+
+.menu-widget, .menu-widget .sub-menu {
+	list-style: none;
+}
+
+.menu-widget {
+	background: $grey;
+}
+
+.widget_text, .ecpt-page-sidebar {
+  font-size: 1rem;
+  background-color: $powderblue;
+  .sidebar_header, h6 {
+    background-color: $skyblue;
+    padding:12px 15px 10px 0;
+  }
+  ul.nav {
+    li {
+      border-bottom: none;
+      a {
+         font-size: 1rem;
+      }
+    }
+  }
+}
+
+.widget_text {
+  h6 {
+    padding:.75rem .93rem .62rem 1rem;
+    color: $white;
+  }
+}
+.textwidget {
+  padding: 0 1.25rem .1rem 1.25rem;
+}

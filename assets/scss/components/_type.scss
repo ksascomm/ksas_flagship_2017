@@ -1,0 +1,45 @@
+body {
+  font-family: $font-stack;
+  font-weight: 300;
+  font-style: normal;
+  font-size: $global-font-size * 1.125
+}
+
+h1, h2 {
+  font-family: $font-header;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+h3, h4, h5, h6, .semibold, blockquote {
+  font-family: $font-subhead-book;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main-content {
+  a {
+    color: $blue;
+    border-bottom: .125em dotted;
+    border-bottom-color: rgba(0,0,0,.2);
+    &:hover, &:active {
+        color: $black;
+        border-bottom-style: solid;
+    }
+  }
+}
+
+#parent-menu {
+  .card-section {
+  a {
+      color: $blue;
+      border-bottom: .125em dotted;
+      border-bottom-color: rgba(0,0,0,.2);
+      &:hover, &:active {
+          color: $black;
+          border-bottom-style: solid;
+      }
+    }
+  }
+}

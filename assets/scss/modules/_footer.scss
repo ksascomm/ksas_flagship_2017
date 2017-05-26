@@ -1,0 +1,54 @@
+#footer-container {
+  background-color: $black;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  //border-top: 1px solid #ccc;
+  //margin-top: rem-calc(60);
+
+  #footer {
+    @include grid-row();
+    padding: rem-calc(30) 0;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      color: $white;
+      font-size: .75rem;
+    }
+  }
+}
+
+
+.social-media {
+  a {
+    .fa {
+      padding: 0 .5rem;
+      color: $white;
+    }
+  }
+}
+
+.margin4 {
+  @include breakpoint (small) {
+      margin-top: 1rem;
+  }
+  @include breakpoint (medium) {
+     margin-top: 2rem;
+  }
+  @include breakpoint (large) {
+      margin-top: 4rem;
+  }
+}
+
+#menu-footer-links {
+  margin-top: 15px;
+  a {
+    font-size: .75rem;
+    font-weight: bold;
+    color: $white;
+  }
+}
