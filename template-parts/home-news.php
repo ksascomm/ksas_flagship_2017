@@ -12,17 +12,16 @@
 
 <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 
-<div class="media-object">
-  <div class="media-object-section">
-  <h6><?php echo get_the_category( $id )[0]->name; ?></h6>
-  	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-    	<h1><?php the_title(); ?></h1>
-    </a>
-    <p><?php the_excerpt(); ?></p>
-    
+<div class="row">
+  <div class="large-6 large-push-6 columns">
+
+    <?php the_post_thumbnail('full',  ['class' => 'img-responsive large-news', 'title' => 'Feature image']); ?>
   </div>
-  <div class="media-object-section">
-    <?php the_post_thumbnail('full'); ?>
+  <div class="large-6 large-pull-6 columns">
+      <h6><?php echo get_the_category( $id )[0]->name; ?></h6>
+      <h1><?php the_title(); ?></h1> 
+      <p><?php the_excerpt(); ?></p>
+      <a href="<?php the_permalink(); ?>" class="button" title="<?php the_title(); ?>">Read the Full Story</a>
   </div>
 </div>
 

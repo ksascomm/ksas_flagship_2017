@@ -114,7 +114,7 @@
 // Intro
 .intro {
   height: 25vh;
-
+  margin-top: 2rem;
   .fp-intro {
     @include breakpoint(small) {
       @include grid-column(12);
@@ -152,12 +152,16 @@
 }
 
 .grey-bg {
-  background-color: $grey;
+  @include breakpoint(medium) {
+    background-color: $grey;
+  }
 }
 
 
 // Benefits
 .news {
+  @include grid-row();
+  text-align: left;
   .tabs {
     margin-top: 1rem;
   }
@@ -170,6 +174,8 @@
     border-bottom: 1px solid darken($grey, 25%);
     border-left: 1px solid darken($grey, 25%);
     border-right: 1px solid darken($grey, 25%);
+  }
+  .tabs-content, .accordion-item {   
       h1 {
         font-size: 1.25rem;
         font-weight: bold;
@@ -188,12 +194,15 @@
           p {
             font-family: $font-subhead-book;
           }
-          @include breakpoint(small) {
+        @include breakpoint(small) {
             @include grid-column(12);
-          }
-         @include breakpoint(medium) {
+        }
+        @include breakpoint(medium) {
+            @include grid-column(6);
+        }
+        @include breakpoint(large) {
             @include grid-column(3);
-          }
+        }  
       }
       .hub-events {
         h3, h4 {
@@ -203,15 +212,20 @@
         p {
           font-size: .9rem;
         }
+        @include breakpoint(medium) {
+            @include grid-column(3);
+        }
       }      
   }
-  .tabs-title > a {
+  .tabs-title > a, a.accordion-title {
     font-size: 1rem;
     font-family: $font-subhead-book;
     font-weight: bold;
   }
-  @include grid-row();
-  text-align: left;
+
+  li.is-active.accordion-item > a.accordion-title {
+      background: $grey;
+  }
 
   header {
     @include grid-column(12);
@@ -266,12 +280,11 @@
 $marketing-site-hero-height: 40vh;
 
 .marketing-site-hero {
-  background: url('https://images.pexels.com/photos/8264/pexels-photo.jpg?h=350&auto=compress&cs=tinysrgb') top right no-repeat;
+  background: url('../images/frontpage/homepage-giving-image.jpg') top right no-repeat;
   height: $marketing-site-hero-height;
   background-size: cover;
   display: flex;
   align-items: center;
-
   @media screen and (min-width: 40em) {
     background-position: center center;
   }
@@ -283,6 +296,7 @@ $marketing-site-hero-height: 40vh;
   padding-left: 5%;
   padding-right: 5%;
   h1 {
+    color: $white;
     font-size: 2rem;
   }
   .subheader {
@@ -294,14 +308,32 @@ $marketing-site-hero-height: 40vh;
   }
 }
 
+.hero {
+  background-color: $black;
+}
 .fullscreen-image-slider {
+   //@include flex-align($x: center, $y: stretch);
   .orbit-image {
     width: 100%;
-    height: 50vh;
+    height: 60vh;
   }
   .orbit-caption {
+    @include breakpoint(large) {
+    background: none;
+    bottom: 20%;
+    width: 35%;
+    }
+    @include breakpoint(xlarge) {
+    background: none;
+    bottom: 36%;
+    width: 35%;
+    }
     h1 {
       font-size: 2rem;
+    }
+    p {
+      font-family: $font-subhead-book;
+      font-weight: bold;
     }
   }
 }
@@ -341,4 +373,41 @@ $marketing-site-hero-height: 40vh;
       @include grid-column(6);
     }
   }  
+}
+
+.programs {
+  .button {
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: $skyblue;
+  }
+  .block-text {
+     position: relative;
+  }
+  img.big_image {
+      position: absolute;
+      height: inherit;
+  }
+  div.overlay_text {
+    color: $white;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    top: 80px;
+    width: 100%;
+      h2 {
+        font-family: $font-subhead-book;
+        @include breakpoint(medium) {
+          font-size: 1.75rem;
+        }
+        @include breakpoint(large){
+          font-size: 1.25rem;
+        }
+    }
+}
+}
+
+img.large-news {
+  padding: 2rem;
 }

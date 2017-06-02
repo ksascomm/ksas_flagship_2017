@@ -135,6 +135,7 @@
   font-size: 1rem;
    @include breakpoint (medium) {
       float: left;
+      padding-left: 1rem;
     }
     @include breakpoint (large) {
        float: right;
@@ -147,17 +148,15 @@
 
 .top-bar-title {
   img {
-    max-width: 70%;
+    display: block;
+    margin: auto;
     padding: .5rem 1rem;
     margin-left: .5rem;
     @include breakpoint (medium) {
-      max-width: 75%;
+      max-width: 375px;
     }
     @include breakpoint (large) {
       max-width: 350px;
-    }
-    @include breakpoint (xlarge) {
-      max-width: 400px;
     }
   }
 }
@@ -234,9 +233,37 @@ div#offCanvasTop1 {
   background-color: $blue;
 }
 
-#global-links .menu {
+#global-links {
+  h3 {
+    font-size: 1.25rem;
+  }
+  .menu {
   display: inherit;
-  li {
-    display: list-item
+    li {
+      display: list-item;
+      a {
+        padding: 0.35rem 1rem; 
+        &:hover, &:active {
+            color: $black;
+        }
+      }      
+    }
+  }
+}
+
+.off-canvas {
+  .menu.nested {
+  }
+}
+
+.sticky-container {
+   @include breakpoint (medium) {
+      height: 0px !important;
+    }
+}
+
+.top-bar .menu {
+  .current_page_parent.current_page_ancestor {
+    background: #004485;
   }
 }

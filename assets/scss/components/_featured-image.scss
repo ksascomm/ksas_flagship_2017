@@ -2,10 +2,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: rem-calc(100);
+  height: rem-calc(200);
 
   @include breakpoint(medium) {
-    height: rem-calc(200);
+    height: rem-calc(300);
   }
 
   @include breakpoint(xlarge) {
@@ -17,6 +17,7 @@
     position: relative;
     .row {
       h1.entry-title {
+        font-size: 2rem;
         bottom: 0;
         position: absolute;
         background: rgba(0, 0, 0, 0.75);

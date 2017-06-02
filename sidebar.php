@@ -54,6 +54,7 @@
 				}
 	} ?>
 	<?php if( is_singular('people') ) : ?>
+
 		<div class="offset-gutter radius-topright" id="sidebar_header">
 			<h5 class="white">Also in <a href="/people" class="grey bold">People</a></h5>
 		</div>
@@ -67,10 +68,13 @@
 				'depth' => 2
 			));
 	if (has_term('', 'role') && !has_term('job-market-candidate', 'role')) : ?>
-	
-		<label for="jump">
-			<h5>Jump to Leadership Profile</h5>
-		</label>
+	<div class="ecpt-page-sidebar">
+		<div class="offset-gutter radius-topright" id="sidebar_header">
+			<label for="jump">
+			<h5 class="white">View Other Profiles</h5>
+			</label>
+		</div>
+		<br>
 		<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<option>---<?php the_title(); ?></option> 
@@ -86,7 +90,7 @@
 				<option value="<?php the_permalink() ?>"><?php the_title(); ?></option>
 			<?php endwhile; ?>
 		</select>
-
+	</div>
 	<?php endif; endif; ?>				
 
 	<?php if( is_singular('studyfields') ) : ?>
@@ -104,9 +108,9 @@
 			)); ?>
 	
 		<?php $field = get_post_meta($post->ID, 'ecpt_field_level', true);?>
-	
+		<div class="ecpt-page-sidebar">
+			<div class="offset-gutter radius-topright" id="sidebar_header">
 			<label for="jump">
-				<div class="blue_bg offset-gutter sidebar_header">
 					<h5 class="white">
 					<?php if ( ($field == 'undergraduate') || ($field == 'full-graduate' )) : ?>
 						Other Undergraduate &  Full-Time Graduate Programs
@@ -114,8 +118,9 @@
 						Other Part Time Graduate Programs
 					<?php endif;?>
 					</h5>
-				</div>
-			</label>	
+			</label>
+			</div>
+			<br>	
 	        <select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
 	         	<option>--<?php the_title(); ?></option>
 	         	<?php if ( ($field == 'undergraduate') || ($field == 'full-graduate' )) : ?>
@@ -157,8 +162,9 @@
 			
 			<?php endif;?>
 			</select>
+		</div>
 	<?php endif; ?>	
-	
+		
 	<!-- Page Specific Sidebar -->
 		<?php if ( is_page() && get_post_meta($post->ID, 'ecpt_page_sidebar', true) ) : ?>
 			<div class="ecpt-page-sidebar">

@@ -22,31 +22,31 @@ Template Name: Fields of Study
 		  </article>
 		<?php endwhile;?>
 
-		<ul id="filters">
-	    <li><a href="#" data-filter="*" class="selected">Everything</a></li>
-		 <?php 
-		 $terms = get_terms("program_type"); // get all categories, but you can use any taxonomy
-		 $count = count($terms); //How many are they?
-		 if ( $count > 0 ){  //If there are more than 0 terms
-		 foreach ( $terms as $term ) {  //for each term:
-		 echo "<li><a href='#' data-filter='.".$term->slug."'>" . $term->name . "</a></li>\n";
-		 //create a list item with the current term slug for sorting, and name for label
-		 }
-		 } 
-		 ?>
-		</ul>
-		<div class="row">
-			<label for="id_search">
-				<h5>Search by keyword:</h5>
-			</label>		
-			<button class="submit" type="submit" aria-label="submit"/>
-				<span class="fa fa-search"></span>
-			</button>
-			<input type="text" name="search" value="<?php if (isset($_POST['home_search'])) { echo($_POST['home_search']); } ?>" id="id_search" aria-label="Search Fields of Study" placeholder="Enter major/minor, area of study, or description keyword"  /> 
-				<label for="id_search" class="screen-reader-text">
-					Search Fields of Study
-				</label>
-		</div>
+	<div class="study-fields callout primary">
+			<ul class="menu" id="filters">
+			    <li><a class="button" href="#" data-filter="*" class="selected">Everything</a></li>
+				<li><a class="undergrad_program button" href="#" data-filter=".undergrad_program" class="selected">Undergraduate</a></li>
+				<li><a class="full_time_program button" href="#" data-filter=".full_time_program" class="selected">Full-Time Masters & Doctorates</a></li>
+				<li><a class="part_time_program button" href="#" data-filter=".part_time_program" class="selected">Part-Time Online Masters & Certificates</a></li>
+			</ul>
+
+			<div class="row">
+				<div class="small-12 columns">
+					<label for="id_search">
+						<h4>Search our Fields of Study by keyword:</h4>
+					</label>	
+					<div class="input-group">
+						<span class="input-group-label">
+							<span class="fa fa-search"></span>
+						</span>
+							<input class="input-group-field" type="text" name="search" value="<?php if (isset($_POST['home_search'])) { echo($_POST['home_search']); } ?>" id="id_search" aria-label="Search Fields of Study" placeholder="Enter major/minor, area of study, or description keyword"  /> 
+							<label for="id_search" class="screen-reader-text">
+								Search Fields of Study
+							</label>
+					</div>
+				</div>
+			</div>
+	</div>
 		<?php $the_query = new WP_Query(array(
 							'post_type' => 'studyfields',
 							'orderby' => 'title',
@@ -61,51 +61,53 @@ Template Name: Fields of Study
 		 $termsString .= $term->slug.' '; //create a string that has all the slugs 
 		 }
 		 ?> 
-		 <div class="medium-6 large-4 columns <?php echo $termsString; ?> item"> <?php // 'item' is used as an identifier (see Setp 5, line 6) ?>
-		 	<h3><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a></h3>
-				<div class="row hide-for-small">
-					<div class="small-12 columns">
+		 <div class="small-12 medium-6 large-4 columns item <?php echo $termsString; ?>"> <?php // 'item' is used as an identifier (see Step 5, line 6) ?>
+		 	<div class="small-12 columns field border-<?php echo $termsString; ?>">
+		 					<!-- Display ribbons for discipline taxonomy -->
+						<div class="row">	
+							<div class="small-12 columns disciplines">
+							</div>
+						</div>
+		 			<h3><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a></h3>
 						<p class="contact">
-							<?php echo get_post_meta($post->ID, 'ecpt_phonenumber', true); ?>
-							<span class="floatright">
+							<span class="fa fa-envelope"></span>
 								<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
 									<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>
 								</a>
-							</span>
-						</p>
-						<ul class="fields-of-study">
-							<?php if (get_post_meta($post->ID, 'ecpt_majors', true)) : ?>
-								<li><strong>Majors:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'ecpt_majors', true); ?>
-								</li>
-							<?php endif; ?>
-							<?php if (get_post_meta($post->ID, 'ecpt_minors', true)) : ?>
-								<li><strong>Minors:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'ecpt_minors', true); ?></li>
-							<?php endif; ?>
-							<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true)) : ?>
-								<li><strong>Degrees Offered:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></li>
-							<?php endif; ?>
-							<?php if (get_post_meta($post->ID, 'ecpt_pcitext', true)) : ?>
-								<p><?php echo get_post_meta($post->ID, 'ecpt_pcitext', true); ?></p>
-							<?php endif; ?>
-						</ul>
-					</div>	
-				</div>
-				<span class="hide"><?php echo get_post_meta($post->ID, 'ecpt_keywords', true); ?></span>
 							
+						</p>
+					<div class="button-group">
+						<?php if (get_post_meta($post->ID, 'ecpt_majors', true)) : ?>
+							<button type="button" class="button major">Major</button>
+						<?php endif; ?>
+						<?php if (get_post_meta($post->ID, 'ecpt_minors', true)) : ?>
+							<button type="button" class="button minor">Minor</button>
+						<?php endif; ?>
+						<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true)) : ?>
+							<button type="button" class="button degrees"><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></button>
+						<?php endif; ?>
+						<?php if (get_post_meta($post->ID, 'ecpt_pcitext', true)) : ?>
+							<p><?php echo get_post_meta($post->ID, 'ecpt_pcitext', true); ?></p>
+						<?php endif; ?>
+					</div>
+				<span class="hide"><?php echo get_post_meta($post->ID, 'ecpt_keywords', true); ?></span>
+			</div>				
 		 </div> <!-- end item -->
 		    <?php endwhile;  ?>
 		</div> <!-- end isotope-list -->
 		<?php endif; ?>
-		
-		<div class="row" id="noresults">
-			<div class="small-4 columns centered">
-				<h3> No matching results</h3>
+	
+	<div id="noResult">
+		<div class="small-12 small-centered medium-6 columns end">	
+			<div class="callout warning">
+			  <h5>Sorry, No Results Found</h5>
+			  <p>Try changing your search terms, or explore <a href="https://www.jhu.edu/academics/">all of JHU's academic programs</a></p>
 			</div>
 		</div>
-	
+	</div>
+
 	</section>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 	<?php get_sidebar(); ?>
 </div>
-
 <?php get_footer(); ?>

@@ -14,6 +14,7 @@ get_header(); ?>
 		<header class="article-header">	
 			<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 		</header>
+
 		<div class="row bio">
 			<div class="small-12 medium-4 columns">
 
@@ -22,6 +23,8 @@ get_header(); ?>
 				<?php } ?>	
 
 			</div>
+
+
 			<div class="small-12 medium-8 columns end">	
 
 			   <?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
@@ -70,6 +73,9 @@ get_header(); ?>
 		</div>
 	</div>
 	<?php if (has_term('', 'role') && !has_term('job-market-candidate', 'role')) : ?>
+
+	<?php if( $post->post_title == 'Beverly Wendland' ) : ?>
+
 		<div class="row">
 			<ul class="tabs margin10" data-tabs id="profile-tabs">
 				<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) : ?>
@@ -124,7 +130,12 @@ get_header(); ?>
 				<?php endif; ?>			
 			</div>
 		</div>
-	<?php endif; ?>
+	
+	<?php else :?>
+
+		<p><?php echo get_post_meta($post->ID, 'ecpt_bio', true); ?></p>
+		
+	<?php endif; endif; ?>
 	</article>
 <?php endwhile; endif; ?>
 <?php do_action( 'foundationpress_after_content' ); ?>

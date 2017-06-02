@@ -43,40 +43,50 @@ get_header(); ?>
 	  </article>
 	<?php endwhile;?>
 
-		<div class="row">
-			<label for="id_search">
-				<h2>Search the Dean's directory:</h2>
-			</label>		
-			<button class="submit" type="submit" aria-label="submit"/>
-				<span class="fa fa-search"></span>
-			</button>
-			<input type="text" name="search" value="<?php if (isset($_POST['home_search'])) { echo($_POST['home_search']); } ?>" id="id_search" aria-label="Search the dean's directory"  /> 
-				<label for="id_search" class="screen-reader-text">
-					Search the dean's directory
-				</label>
-		</div>
+	<!--	<div class="row">
+			<div class="small-12 medium-6 columns callout primary">
 
-		<div class="row" id="fields_container">
-			<ul id="isotope-list">
+
+				<label for="id_search">
+					<h4>Search the Dean's directory:</h4>
+				</label>	
+				<div class="input-group">
+					<span class="input-group-label">
+						<span class="fa fa-search"></span>
+					</span>
+				<input class="input-group-field" type="text" name="search" value="<?php if (isset($_POST['home_search'])) { echo($_POST['home_search']); } ?>" id="id_search" aria-label="Search the dean's directory"  /> 
+					<label for="id_search" class="screen-reader-text">
+						Search the dean's directory
+					</label>
+				</div>
+			</div>
+		</div>
+-->
+		<div class="row">
+			<ul class="directory">
 				<?php while ($flagship_leadership_query->have_posts()) : $flagship_leadership_query->the_post(); ?>
 						<li class="item person">
 							<div class="row">
-								<div class="small-12 columns">
+								<div class="media-object">
+									<div class="media-object-section">
+
 									<?php if ( has_post_thumbnail()) { ?> 
 										<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('directory', array('class' => 'padding-five floatleft hide-for-small')); ?></a>
-									<?php } ?>			    
+									<?php } ?>	
+									</div>
+									<div class="media-object-section">
 									<h4 class="no-margin">
 										<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 									</h4>
 									<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
 										<h5 class="no-margin"><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h5>
 									<?php endif; ?>
-									<p class="contact black">
+									<p class="contact">
 										<?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>
 											<span class="fa fa-phone-square"></span> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?>
 										<?php endif; ?>
 										<?php if ( get_post_meta($post->ID, 'ecpt_fax', true) ) : ?>
-											<span class="fa fa-fax"></span><?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?>
+											<span class="fa fa-fax"></span> <?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?>
 										<?php endif; ?>
 										<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?>
 											<span class="fa fa-envelope"></span> <a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a>
@@ -87,6 +97,7 @@ get_header(); ?>
 									</p>
 								</div>
 							</div>
+						</div>
 						</li>		
 				<?php endwhile; ?>
 				
@@ -118,7 +129,7 @@ get_header(); ?>
 				<?php endwhile; ?>
 					<div class="row" id="noresults">
 						<div class="small-12 medium-4 columns centered">
-							<h3> No matching results</h3>
+							<h3>No matching results</h3>
 						</div>
 					</div>
 			</ul>

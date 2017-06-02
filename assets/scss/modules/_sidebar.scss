@@ -1,24 +1,25 @@
 .sidebar {
+  padding: 0 1.25rem .1rem 1.25rem;
   @include breakpoint(small) {
     @include grid-column(12);
   }
-
   @include breakpoint(medium) {
     @include grid-column(4);
     margin-top: 1rem;
   }
-  padding: 0 1.25rem .1rem 1.25rem;
-		@include breakpoint (large) {
-			margin-top: 1rem;
-			margin-bottom: 1.5rem;	
-		}
-		h5 {
-			padding-left:1rem;
-			margin-top:0;
-			margin-bottom:0;
-			color: $white;
-			font-weight: bold;
-		}
+	@include breakpoint (large) {
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;	
+	}
+  .sidebar p {
+    padding: .5rem;
+  }
+	h5 {
+		margin-top:0;
+		margin-bottom:0;
+		color: $white;
+		font-weight: bold;
+	}
   ul.nav {
   	margin-left: inherit;
   	li {
@@ -34,10 +35,17 @@
     		color: $black;
     		font-weight: bold;
     	}
+      &.current_page_item {
+        background: $powderblue;
+      }
   	}
   }
+  select {
+    width: 95%;
+    margin: 0 .4rem 1rem;
+  }
   #sidebar_header {
-   padding:.75rem .93rem .62rem 1rem;
+  padding:.75rem .93rem .62rem 1rem;
 	background: $blue;
   	a, a:hover {
   		color: $white;
@@ -58,9 +66,10 @@
 .widget_text, .ecpt-page-sidebar {
   font-size: 1rem;
   background-color: $powderblue;
-  .sidebar_header, h6 {
+  .sidebar_header, h5 {
     background-color: $skyblue;
-    padding:12px 15px 10px 0;
+    padding: .5rem;
+    font-size: 1rem;
   }
   ul.nav {
     li {

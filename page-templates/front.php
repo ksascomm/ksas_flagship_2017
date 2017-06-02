@@ -13,7 +13,7 @@ get_header(); ?>
 
 if ( $flagship_evergreen_query->have_posts() ) : ?>
 
-
+<div class="hero">
 <div class="fullscreen-image-slider">
   <div class="orbit" role="region" aria-label="FullScreen Pictures" data-orbit>
     <ul class="orbit-container">
@@ -26,7 +26,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
         <img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>">
         <figcaption class="orbit-caption">
         <div class="row">
-        <div class="small-12 large-9 large-push-1 columns">
+        <div class="small-push-1 columns">
           <h1><?php the_title(); ?></h1>
           <p><?php the_content(); ?></p>
          </div>
@@ -35,7 +35,14 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
       </li>
      <?php endwhile;?>
     </ul>
+	<nav class="orbit-bullets">
+	  <?php $entries = $flagship_evergreen_query->post_count; ?>
+	  <?php for($i=0; $i<$entries; $i++) { ?>
+	    <button class="<?php echo $i==0 ? 'is-active' : '' ?>" data-slide="<?php echo $i; ?>"></button>
+	  <?php } ?>
+	</nav>   
   </div>
+</div>
 </div>
 <?php endif; ?>
 
@@ -45,35 +52,60 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	<div class="fp-intro">
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
-			<div class="entry-content">
+			<div class="entry-content programs">
 				<h1>Find Your Program</h1>
-					<div class="row small-up-1 medium-up-2 large-up-5">
+					<div class="row hide-for-small-only small-up-1 medium-up-2 large-up-5">
 					    <div class="column column-block">
+					    	<div class="block-text">
 					    	<a href="academics/departments-programs-and-centers" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Departments');">
-					        	<img src="//placehold.it/204?text=Departments" class="thumbnail" alt="">
+					        	<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/dept.jpg" class="big_image thumbnail" alt="">
+					        	<div class="overlay_text"><h2>Departments</h2></div>
 					        </a>
+					        </div>
 					    </div>
-					    <div class="column column-block">
+					    <div class="column column-block major">
+					    	<div class="block-text">
 					    	<a href="academics/majors-minors" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Majors/Minors');">
-					        	<img src="//placehold.it/204?text=Majors & Minors" class="thumbnail" alt="">
+					        	<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/major.jpg" class="thumbnail" alt="">
+					        <div class="overlay_text"><h2>Majors & Minors</h2></div>
 					        </a>
 					    </div>
-					    <div class="column column-block">
-					    	<a href="academics/fields?filter=undergrad_program&ccAC=1" data-filter=".undergrad_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Undergraduate');">
-					    		<img src="//placehold.it/204?text=Undergraduate" class="thumbnail" alt="">
+					    </div>
+					    <div class="column column-block under">
+					    	<div class="block-text">
+					    	<a href="academics/fields/#filter=.undergrad_program" data-filter=".undergrad_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Undergraduate');">
+					    		<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/under.jpg" class="thumbnail" alt="">
+					    		<div class="overlay_text"><h2>Undergraduate</h2></div>
 					    	</a>
 					    </div>
-					    <div class="column column-block">
-					    	<a href="academics/fields?filter=full_time_program&ccAC=1" data-filter=".full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT');">
-					    		<img src="//placehold.it/204?text=Graduate Full-Time" class="thumbnail" alt="">
+					    </div>
+					    <div class="column column-block gradft">
+					    	<div class="block-text">
+					    	<a href="academics/#filter=.full_time_program" data-filter=".full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT');">
+					    		<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/gradft.jpg" class="thumbnail" alt="">
+					    		<div class="overlay_text"><h2>Graduate<br><small>Full Time Masters & Doctorates</small></h2></div>
 					    	</a>
 					    </div>
-					    <div class="column column-block">
-					    	<a href="academics/fields?filter=part_time_program&ccAC=1" data-filter=".full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT');">
-					    		<img src="//placehold.it/204?text=Graduate Part-Time & Certificates" class="thumbnail" alt="">
+					    </div>
+					    <div class="column column-block gradpt">
+					    	<div class="block-text">
+					    	<a href="academics/fields/#filter=.part_time_program" data-filter=".full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT');">
+					    		<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/gradpt.jpg" class="thumbnail" alt="">
+					    		<div class="overlay_text"><h2>Graduate<br><small>Online Masters & Certificates</small></span></h2></div>
 					    	</a>
 					    </div>
-					</div>		
+					    </div>
+					</div>
+
+				<div class="row show-for-small hide-for-medium">
+					<ul class="vertical menu programs">
+						<li><a class="button" href="#">Undergraduate</a></li>
+						<li><a class="button" href="#">Full-Time Masters & Doctorates</a></li>
+						<li><a class="button" href="#">Part-Time Online Masters & Certificates</a></li>
+						<li><a class="button" href="#">List of Departments</a></li>
+						<li><a class="button" href="#">List of Majors & Minors</a></li>
+					</ul>
+				</div>
 				<?php the_content(); ?>
 			</div>
 		</div>
@@ -193,7 +225,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 
 	<div class="marketing-site-hero">
 	  <div class="marketing-site-hero-content">
-	    <h1>Giving</h1>
+	    <h1>Support the Krieger School</h1>
 	    <p class="subheader">The School of Arts and Sciences plays a vital role within Johns Hopkins University, housing the disciplines of the humanities and natural and social sciences from which all other courses of study stem.</p>
 	    <a href="/giving" class="button">Find Out More</a>
 	  </div>
