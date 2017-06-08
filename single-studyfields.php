@@ -9,6 +9,24 @@
 get_header(); ?>
  <div id="page-sidebar-left" role="main">
 	<?php do_action( 'foundationpress_before_content' ); ?>
+		
+		<!--custom breadcrumbs-->
+
+		<ul id="breadcrumbs" class="breadcrumbs">
+			<li class="item-home">
+				<a class="bread-link bread-home" href="<?php echo site_url();?>" title="Home">Home</a>
+			</li>
+			<li class="item-parent">
+				<a class="bread-parent" href="/academics/" title="Academics">Academics</a>
+			</li>
+			<li class="item-parent">
+				<a class="bread-parent" href="/academics/fields" title="Academics">Fields of Study</a>
+			</li>
+			<li class="current item"><?php echo the_title();?></li>
+		</ul>
+
+
+
 		<?php  
 		    $field = get_post_meta($post->ID, 'ecpt_field_level', true);
 		      if ( ($field == 'undergraduate') || ($field == 'full-graduate' )) {

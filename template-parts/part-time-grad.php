@@ -12,37 +12,38 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('main-content') ?>>
 <img src="<?php echo get_post_meta($post->ID, 'ecpt_image', true); ?>" alt="<?php the_title(); ?>" class="radius10">
-	<header>
-		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	</header>
+	
+	<h1><?php the_title(); ?></h1>
+
 	<div class="entry-content">
-		<p class="contact"> <!-- Contact info line -->
-
+		<div class="row study-fields-contact">			
 			<?php if ( get_post_meta($post->ID, 'ecpt_homepage', true) ) : ?>
-				<br><span class="fa fa-globe"></span> 
+				<div class="small-12 large-6 columns">
+				<span class="fa fa-globe"></span> 
 				<a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')">
-					<?php echo get_post_meta($post->ID, 'ecpt_homepage', true);?>
-				</a>	
+					<?php the_title(); ?> Website
+				</a>
+				</div>
 			<?php endif; ?>
-
-
 			<?php if ( get_post_meta($post->ID, 'ecpt_emailaddress', true) ) : ?>
-				<span class="fa fa-envelope"></span> 
-				<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
-					<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true);?>
-				</a>	
+				<div class="small-12 large-3 columns">
+					<span class="fa fa-envelope"></span> 
+					<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
+						<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true);?>
+					</a>
+				</div>	
 			<?php endif; ?>
-
-			<?php if ( get_post_meta($post->ID, 'ecpt_phonenumber', true) ) : ?>
-				<span class="fa fa-phone-square"></span>  <?php echo get_post_meta($post->ID, 'ecpt_phonenumber', true); ?>
-			<?php endif; ?>
-						
 			<?php if ( get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
-				<span class="fa fa-map-marker"></span>  <?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>
+				<div class="small-12 large-3 columns">
+					<span class="fa fa-map-marker"></span>  <?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>
+				</div>
+			<?php endif; ?>	
+		</div>
+		<div class="row study-fields-contact">
+			<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true)) : ?>
+				<h4>Degrees Offered: <small><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></small></h4>	
 			<?php endif; ?>
-
-
-		</p> <!-- End Contact info line -->
+		</div>
 		<?php if ( get_post_meta($post->ID, 'ecpt_section1', true) ) :  echo get_post_meta($post->ID, 'ecpt_section1', true);  endif; ?>
 					
 		<?php if ( get_post_meta($post->ID, 'ecpt_section2content', true) ) :?>  
@@ -60,34 +61,12 @@
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				
-		<div class="blue_bg offset-gutter sidebar_header">
-				<h5 class="white">Explore <?php the_title();?></h5>
-		</div>	
-
-		<!--Begin Department Navigation Links -->
-		<div class="row">
-			<ul class="nav">
-				<?php if ( get_post_meta($post->ID, 'ecpt_homepage', true) ) : ?>
-					<li><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?> Website</a></li>
-				<?php endif; ?>
-				<?php if ( get_post_meta($post->ID, 'ecpt_facultypage', true) ) : ?>
-					<li><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_facultypage', true); ?>">Faculty</a></li>
-				<?php endif; ?>
-
-				<?php if ( get_post_meta($post->ID, 'ecpt_undergraduatepage', true) ) : ?>
-					<li><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_undergraduatepage', true); ?>">Undergraduate</a></li>
-				<?php endif; ?>
-
-				<?php if ( get_post_meta($post->ID, 'ecpt_graduatepage', true) ) : ?>
-					<li><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_graduatepage', true); ?>">Graduate</a></li>
-				<?php endif; ?>
-			</ul>
-		</div> <!--End Dept Nav Links -->
+		
 	<?php endwhile; endif; ?>	
 
 	<?php if ( get_post_meta($post->ID, 'ecpt_title', true) && get_post_meta($post->ID, 'ecpt_content', true) ) : ?>
 		<?php if ( get_post_meta($post->ID, 'ecpt_title', true) ) : ?>
-			<div class="blue_bg offset-gutter sidebar_header">
+			<div class="offset-gutter sidebar_header">
 				<h5 class="white"><?php echo get_post_meta($post->ID, 'ecpt_title', true);?></h5>
 			</div>	
 		<?php endif; ?>

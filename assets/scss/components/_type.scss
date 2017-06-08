@@ -56,35 +56,6 @@ h3, h4, h5, h6, .semibold, blockquote {
   }
 }
 
-li.person {
-  margin-bottom: 15px;
-  width: 90%;
-  min-height: 95px;
-  padding: 3px 10px 0 10px;
-}
-
-.directory {
-  list-style: none;
-  li:nth-child(odd) {
-    background: lighten($grey, 5%);
-  }
-  p {
-    margin-top: 20px;
-  }
-}
-
-.black {
-  color: $black;
-}
-
-.bio {
-  h2 {
-    font-family: $font-subhead-book;
-    color: $blue;
-    font-size: 1.5rem;
-  }
-}
-
 .tabs-content, .accordion-item {   
   h1 {
     font-size: 1.25rem;

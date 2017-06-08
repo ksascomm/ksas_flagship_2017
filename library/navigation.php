@@ -104,7 +104,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 		$separator  = '&gt;';
 		$id         = 'breadcrumbs';
 		$class      = 'breadcrumbs';
-		$home_title = 'KSAS Homepage';
+		$home_title = 'Home';
 
 		// Get the query & post information
 		global $post,$wp_query;
@@ -130,7 +130,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 					echo '<li class="separator separator-' . $category[0]->term_id . '"> ' . $separator . ' </li>';
 				}
 				echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
-
+				
 			} elseif ( is_category() ) {
 
 				// Category page

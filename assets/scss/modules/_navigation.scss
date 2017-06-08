@@ -1,10 +1,10 @@
 // Navigation breakpoints
 .desktop-menu, .top-bar-left {
-  @include show-for(medium);
+  @include show-for(large);
 }
 
 #mobile-menu, .title-bar {
-  @include hide-for(medium);
+  @include hide-for(large);
 }
 
 // Mobile menu
@@ -147,15 +147,28 @@
 }
 
 .top-bar-title {
-  img {
+  @include breakpoint (small) {
     display: block;
-    margin: auto;
+    float: none;
+  }
+  @include breakpoint (large) {
+    display: inline-block;
+    float: left;
+  }
+  img {
     padding: .5rem 1rem;
-    margin-left: .5rem;
+    //this is when menu breaks line
+    @include breakpoint (small) {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+    }
     @include breakpoint (medium) {
-      max-width: 375px;
+      margin-top: 2.25rem;
+      max-width: 400px;
     }
     @include breakpoint (large) {
+      margin-top: inherit;
       max-width: 350px;
     }
   }
@@ -163,7 +176,10 @@
 
 .top-bar-left {
   //check when menu breaks line!
-  @include breakpoint (723px) {
+  @include breakpoint (886px) {
+    margin-top: 1rem;
+  }
+  @include breakpoint (1024px) {
     margin-top: 2rem;
   }
 }
@@ -266,4 +282,8 @@ div#offCanvasTop1 {
   .current_page_parent.current_page_ancestor {
     background: #004485;
   }
+}
+
+li#menu-item-8798.current_page_item, li#menu-item-8802.current_page_item, li#menu-item-8808.current_page_item, li#menu-item-8815.current_page_item, li#menu-item-8823.current_page_item {
+   background: #004485;
 }

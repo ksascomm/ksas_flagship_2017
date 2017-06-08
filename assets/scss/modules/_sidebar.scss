@@ -5,10 +5,10 @@
   }
   @include breakpoint(medium) {
     @include grid-column(4);
-    margin-top: 1rem;
+    //margin-top: 1rem;
   }
 	@include breakpoint (large) {
-		margin-top: 1rem;
+		//margin-top: 1rem;
 		margin-bottom: 1.5rem;	
 	}
   .sidebar p {
@@ -22,12 +22,13 @@
 	}
   ul.nav {
   	margin-left: inherit;
+    margin-bottom: 2.5rem;
   	li {
   		list-style-type: none;
   		padding: .5rem 1rem;
     	border-bottom: 1px solid $darkgrey;
     	&:hover {
-    		background-color: $skyblue;
+    		background-color: lighten($skyblue, 10%);
     		color: $white;
     	}
     	a {
@@ -70,6 +71,16 @@
     background-color: $skyblue;
     padding: .5rem;
     font-size: 1rem;
+  }
+  p {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    &:first-of-type {
+      padding-top: 1rem;
+    }
+    &:last-of-type {
+      padding-bottom: 1rem;
+    }
   }
   ul.nav {
     li {

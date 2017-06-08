@@ -10,7 +10,7 @@
 ?>
 
 <h1>
-	<a class="dark_blue_bg" href="https://hub.jhu.edu/events/">Events from The Hub</a>
+	<a href="https://hub.jhu.edu/events/">Events from The Hub</a>
 </h1>
 
 

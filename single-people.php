@@ -9,6 +9,24 @@
 get_header(); ?>
  <div id="page-sidebar-left" role="main">
 <?php do_action( 'foundationpress_before_content' ); ?>
+
+		<!--custom breadcrumbs-->
+
+		<ul id="breadcrumbs" class="breadcrumbs">
+			<li class="item-home">
+				<a class="bread-link bread-home" href="<?php echo site_url();?>" title="Home">Home</a>
+			</li>
+			<li class="item-parent">
+				<a class="bread-parent" href="/people/" title="People">People</a>
+			</li>
+			<li class="item-parent">
+				<a class="bread-parent" href="/people/leadership/" title="Academics">Dean & Leadership</a>
+			</li>
+			<li class="current item"><?php echo the_title();?></li>
+		</ul>
+
+
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header class="article-header">	

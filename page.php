@@ -14,6 +14,7 @@
 
  <div id="page-sidebar-left" role="main">
  <?php do_action( 'foundationpress_before_content' ); ?>
+ <?php foundationpress_breadcrumb();?>
  <?php while ( have_posts() ) : the_post(); ?>
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
     <?php get_template_part( 'template-parts/featured-image' ); ?>

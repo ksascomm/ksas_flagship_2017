@@ -23,7 +23,7 @@ get_header(); ?>
 				    <form class="search-form" action="<?php echo site_url('/search'); ?>" method="get">
 		                <fieldset>
 		                    <input type="text" class="input-text" name="q" />
-		                    <input type="submit" class="button blue_bg" value="Search" />
+		                    <input type="submit" class="button" value="Search" />
 		                </fieldset>
 		   			</form>    
 			</div>

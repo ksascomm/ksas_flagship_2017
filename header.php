@@ -41,7 +41,7 @@
 
 
 
-		<div class="roof hide-for-small-only">
+		<div class="roof show-for-large">
 			<?php get_template_part( 'template-parts/roof' ); ?>
 		</div>
 
@@ -49,7 +49,9 @@
 		
 				<div class="top-bar-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/images/ksas-horizontal.png" alt="Krieger School of Arts and Sciences">
+
+						<img data-interchange="[<?php echo get_template_directory_uri() ?>/assets/images/ksas-horizontal-sm.png, small], [<?php echo get_template_directory_uri() ?>/assets/images/ksas-horizontal-md.png, medium], [<?php echo get_template_directory_uri() ?>/assets/images/ksas-horizontal-lg.png, large]">
+
 					</a>
 						
 				</div>

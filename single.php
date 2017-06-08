@@ -13,6 +13,7 @@ get_header(); ?>
 <div id="single-post" role="main">
 <?php foundationpress_breadcrumb();?>
 <?php do_action( 'foundationpress_before_content' ); ?>
+<?php foundationpress_breadcrumb();?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>

@@ -9,6 +9,7 @@ get_header(); ?>
 <div id="page-sidebar-left" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
+<?php foundationpress_breadcrumb();?>
 <?php while ( have_posts() ) : the_post(); ?>
   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
       <header>
@@ -18,20 +19,6 @@ get_header(); ?>
       <div class="entry-content">
           <?php the_content(); ?>
       </div>
-      <footer>
-          <?php
-            wp_link_pages(
-              array(
-                'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
-                'after'  => '</p></nav>',
-              )
-            );
-          ?>
-          <p><?php the_tags(); ?></p>
-      </footer>
-      <?php do_action( 'foundationpress_page_before_comments' ); ?>
-      <?php comments_template(); ?>
-      <?php do_action( 'foundationpress_page_after_comments' ); ?>
   </article>
 <?php endwhile;?>
 

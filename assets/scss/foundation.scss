@@ -85,6 +85,7 @@
 
 // Components
 @import "components/type";
+@import "components/icomoon";
 @import "components/buttons";
 @import "components/callout";
 @import "components/cards";
@@ -92,8 +93,10 @@
 @import "components/dividers";
 @import "components/links";
 @import "components/fieldsofstudy";
+@import "components/tables";
 
 // Templates
+@import "templates/directory";
 @import "templates/front";
 @import "templates/kitchen-sink";
 @import "templates/page-default";

@@ -7,7 +7,7 @@
       @include grid-column(12);
     }
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       @include grid-column(9);
       @include grid-col-pos(3);
     }
@@ -18,10 +18,10 @@
       @include grid-column(12);
     }
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       @include grid-column(3);
       @include grid-col-pos(-9);
-      margin-top: 1rem;
+      //margin-top: 1rem;
     }
   }
 }

@@ -41,7 +41,7 @@ get_header(); ?>
                         <label>
                             <input type="text" class="input-text" name="q" value="<?php echo $displayQuery ?>" />
                         </label>
-                        <input type="submit" class="button blue_bg" id="search_again" value="Search Krieger Network" />
+                        <input type="submit" class="button" id="search_again" value="Search Krieger Network" />
                             <label for="search_again" class="screen-reader-text">
                             Search Again
                             </label>
@@ -106,7 +106,7 @@ get_header(); ?>
                             Search:
                             <input type="text" class="input-text" name="q" value="<?php echo $displayQuery ?>" />
                         </label>
-                        <input type="submit" class="button blue_bg" id="search_again" value="Search Krieger Network" />
+                        <input type="submit" class="button" id="search_again" value="Search Krieger Network" />
                             <label for="search_again" class="screen-reader-text">
                             Search Again
                             </label>

@@ -17,11 +17,17 @@
     position: relative;
     .row {
       h1.entry-title {
-        font-size: 2rem;
         bottom: 0;
         position: absolute;
-        background: rgba(0, 0, 0, 0.75);
-        padding: 4px 8px;
+        background: rgba(0, 0, 0, 0.85);
+        @include breakpoint (small) {
+          font-size: 3rem;
+          padding: 4px 8px;
+        }
+        @include breakpoint (large) {
+          font-size: 4rem;
+          padding: 4px 2rem;
+        }
         color: white;
         margin: 0;
       }

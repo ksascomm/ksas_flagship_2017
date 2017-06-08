@@ -8,7 +8,10 @@ Template Name: Fields of Study
 <div id="page-sidebar-left" role="main">
 
 	<?php do_action( 'foundationpress_before_content' ); ?>
-	<section class="main-content">
+
+	<?php foundationpress_breadcrumb();?>
+
+	<div class="main-content">
 		<?php while ( have_posts() ) : the_post(); ?>
 		  <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 		      <header>
@@ -22,36 +25,36 @@ Template Name: Fields of Study
 		  </article>
 		<?php endwhile;?>
 
-	<div class="study-fields callout primary">
-			<ul class="menu" id="filters">
-			    <li><a class="button" href="#" data-filter="*" class="selected">Everything</a></li>
-				<li><a class="undergrad_program button" href="#" data-filter=".undergrad_program" class="selected">Undergraduate</a></li>
-				<li><a class="full_time_program button" href="#" data-filter=".full_time_program" class="selected">Full-Time Masters & Doctorates</a></li>
-				<li><a class="part_time_program button" href="#" data-filter=".part_time_program" class="selected">Part-Time Online Masters & Certificates</a></li>
-			</ul>
+		<div class="study-fields callout primary">
+				<ul class="menu" id="filters">
+				    <li><a class="button" href="#" data-filter="*" class="selected">Everything</a></li>
+					<li><a class="undergrad_program button" href="#" data-filter=".undergrad_program" class="selected">Undergraduate</a></li>
+					<li><a class="full_time_program button" href="#" data-filter=".full_time_program" class="selected">Full-Time Masters & Doctorates</a></li>
+					<li><a class="part_time_program button" href="#" data-filter=".part_time_program" class="selected">Part-Time Online Masters & Certificates</a></li>
+				</ul>
 
-			<div class="row">
-				<div class="small-12 columns">
-					<label for="id_search">
-						<h4>Search our Fields of Study by keyword:</h4>
-					</label>	
-					<div class="input-group">
-						<span class="input-group-label">
-							<span class="fa fa-search"></span>
-						</span>
-							<input class="input-group-field" type="text" name="search" value="<?php if (isset($_POST['home_search'])) { echo($_POST['home_search']); } ?>" id="id_search" aria-label="Search Fields of Study" placeholder="Enter major/minor, area of study, or description keyword"  /> 
-							<label for="id_search" class="screen-reader-text">
-								Search Fields of Study
-							</label>
+				<div class="row">
+					<div class="small-12 columns">
+						<label for="id_search">
+							<h4>Search our Fields of Study by keyword:</h4>
+						</label>	
+						<div class="input-group">
+							<span class="input-group-label">
+								<span class="fa fa-search"></span>
+							</span>
+								<input class="input-group-field" type="text" name="search" value="<?php if (isset($_POST['home_search'])) { echo($_POST['home_search']); } ?>" id="id_search" aria-label="Search Fields of Study" placeholder="Enter major/minor, area of study, or description keyword"  /> 
+								<label for="id_search" class="screen-reader-text">
+									Search Fields of Study
+								</label>
+						</div>
 					</div>
 				</div>
-			</div>
-	</div>
+		</div>
 		<?php $the_query = new WP_Query(array(
-							'post_type' => 'studyfields',
-							'orderby' => 'title',
-							'order' => 'ASC',
-							'posts_per_page' => '-1')); //Check the WP_Query docs to see how you can limit which posts to display ?>
+			'post_type' => 'studyfields',
+			'orderby' => 'title',
+			'order' => 'ASC',
+			'posts_per_page' => '-1')); //Check the WP_Query docs to see how you can limit which posts to display ?>
 		<?php if ( $the_query->have_posts() ) : ?>
 		    <div id="isotope-list">
 		    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
@@ -97,16 +100,16 @@ Template Name: Fields of Study
 		</div> <!-- end isotope-list -->
 		<?php endif; ?>
 	
-	<div id="noResult">
-		<div class="small-12 small-centered medium-6 columns end">	
-			<div class="callout warning">
-			  <h5>Sorry, No Results Found</h5>
-			  <p>Try changing your search terms, or explore <a href="https://www.jhu.edu/academics/">all of JHU's academic programs</a></p>
+		<div id="noResult">
+			<div class="small-12 small-centered medium-6 columns end">	
+				<div class="callout warning">
+				  <h5>Sorry, No Results Found</h5>
+				  <p>Try changing your search terms, or explore <a href="https://www.jhu.edu/academics/">all of JHU's academic programs</a></p>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	</section>
+	</div>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 	<?php get_sidebar(); ?>
 </div>

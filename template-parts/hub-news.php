@@ -10,7 +10,7 @@
 ?>
 
 <h1>
-	<a class="dark_blue_bg" href="https://hub.jhu.edu/">News from The Hub</a>
+	<a href="https://hub.jhu.edu/">News from The Hub</a>
 </h1>
 
 <div class="row">
@@ -23,7 +23,7 @@
 							$hub_articles = $hub_results['_embedded'];
 	foreach($hub_articles['articles'] as $hub_article) { ?>
 		<article class="hub-news" id="post-<?php the_ID(); ?>">
-			<img src="<?php echo $hub_article['_embedded']['image_thumbnail'][0]['sizes']['thumbnail']; ?>" alt="From The Hub" />
+			<img class="hub-img" src="<?php echo $hub_article['_embedded']['image_thumbnail'][0]['sizes']['thumbnail']; ?>" alt="From The Hub" />
 			<h1><a href="<?php echo $hub_article['url']; ?>"><?php echo $hub_article['headline']; ?></a></h1>
 			<summary>
 			<p><?php echo $hub_article['subheadline'];

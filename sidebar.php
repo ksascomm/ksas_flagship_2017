@@ -25,8 +25,8 @@
 					$test_menu = wp_nav_menu( array( 
 						'theme_location' => 'top-bar-r', 
 						'menu_class' => 'nav',
-						'container_class' => 'offset-gutter',
-						'items_wrap' =>  '<div class="radius-topright" id="sidebar_header"><h5 class="white">Also in <span class="grey bold">' . $page_name . '</span></h5></div><ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',				
+						'container_class' => '',
+						'items_wrap' =>  '<div id="sidebar_header"><h5 class="white">Also in <span class="grey bold">' . $page_name . '</span></h5></div><ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',				
 						'submenu' => $page_name,
 						'depth' => 1,
 					));
@@ -39,7 +39,7 @@
 					$parent_name = $parent_page->post_title;
 				?>
 			<!--Below is displayed when on a child page -->	
-				<div class="offset-gutter radius-topright" id="sidebar_header">
+				<div id="sidebar_header">
 					<h5 class="white">Also in <a href="<?php echo $parent_url;?>" class="grey bold"><?php echo $parent_name ?></a></h5>
 				</div>
 				<?php
@@ -54,8 +54,8 @@
 				}
 	} ?>
 	<?php if( is_singular('people') ) : ?>
-
-		<div class="offset-gutter radius-topright" id="sidebar_header">
+	
+		<div class="" id="sidebar_header">
 			<h5 class="white">Also in <a href="/people" class="grey bold">People</a></h5>
 		</div>
 		<?php
@@ -69,7 +69,7 @@
 			));
 	if (has_term('', 'role') && !has_term('job-market-candidate', 'role')) : ?>
 	<div class="ecpt-page-sidebar">
-		<div class="offset-gutter radius-topright" id="sidebar_header">
+		<div class="sidebar_header">
 			<label for="jump">
 			<h5 class="white">View Other Profiles</h5>
 			</label>
@@ -94,7 +94,7 @@
 	<?php endif; endif; ?>				
 
 	<?php if( is_singular('studyfields') ) : ?>
-		<div class="offset-gutter radius-topright" id="sidebar_header">
+		<div class="" id="sidebar_header">
 			<h5 class="white">Also in <a href="/academics" class="grey bold">Academics</a></h5>
 		</div>
 		<?php
@@ -109,7 +109,7 @@
 	
 		<?php $field = get_post_meta($post->ID, 'ecpt_field_level', true);?>
 		<div class="ecpt-page-sidebar">
-			<div class="offset-gutter radius-topright" id="sidebar_header">
+			<div class="sidebar_header">
 			<label for="jump">
 					<h5 class="white">
 					<?php if ( ($field == 'undergraduate') || ($field == 'full-graduate' )) : ?>
