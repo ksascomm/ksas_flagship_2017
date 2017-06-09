@@ -121,6 +121,12 @@
       span.skyblue {
         color: $skyblue;
       }
+      @include breakpoint(small) { 
+        font-size: 1.25rem;
+      }
+      @include breakpoint(medium) {
+        font-size: 2rem;
+      }
     }
     @include breakpoint(small) {
       @include grid-column(12);
@@ -166,10 +172,10 @@
 .grey-bg {
   @include breakpoint(medium) {
     background-color: $grey;
-  }
   &.texture {
      background: url(../images/frontpage/bg-at-glance.jpg) no-repeat fixed;
      background-size: cover;
+  }
   }
 }
 
@@ -341,11 +347,21 @@ $marketing-site-hero-height: 50vh;
   padding-bottom: 1rem;
   h1 {
     color: $white;
-    font-size: 2rem;
+    @include breakpoint (small) {
+      font-size: 1.5rem;
+    }
+    @include breakpoint (large) {
+      font-size: 2rem;
+    }
   }
   .subheader {
     color: $white;
-    font-size: 1.5rem;
+    @include breakpoint (small) {
+      font-size: 1.25rem;
+    }
+    @include breakpoint (large) {
+      font-size: 1.5rem;
+    }
   }
   @media screen and (min-width: 64em) {
     padding-left: 35%;
@@ -362,24 +378,37 @@ $marketing-site-hero-height: 50vh;
     //height: 60vh;
   }
   .orbit-caption {
-    h1, p { 
-      padding-right: 1rem;
+    p {
+      font-family: $font-subhead-book;
+      font-weight: bold;
+    }
+    @include breakpoint(small) {
+      bottom: 0;
+      width: 100%;
+      h1 {
+        font-size: 1rem;
+      }
+    }
+    @include breakpoint(medium) {
+      h1 {
+        font-size: 1.75rem;
+      }
     }
     @include breakpoint(large) {
     bottom: 15%;
     width: 35%;
+    h1, p {
+      padding-right: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
     }
     @include breakpoint(xlarge) {
     bottom: 25%;
     width: 35%;
     }
-    h1 {
-      font-size: 2rem;
-    }
-    p {
-      font-family: $font-subhead-book;
-      font-weight: bold;
-    }
+
   }
   .orbit-bullets {
     @include breakpoint(large) {
@@ -412,7 +441,6 @@ $marketing-site-hero-height: 50vh;
   .youtube, .twitter, .instagram {
     padding: 1rem;
     border: 2px solid $grey;
-  
     @include breakpoint(small) {
         @include grid-column(12);
       }
@@ -427,34 +455,35 @@ $marketing-site-hero-height: 50vh;
   .twitter {
     padding-left: 2rem !important;
     padding-right: 0 !important;
-    img {
-
+    .media-object {
+      img:hover {
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+      }
     }
     .callout {
       //border-width: 2px;
     }
+    h5 {
+      font-weight: bold;
+      small {
+        color: $darkgrey;
+      }
+    }
   }
-  .twitter-img {
-    @include breakpoint(large) {
-      @include grid-column(6);
-    }
-  } 
   .instagram {
-    .sbi_follow_btn {
-      a {
-        background: $white !important;
-        font-size: 1rem !important;
-        color: $blue !important;
-        border: 1px solid $blue !important;
-      }
-    }
-    #sb_instagram #sbi_load, #sb_instagram .sb_instagram_error {
-      text-align: right !important;
-    }
-    #sb_instagram a.sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready .sbi_photo img {
-       @include breakpoint(small) {
-        width: 50% !important;
-      }
+   img.gram:hover {
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+   }
+   .gram-link {
+    margin-top: 2rem;
+   }
+  }
+
+  .twitter, .instagram {
+    @include breakpoint(large) {
+      height: 275px;
     }
   }
   .social {
@@ -467,6 +496,9 @@ $marketing-site-hero-height: 50vh;
       @include breakpoint(large) {
         margin-top: -50px;
       }
+    }
+    li.menu-text {
+      font-size: 1.6rem;
     }
   }
 }

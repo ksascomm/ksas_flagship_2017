@@ -34,4 +34,7 @@ $flagship-icon_url_4: url(../fonts/flagship-icon.ttf);
 
 a {
 	color: $blue;
+	&:hover {
+		color: $skyblue;
+	}
 }

@@ -26,9 +26,11 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
         <img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>">
         <figcaption class="orbit-caption">
 	        <div class="row">
-		        <div class="large-push-1 columns">
+		        <div class="small-12 large-push-1 columns">
 		          <h1><?php the_title(); ?></h1>
-		          <?php the_content(); ?>
+		          	<div class="show-for-medium">
+		          		<?php the_content(); ?>
+		          	</div>
 		         </div>
 	         </div>
         </figcaption>
@@ -103,28 +105,26 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 </div>
 
 <section class="connect">
-<h2>Connect</h3>
+	<h2>Connect</h3>
 
-<div class="social">
-<ul class="menu align-right">
-	<li><a href="https://www.youtube.com/user/jhuksas" title="YouTube"><span class="fi-list fa fa-youtube-square fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
-	<li><a href="https://twitter.com/JHUKSAS" title="Twitter"><span class="fi-list fa fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
-	<li><a href="https://www.instagram.com/jhuksas1/" title="Instragram"><span class="fi-list fa fa-instagram fa-2x"></span><span class="screen-reader-text">Instragram</span></a></li>
-	<li><a href="http://facebook.com/jhuksas" title="Facebook"><span class="fi-list fa fa-facebook-official fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
-	<li class="menu-text">#jhuksas</li>
-</ul>
-</div>
-	<div class="instagram">
-		<?php echo do_shortcode( '[instagram-feed disablemobile=true]' );?>
-		    
+	<div class="social">
+		<ul class="menu align-right">
+			<li><a href="https://www.youtube.com/user/jhuksas" title="YouTube"><span class="fi-list fa fa-youtube-square fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
+			<li><a href="https://twitter.com/JHUKSAS" title="Twitter"><span class="fi-list fa fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
+			<li><a href="https://www.instagram.com/jhuksas/" title="Instragram"><span class="fi-list fa fa-instagram fa-2x"></span><span class="screen-reader-text">Instragram</span></a></li>
+			<li><a href="http://facebook.com/jhuksas" title="Facebook"><span class="fi-list fa fa-facebook-official fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
+			<li class="menu-text">#jhuksas</li>
+		</ul>
 	</div>
-	<div class="twitter">
-
-		<?php echo do_shortcode('[twitter_list screen_name="JohnsHopkins" slug="jhu-profs-pros-post-docs" height="200" limit="1" chrome="noheader, nofooter, noborders, noscrollbar, transparent"]');?>
-			<style>
-				.Avatar {display: none;}
-			</style>
-	</div>
+		<div class="instagram">
+			<h1>instagram</h1>
+			<?php get_template_part( 'template-parts/feed-instagram' ); ?>
+			    
+		</div>
+		<div class="twitter">
+			<h1>twitter</h1>
+			<?php get_template_part( 'template-parts/feed-twitter' ); ?>
+		</div>
 </section>
 
 

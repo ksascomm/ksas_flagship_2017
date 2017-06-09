@@ -54,7 +54,7 @@
 										<h2>Graduate Full Time <span>Masters & Doctorates</span></h2>
 										<p>Offered through KSAS</p>
 									</div>
-									<a href="academics/#filter=.full_time_program" data-filter=".full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT');"><p>Explore all 22 academic departments</p></a>
+									<a href="academics/fields/#filter=.full_time_program" data-filter=".full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT');"><p>Explore all 22 academic departments</p></a>
 								</figcaption>			
 							</figure>
 							<figure class="effect-sarah">
