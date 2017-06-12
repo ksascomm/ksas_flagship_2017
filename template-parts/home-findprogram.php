@@ -17,64 +17,52 @@
 
 				<div class="row hide-for-small-only small-up-1 medium-up-2 large-up-5">	
 						<div class="grid">
-							<figure class="effect-sarah">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/dept.jpg" class="" alt="">
+							<figure class="effect-oscar">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
 								<figcaption>
-									<div>
-										<h2>Departments</h2>
-										<p>Explore the 50-plus departments, programs, centers, and institutes.</p>
-									</div>
+									<h2>Departments</h2>
+									<p>Explore 50-plus departments, programs, centers, and institutes</p>
 									<a href="academics/departments-programs-and-centers" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Departments');"> <p>Explore our Departments</p></a>
 								</figcaption>			
 							</figure>
-							<figure class="effect-sarah">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/major.jpg" class="" alt="">
+							<figure class="effect-oscar">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
 								<figcaption>
-									<div>
-										<h2>Majors <span>&</span> Minors</h2>
-										<p>Choose from more than 60 undergraduate majors and minors.</p>
-									</div>
+									<h2>Majors & Minors</h2>
+									<p>Choose from more than 60 undergraduate majors and minors</p>							
 									<a href="academics/majors-minors" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Majors/Minors');"><p>Explore our academic majors and minors</p></a>
 								</figcaption>			
 							</figure>
-							<figure class="effect-sarah">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/under.jpg" class="" alt="">
+							<figure class="effect-oscar">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
 								<figcaption>
-									<div>
-										<h2>Undergraduate Fields of Study</h2>
-										<p>Explore all of Krieger's undergraduate academic offerings</p>
-									</div>
-									<a href="academics/fields/#filter=.undergrad_program" data-filter=".undergrad_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Undergraduate');"><p>Explore all 22 academic departments</p></a>
+									<h2>Undergraduate</h2>
+									<p>See all Krieger School undergraduate fields of study</p>
+									<a href="academics/fields/#filter=.undergrad_program" data-filter=".undergrad_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Undergraduate');"><p>See all Krieger School study fields</p></a>
 								</figcaption>			
 							</figure>
-							<figure class="effect-sarah">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/gradft.jpg" class="" alt="">
+							<figure class="effect-oscar">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
 								<figcaption>
-									<div>
-										<h2>Graduate Full Time <span>Masters & Doctorates</span></h2>
-										<p>Offered through KSAS</p>
-									</div>
-									<a href="academics/fields/#filter=.full_time_program" data-filter=".full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT');"><p>Explore all 22 academic departments</p></a>
+									<h2>Graduate Full Time</h2>
+									<p>Masters and Doctorate programs at the Krieger school</p>
+									<a href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT');"><p>Masters and Doctorate programs</p></a>
 								</figcaption>			
 							</figure>
-							<figure class="effect-sarah">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/gradpt.jpg" class="" alt="">
+							<figure class="effect-oscar">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
 								<figcaption>
-									<div>
-										<h2>Graduate Part Time <br><span>Online Masters & Certificates</span></h2>
-										<p>Offered through AAP</p>
-									</div>
-									<a href="academics/fields/#filter=.part_time_program" data-filter=".full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT');"><p>Explore all 22 academic departments</p></a>
+									<h2>Graduate Part Time</h2>
+									<p>Online masters and graduate certificates offered through Advanced Academic Programs</p>
+									<a href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT');"><p>Online Masters & Certificates</p></a>
 								</figcaption>			
 							</figure>
-							<figure class="effect-sarah">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/dept.jpg" class="" alt="">
+							<figure class="effect-oscar">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
 								<figcaption>
-									<div>
-										<h2>Explore all of <br><span>Johns Hopkins</span></h2>
-										<p>Search the other 8 divisions within Johns Hopkins University</p>
-									</div>
-									<a href="academics/fields/#filter=.part_time_program" data-filter=".full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT');"><p>Search JHU</p></a>
+									<h2>Explore all of JHU</h2>
+									<p>Search the other 8 divisions in Johns Hopkins University</p>
+									<a href="https://www.jhu.edu/academics/" target="_blank" onclick="ga('send', 'event', 'Fields', 'Homepage', 'JHU.edu');"><p>Search JHU</p></a>
 								</figcaption>			
 							</figure>							
 						</div>
@@ -82,11 +70,12 @@
 
 				<div class="row show-for-small hide-for-medium">
 					<ul class="vertical menu programs">
-						<li><a class="button" href="#">Undergraduate</a></li>
-						<li><a class="button" href="#">Full-Time Masters & Doctorates</a></li>
-						<li><a class="button" href="#">Part-Time Online Masters & Certificates</a></li>
-						<li><a class="button" href="#">List of Departments</a></li>
-						<li><a class="button" href="#">List of Majors & Minors</a></li>
+						<li><a class="button" href="academics/fields/#filter=.undergrad_program" data-filter=".undergrad_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Undergraduate Mobile');">Undergraduate</a></li>
+						<li><a class="button" href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT Mobile');">Full-Time Masters & Doctorates</a></li>
+						<li><a class="button" href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT Mobile');">Part-Time Online Masters & Certificates</a></li>
+						<li><a class="button" href="academics/departments-programs-and-centers" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Departments Mobile');">List of Departments</a></li>
+						<li><a class="button" href="academics/majors-minors" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Majors/Minors Mobile');">List of Majors & Minors</a></li>
+						<li><a class="button" href="https://www.jhu.edu/academics/" onclick="ga('send', 'event', 'Fields', 'Homepage', 'JHU.edu Mobile');">Explore all of JHU</a></li>
 					</ul>
 				</div>
 				

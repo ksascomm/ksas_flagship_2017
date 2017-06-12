@@ -28,15 +28,14 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div data-sticky-container>
-			<div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;" style="width:100%; z-index:2">
-
-		<div class="title-bar" <?php foundationpress_title_bar_responsive_toggle() ?>>
-			<button class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-			<div class="title-bar-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			<div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: medium;" style="width:100%; z-index:2">
+				<div class="title-bar" <?php foundationpress_title_bar_responsive_toggle() ?>>
+					<button class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
+					<div class="title-bar-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+					</div>
+				</div>
 			</div>
-		</div>
-		</div>
 		</div>
 
 
@@ -48,17 +47,14 @@
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 		
 				<div class="top-bar-title">
+					<h1><span class="screen-reader-text"><?php echo get_bloginfo( 'title' ); ?></span></h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-
 						<img data-interchange="[<?php echo get_template_directory_uri() ?>/assets/images/ksas-horizontal-sm.png, small], [<?php echo get_template_directory_uri() ?>/assets/images/ksas-horizontal-md.png, medium], [<?php echo get_template_directory_uri() ?>/assets/images/ksas-horizontal-lg.png, large]">
-
-					</a>
-						
+					</a>	
 				</div>
 	
 			<div class="top-bar-left">
 				<?php foundationpress_top_bar_r(); ?>
-
 				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
 					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<?php endif; ?>
