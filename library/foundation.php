@@ -21,8 +21,8 @@ function foundationpress_pagination() {
 		'total' => $wp_query->max_num_pages,
 		'mid_size' => 5,
 		'prev_next' => true,
-	    'prev_text' => __( '&laquo;', 'foundationpress' ),
-	    'next_text' => __( '&raquo;', 'foundationpress' ),
+		'prev_text' => __( '&laquo;', 'foundationpress' ),
+		'next_text' => __( '&raquo;', 'foundationpress' ),
 		'type' => 'list',
 	) );
 
@@ -181,4 +181,3 @@ function foundationpress_title_bar_responsive_toggle() {
 	}
 }
 endif;
-

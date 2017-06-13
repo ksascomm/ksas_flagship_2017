@@ -18,7 +18,7 @@ get_header(); ?>
 		?> 
 
 
-<div id="page-sidebar-left" role="main">
+<div class="main-wrap sidebar-left" role="main">
 	<?php foundationpress_breadcrumb();?>
 
 	<div class="main-content">

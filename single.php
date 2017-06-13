@@ -10,7 +10,7 @@ get_header(); ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 
-<div id="single-post" role="main">
+<div class="main-wrap" role="main">
 <?php foundationpress_breadcrumb();?>
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php foundationpress_breadcrumb();?>

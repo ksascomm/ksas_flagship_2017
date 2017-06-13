@@ -12,7 +12,7 @@
 
  get_header(); ?>
 
- <div id="page-sidebar-left" role="main">
+<div class="main-wrap sidebar-left" role="main">
  <?php do_action( 'foundationpress_before_content' ); ?>
  <?php foundationpress_breadcrumb();?>
  <?php while ( have_posts() ) : the_post(); ?>

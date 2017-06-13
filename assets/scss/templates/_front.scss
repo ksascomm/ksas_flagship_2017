@@ -1,5 +1,5 @@
 // Page header
-#front-hero {
+.front-hero {
   .marketing {
     @include grid-row();
     max-width: 55rem;
@@ -22,58 +22,6 @@
     background-position: center;
     height: rem-calc(685);
     margin: 0 0 rem-calc(72);
-  }
-
-  #watch {
-    @include breakpoint(small) {
-      @include grid-column(7);
-      @include grid-column-position(-5);
-    }
-
-    @include breakpoint(medium) {
-      @include grid-column(12);
-      @include grid-column-position(0);
-    }
-
-    section {
-      display: inline;
-    }
-
-    a {
-      color: #B4C9D1;
-      cursor: pointer;
-      font-weight: 400;
-      margin-right: rem-calc(20);
-    }
-
-    a:hover {
-      color: #fff;
-    }
-
-    #stargazers {
-      :before {
-        content: "\f09b";
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        color: #B4C9D1;
-        margin-right: rem-calc(8);
-      }
-    }
-
-    #twitter {
-      :before {
-        content: "\f099";
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: inherit;
-        color: #B4C9D1;
-        margin-right: rem-calc(8);
-      }
-    }
-
   }
 
   .tagline {
@@ -109,6 +57,7 @@
   .download {
     margin-top: rem-calc(20);
   }
+
 }
 
 // Intro
@@ -150,7 +99,7 @@
     .card {
       border: none;
       text-align: center;
-      font-weight: bold;
+      font-family: $font-stack-bold;
        &:hover {
             background: black;
       }
@@ -206,7 +155,7 @@
   .tabs-content, .accordion-item {   
       h1 {
         font-size: 1.25rem;
-        font-weight: bold;
+        font-family: $font-stack-bold;
       }
       .media-object-section {
         img {
@@ -215,8 +164,7 @@
       }
       .hub-news, .hub-events {
           h1 {
-            font-family: $font-subhead-book;
-            font-weight: bold;
+            font-family: $font-stack-bold;
             font-size: 1rem;
           }
           p {
@@ -224,6 +172,9 @@
           }
           .hub-img {
             padding-top: 1rem;
+          }
+          summary {
+            list-style-type: none;
           }
         @include breakpoint(small) {
             @include grid-column(12);
@@ -240,7 +191,7 @@
         padding-top: 1rem;
         h3, h4 {
           font-size: .9rem;
-          font-weight: bold;
+          font-family: $font-stack-bold;
         }
         p {
           font-size: .9rem;
@@ -258,8 +209,7 @@
   }
   .tabs-title > a, a.accordion-title {
     font-size: 1rem;
-    font-family: $font-subhead-book;
-    font-weight: bold;
+    font-family: $font-stack-bold;
   }
   .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
     background: $skyblue;
@@ -284,6 +234,12 @@
       font-size: 1.125rem;
       line-height: 1.6;
       color: #777;
+    }
+  }
+
+  #spotlight {
+    .home-news {
+      background: $white;
     }
   }
 
@@ -379,8 +335,7 @@ $marketing-site-hero-height: 50vh;
   }
   .orbit-caption {
     p {
-      font-family: $font-subhead-book;
-      font-weight: bold;
+      font-family: $font-stack-bold;
     }
     @include breakpoint(small) {
       bottom: 0;
@@ -432,7 +387,7 @@ $marketing-site-hero-height: 50vh;
 .connect {
   h1 {
     font-size: 1.25rem;
-    font-weight: bold;
+    font-family: $font-stack-bold;
   }
   p {
     font-family: $font-subhead-book;
@@ -465,7 +420,7 @@ $marketing-site-hero-height: 50vh;
       //border-width: 2px;
     }
     h5 {
-      font-weight: bold;
+      font-family: $font-stack-bold;
       small {
         color: $darkgrey;
       }
@@ -516,7 +471,7 @@ img.Avatar {
   .button {
     margin: 1rem;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-family: $font-stack-bold;
     background-color: $skyblue;
   }
   .block-text {
@@ -577,8 +532,7 @@ img.large-news {
       @include breakpoint (xlarge) {
         font-size: 1.5rem;
       }
-    font-family: $font-subhead-book;
-    font-weight: bold;
+    font-family: $font-stack-bold;
     line-height: 1;
     margin-bottom: 0;
   }

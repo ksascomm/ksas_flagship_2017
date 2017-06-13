@@ -26,25 +26,22 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div data-sticky-container>
-			<div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: medium;" style="width:100%; z-index:2">
-				<div class="title-bar" <?php foundationpress_title_bar_responsive_toggle() ?>>
-					<button class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-					<div class="title-bar-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					</div>
-				</div>
+	<header class="site-header" role="banner">
+		<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle() ?> data-hide-for="large">
+			<div class="title-bar-left">
+				<button class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
+				<span class="site-mobile-title title-bar-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				</span>
 			</div>
 		</div>
-
 
 
 		<div class="roof show-for-large">
 			<?php get_template_part( 'template-parts/roof' ); ?>
 		</div>
 
-		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
+		<nav class="site-navigation top-bar" role="navigation">
 		
 				<div class="top-bar-title">
 					<h1><span class="screen-reader-text"><?php echo get_bloginfo( 'title' ); ?></span></h1>

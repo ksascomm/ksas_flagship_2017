@@ -1,0 +1,43 @@
+// custom fonts
+@font-face {
+  font-family: 'quadon';
+  src: url('../fonts/quadon/Quadon-Medium.eot');
+  src: url('../fonts/quadon/Quadon-Medium.eot?#iefix') format("embedded-opentype"), url('../fonts/quadon/Quadon-Medium.woff') format("woff"), url('../fonts/quadon/Quadon-Medium.ttf') format("truetype");
+}
+
+
+@font-face {
+  font-family: 'gentona-book';
+  src: url('../fonts/gentona/Gentona-Book.eot');
+  src: url('../fonts/gentona/Gentona-Book.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-Book.woff') format("woff"), url('../fonts/gentona/Gentona-Book.ttf') format("truetype");
+}
+
+
+@font-face {
+  font-family: 'gentona-semibold';
+  src: url('../fonts/gentona/Gentona-SemiBold.eot');
+  src: url('../fonts/gentona/Gentona-SemiBold.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-SemiBold.woff') format("woff"), url('../fonts/gentona/Gentona-SemiBold.ttf') format("truetype");
+}
+
+
+@font-face {
+  font-family: 'gentona-light';
+  src: url('../fonts/gentona/Gentona-Light.eot');
+  src: url('../fonts/gentona/Gentona-Light.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-Light.woff') format("woff"), url('../fonts/gentona/Gentona-Light.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'gentona-extralight';
+  src: url('../fonts/gentona/Gentona-ExtraLight.eot');
+  src: url('../fonts/gentona/Gentona-ExtraLight.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-ExtraLight.woff') format("woff"), url('../fonts/gentona/Gentona-ExtraLight.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'gentona-bold';
+  src: url('../fonts/gentona/Gentona-Bold.eot');
+  src: url('../fonts/gentona/Gentona-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gentona/Gentona-Bold.woff') format('woff'),
+       url('../fonts/gentona/Gentona-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

@@ -13,13 +13,13 @@ get_header(); ?>
 
 if ( $flagship_evergreen_query->have_posts() ) : ?>
 
-<div class="hero">
+<header class="hero" role="banner">
 <div class="fullscreen-image-slider">
   <div class="orbit" role="region" aria-label="FullScreen Pictures" data-orbit>
     <ul class="orbit-container">
      <?php if ($flagship_evergreen_query->post_count > 1) : ?>
-      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true">&#xFE0E;</button>
-      <button class="orbit-next"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true">&#xFE0E;</button>
+      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true"></button>
+      <button class="orbit-next"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true"></button>
       <?php endif;?>
       <?php while ($flagship_evergreen_query->have_posts()) : $flagship_evergreen_query->the_post(); ?>
       <li class="is-active orbit-slide">
@@ -62,15 +62,15 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 
 <section class="news">
 	
-	<ul class="tabs" data-responsive-accordion-tabs="accordion medium-tabs" id="example-tabs">
-	    <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Spotlight</a></li>
-	    <li class="tabs-title"><a href="#panel2">News</a></li>
-	    <li class="tabs-title"><a href="#panel3">Events</a></li>
+	<ul class="tabs" data-responsive-accordion-tabs="accordion medium-tabs" id="home-tabs">
+	    <li class="tabs-title is-active"><a href="#spotlight" aria-selected="true">Spotlight</a></li>
+	    <li class="tabs-title"><a href="#hubnews">News</a></li>
+	    <li class="tabs-title"><a href="#hubevents">Events</a></li>
 	</ul>
 
-	<div class="tabs-content" data-tabs-content="example-tabs">
+	<div class="tabs-content" data-tabs-content="home-tabs">
 
-	    <div class="tabs-panel is-active" id="panel1">
+	    <div class="tabs-panel is-active" id="spotlight">
 	   
 	    <?php $homepage_query = new WP_Query(array(	
 			'post_type' => array('deptextra', 'post'),
@@ -86,12 +86,12 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 		<?php endwhile; endif; ?>
 	   
 	    </div>
-	    <div class="tabs-panel" id="panel2">
+	    <div class="tabs-panel" id="hubnews">
 	     
 	     <?php get_template_part( 'template-parts/hub-news' ); ?>
 
 	    </div>
-	    <div class="tabs-panel" id="panel3">
+	    <div class="tabs-panel" id="hubevents">
 		<?php get_template_part( 'template-parts/hub-events' ); ?>
 	    </div>
 

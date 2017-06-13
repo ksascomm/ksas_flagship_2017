@@ -10,7 +10,7 @@
 
 ?>
 
-<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
+<article class="home-news" id="post-<?php the_ID(); ?>">
 
 <div class="row">
   <div class="large-6 large-push-6 columns">

@@ -40,6 +40,11 @@ h3, h4, h5, h6, .semibold, blockquote {
       border: none;
     }
   }
+  p {
+    strong {
+      font-family: $font-stack-bold;
+    }
+  }
 }
 
 #parent-menu {
@@ -59,7 +64,7 @@ h3, h4, h5, h6, .semibold, blockquote {
 .tabs-content, .accordion-item {   
   h1 {
     font-size: 1.25rem;
-    font-weight: bold;
+    font-family: $font-stack-bold;
   }
 }
 .tabs-title > a, a.accordion-title {

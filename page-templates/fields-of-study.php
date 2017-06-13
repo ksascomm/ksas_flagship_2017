@@ -5,7 +5,7 @@ Template Name: Fields of Study
 ?>
 <?php get_header(); ?>
 
-<div id="page-sidebar-left" role="main">
+<div class="main-wrap sidebar-left" role="main">
 
 	<?php do_action( 'foundationpress_before_content' ); ?>
 

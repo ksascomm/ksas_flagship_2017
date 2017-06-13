@@ -74,7 +74,7 @@ li.person {
 .study-fields {
   .button {
     margin: .5rem;
-    font-weight: bold;
+    font-family: $font-stack-bold;
     &.is-checked {
       background-color: transparent;
       border: 1px solid $blue;
