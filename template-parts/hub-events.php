@@ -9,12 +9,13 @@
 
 ?>
 
+
+<div class="row">
+
 <h1>
 	<a href="https://hub.jhu.edu/events/">Events from The Hub</a>
 </h1>
 
-
-<div class="row">
 <?php
 $hub_event_url = 'https://api.hub.jhu.edu/event_categories/2450,2454,2457,2458,2459,2460,2461,2519,2520,2521,2522/events?v=0&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&return_format=json&per_page=4';
 							//if ( false === ( $hub_call = get_transient( 'flagship_hub_query' ) ) ) {

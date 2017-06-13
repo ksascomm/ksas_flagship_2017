@@ -18,10 +18,15 @@
     <?php the_post_thumbnail('full',  ['class' => 'img-responsive large-news', 'title' => 'Feature image']); ?>
   </div>
   <div class="large-6 large-pull-6 columns">
-      <h6><?php echo get_the_category( $id )[0]->name; ?></h6>
-      <h1><?php the_title(); ?></h1> 
+      <h1><small><?php echo get_the_category( $id )[0]->name; ?></small><br>
+      <?php the_title(); ?></h1> 
       <p><?php the_excerpt(); ?></p>
-      <a href="<?php the_permalink(); ?>" class="button" title="<?php the_title(); ?>">Read the Full Story</a>
+
+     <?php if ( get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
+      	<a href="<?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>" target="_blank" class="button" title="<?php the_title(); ?>">Read the Full Story</a>
+  	<?php else: ?>
+  		<a href="<?php the_permalink(); ?>" class="button" title="<?php the_title(); ?>">Read the Full Story</a>
+	<?php endif;?>
   </div>
 </div>
 

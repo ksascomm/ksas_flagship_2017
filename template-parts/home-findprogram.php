@@ -4,7 +4,7 @@
 			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 			<div class="entry-content programs">
 				<h1>
-					<span class="fa-stack fa-lg">
+					<span class="fa-stack fa-lg hide-for-small-only">
 						<span class="fa fa-circle fa-stack-2x"></span>
 						<span class="fa fa-lightbulb-o fa-stack-1x fa-inverse" aria-hidden="true"></span>
 					</span>

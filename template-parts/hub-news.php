@@ -9,11 +9,12 @@
 
 ?>
 
+<div class="row">
+
 <h1>
 	<a href="https://hub.jhu.edu/">News from The Hub</a>
 </h1>
 
-<div class="row">
 	<?php
 	$hub_url = 'https://api.hub.jhu.edu/articles?v=0&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&return_format=json&divisions=426&per_page=4';
 								//if ( false === ( $hub_call = get_transient( 'flagship_hub_query' ) ) ) {

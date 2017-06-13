@@ -31,7 +31,7 @@ get_header(); ?>
 		<?php foreach( $pages as $page ) { ?>
 		<div class="column">
 			<div class="card">
-				<?php echo get_the_post_thumbnail($page->ID, 'small-thumb'); ?>
+				<?php echo get_the_post_thumbnail($page->ID, 'child-bucket'); ?>
 				<div class="card-section">
 					<a href="<?php echo  get_permalink($page->ID); ?>" rel="bookmark" title="<?php echo $page->post_title; ?>">
 						<h1><?php echo $page->post_title; ?></h1>

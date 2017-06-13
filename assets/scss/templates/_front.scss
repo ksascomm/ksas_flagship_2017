@@ -72,8 +72,13 @@
       }
       @include breakpoint(small) { 
         font-size: 1.25rem;
+        text-align:center;
       }
       @include breakpoint(medium) {
+        font-size: 1.5rem;
+        text-align: inherit;
+      }
+      @include breakpoint(large) {
         font-size: 2rem;
       }
     }
@@ -245,6 +250,20 @@
   #spotlight {
     .home-news {
       background: $white;
+    }
+    h1 {
+      @include breakpoint(large) {
+        margin-top: 1rem;
+        font-size: 1.75rem;
+        font-family: $font-header;
+        font-weight: bold;
+      }
+      small {
+        text-transform: uppercase;
+        font-size: 55%;
+        color: $dark-gray;
+        font-family: $font-stack-bold;
+      }
     }
   }
 
