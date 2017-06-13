@@ -3,23 +3,37 @@
   background-position: center;
   background-repeat: no-repeat;
   height: rem-calc(200);
-
-  @include breakpoint(medium) {
-    height: rem-calc(300);
-  }
-
-  @include breakpoint(xlarge) {
-    height: rem-calc(400);
+  position: relative;
+  .row {
+    h1.entry-title {
+      bottom: 0;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.85);
+      @include breakpoint (small) {
+        font-size: 1.5rem;
+        padding: 4px 8px;
+      }
+      @include breakpoint (large) {
+        font-size: 2rem;
+        padding: 4px 2rem;
+      }
+      color: white;
+      margin: 0;
+    }
   }
 }
 
-.featured-hero {
-    position: relative;
+.page-template-parent-page {
+  .featured-hero {
+    @include breakpoint(medium) {
+      height: rem-calc(300);
+    }
+
+    @include breakpoint(xlarge) {
+      height: rem-calc(400);
+    }   
     .row {
       h1.entry-title {
-        bottom: 0;
-        position: absolute;
-        background: rgba(0, 0, 0, 0.85);
         @include breakpoint (small) {
           font-size: 3rem;
           padding: 4px 8px;
@@ -28,8 +42,7 @@
           font-size: 4rem;
           padding: 4px 2rem;
         }
-        color: white;
-        margin: 0;
       }
     }
+  }
 }

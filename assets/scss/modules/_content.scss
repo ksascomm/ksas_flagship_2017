@@ -71,7 +71,7 @@ padding: 0 1.25rem .1rem 1.25rem;
     	a {
     		font-size: 1.25rem;
     		color: $black;
-    		font-family: $font-stack-bold;
+    		font-family: $font-subhead-book;
     	}
       &.current_page_item {
         background: $powderblue;
@@ -137,4 +137,25 @@ padding: 0 1.25rem .1rem 1.25rem;
 }
 .textwidget {
   padding: 0 1.25rem .1rem 1.25rem;
+}
+
+#parent-menu {
+  .card {
+    border: none;
+    .card-section {
+      a {
+        color: $blue;
+        border-bottom: .125em dotted;
+        border-bottom-color: rgba(0,0,0,.2);
+        &:hover, &:active {
+            color: $black;
+            border-bottom-style: solid;
+        }
+        h1 {
+          font-size: 1.25rem;
+          font-family: $font-stack-bold;
+        }
+      }
+    }
+  } 
 }

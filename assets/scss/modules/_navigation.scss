@@ -193,6 +193,7 @@
     li {
       a {
         color: $black;
+        font-family: $font-subhead-book;
         &:hover:not(.button) {
           background-color: $skyblue;
           color: $white;

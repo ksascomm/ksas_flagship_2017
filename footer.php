@@ -18,8 +18,12 @@
 				<?php do_action( 'foundationpress_after_footer' ); ?>
 
 				<div class="row float-right social-media hide-for-small-only">
+					
 					<a href="http://facebook.com/jhuksas" title="Facebook"><span class="fa fa-facebook-official fa-2x"></span><span class="screen-reader-text">Facebook</span></a>
+					<a href="https://www.instagram.com/jhuksas/" title="Instagram"><span class=" fa fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a>
+					<a href="https://twitter.com/JHUKSAS" title="Twitter"><span class="fa fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a>
 					<a href="https://www.youtube.com/user/jhuksas" title="YouTube"><span class="fa fa-youtube-square fa-2x"></span><span class="screen-reader-text">YouTube</span></a>
+
 				</div>
 				<div class="row">
 					<div class="small-12 medium-4 columns">

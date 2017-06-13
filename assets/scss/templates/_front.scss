@@ -85,7 +85,7 @@
       @include grid-column(10);
       @include grid-column-offset(1);
       h2 {
-        font-weight: 300;
+        //font-weight: 300;
         //margin-bottom: 1.5rem;
       }
 
@@ -109,6 +109,7 @@
 
 // Section divider
 .section-divider {
+  margin: 2rem 0;
   @include grid-row();
 
   hr {
@@ -119,12 +120,16 @@
 }
 
 .grey-bg {
+  hr {
+    border-bottom: 1px solid transparent;
+  }
   @include breakpoint(medium) {
     background-color: $grey;
   &.texture {
      background: url(../images/frontpage/bg-at-glance.jpg) no-repeat fixed;
      background-size: cover;
-  }
+     margin-bottom: 2rem;
+  }  
   }
 }
 
@@ -590,7 +595,7 @@ img.large-news {
       max-height: 215px;
       width: 31%;
     }
-    background: #3085a3;
+    background: $blue;
     text-align: center;
     cursor: pointer;
     img {
@@ -608,7 +613,7 @@ img.large-news {
         padding: 2em;
       }
       
-      color: #fff;
+      color: $white;
       font-size: 1.25em;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
@@ -635,9 +640,9 @@ img.large-news {
     }
     h2 {
       //word-spacing: -0.15em;
-      font-weight: 300;
+      //font-weight: 300;
       span {
-        font-weight: 800;
+        //font-weight: 800;
       }
       margin: 0;
       @include breakpoint (medium) {
@@ -684,13 +689,13 @@ figure.effect-oscar {
       bottom: 30px;
       left: 30px;
       @include breakpoint (large) {
-        border: 1px solid #fff;
+        border: 1px solid $white;
       }
       content: '';
     }
   }
   h2 {
-    font-family: $font-subhead-book;
+    font-family: $font-stack-bold;
     margin: 0 0 10px 0;
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;

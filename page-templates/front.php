@@ -9,7 +9,7 @@ get_header(); ?>
    'post_type' => 'evergreen',
    'orderby' => 'rand',
    'post_status' => 'publish',
-   'posts_per_page' => '3'));
+   'posts_per_page' => '-1'));
 
 if ( $flagship_evergreen_query->have_posts() ) : ?>
 
@@ -55,7 +55,6 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 
 <div class="section-divider">
-	<hr />
 </div>
 
 <div class="grey-bg texture">
@@ -74,7 +73,6 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	   
 	    <?php $homepage_query = new WP_Query(array(	
 			'post_type' => array('deptextra', 'post'),
-			'category_name' => 'spotlight',
 			'posts_per_page' => '1'				
 			)); 
 	    	if ( $homepage_query->have_posts() ) : while ( $homepage_query->have_posts() ) : $homepage_query->the_post();
@@ -92,7 +90,9 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 
 	    </div>
 	    <div class="tabs-panel" id="hubevents">
-		<?php get_template_part( 'template-parts/hub-events' ); ?>
+		
+			<?php get_template_part( 'template-parts/hub-events' ); ?>
+	    
 	    </div>
 
     </div>
@@ -101,7 +101,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 </section>
 </div>
 <div class="section-divider">
-	<hr />
+	
 </div>
 
 <section class="connect">
@@ -111,25 +111,25 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 		<ul class="menu align-right">
 			<li><a href="https://www.youtube.com/user/jhuksas" title="YouTube"><span class="fi-list fa fa-youtube-square fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
 			<li><a href="https://twitter.com/JHUKSAS" title="Twitter"><span class="fi-list fa fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
-			<li><a href="https://www.instagram.com/jhuksas/" title="Instragram"><span class="fi-list fa fa-instagram fa-2x"></span><span class="screen-reader-text">Instragram</span></a></li>
+			<li><a href="https://www.instagram.com/jhuksas/" title="Instagram"><span class="fi-list fa fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
 			<li><a href="http://facebook.com/jhuksas" title="Facebook"><span class="fi-list fa fa-facebook-official fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
 			<li class="menu-text">#jhuksas</li>
 		</ul>
 	</div>
 		<div class="instagram">
-			<h1>instagram</h1>
+			<h1>instagram <span class="fa fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
 			<?php get_template_part( 'template-parts/feed-instagram' ); ?>
 			    
 		</div>
 		<div class="twitter">
-			<h1>twitter</h1>
+			<h1>twitter <span class="fa fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
 			<?php get_template_part( 'template-parts/feed-twitter' ); ?>
 		</div>
 </section>
 
 
 <div class="section-divider">
-	<hr />
+
 </div>
 
 
