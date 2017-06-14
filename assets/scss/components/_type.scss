@@ -54,3 +54,22 @@ h3, h4, h5, h6, .semibold, blockquote {
   font-family: $font-subhead-book;
   font-weight: bold;
 }
+
+.ecpt-page-sidebar {
+  .sidebar-content {
+    p {
+      a {
+        color: darken($blue, 20%);
+        border-bottom: .125em dotted;
+        border-bottom-color: rgba(0,0,0,.2);
+        &:hover, &:active {
+            color: $black;
+            border-bottom-style: solid;
+        }
+      }
+      strong {
+        font-family: $font-stack-bold;
+      }
+    }
+  }
+}

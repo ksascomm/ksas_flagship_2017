@@ -40,7 +40,7 @@ if (strpos($test_menu,'<li id') !== false ) : echo $test_menu; endif;
 	?>
 <!--Below is displayed when on a child page --> 
 	<div id="sidebar_header">
-<h5 class="white">Also in <a href="<?php echo $parent_url;?>" class="grey bold"><?php echo $parent_name ?></a></h5>
+		<h5>Also in <?php echo $parent_name ?></h5>
 	</div>
 	<?php
 	wp_nav_menu( array(
@@ -56,7 +56,7 @@ if (strpos($test_menu,'<li id') !== false ) : echo $test_menu; endif;
 	<?php if ( is_singular('people') ) : ?>
 	
 		<div class="" id="sidebar_header">
-			<h5 class="white">Also in <a href="/people" class="grey bold">People</a></h5>
+			<h5>Also in People</h5>
 		</div>
 		<?php
 			wp_nav_menu( array(
@@ -71,7 +71,7 @@ if (strpos($test_menu,'<li id') !== false ) : echo $test_menu; endif;
 		<div class="ecpt-page-sidebar">
 		<div class="sidebar_header">
 		<label for="jump">
-		<h5 class="white">View Other Profiles</h5>
+		<h5>View Other Profiles</h5>
 		</label>
 		</div>
 		<br>
@@ -96,7 +96,7 @@ if (strpos($test_menu,'<li id') !== false ) : echo $test_menu; endif;
 
 	<?php if ( is_singular('studyfields') ) : ?>
 		<div class="" id="sidebar_header">
-			<h5 class="white">Also in <a href="/academics" class="grey bold">Academics</a></h5>
+			<h5>Also in Academics</h5>
 		</div>
 		<?php
 			wp_nav_menu( array(
