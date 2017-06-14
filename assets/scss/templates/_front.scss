@@ -1,63 +1,60 @@
-// Page header
-.front-hero {
-  .marketing {
-    @include grid-row();
-    max-width: 55rem;
-  }
-
-  @include breakpoint(small) {
-    background: url('../images/demo/hero-bg-foundation-6-small.svg') bottom center;
-    background-size: cover;
-    background-position: bottom;
-    padding: rem-calc(65%) 0;
-    margin: 0 0 rem-calc(32);
-    height: auto;
-    position: relative;
-    text-align: left;
-  }
-
-  @include breakpoint(medium) {
-    background: url('../images/frontpage/womens-lax.jpg') bottom center;
-    background-size: cover;
-    background-position: center;
-    height: rem-calc(685);
-    margin: 0 0 rem-calc(72);
-  }
-
-  .tagline {
-    @include breakpoint(small) {
-      @include grid-column(8);
+.hero {
+  background: transparent;
+  .fullscreen-image-slider {
+     //@include flex-align($x: center, $y: stretch);
+    .orbit-image {
+      width: 100%;
+      //height: 60vh;
     }
+    .orbit-caption {
+      p {
+        font-family: $font-stack-bold;
+      }
+      @include breakpoint(small) {
+        bottom: 0;
+        width: 100%;
+        h1 {
+          font-size: 1rem;
+        }
+      }
+      @include breakpoint(medium) {
+        h1 {
+          font-size: 1.75rem;
+        }
+      }
+      @include breakpoint(large) {
+      bottom: 15%;
+      width: 35%;
+      h1, p {
+        padding-right: 1rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      }
+      @include breakpoint(xlarge) {
+      bottom: 25%;
+      width: 35%;
+      }
 
-    @include breakpoint(medium) {
-      @include grid-column(5);
-      padding-top: 6rem;
+    }
+    .orbit-bullets {
+      @include breakpoint(large) {
+        margin-top: -2rem;
+      }
+      button {
+        background-color: $white;
+        &.is-active {
+          background-color: $blue;
+        }
+      }
+    }
+    .orbit-previous, .orbit-next {
+      .fa {
+        font-weight: 800;
+      }
     }
   }
-
-  h1 {
-    color: #fff;
-    font-weight: 500;
-
-    @include breakpoint(small) {
-      font-size: 2.2rem;
-    }
-
-    @include breakpoint(medium) {
-      font-size: 2.875rem;
-    }
-  }
-
-  h4 {
-    color: #fefefe;
-    font-weight: 300;
-    font-size: 1.3125rem;
-  }
-
-  .download {
-    margin-top: rem-calc(20);
-  }
-
 }
 
 // Intro
@@ -93,7 +90,6 @@
         //font-weight: 300;
         //margin-bottom: 1.5rem;
       }
-
       h4 {
         font-size: 1.125rem;
         line-height: 1.6;
@@ -110,6 +106,207 @@
       }
     }
   }
+  .home-content {
+    padding-bottom: 1rem;
+
+    @include grid-col;
+
+    @include breakpoint(large) {
+      p {
+        font-size: 1.35rem;
+      }
+      // Changes size only
+      @include grid-col-size(10);
+
+      // Changes position only
+      @include grid-col-pos(1);
+    }
+  }
+  .programs {
+    .button {
+      margin: 1rem;
+      font-size: 1.5rem;
+      font-family: $font-stack-bold;
+      background-color: $skyblue;
+    }
+  }
+  .grid {
+    position: relative;
+    margin: 0 auto;
+    padding: 1em 0 4em;
+    max-width: 1000px;
+    list-style: none;
+    text-align: center;
+    figure {
+      position: relative;
+      float: left;
+      overflow: hidden;
+      margin: 10px 1%;
+      @include breakpoint (medium) {
+        //min-width: 320px;
+        max-width: 480px;
+        max-height: 360px;
+        width: 48%;      
+      }
+      @include breakpoint (large) { 
+        max-width: 320px;
+        max-height: 215px;
+        width: 31%;
+      }
+      background: $blue;
+      text-align: center;
+      cursor: pointer;
+      img {
+        position: relative;
+        display: block;
+        min-height: 100%;
+        max-width: 100%;
+        opacity: 0.8;
+      }
+      figcaption {
+        @include breakpoint (medium) {
+           padding: 1em;
+        }
+        @include breakpoint (large) {
+          padding: 2em;
+        }
+        
+        color: $white;
+        font-size: 1.25em;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        &::before, &::after {
+          pointer-events: none;
+        }
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        > a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1000;
+          text-indent: 200%;
+          white-space: nowrap;
+          font-size: 0;
+          opacity: 0;
+        }
+      }
+      h2 {
+        //word-spacing: -0.15em;
+        //font-weight: 300;
+        span {
+          //font-weight: 800;
+        }
+        margin: 0;
+        @include breakpoint (small) {
+          font-size: 1.25rem;
+        }
+        @include breakpoint (medium) {
+          font-size: 1.5rem;
+        }
+        @include breakpoint (large) {
+          font-size: 1.5rem;
+        }
+      }
+      p {
+        margin: 0;
+        letter-spacing: 1px;
+         @include breakpoint (medium) {
+          font-size: 70%;
+        }
+        @include breakpoint (large) {
+          font-size: 68.5%;
+        }
+      }
+    }
+  }
+  figure.effect-oscar {
+    //background: -webkit-linear-gradient(45deg, #22682a 0%, #9b4a1b 40%, #3a342a 100%);
+    //background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
+    img {
+      opacity: 0.9;
+      -webkit-transition: opacity 0.35s;
+      transition: opacity 0.35s;
+    }
+    figcaption {
+      //padding: 2em;
+      //background-color: rgba(58, 52, 42, 0.7);
+      //-webkit-transition: background-color 0.35s;
+      //transition: background-color 0.35s;
+      &::before {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        bottom: 30px;
+        left: 30px;
+        @include breakpoint (large) {
+          border: 1px solid $white;
+        }
+        content: '';
+      }
+    }
+    h2 {
+      font-family: $font-stack-bold;
+      margin: 0 0 10px 0;
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      
+    }
+    figcaption::before, p {
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    &:hover {
+      h2 {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      figcaption::before, p {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+      figcaption {
+        background-color: rgba(58, 52, 42, 0);
+      }
+      img {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1178px) {
+    figure.effect-oscar { 
+       figcaption {
+        h2 {
+          font-size: 1.25rem;
+        }
+        p {
+          font-size: 60%;
+        }
+         &::before {
+          border: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 640px) and (max-width: 675px) {
+  .grid figure h2 {
+    font-size: 1.125rem;
+  }
+  }
+
 }
 
 // Section divider
@@ -124,29 +321,32 @@
   }
 }
 
-.grey-bg {
+.texture {
+  background: url(../images/frontpage/bg-campus-students.jpg) no-repeat fixed;
+  background-size: cover;
+  margin-bottom: 2rem;
   hr {
     border-bottom: 1px solid transparent;
   }
   @include breakpoint(medium) {
     background-color: $grey;
-  &.texture {
-     background: url(../images/frontpage/bg-at-glance.jpg) no-repeat fixed;
-     background-size: cover;
-     margin-bottom: 2rem;
-  }  
   }
 }
 
 
-// Benefits
+// News
 .news {
   @include grid-row();
   text-align: left;
   .tabs, .tabs-content {
     background: rgba(255, 255, 255, 0.8);
-     .main-content, .hub-news {
+     .main-content, .hub-news,  h1.hub-title a {
       background: $white;
+    }
+  }
+  h1.hub-title {
+    a {
+      padding: 1rem;
     }
   }
   .tabs {
@@ -265,148 +465,11 @@
         font-family: $font-stack-bold;
       }
     }
-  }
-
-  .semantic,
-  .responsive,
-  .customizable,
-  .professional {
-    @include breakpoint(small) {
-      @include grid-column(12);
-    }
-
-    @include breakpoint(medium) {
-      @include grid-column(3);
-    }
-
-    img {
-      padding: 1.25rem;
-      margin: 1rem auto 0 auto;
-    }
-
-    h3 {
-      color: #0a0a0a;
-      font-weight: 300;
-      font-size: 1.75rem;
-    }
-
-    p {
-      font-size: 0.9375rem;
-    }
-  }
-
-  .why-foundation {
-    @include grid-row();
-    @include grid-column(12);
-    margin-top: 4rem;
-  }
-}
-
-
-$marketing-site-hero-height: 50vh;
-
-.marketing-site-hero {
-  background: url('../images/frontpage/homepage-giving-image.jpg') top right no-repeat;
-  @include breakpoint (large) {
-    height: $marketing-site-hero-height;
-  }
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  @media screen and (min-width: 40em) {
-    background-position: center center;
-  }
-}
-
-.marketing-site-hero-content {
-  max-width: $global-width;
-  margin: 0 auto;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  h1 {
-    color: $white;
-    @include breakpoint (small) {
-      font-size: 1.5rem;
-    }
-    @include breakpoint (large) {
-      font-size: 2rem;
-    }
-  }
-  .subheader {
-    color: $white;
-    @include breakpoint (small) {
-      font-size: 1.25rem;
-    }
-    @include breakpoint (large) {
-      font-size: 1.5rem;
-    }
-  }
-  @media screen and (min-width: 64em) {
-    padding-left: 35%;
-  }
-}
-
-.hero {
-  background: transparent;
-}
-.fullscreen-image-slider {
-   //@include flex-align($x: center, $y: stretch);
-  .orbit-image {
-    width: 100%;
-    //height: 60vh;
-  }
-  .orbit-caption {
-    p {
-      font-family: $font-stack-bold;
-    }
-    @include breakpoint(small) {
-      bottom: 0;
-      width: 100%;
-      h1 {
-        font-size: 1rem;
-      }
-    }
-    @include breakpoint(medium) {
-      h1 {
-        font-size: 1.75rem;
-      }
-    }
-    @include breakpoint(large) {
-    bottom: 15%;
-    width: 35%;
-    h1, p {
-      padding-right: 1rem;
-    }
-    h1 {
-      font-size: 2rem;
-    }
-    }
-    @include breakpoint(xlarge) {
-    bottom: 25%;
-    width: 35%;
-    }
-
-  }
-  .orbit-bullets {
-    @include breakpoint(large) {
-      margin-top: -2rem;
-    }
-    button {
-      background-color: $white;
-      &.is-active {
-        background-color: $blue;
-      }
-    }
-  }
-  .orbit-previous, .orbit-next {
-    .fa {
-      font-weight: 800;
+    img.large-news {
+      padding: 2rem;
     }
   }
 }
-
 
 .connect {
   h1 {
@@ -482,268 +545,46 @@ $marketing-site-hero-height: 50vh;
   }
 }
 
-#twitter-widget-0 {
-.TweetAuthor-name, .timeline-Tweet-text {
-  font-family: $font-stack !important;
-}
-img.Avatar {
-  display: none !important;
-}
-}
+$giving-hero-height: 50vh;
 
-.programs {
-  .button {
-    margin: 1rem;
-    font-size: 1.5rem;
-    font-family: $font-stack-bold;
-    background-color: $skyblue;
+.giving-hero {
+  background: url('../images/frontpage/homepage-giving-image.jpg') top right no-repeat;
+  @include breakpoint (large) {
+    height: $giving-hero-height;
   }
-  .block-text {
-     position: relative;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: 40em) {
+    background-position: center center;
   }
-  img.big_image {
-      position: absolute;
-      height: inherit;
-  }
-  div.overlay_text {
-    color: $white;
-    position: absolute;
-    left: 0;
-    text-align: center;
-    top: 80px;
-    width: 100%;
-      h2 {
-        font-family: $font-subhead-book;
-        @include breakpoint(medium) {
-          font-size: 1.75rem;
-        }
-        @include breakpoint(large){
-          font-size: 1.25rem;
-        }
-    }
-}
-}
-
-img.large-news {
-  padding: 2rem;
-}
-
-
-.program-bucket, {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    img:hover {
-    opacity: 0.5;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
-}
-}
-
-
-.bucket-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    //width: 93%;
-   // max-height: 5.25rem;
-    padding: 5%;
-    color: $white;
-    transition: all 0.8s;
-    z-index: 3;
-    overflow: hidden;
-    h2 {
-      font-size: 1.25rem;
-      @include breakpoint (xlarge) {
+  .giving-hero-content {
+    max-width: $global-width;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    h1 {
+      color: $white;
+      @include breakpoint (small) {
         font-size: 1.5rem;
       }
-    font-family: $font-stack-bold;
-    line-height: 1;
-    margin-bottom: 0;
-  }
-}
-
-
-@media only screen and (min-width: 40.063em) {
-.bucket-caption {
-    width: 100%;
-}
-}
-@media only screen and (min-width: 64.063em) {
-.bucket-caption {
-    max-height: 5.75rem;
-}
-}
-
-.home-content {
-  padding-bottom: 1rem;
-
-  @include grid-col;
-
-  @include breakpoint(large) {
-    p {
-      font-size: 1.35rem;
-    }
-    // Changes size only
-    @include grid-col-size(10);
-
-    // Changes position only
-    @include grid-col-pos(1);
-  }
-}
-
-.grid {
-  position: relative;
-  margin: 0 auto;
-  padding: 1em 0 4em;
-  max-width: 1000px;
-  list-style: none;
-  text-align: center;
-  figure {
-    position: relative;
-    float: left;
-    overflow: hidden;
-    margin: 10px 1%;
-    @include breakpoint (medium) {
-      //min-width: 320px;
-      max-width: 480px;
-      max-height: 360px;
-      width: 48%;      
-    }
-    @include breakpoint (large) { 
-      max-width: 320px;
-      max-height: 215px;
-      width: 31%;
-    }
-    background: $blue;
-    text-align: center;
-    cursor: pointer;
-    img {
-      position: relative;
-      display: block;
-      min-height: 100%;
-      max-width: 100%;
-      opacity: 0.8;
-    }
-    figcaption {
-      @include breakpoint (medium) {
-         padding: 1em;
-      }
       @include breakpoint (large) {
-        padding: 2em;
-      }
-      
-      color: $white;
-      font-size: 1.25em;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      &::before, &::after {
-        pointer-events: none;
-      }
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      > a {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1000;
-        text-indent: 200%;
-        white-space: nowrap;
-        font-size: 0;
-        opacity: 0;
+        font-size: 2rem;
       }
     }
-    h2 {
-      //word-spacing: -0.15em;
-      //font-weight: 300;
-      span {
-        //font-weight: 800;
-      }
-      margin: 0;
-      @include breakpoint (medium) {
+    .subheader {
+      color: $white;
+      @include breakpoint (small) {
         font-size: 1.25rem;
       }
       @include breakpoint (large) {
         font-size: 1.5rem;
       }
     }
-    p {
-      margin: 0;
-      letter-spacing: 1px;
-       @include breakpoint (medium) {
-        font-size: 70%;
-      }
-      @include breakpoint (large) {
-        font-size: 68.5%;
-      }
-    }
-  }
-}
-
-/*---------------*/
-/***** Oscar *****/
-/*---------------*/
-
-figure.effect-oscar {
-  //background: -webkit-linear-gradient(45deg, #22682a 0%, #9b4a1b 40%, #3a342a 100%);
-  //background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
-  img {
-    opacity: 0.9;
-    -webkit-transition: opacity 0.35s;
-    transition: opacity 0.35s;
-  }
-  figcaption {
-    //padding: 2em;
-    //background-color: rgba(58, 52, 42, 0.7);
-    //-webkit-transition: background-color 0.35s;
-    //transition: background-color 0.35s;
-    &::before {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      bottom: 30px;
-      left: 30px;
-      @include breakpoint (large) {
-        border: 1px solid $white;
-      }
-      content: '';
-    }
-  }
-  h2 {
-    font-family: $font-stack-bold;
-    margin: 0 0 10px 0;
-    -webkit-transition: -webkit-transform 0.35s;
-    transition: transform 0.35s;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    
-  }
-  figcaption::before, p {
-    opacity: 0;
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  &:hover {
-    h2 {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-    figcaption::before, p {
-      opacity: 1;
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-    figcaption {
-      background-color: rgba(58, 52, 42, 0);
-    }
-    img {
-      opacity: 0.4;
+    @media screen and (min-width: 64em) {
+      padding-left: 35%;
     }
   }
 }

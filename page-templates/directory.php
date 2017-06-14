@@ -5,7 +5,7 @@ Template Name: Dean's Directory
 get_header(); ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
-<?php //if ( false === ( $flagship_leadership_query = get_transient( 'flagship_leadership_query' ) ) ) {
+<?php // if ( false === ( $flagship_leadership_query = get_transient( 'flagship_leadership_query' ) ) ) {
 		// It wasn't there, so regenerate the data and save the transient
 		$flagship_leadership_query = new WP_Query(array(
 			'post_type' => 'people',
@@ -13,8 +13,9 @@ get_header(); ?>
 			'meta_key' => 'ecpt_people_alpha',
 			'orderby' => 'meta_value',
 			'order' => 'ASC',
-			'posts_per_page' => '-1'));
-			//set_transient( 'flagship_leadership_query', $flagship_leadership_query, 2592000 ); }
+			'posts_per_page' =>'-1',
+));
+			// set_transient( 'flagship_leadership_query', $flagship_leadership_query, 2592000 ); }
 		?> 
 
 
@@ -39,13 +40,15 @@ get_header(); ?>
 	<?php endwhile;?>
 		<div class="row">
 			<ul class="directory">
-				<?php while ($flagship_leadership_query->have_posts()) : $flagship_leadership_query->the_post(); ?>
+				<?php while ($flagship_leadership_query->have_posts() ) : $flagship_leadership_query->the_post(); ?>
 						<li class="item person">
 							<div class="media-object">
 								<div class="media-object-section">
 
-								<?php if ( has_post_thumbnail()) { ?> 
-									<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('directory', array('class' => 'padding-five floatleft hide-for-small')); ?></a>
+								<?php if ( has_post_thumbnail() ) { ?> 
+									<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('directory', array(
+	'class' => 'padding-five floatleft hide-for-small',
+)); ?></a>
 								<?php } ?>	
 								</div>
 								<div class="media-object-section">

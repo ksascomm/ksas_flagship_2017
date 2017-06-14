@@ -38,8 +38,10 @@ get_header(); ?>
 		<div class="row bio">
 			<div class="small-12 medium-4 columns">
 
-			<?php if ( has_post_thumbnail()) { ?> 
-					<?php the_post_thumbnail('full', array('class' => 'headshot')); ?>
+			<?php if ( has_post_thumbnail() ) { ?> 
+					<?php the_post_thumbnail('full', array(
+	'class' => 'headshot',
+)); ?>
 				<?php } ?>	
 
 			</div>
@@ -92,9 +94,9 @@ get_header(); ?>
 			    </p>
 		</div>
 	</div>
-	<?php if (has_term('', 'role') && !has_term('job-market-candidate', 'role')) : ?>
+	<?php if (has_term('', 'role') && ! has_term('job-market-candidate', 'role') ) : ?>
 
-	<?php if( $post->post_title == 'Beverly Wendland' ) : ?>
+	<?php if ( $post->post_title == 'Beverly Wendland' ) : ?>
 
 		<div class="row">
 			<ul class="tabs margin10" data-tabs id="profile-tabs">
@@ -109,7 +111,7 @@ get_header(); ?>
 					 <li class="tabs-title"><a href="#teachingTab">Teaching</a></li>
 				<?php endif; ?>
 				
-				<?php if ( get_post_meta($post->ID, 'ecpt_publications', true)) : ?>
+				<?php if ( get_post_meta($post->ID, 'ecpt_publications', true) ) : ?>
 						 <li class="tabs-title"><a href="#publicationsTab">Publications</a></li>
 				<?php endif; ?>
 				<?php if ( get_post_meta($post->ID, 'ecpt_extra_tab_title', true) ) : ?>
@@ -135,7 +137,7 @@ get_header(); ?>
 					 <div class="tabs-panel" id="teachingTab"><?php echo get_post_meta($post->ID, 'ecpt_teaching', true); ?></div>
 				<?php endif; ?>
 				
-				<?php if ( get_post_meta($post->ID, 'ecpt_publications', true)) : ?>
+				<?php if ( get_post_meta($post->ID, 'ecpt_publications', true) ) : ?>
 					 <div class="tabs-panel" id="publicationsTab">
 						<?php if ( get_post_meta($post->ID, 'ecpt_publications', true) ) : echo get_post_meta($post->ID, 'ecpt_publications', true); endif; ?>
 					</div>

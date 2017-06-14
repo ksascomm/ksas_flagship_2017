@@ -42,7 +42,7 @@ Template Name: Fields of Study
 							<span class="input-group-label">
 								<span class="fa fa-search"></span>
 							</span>
-								<input class="input-group-field" type="text" name="search" value="<?php if (isset($_POST['home_search'])) { echo($_POST['home_search']); } ?>" id="id_search" aria-label="Search Fields of Study" placeholder="Enter major/minor, area of study, or description keyword"  /> 
+								<input class="input-group-field" type="text" name="search" value="<?php if (isset($_POST['home_search']) ) { echo($_POST['home_search']); } ?>" id="id_search" aria-label="Search Fields of Study" placeholder="Enter major/minor, area of study, or description keyword"  /> 
 								<label for="id_search" class="screen-reader-text">
 									Search Fields of Study
 								</label>
@@ -54,14 +54,14 @@ Template Name: Fields of Study
 			'post_type' => 'studyfields',
 			'orderby' => 'title',
 			'order' => 'ASC',
-			'posts_per_page' => '-1')); //Check the WP_Query docs to see how you can limit which posts to display ?>
+			'posts_per_page' =>'-1',)); // Check the WP_Query docs to see how you can limit which posts to display ?>
 		<?php if ( $the_query->have_posts() ) : ?>
 		    <div id="isotope-list">
-		    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
-		 $termsArray = get_the_terms( $post->ID, "program_type" );  //Get the terms for this particular item
-		 $termsString = ""; //initialize the string that will contain the terms
-		 foreach ( $termsArray as $term ) { // for each term 
-		 $termsString .= $term->slug.' '; //create a string that has all the slugs 
+		    <?php while ( $the_query->have_posts() ) : $the_query->the_post();
+		 $termsArray = get_the_terms( $post->ID, 'program_type' );  // Get the terms for this particular item
+		 $termsString = ''; // initialize the string that will contain the terms
+		 foreach ( $termsArray as $term ) { // for each term
+					   $termsString .= $term->slug . ' '; // create a string that has all the slugs
 		 }
 		 ?> 
 		 <div class="small-12 medium-6 large-4 columns item <?php echo $termsString; ?>"> <?php // 'item' is used as an identifier (see Step 5, line 6) ?>
@@ -80,16 +80,16 @@ Template Name: Fields of Study
 							
 						</p>
 					<div class="button-group">
-						<?php if (get_post_meta($post->ID, 'ecpt_majors', true)) : ?>
+						<?php if (get_post_meta($post->ID, 'ecpt_majors', true) ) : ?>
 							<button type="button" class="button major">Major</button>
 						<?php endif; ?>
-						<?php if (get_post_meta($post->ID, 'ecpt_minors', true)) : ?>
+						<?php if (get_post_meta($post->ID, 'ecpt_minors', true) ) : ?>
 							<button type="button" class="button minor">Minor</button>
 						<?php endif; ?>
-						<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true)) : ?>
+						<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true) ) : ?>
 							<button type="button" class="button degrees"><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></button>
 						<?php endif; ?>
-						<?php if (get_post_meta($post->ID, 'ecpt_pcitext', true)) : ?>
+						<?php if (get_post_meta($post->ID, 'ecpt_pcitext', true) ) : ?>
 							<p><?php echo get_post_meta($post->ID, 'ecpt_pcitext', true); ?></p>
 						<?php endif; ?>
 					</div>

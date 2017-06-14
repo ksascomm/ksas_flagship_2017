@@ -2,7 +2,6 @@
 /**
  * The default template for the "roof"
  *
- *
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */

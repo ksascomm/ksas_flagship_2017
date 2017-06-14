@@ -119,19 +119,17 @@
   .button {
     background-color: $skyblue;
   }
+  .roof-menu {
+    font-size: 1rem;
+     @include breakpoint (medium) {
+        float: left;
+        padding-left: 1rem;
+      }
+      @include breakpoint (large) {
+         float: right;
+      }
+  }
 }
-
-.roof-menu {
-  font-size: 1rem;
-   @include breakpoint (medium) {
-      float: left;
-      padding-left: 1rem;
-    }
-    @include breakpoint (large) {
-       float: right;
-    }
-}
-
 .top-bar, .top-bar ul {
   background-color: $blue;
 }
@@ -167,27 +165,33 @@
   }
 }
 
-.top-bar-left {
-  //check when menu breaks line!
-  @include breakpoint (886px) {
-    margin-top: 1rem;
-  }
-  @include breakpoint (1024px) {
-    margin-top: 2rem;
-  }
-}
-
 .top-bar {
   padding-bottom: 0;
-  .menu {
-    font-family: $font-stack-bold;
-    a:hover:not(.button) {
-      background: darken($blue, 10%);
+  .top-bar-left {
+    //check when menu breaks line!
+    @include breakpoint (886px) {
+      margin-top: 1rem;
     }
-    li:not(:last-child) {
-      border-right: none;
+    @include breakpoint (1024px) {
+      margin-top: 2rem;
+    }
+    .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+      border-color: $white transparent transparent;
     }
   }
+  .menu {
+    font-family: $font-stack-bold;
+    a {
+      font-size: 1.125rem;
+      color: $white;
+      &:hover:not(.button) {
+        background: darken($blue, 10%);
+      }
+      li:not(:last-child) {
+        border-right: none;
+      }
+    }
+  }  
   ul li ul.submenu {
     background-color: $white;
     li {
@@ -202,14 +206,10 @@
       &:hover {
         background-color: $skyblue;
       }
+      &:not(:last-child) {
+        border-bottom: 1px solid $darkgrey;
+      }
     }
-  }
-  .menu a {
-    font-size: 1.125rem;
-    color: $white;
-  }
-  ul li ul.submenu li:not(:last-child) {
-    border-bottom: 1px solid $darkgrey;
   }
 }
 

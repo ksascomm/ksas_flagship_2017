@@ -40,7 +40,7 @@
 			<?php endif; ?>	
 		</div>
 		<div class="row study-fields-contact">
-			<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true)) : ?>
+			<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true) ) : ?>
 				<h4>Degrees Offered: <small><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></small></h4>	
 			<?php endif; ?>
 		</div>
@@ -50,7 +50,7 @@
 				<h3>What can you do with your degree?</h3>
 			<?php echo get_post_meta($post->ID, 'ecpt_section2content', true);  endif; ?>
 		
-		<?php if ( get_post_meta($post->ID, 'ecpt_section3heading', true) ) : ?><h3><?php echo get_post_meta($post->ID, 'ecpt_section3heading', true) ?></h3><?php elseif(get_post_meta($post->ID, 'ecpt_section3content', true)) : ?>
+		<?php if ( get_post_meta($post->ID, 'ecpt_section3heading', true) ) : ?><h3><?php echo get_post_meta($post->ID, 'ecpt_section3heading', true) ?></h3><?php elseif (get_post_meta($post->ID, 'ecpt_section3content', true) ) : ?>
 			<h3>Related Programs and Centers</h3>
 		<?php endif; ?>
 		<?php if ( get_post_meta($post->ID, 'ecpt_section3content', true) ) :  echo get_post_meta($post->ID, 'ecpt_section3content', true);  endif; ?>

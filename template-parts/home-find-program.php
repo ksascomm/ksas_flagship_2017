@@ -44,24 +44,24 @@
 							<figure class="effect-oscar">
 								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
 								<figcaption>
-									<h2>Graduate Full Time</h2>
-									<p>Masters and Doctorate programs at the Krieger school</p>
+									<h2>Graduate Full-Time</h2>
+									<p>Master's and doctoral programs at the Krieger School</p>
 									<a href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT');"><p>Masters and Doctorate programs</p></a>
 								</figcaption>			
 							</figure>
 							<figure class="effect-oscar">
 								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
 								<figcaption>
-									<h2>Graduate Part Time</h2>
-									<p>Online masters and graduate certificates offered through Advanced Academic Programs</p>
+									<h2>Graduate Part-Time</h2>
+									<p>Advanced Academic Programs offers online master's programs and graduate certificates</p>
 									<a href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT');"><p>Online Masters & Certificates</p></a>
 								</figcaption>			
 							</figure>
 							<figure class="effect-oscar">
 								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
 								<figcaption>
-									<h2>Explore all of JHU</h2>
-									<p>Search the other 8 divisions in Johns Hopkins University</p>
+									<h2>Explore All of JHU</h2>
+									<p>Search the other 8 divisions at Johns Hopkins University</p>
 									<a href="https://www.jhu.edu/academics/" target="_blank" onclick="ga('send', 'event', 'Fields', 'Homepage', 'JHU.edu');"><p>Search JHU</p></a>
 								</figcaption>			
 							</figure>							

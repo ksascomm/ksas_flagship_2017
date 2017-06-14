@@ -27,14 +27,14 @@ get_header(); ?>
 
 
 
-		<?php  
+		<?php
 		    $field = get_post_meta($post->ID, 'ecpt_field_level', true);
-		      if ( ($field == 'undergraduate') || ($field == 'full-graduate' )) {
-		    	locate_template('/template-parts/undergrad-grad.php', true, false);
-		    } 
+		      if ( ($field == 'undergraduate') || ($field == 'full-graduate' ) ) {
+		  locate_template('/template-parts/undergrad-grad.php', true, false);
+		    }
 		     if ( $field == 'part-graduate' ) {
-		    	locate_template('/template-parts/part-time-grad.php', true, false);
-		    } 
+		   locate_template('/template-parts/part-time-grad.php', true, false);
+		    }
 		?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 	<?php get_sidebar(); ?>

@@ -19,3 +19,15 @@
     	}
     }
 }
+
+.main-wrap.full-width {
+    .breadcrumbs {
+        @include breakpoint (small) {
+            @include grid-column(12);
+        }
+        @include breakpoint (large) {
+            @include grid-column(12);
+            @include grid-col-pos(0);
+        }
+    }
+}

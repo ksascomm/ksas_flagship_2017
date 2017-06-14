@@ -27,7 +27,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
 	// Add the comment-reply library on pages where it is necessary
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+			wp_enqueue_script( 'comment-reply' );
 	}
 
 	}

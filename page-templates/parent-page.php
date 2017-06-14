@@ -19,16 +19,16 @@ get_header(); ?>
 	'parent' => $post->ID,
 	'post_type' => 'page',
 	'post_status' => 'publish',
-	'sort_column' => 'menu_order', 
-    'sort_order' => 'asc'
+	'sort_column' => 'menu_order',
+    'sort_order' => 'asc',
 	);
 	$pages = get_pages($args); ?>
-	<?php if (is_page('About')) : ?>
+	<?php if (is_page('About') ) : ?>
 		<div class="row small-up-1 medium-up-3 large-up-4" id="parent-menu">
-	<?php elseif (is_page('Academics')) : ?>
+	<?php elseif (is_page('Academics') ) : ?>
 		<div class="row small-up-1 medium-up-3" id="parent-menu">		
 	<?php endif; ?>
-		<?php foreach( $pages as $page ) { ?>
+		<?php foreach ( $pages as $page ) { ?>
 		<div class="column">
 			<div class="card">
 				<?php echo get_the_post_thumbnail($page->ID, 'child-bucket'); ?>

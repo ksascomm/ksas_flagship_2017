@@ -5,7 +5,7 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-require_once TEMPLATEPATH . "/library/GoogleSearch.php";
+require_once TEMPLATEPATH . '/library/GoogleSearch.php';
 get_header(); ?>
 
 <div class="main-wrap" role="main">
@@ -18,24 +18,24 @@ get_header(); ?>
         <p>You are currently searching the Krieger network. Try searching the <a href="https://www.jhu.edu/search/">JHU network</a> for websites beyond KSAS.</p>
 	</header>
 
-	<?php 
+	<?php
             try {
-                $search = new KSAS_GoogleSearch();
-                $resultsPageNum = 1;
-                if (array_key_exists('resultsPageNum', $_REQUEST)) {
-                    $resultsPageNum = $_REQUEST['resultsPageNum'];
-                }
-                $resultsPerPage = 10;
-                $baseQueryURL = 'http://search.johnshopkins.edu/search?site=krieger_collection&client=ksas_frontend';
-                $results = $search->query($_REQUEST['q'], $baseQueryURL, $resultsPageNum, $resultsPerPage);
-                 
-                $hits = $results->getNumHits();
-                $displayQuery = $results->getDisplayQuery();
-                $docTitle = 'Search Results';
-                $sponsored_result = $results->getSponsoredResult();
-            ?>
+		$search = new KSAS_GoogleSearch();
+		$resultsPageNum = 1;
+		if (array_key_exists('resultsPageNum', $_REQUEST) ) {
+			$resultsPageNum = $_REQUEST['resultsPageNum'];
+		}
+		$resultsPerPage = 10;
+		$baseQueryURL = 'http://search.johnshopkins.edu/search?site=krieger_collection&client=ksas_frontend';
+		$results = $search->query($_REQUEST['q'], $baseQueryURL, $resultsPageNum, $resultsPerPage);
 
-            <?php if ($hits > 0) { ?>
+		$hits = $results->getNumHits();
+		$displayQuery = $results->getDisplayQuery();
+		$docTitle = 'Search Results';
+		$sponsored_result = $results->getSponsoredResult();
+	?>
+
+	<?php if ($hits > 0 ) { ?>
                 <form class="search-form" action="<?php echo site_url('/search'); ?>" method="get">
                     <fieldset>
                         <label>
@@ -50,7 +50,7 @@ get_header(); ?>
                 <h2><?php _e( 'Results for:', 'foundationpress' ); ?> "<?php echo $displayQuery ?>"</h2>  
                 <p>Results <strong><?php echo $results->getFirstResultNum() ?> - <?php echo $results->getLastResultNum() ?></strong> of about <strong><?php echo $hits ?></strong></p>
            
-            <?php if (empty($sponsored_result) == false) { ?>
+            <?php if (empty($sponsored_result) == false ) { ?>
     	        <div class="panel callout radius10" id="sponsored">
                     <h2 class="black">Featured Result</h2>
                     <h3><a href="<?php echo $sponsored_result['sponsored_url']; ?>"><?php echo $sponsored_result['sponsored_title']; ?></a><small class="italic"> &mdash;<?php echo $sponsored_result['sponsored_url']; ?></small></h3>
@@ -59,15 +59,15 @@ get_header(); ?>
             <div id="search-results">
                 <ul>
            
-                <?php while ($result = $results->getNextResult()) {
+                <?php while ($result = $results->getNextResult() ) {
                     // note what results are PDFs
                     $pdfNote = '';
-                    if (preg_match('{application/pdf}', $result['mimeType'])) {
+                    if (preg_match('{application/pdf}', $result['mimeType']) ) {
                         $pdfNote = '<span class="black"><span class="fa fa-file-pdf-o" aria-hidden="true"></span> [PDF]</span>  ';
                 } ?>
                     <li>
                         <h5><?php echo $pdfNote ?><a href="<?php echo $result['path'] ?>"><?php echo $result['title'] ?></a></h5>
-                            <?php if (array_key_exists('description', $result) && $result['description']) { ?>
+                            <?php if (array_key_exists('description', $result) && $result['description'] ) { ?>
                                 <p><?php echo $result['description'] ?></p>
                             <?php } ?>
                         <div class="url"><?php echo $result['path'] ?> - <?php echo $result['sizeHumanReadable'] ?></div>
@@ -79,13 +79,13 @@ get_header(); ?>
              
             <div class="section">
 
-                <?php $notices = $results->getNotices(); foreach ($notices as $notice) { ?>
+                <?php $notices = $results->getNotices(); foreach ($notices as $notice ) { ?>
                     <p class="notice"><?php echo $notice ?></p>
                 <?php } ?>
 
                 <ul class="pagination text-center">
                          
-                     <?php foreach ($results->getResultsetLinks() as $resultsetLink) { echo '<li>' . $resultsetLink . '</li>'; } ?>
+                     <?php foreach ($results->getResultsetLinks() as $resultsetLink ) { echo '<li>' . $resultsetLink . '</li>'; } ?>
                     <?php echo '<li>' . $results->getNextLink() . '</li>'; ?> 
                 
                 </ul>
@@ -95,7 +95,7 @@ get_header(); ?>
         // no hits
         ?>
              
-        <?php $notices = $results->getNotices(); foreach ($notices as $notice) { ?>
+        <?php $notices = $results->getNotices(); foreach ($notices as $notice ) { ?>
             <p class="notice"><?php echo $notice ?></p>
          <?php } ?>
              
@@ -113,16 +113,17 @@ get_header(); ?>
                     </fieldset>
                 </form>        
 
-        <?php }
-        } catch (KSAS_GoogleSearchException $e) {
-        $docTitle = "Search Temporarily Unavailable";
+        <?php }// End if().
+        } catch (KSAS_GoogleSearchException $e ) {
+        $docTitle = 'Search Temporarily Unavailable';
         ?>
         
     <div class="section">
         <p>We're sorry, the search engine is temporarily unavailable. Please try your search again later.</p>
     </div>
 
-    <?php } ?>
+    <?php }// End try().
+ ?>
 
 </article>
 
