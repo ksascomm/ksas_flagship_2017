@@ -6,24 +6,47 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+get_header(); 
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
+$home_url = home_url();
+$article_title = $post->post_title;
+?>
 
-<div class="main-wrap" role="main">
-<?php foundationpress_breadcrumb();?>
+<div class="main-wrap sidebar-left" role="main">
 <?php do_action( 'foundationpress_before_content' ); ?>
-<?php foundationpress_breadcrumb();?>
+<ul id="breadcrumbs" class="breadcrumbs">
+	<li><a href="<?php echo $home_url; ?>">Home</a></li>
+	<li><a href="<?php echo $home_url; ?>/about">About</a></li>
+	<li><a href="<?php echo $home_url; ?>/about/news-archive">News Archive</a></li>
+	<li><?php echo $article_title; ?></li>
+</ul>
 <?php while ( have_posts() ) : the_post(); ?>
-	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-		<header>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php foundationpress_entry_meta(); ?>
-		</header>
-		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
-		<div class="entry-content">
-			<?php the_content(); ?>
-			<?php edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+	<article class="main-content">
+		<div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
+
+			<?php $format = get_post_format(); 
+				
+				if ( false === $format ) { $format = 'standard'; }
+
+				if ( $format == 'standard' ) : 
+
+					the_post_thumbnail('full', array('class'	=> "floatleft")); 
+
+			endif; ?>
+			
+
+			<header>
+				<h1><small><?php echo get_the_category( $id )[0]->name; ?></small><br>
+					<?php the_title(); ?>
+				</h1>
+			<?php foundationpress_entry_meta(); ?>	
+			</header>
+			
+			<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
+	 		<div class="entry-content" itemprop="articleBody">
+				<?php the_content(); ?>
+				<?php edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+			</div> <!-- end article section -->
 		</div>
 	</article>
 <?php endwhile;?>

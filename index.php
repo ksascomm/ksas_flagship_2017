@@ -15,9 +15,12 @@
 
 get_header(); ?>
 
-<div class="main-wrap" role="main">
+<div class="main-wrap sidebar-left" role="main">
+ <?php do_action( 'foundationpress_before_content' ); ?>
+ <?php foundationpress_breadcrumb();?>
+
 	<article class="main-content">
-	<?php foundationpress_breadcrumb();?>
+	<h1>News Archive</h1>
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
@@ -43,7 +46,10 @@ get_header(); ?>
 		<?php endif; ?>
 
 	</article>
-	<?php get_sidebar(); ?>
+
+ <?php do_action( 'foundationpress_after_content' ); ?>
+ <?php get_sidebar(); ?>
+
 
 </div>
 

@@ -5,8 +5,10 @@ if ( has_post_thumbnail( $post->ID ) ) : ?>
 	<header class="featured-hero" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]">
 
 		<?php if (is_page(array('About', 'Academics', 'Apply', 'People')) ) : ?>
-			<div class="row">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+			<div class="orbit-caption">
+				<div class="row">
+					<h1 class="entry-title"><?php the_title(); ?></h1>
+				</div>
 			</div>	
 		</header>
 	<?php else : ?>

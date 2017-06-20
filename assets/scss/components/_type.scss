@@ -41,6 +41,25 @@ h3, h4, h5, h6, .semibold, blockquote {
       font-family: $font-stack-bold;
     }
   }
+  .blogpost-entry {
+    h1, h2 {
+      font-size: 2rem;
+      font-family: $font-stack-bold;
+      small {
+        text-transform: uppercase;
+        font-size: 55%;
+        color: $dark-gray;
+      }
+      a {
+        .icon-new-tab2 {
+          font-size: 1.25rem;
+        }
+      }
+    }
+    time.updated {
+      font-family: $font-stack-bold;
+    }
+  }
 }
 
 .tabs-content, .accordion-item {   

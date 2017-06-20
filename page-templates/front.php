@@ -7,7 +7,7 @@ get_header(); ?>
 
 <?php $flagship_evergreen_query = new WP_Query(array(
    'post_type' => 'evergreen',
-   'orderby' => 'rand',
+   'orderby' => 'ID',
    'post_status' => 'publish',
    'posts_per_page' =>'-1',
 ));
@@ -31,6 +31,11 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 		          <h1><?php the_title(); ?></h1>
 		          	<div class="show-for-medium">
 		          		<?php the_content(); ?>
+			  				<?php if (get_post_meta($post->ID, 'ecpt_link_destination', true) ) : ?>
+						   		<p>
+						   			<a href="<?php echo get_post_meta($post->ID, 'ecpt_link_destination', true);?>" class="button orbit" target="_blank"><?php echo get_post_meta($post->ID, 'ecpt_link_button_text', true);?></a>
+						   		</p>
+							<?php endif; ?>
 		          	</div>
 		         </div>
 	         </div>
@@ -143,8 +148,8 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	<div class="giving-hero">
 	  <div class="giving-hero-content">
 	    <h1>Support the Krieger School</h1>
-	    <p class="subheader">The School of Arts and Sciences plays a vital role within Johns Hopkins University, housing the disciplines of the humanities and natural and social sciences from which all other courses of study stem.</p>
-	    <a href="/giving" class="button">Find Out More</a>
+	    <p class="subheader">The School of Arts & Sciences offers a stellar education that positions its students as the best of the best and trains them to be future leaders. Help us ensure that a Hopkins education is attainable to every deserving student, regardless of financial ability.</p>
+	    <p><a href="/giving" class="button">Find Out More</a></p>
 	  </div>
 	</div>
 

@@ -4,6 +4,7 @@
 
   @include breakpoint(medium) {
     margin-top: 3rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -30,6 +31,16 @@
     }
   }
 }
+
+  .main-wrap.full-width.parent {
+    .main-content {
+      @include breakpoint(large) {
+        @include grid-column(8);
+        @include grid-col-pos(1);
+      }
+    }
+  }
+
 
 .sidebar {
 padding: 0 1.25rem .1rem 1.25rem;

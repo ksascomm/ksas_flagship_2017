@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   height: rem-calc(200);
   position: relative;
-  .row {
+  /*.row {
     h1.entry-title {
       bottom: 0;
       position: absolute;
@@ -20,10 +20,24 @@
       color: white;
       margin: 0;
     }
+  }*/
+  .orbit-caption {
+    padding: .5rem 0;
+    background: rgba(0, 0, 0, 0.85);
+    h1 {
+      font-size: 3rem;
+      @include breakpoint(small) {
+        @include grid-column(12);
+      }
+      @include breakpoint(large) {
+        @include grid-column(8);
+        @include grid-col-pos(1);
+      }
+    }
   }
 }
 
-.page-template-parent-page {
+.page-template-parent-page, .page-template-parent-page-no-buckets {
   .featured-hero {
     @include breakpoint(medium) {
       height: rem-calc(300);
@@ -31,16 +45,20 @@
 
     @include breakpoint(xlarge) {
       height: rem-calc(400);
-    }   
-    .row {
-      h1.entry-title {
-        @include breakpoint (small) {
-          font-size: 3rem;
-          padding: 4px 8px;
+    }
+  }
+}
+
+.page-template-parent-page-no-buckets {
+   .featured-hero {
+     .orbit-caption {
+      h1 {
+        @include breakpoint(small) {
+          @include grid-column(12);
         }
-        @include breakpoint (large) {
-          font-size: 4rem;
-          padding: 4px 2rem;
+        @include breakpoint(large) {
+          @include grid-column(8);
+          @include grid-col-pos(0);
         }
       }
     }

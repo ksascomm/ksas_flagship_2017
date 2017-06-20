@@ -10,59 +10,96 @@
 <aside class="sidebar">
 	<?php do_action( 'foundationpress_before_sidebar' ); ?>
 
-<?php
-	wp_reset_query();
-	if ( is_page() ) {
-	global $post;
-	$ancestors = get_post_ancestors( $post->ID ); // Get the array of ancestors
-	// Get the top-level page slug for sidebar/widget content conditionals
-	$ancestor_id = ($ancestors) ? $ancestors[ count($ancestors) -1 ]: $post->ID;
-	$the_ancestor = get_page( $ancestor_id );
-	$ancestor_slug = $the_ancestor->post_name;
-	// If there are no ancestors display a menu of children
-	if (count($ancestors) == 0 && is_front_page() == false ) {
-		$page_name = $post->post_title;
-		$test_menu = wp_nav_menu( array(
-	'theme_location' => 'top-bar-r',
-	'menu_class' => 'nav',
-	'container_class' => '',
-	'items_wrap' => '<div id="sidebar_header"><h5 class="white">Also in <span class="grey bold">' . $page_name . '</span></h5></div><ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
-	'submenu' => $page_name,
-	'depth' => 1,
-		));
-if (strpos($test_menu,'<li id') !== false ) : echo $test_menu; endif;
-	}
-	// If there are one or more display a menu of siblings
-	elseif (count($ancestors) >= 1 ) {
-		$parent_page = get_post($post->post_parent);
-		$parent_url  = get_permalink($post->post_parent);
-		$parent_name = $parent_page->post_title;
-	?>
-<!--Below is displayed when on a child page --> 
-	<div id="sidebar_header">
-		<h5>Also in <?php echo $parent_name ?></h5>
-	</div>
 	<?php
-	wp_nav_menu( array(
-	'theme_location' => 'top-bar-r',
-	'menu_class' => 'nav',
-	'submenu' => $parent_name,
-	'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
-	'depth' => 2,
-	));
-	}
-	}// End if().
- ?>
+		wp_reset_query();
+		if ( is_page() ) {
+		global $post;
+		$ancestors = get_post_ancestors( $post->ID ); // Get the array of ancestors
+		// Get the top-level page slug for sidebar/widget content conditionals
+		$ancestor_id = ($ancestors) ? $ancestors[ count($ancestors) -1 ]: $post->ID;
+		$the_ancestor = get_page( $ancestor_id );
+		$ancestor_slug = $the_ancestor->post_name;
+		// If there are no ancestors display a menu of children
+		if (count($ancestors) == 0 && is_front_page() == false ) {
+			$page_name = $post->post_title;
+			$test_menu = wp_nav_menu( array(
+		'theme_location' => 'top-bar-r',
+		'menu_class' => 'nav',
+		'container_class' => '',
+		'items_wrap' => '<div id="sidebar_header"><h5 class="white">Also in <span class="grey bold">' . $page_name . '</span></h5></div><ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+		'submenu' => $page_name,
+		'depth' => 1,
+			));
+	if (strpos($test_menu,'<li id') !== false ) : echo $test_menu; endif;
+		}
+		// If there are one or more display a menu of siblings
+		elseif (count($ancestors) >= 1 ) {
+			$parent_page = get_post($post->post_parent);
+			$parent_url  = get_permalink($post->post_parent);
+			$parent_name = $parent_page->post_title;
+		?>
+	<!--Below is displayed when on a child page --> 
+		<div id="sidebar_header">
+			<h5>Also in <?php echo $parent_name ?></h5>
+		</div>
+		<?php
+		wp_nav_menu( array(
+		'theme_location' => 'top-bar-r',
+		'menu_class' => 'nav',
+		'submenu' => $parent_name,
+		'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+		'depth' => 2,
+		));
+		}
+		}// End if().
+	 ?>
+
+	 <?php if (is_home() || is_single()):?>
+
+		<div id="sidebar_header">
+			<h5>Also in About</h5>
+		</div>
+		<?php
+			wp_nav_menu( array(
+				'theme_location' => 'top-bar-r',
+				'menu_class' => 'nav',
+				'container_class' => '',
+				'submenu' => 'About',
+				'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+				'depth' => 2,
+			)); ?>
+
+
+	 <?php endif;?> 
+
+	 <?php if (is_404()):?>
+
+	 	<div id="sidebar_header">
+			<h5>Explore This Website</h5>
+		</div>
+
+		<?php 
+			wp_nav_menu( array(
+					'theme_location' => 'top-bar-r',
+					'menu_class' => 'nav',
+					'container_class' => '',
+					'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+					'depth' => 1,
+				)); ?>
+
+
+	 <?php endif;?>	
+
 	<?php if ( is_singular('people') ) : ?>
 	
-		<div class="" id="sidebar_header">
+		<div id="sidebar_header">
 			<h5>Also in People</h5>
 		</div>
 		<?php
 			wp_nav_menu( array(
 				'theme_location' => 'top-bar-r',
 				'menu_class' => 'nav',
-				'container_class' => 'offset-gutter',
+				'container_class' => '',
 				'submenu' => 'People',
 				'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
 				'depth' => 2,
@@ -95,14 +132,14 @@ if (strpos($test_menu,'<li id') !== false ) : echo $test_menu; endif;
 			<?php endif; endif; ?>				
 
 	<?php if ( is_singular('studyfields') ) : ?>
-		<div class="" id="sidebar_header">
+		<div id="sidebar_header">
 			<h5>Also in Academics</h5>
 		</div>
 		<?php
 			wp_nav_menu( array(
 				'theme_location' => 'top-bar-r',
 				'menu_class' => 'nav',
-				'container_class' => 'offset-gutter',
+				'container_class' => '',
 				'submenu' => 'Academics',
 				'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
 				'depth' => 2,

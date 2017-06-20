@@ -34,3 +34,33 @@
         }
     }
 }
+
+.pagination {
+  a, button {
+    color: $black;
+    border: none;
+  }
+  .current {
+    background: $powderblue;
+    a:hover {
+      background: transparent;
+      border: none;
+    }
+  }
+}
+
+.search-404 {
+  list-style: none;
+  form {
+    margin-top: 1rem;
+    width: 50%;
+    input {
+      &[type="text"] {
+        margin-bottom: 0rem;
+      }
+      &[type="submit"] {
+        font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+    }
+  }
+}
