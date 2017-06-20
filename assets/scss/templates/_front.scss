@@ -55,6 +55,54 @@
       }
     }
   }
+  .front-hero {
+    .marketing {
+      @include grid-row();
+      max-width: 55rem;
+    }
+
+    @include breakpoint(small) {
+      background: url('../images/frontpage/homepage-slider-hero.jpg') bottom center;
+      background-size: cover;
+      background-position: bottom;
+      padding: rem-calc(65%) 0;
+      margin: 0 0 rem-calc(32);
+      height: rem-calc(200);
+      position: relative;
+      text-align: left;
+    }
+
+    @include breakpoint(medium) {
+      background-size: cover;
+      background-position: center;
+      height: rem-calc(365);
+    }
+
+
+    .tagline {
+      @include breakpoint(small) {
+        @include grid-column(8);
+      }
+
+      @include breakpoint(medium) {
+        @include grid-column(9);
+        padding-top: 6rem;
+      }
+    }
+
+    h1 {
+      color: $white;
+      text-shadow: 2px 2px 2px #000;
+      text-shadow: 2px 2px 2px rgba(0,0,0,0.75);
+      @include breakpoint(small) {
+        font-size: 2.2rem;
+      }
+
+      @include breakpoint(medium) {
+        font-size: 2.875rem;
+      }
+    }
+  }
 }
 
 // Intro
@@ -322,8 +370,10 @@
 }
 
 .texture {
-  background: url(../images/frontpage/bg-campus-students.jpg) no-repeat fixed;
-  background-size: cover;
+  @include breakpoint (large) {
+    background: url(../images/frontpage/bg-campus-students.jpg) no-repeat fixed;
+    background-size: cover;
+  }
   margin-bottom: 2rem;
   hr {
     border-bottom: 1px solid transparent;
@@ -521,11 +571,22 @@
    .gram-link {
     margin-top: 2rem;
    }
+   .instagram-card:not(:first-of-type) {
+    @include breakpoint (small) {
+      display: none;
+    }
+    @include breakpoint (medium) {
+      display: inherit;
+    }
+   }
+   .card {
+    margin-top: 1rem;
+   }
   }
 
   .twitter, .instagram {
     @include breakpoint(large) {
-      height: 275px;
+      height: rem-calc(325);
     }
   }
   .social {

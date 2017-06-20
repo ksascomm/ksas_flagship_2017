@@ -19,7 +19,7 @@ foreach ($obj['data'] as $post ) {
     $pic_created_time = date('F j, Y', $post['caption']['created_time']);
     $pic_created_time = date('F j, Y', strtotime($pic_created_time . ' +1 days'));
 
-    echo "<div class='small-12 medium-6 large-3 columns'>";
+    echo "<div class='small-12 medium-6 large-3 columns instagram-card'>";
     	echo "<div class='card'>";
 	        echo "<a href='{$pic_link}' target='_blank'>";
 	            echo "<img class='gram' src='{$pic_src}' alt='{$pic_text}'>";

@@ -70,12 +70,13 @@
 
 				<div class="row show-for-small hide-for-medium">
 					<ul class="vertical menu programs">
+						<li><a class="button" href="academics/departments-programs-and-centers" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Departments Mobile');">Departments</a></li>
+						<li><a class="button" href="academics/majors-minors" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Majors/Minors Mobile');">Majors & Minors</a></li>
+						
 						<li><a class="button" href="academics/fields/#filter=.undergrad_program" data-filter=".undergrad_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Undergraduate Mobile');">Undergraduate</a></li>
-						<li><a class="button" href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT Mobile');">Full-Time Masters & Doctorates</a></li>
-						<li><a class="button" href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT Mobile');">Part-Time Online Masters & Certificates</a></li>
-						<li><a class="button" href="academics/departments-programs-and-centers" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Departments Mobile');">List of Departments</a></li>
-						<li><a class="button" href="academics/majors-minors" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Majors/Minors Mobile');">List of Majors & Minors</a></li>
-						<li><a class="button" href="https://www.jhu.edu/academics/" onclick="ga('send', 'event', 'Fields', 'Homepage', 'JHU.edu Mobile');">Explore all of JHU</a></li>
+						<li><a class="button" href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate FT Mobile');">Graduate Full-Time</a></li>
+						<li><a class="button" href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT Mobile');">Graduate Part-Time</a></li>
+						<li><a class="button" href="https://www.jhu.edu/academics/" onclick="ga('send', 'event', 'Fields', 'Homepage', 'JHU.edu Mobile');">Explore All of JHU</a></li>
 					</ul>
 				</div>
 				

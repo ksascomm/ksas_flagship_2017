@@ -2,6 +2,12 @@
 .mobile-menu,
 .site-title-bar {
   @include hide-for(large);
+  background: $black;
+  .menu-icon::after {
+    background: $white;
+    -webkit-box-shadow: 0 7px 0 $white, 0 14px 0 $white;
+    box-shadow: 0 7px 0 $white, 0 14px 0 $white;
+  }
 }
 
 .desktop-menu,
@@ -13,7 +19,7 @@
 
 // Site title
 .site-mobile-title a {
-  // placeholder
+  color: $white;
 }
 
 .site-desktop-title a {
@@ -40,6 +46,8 @@
       border-color: $menu-item-color-active transparent transparent;
     }
   }
+
+
 
   // current page
   .current_page_item > a {
@@ -262,7 +270,14 @@ div#offCanvasTop1 {
 }
 
 .off-canvas {
+  background: $black;
   .menu.nested {
+  }
+  .menu > li > a {
+    color: $white;
+    &:hover {
+      background: $darkgrey;
+    }
   }
 }
 

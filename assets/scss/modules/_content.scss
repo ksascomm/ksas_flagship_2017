@@ -131,8 +131,12 @@ padding: 0 1.25rem .1rem 1.25rem;
     &:first-of-type {
       padding-top: 1rem;
     }
+    a > span.fa {
+      color: $blue;
+    }
   }
   ul.nav {
+    margin-bottom: 0rem;
     li {
       border-bottom: none;
       a {
