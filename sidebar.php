@@ -54,24 +54,6 @@
 		}// End if().
 	 ?>
 
-	 <?php if (is_home() || is_single()):?>
-
-		<div id="sidebar_header">
-			<h5>Also in About</h5>
-		</div>
-		<?php
-			wp_nav_menu( array(
-				'theme_location' => 'top-bar-r',
-				'menu_class' => 'nav',
-				'container_class' => '',
-				'submenu' => 'About',
-				'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
-				'depth' => 2,
-			)); ?>
-
-
-	 <?php endif;?> 
-
 	 <?php if (is_404()):?>
 
 	 	<div id="sidebar_header">
@@ -89,6 +71,24 @@
 
 
 	 <?php endif;?>	
+
+	 <?php if (is_home() || is_single() && !is_singular(array( 'studyfields', 'ai1ec_event', 'people' )) ):?>
+
+		<div id="sidebar_header">
+			<h5>Also in About</h5>
+		</div>
+		<?php
+			wp_nav_menu( array(
+				'theme_location' => 'top-bar-r',
+				'menu_class' => 'nav',
+				'container_class' => '',
+				'submenu' => 'About',
+				'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+				'depth' => 2,
+			)); ?>
+
+
+	 <?php endif;?> 
 
 	<?php if ( is_singular('people') ) : ?>
 	

@@ -197,6 +197,14 @@
         border-right: none;
       }
     }
+    li.external {
+      a::after {
+        content: "\ecf6";
+        font-family: $flagship-icon;
+        padding-left: .25rem;
+        font-size: 75%;
+      }
+    }
   }  
   ul li ul.submenu {
     background-color: $white;

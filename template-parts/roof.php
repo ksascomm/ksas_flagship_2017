@@ -21,7 +21,6 @@
 			</div>
 		</form>
 	</li>
-	<li class="roof-padding bar"><a href="<?php echo site_url(); ?>/giving/">Giving</a></li>
 	<li class="roof-padding bar"><a href="https://www.jhu.edu/admissions/visit/">Visit</a></li>
 	<li class="roof-padding"><a href="http://krieger.jhu.edu/magazine/">A&S Magazine</a></li>
 	<li class="button" data-toggle="offCanvasTop1">Explore KSAS <span class="fa fa-bars" aria-hidden="true"></span></li>

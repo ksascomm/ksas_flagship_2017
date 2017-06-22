@@ -18,11 +18,10 @@
  <?php while ( have_posts() ) : the_post(); ?>
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
     <?php get_template_part( 'template-parts/featured-image' ); ?>
-       <header>
+      
        <?php if ( ! has_post_thumbnail( $post->ID ) ) : ?>
            <h1 class="entry-title"><?php the_title(); ?></h1>
        <?php endif;?>
-       </header>
        <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
        <div class="entry-content">
            <?php the_content(); ?>

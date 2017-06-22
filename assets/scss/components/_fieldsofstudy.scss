@@ -232,4 +232,8 @@ ul.fields-of-study li {
       color: $skyblue;
     }
    }
+  .website, .email, .office {
+    display: inline;
+    padding-right: 1rem;
+  }
 }

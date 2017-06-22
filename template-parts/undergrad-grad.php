@@ -11,21 +11,23 @@
 ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('main-content') ?>>
-<img src="<?php echo get_post_meta($post->ID, 'ecpt_image', true); ?>" alt="<?php the_title(); ?>" class="radius10">
+	
+	<img src="<?php echo get_post_meta($post->ID, 'ecpt_image', true); ?>" alt="<?php the_title(); ?>" class="margin1">
 	
 	<h1><?php the_title(); ?></h1>
+	
 	<div class="entry-content">
 		<div class="row study-fields-contact">			
 			<?php if ( get_post_meta($post->ID, 'ecpt_homepage', true) ) : ?>
-				<div class="small-12 large-6 columns">
-				<span class="fa fa-globe"></span> 
-				<a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')">
-					<?php the_title(); ?> Website
-				</a>
+				<div class="website">
+					<span class="fa fa-globe"></span> 
+					<a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')">
+						<?php the_title(); ?> Website
+					</a>
 				</div>
 			<?php endif; ?>
 			<?php if ( get_post_meta($post->ID, 'ecpt_emailaddress', true) ) : ?>
-				<div class="small-12 large-3 columns">
+				<div class="email">
 					<span class="fa fa-envelope"></span> 
 					<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
 						<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true);?>
@@ -34,7 +36,7 @@
 			<?php endif; ?>
 			
 			<?php if ( get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
-				<div class="small-12 large-3 columns">
+				<div class="office">
 					<span class="fa fa-map-marker"></span>  <?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>
 				</div>
 			<?php endif; ?>	
@@ -64,11 +66,5 @@
 		<?php if ( get_post_meta($post->ID, 'ecpt_section3content', true) ) :  echo get_post_meta($post->ID, 'ecpt_section3content', true);  endif; ?>
 
 	</div>
-
-	<hr />
-
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				
-	<?php endwhile; endif; ?>	
 
 </div>

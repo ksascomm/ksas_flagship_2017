@@ -60,6 +60,15 @@ h3, h4, h5, h6, .semibold, blockquote {
       font-family: $font-stack-bold;
     }
   }
+  ul.accordion {
+    li.accordion-item {
+      a.accordion-title {
+        border: 1px solid #e6e6e6;
+        border-bottom: 0;
+      }
+    }
+
+  }
 }
 
 .tabs-content, .accordion-item {   
