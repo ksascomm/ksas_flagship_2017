@@ -19,10 +19,10 @@ get_header(); ?>
 				<a class="bread-link bread-home" href="<?php echo site_url();?>" title="Home">Home</a>
 			</li>
 			<li class="item-parent">
-				<a class="bread-parent" href="/people/" title="People">People</a>
+				<a class="bread-parent" href="<?php echo site_url();?>/people/" title="People">People</a>
 			</li>
 			<li class="item-parent">
-				<a class="bread-parent" href="/people/leadership/" title="Academics">Dean & Leadership</a>
+				<a class="bread-parent" href="<?php echo site_url();?>/people/leadership/" title="Dean and Leadership">Dean & Leadership</a>
 			</li>
 			<li class="current item"><?php echo the_title();?></li>
 		</ul>

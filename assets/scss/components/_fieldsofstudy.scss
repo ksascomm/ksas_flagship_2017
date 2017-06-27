@@ -90,19 +90,19 @@ li.person {
     }    
   }
   .button.full_time_program {
-    background: $fushia;
+    background: $aqua;
     &.is-checked {
       background-color: transparent;
-      border: 1px solid $fushia;
-      color: $fushia;
+      border: 1px solid $aqua;
+      color: $aqua;
     }      
   }
   .button.part_time_program {
-    background: $orange;
+    background: $gold;
     &.is-checked {
       background-color: transparent;
-      border: 1px solid $orange;
-      color: $orange;
+      border: 1px solid $gold;
+      color: $gold;
     }     
   }
 }
@@ -145,15 +145,18 @@ li.person {
     font-size: 1.4rem;
   }
   button {
-    font-family: $font-subhead-light;
-    &.button.major {
-      background-color: $green;
-    }
-    &.button.minor {
-      background-color: $red;
+    padding: .3rem;
+    cursor: auto;
+    //border-radius: .25rem;
+    font-family: $font-subhead-book;
+    font-size: 1rem !important;
+    &.button.major, &.button.minor {
+      background-color: transparent;
+      border: 1px solid $black;
+      color: $black;
     }
     &.button.degrees {
-      background-color: $purple;
+      background-color: $black;
     }
   }
 }
@@ -167,7 +170,7 @@ ul.fields-of-study li {
   border-top: .75em solid $skyblue;
 }
 .border-full_time_program {
-  border-top: .75em solid $fushia;
+  border-top: .75em solid $aqua;
 }
 .border-full_time_program.undergrad_program {
   position: relative;
@@ -178,10 +181,10 @@ ul.fields-of-study li {
   position: absolute;
   width: 100%;
   left: 0;
-  border-top: .75em solid $fushia;
+  border-top: .75em solid $aqua;
 }
 .border-part_time_program {
-  border-top: .75em solid $orange;
+  border-top: .75em solid $gold;
 }
 .disciplines {
   height: 15px;

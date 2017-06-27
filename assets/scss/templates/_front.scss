@@ -461,6 +461,9 @@
           &:not(:last-child) {
             border-right: 1px solid $grey;
           }
+          &.end:last-child:last-child {
+            float: left;
+          }
         }
         @include breakpoint(large) {
           height: 300px;

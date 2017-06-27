@@ -13,13 +13,13 @@ var e;t?(t=n.makeArray(t),e=this.getItems(t)):e=this.items,this._getSorters(),th
 
 //***********FIELDS OF STUDY SCRIPTS***********
 
-var $x = jQuery.noConflict();
-$x(document).ready(function() {
-    $x('#noResult').hide();
-});
 
-jQuery(function ($) {
- 
+
+jQuery(document).ready( function($) {
+
+// initially hide noresult box on page load 
+$('#noResult').hide();
+
 var qsRegex;
 var buttonFilter;
 
@@ -35,17 +35,14 @@ var $grid = $('#isotope-list').isotope({
   }
 });
 
-$('#filters').on( 'click', 'a.button', function() {
-  buttonFilter = $( this ).attr('data-filter');
-  $grid.isotope();
-});
-
 // use value of search field to filter
 var $quicksearch = $('#id_search').keyup( debounce( function() {
   qsRegex = new RegExp( $quicksearch.val(), 'gi' );
   $grid.isotope();
 
   // display message box if no filtered items
+
+  $('#noResult').hide();
 if ( !$grid.data('isotope').filteredItems.length ) {
   $('#noResult').show();
 } else {
@@ -53,15 +50,6 @@ if ( !$grid.data('isotope').filteredItems.length ) {
 }
 
 }) );
-
-  // change is-checked class on buttons
-$('#filters').each( function( i, buttonGroup ) {
-  var $buttonGroup = $( buttonGroup );
-  $buttonGroup.on( 'click', 'a.button', function() {
-    $buttonGroup.find('.is-checked').removeClass('is-checked');
-    $( this ).addClass('is-checked');
-  });
-});
 
 // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
@@ -123,6 +111,5 @@ event.preventDefault();
     onHashChange();
     // Run onHashChange any time the URL hash changes
     window.onhashchange = onHashChange;
-
 
 });

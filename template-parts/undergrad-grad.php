@@ -42,16 +42,16 @@
 			<?php endif; ?>	
 		</div>
 		<div class="row study-fields-contact">
-				<?php if (get_post_meta($post->ID, 'ecpt_majors', true) ) : ?>
-					<h4>Major</h4>
-				<?php endif; ?>
-				<?php if (get_post_meta($post->ID, 'ecpt_minors', true) ) : ?>
-					<h4>Minor</h4>
-				<?php endif; ?>
-				<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true) ) : ?>
-					<h4>Degrees Offered: <small><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></small></h4>
-						
-				<?php endif; ?>
+		<?php if (get_post_meta($post->ID, 'ecpt_majors', true) || get_post_meta($post->ID, 'ecpt_minors', true)  ) : ?>
+			<h4>Students can: 
+				<?php if (get_post_meta($post->ID, 'ecpt_majors', true) ) : ?><small>Major</small><?php if (get_post_meta($post->ID, 'ecpt_majors', true) && get_post_meta($post->ID, 'ecpt_minors', true)  ) : ?>, <?php endif; endif; ?><?php if (get_post_meta($post->ID, 'ecpt_minors', true) ) : ?><small>Minor</small>
+			<?php endif; ?>
+			</h4>
+		<?php endif;?>
+			<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true) ) : ?>
+				<h4>Degrees Offered: <small><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></small></h4>
+					
+			<?php endif; ?>
 		</div>
 
 		<?php if ( get_post_meta($post->ID, 'ecpt_section1', true) ) :  echo get_post_meta($post->ID, 'ecpt_section1', true);  endif; ?>
