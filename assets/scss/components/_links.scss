@@ -64,3 +64,15 @@
     }
   }
 }
+
+.entry-content {
+  p, .tablepress {
+    a {
+    @include link;
+    }
+  }
+}
+
+.field {
+
+}

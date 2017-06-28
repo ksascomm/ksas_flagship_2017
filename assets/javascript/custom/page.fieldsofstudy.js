@@ -17,11 +17,11 @@ var e;t?(t=n.makeArray(t),e=this.getItems(t)):e=this.items,this._getSorters(),th
 
 jQuery(document).ready( function($) {
 
-// initially hide noresult box on page load 
+// initially hide noresult box on page load
 $('#noResult').hide();
 
 var qsRegex;
-var buttonFilter;
+var hashFilter;
 
 // init Isotope
 var $grid = $('#isotope-list').isotope({
@@ -30,8 +30,8 @@ var $grid = $('#isotope-list').isotope({
   filter: function() {
     var $this = $(this);
     var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
-    var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
-    return searchResult && buttonResult;
+    var hashResult = hashFilter ? $this.is( hashFilter ) : true;
+    return searchResult && hashResult;
   }
 });
 
@@ -92,12 +92,12 @@ event.preventDefault();
 
     // Pass filter value to Isotope to repaint.
     function onHashChange() {
-        var hashFilter = getHashFilter();
+        hashFilter = getHashFilter();
 
         if ( hashFilter ) {
-            $grid.isotope({ filter: hashFilter });
             $('#filters').find('a.is-checked').removeClass('is-checked');
             $('#filters').find('[data-filter="' + hashFilter + '"]').addClass('is-checked');
+            $grid.isotope();
         }
     } // onHashChange
 
