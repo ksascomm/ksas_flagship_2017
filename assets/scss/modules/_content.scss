@@ -160,6 +160,8 @@ padding: 0 1.25rem .1rem 1.25rem;
   .card {
     border: none;
     .card-section {
+      padding: inherit;
+      padding-top: .5rem;
       a {
         color: $blue;
         border-bottom: .125em dotted;

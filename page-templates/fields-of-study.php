@@ -62,7 +62,7 @@ Template Name: Fields of Study
 		    <div id="isotope-list" role="region" aria-label="Results">
 		    <?php while ( $the_query->have_posts() ) : $the_query->the_post();
 				 $termsArray = get_the_terms( $post->ID, 'program_type' );  // Get the terms for this particular item
-				 $termsString = ''; // initialize the string that will contain the terms
+				 $termsString = ""; // initialize the string that will contain the terms
 				 foreach ( $termsArray as $term ) { // for each term
 							   $termsString .= $term->slug . ' '; // create a string that has all the slugs
 				 }
@@ -72,33 +72,28 @@ Template Name: Fields of Study
 		 <div class="small-12 medium-6 large-4 columns item <?php echo $termsString; ?>" role="listitem" aria-label="<?php echo the_title();?>"> 
 		 <?php // 'item' is used as an identifier (see Step 5, line 6) ?>
 		 	<div class="small-12 columns field border-<?php echo $termsString; ?>">
-		 					<!-- Display ribbons for discipline taxonomy -->
-						<div class="row">	
-							<div class="small-12 columns disciplines">
-							</div>
-						</div>
-		 			<h3><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a></h3>
-						<p class="contact">
-							<span class="fa fa-envelope"></span>
-								<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
-									<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>
-								</a>
-							
-						</p>
-					<div class="button-group">
-						<?php if (get_post_meta($post->ID, 'ecpt_majors', true) ) : ?>
-							<button type="button" class="button major">Major</button>
-						<?php endif; ?>
-						<?php if (get_post_meta($post->ID, 'ecpt_minors', true) ) : ?>
-							<button type="button" class="button minor">Minor</button>
-						<?php endif; ?>
-						<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true) ) : ?>
-							<button type="button" class="button degrees"><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></button>
-						<?php endif; ?>
-						<?php if (get_post_meta($post->ID, 'ecpt_pcitext', true) ) : ?>
-							<p><?php echo get_post_meta($post->ID, 'ecpt_pcitext', true); ?></p>
-						<?php endif; ?>
-					</div>
+	 			<h3><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a></h3>
+					<p class="contact">
+						<span class="fa fa-envelope"></span>
+							<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
+								<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>
+							</a>
+						
+					</p>
+				<div class="button-group">
+					<?php if (get_post_meta($post->ID, 'ecpt_majors', true) ) : ?>
+						<button type="button" class="button major">Major</button>
+					<?php endif; ?>
+					<?php if (get_post_meta($post->ID, 'ecpt_minors', true) ) : ?>
+						<button type="button" class="button minor">Minor</button>
+					<?php endif; ?>
+					<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true) ) : ?>
+						<button type="button" class="button degrees"><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></button>
+					<?php endif; ?>
+					<?php if (get_post_meta($post->ID, 'ecpt_pcitext', true) ) : ?>
+						<p><?php echo get_post_meta($post->ID, 'ecpt_pcitext', true); ?></p>
+					<?php endif; ?>
+				</div>
 				<span class="hide"><?php echo get_post_meta($post->ID, 'ecpt_keywords', true); ?></span>
 			</div>				
 		 </div> <!-- end item -->

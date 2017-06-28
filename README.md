@@ -9,8 +9,9 @@ Built off [FoundationPress](https://github.com/olefredrik/FoundationPress).
 ### 1. Clone the repository and install with npm
 ```bash
 $ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/olefredrik/FoundationPress.git
-$ cd FoundationPress
+$ git clone https://github.com/ksascomm/Flagship-2017.git
+$ cd Flagship-2017
+$ npm install -g bower (if not already installed)
 $ npm install
 ```
 
