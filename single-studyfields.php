@@ -29,10 +29,10 @@ get_header(); ?>
 
 		<?php
 		    $field = get_post_meta($post->ID, 'ecpt_field_level', true);
-		      if ( ($field == 'undergraduate') || ($field == 'full-graduate' ) ) {
+		      if ( ( 'undergraduate' === $field ) || ( 'full-graduate' === $field ) ) {
 		  locate_template('/template-parts/undergrad-grad.php', true, false);
 		    }
-		     if ( $field == 'part-graduate' ) {
+		     if ( 'part-graduate' === $field ) {
 		   locate_template('/template-parts/part-time-grad.php', true, false);
 		    }
 		?>

@@ -1,6 +1,17 @@
+<?php
+/**
+ * The default template for displaying homepage program finder
+ *
+ * Used for both single and index/archive/search.
+ *
+ * @package FoundationPress
+ * @since FoundationPress 1.0.0
+ */
+
+?>
 <div class="intro" role="main">
 	<div class="fp-intro">
-		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 			<div class="entry-content programs">
 				<h1>

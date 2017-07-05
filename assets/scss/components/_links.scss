@@ -20,6 +20,9 @@
     }
     a {
         color: $blue;
+        &:hover {
+          color: $black;
+        }
     }
 }
 
@@ -69,6 +72,11 @@
   p, .tablepress {
     a {
     @include link;
+      &.button {
+        &:hover, &:active {
+        border: none;
+        } 
+      }
     }
   }
 }

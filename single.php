@@ -6,7 +6,7 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); 
+get_header();
 
 $home_url = home_url();
 $article_title = $post->post_title;
@@ -24,16 +24,17 @@ $article_title = $post->post_title;
 	<article class="main-content">
 		<div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
 
-			<?php $format = get_post_format(); 
-				
-				if ( false === $format ) { $format = 'standard'; }
+			<?php $format = get_post_format();
 
-				if ( $format == 'standard' ) : 
+				if ( false === $format ) { 'standard' === $format; }
 
-					the_post_thumbnail('full', array('class'	=> "floatleft")); 
+				if ( 'standard' === $format ) :
+
+					the_post_thumbnail('full', array(
+						'class' => 'floatleft',
+					));
 
 			endif; ?>
-			
 
 			<header>
 				<h1><small><?php echo get_the_category( $id )[0]->name; ?></small><br>

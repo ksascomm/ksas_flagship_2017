@@ -13,7 +13,9 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
 
 	<div class="large-4 columns">
-		<?php the_post_thumbnail('full', array('class'	=> "floatleft")); ?>
+		<?php the_post_thumbnail('full', array(
+			'class'	=> 'floatleft',
+		)); ?>
 	</div>
 
 	<div class="large-8 columns">

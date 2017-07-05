@@ -237,10 +237,10 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				// Search results page
 				echo '<li class="current item-current-search">Search results for: ' . get_search_query() . '</li>';
 
-			} elseif (is_home()) {
+			} elseif (is_home() ) {
 				echo '<li class="item-parent item-parent-747"><a class="bread-parent bread-parent-747" href="' . site_url() . '/about/" title="About">About</a></li><li class="current item-' . $post->ID . '">' . 'News Archive' . '</li>';
 
-			} elseif ( is_404()) {
+			} elseif ( is_404() ) {
 
 				// 404 page
 				echo '<li>Error 404</li>';

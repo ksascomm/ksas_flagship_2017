@@ -40,8 +40,8 @@ get_header(); ?>
 
 			<?php if ( has_post_thumbnail() ) { ?> 
 					<?php the_post_thumbnail('full', array(
-	'class' => 'headshot',
-)); ?>
+					'class' => 'headshot',
+					)); ?>
 				<?php } ?>	
 
 			</div>
@@ -96,7 +96,7 @@ get_header(); ?>
 	</div>
 	<?php if (has_term('', 'role') && ! has_term('job-market-candidate', 'role') ) : ?>
 
-	<?php if ( $post->post_title == 'Beverly Wendland' ) : ?>
+	<?php if ( 'Beverly Wendland' === $post->post_title ) : ?>
 
 		<div class="row">
 			<ul class="tabs margin10" data-tabs id="profile-tabs">

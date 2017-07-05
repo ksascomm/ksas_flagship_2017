@@ -9,7 +9,7 @@ get_header(); ?>
    'post_type' => 'evergreen',
    'orderby' => 'ID',
    'post_status' => 'publish',
-   'posts_per_page' =>'-1',
+   'posts_per_page' => -1,
 ));
 
 if ( $flagship_evergreen_query->have_posts() ) : ?>
@@ -47,7 +47,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 		<nav class="orbit-bullets">
 		  <?php $entries = $flagship_evergreen_query->post_count; ?>
 		  <?php for ($i = 0; $i < $entries; $i++ ) { ?>
-		    <button class="<?php echo $i == 0 ? 'is-active' : '' ?>" data-slide="<?php echo $i; ?>"></button>
+		    <button class="<?php echo 0 === $i ? 'is-active' : '' ?>" data-slide="<?php echo $i; ?>"></button>
 		  <?php } ?>
 		</nav>   
 	  </div>
@@ -89,11 +89,11 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 					'post_type' => array('deptextra', 'post'),
 					'posts_per_page' => '1',
 					));
-			    	if ( $homepage_query->have_posts() ) : while ( $homepage_query->have_posts() ) : $homepage_query->the_post(); 
+			    	if ( $homepage_query->have_posts() ) : while ( $homepage_query->have_posts() ) : $homepage_query->the_post();
 			    	$format = get_post_format();
 					if ( false === $format ) { $format = 'standard'; }
-					if ( $format == 'video' ) : locate_template('template-parts/home-video.php', true, false); endif;
-					if ( $format == 'standard' ) : locate_template('template-parts/home-news.php', true, false); endif;?>
+					if ( 'video' === $format ) : locate_template('template-parts/home-video.php', true, false); endif;
+					if ( 'standard' === $format ) : locate_template('template-parts/home-news.php', true, false); endif;?>
 				<?php endwhile; endif; ?>
 		   
 		    </div>

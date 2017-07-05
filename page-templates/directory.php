@@ -13,8 +13,8 @@ get_header(); ?>
 			'meta_key' => 'ecpt_people_alpha',
 			'orderby' => 'meta_value',
 			'order' => 'ASC',
-			'posts_per_page' =>'-1',
-));
+			'posts_per_page' => -1,
+			));
 			// set_transient( 'flagship_leadership_query', $flagship_leadership_query, 2592000 ); }
 		?> 
 
