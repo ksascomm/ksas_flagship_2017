@@ -12,11 +12,10 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 
-<article <?php post_class('main-content') ?> id="search-results">
-	<header>
-		<h1 class="entry-title">Search</h1>
-        <p>You are currently searching the Krieger network. Try searching the <a href="https://www.jhu.edu/search/">JHU network</a> for websites beyond KSAS.</p>
-	</header>
+<article <?php post_class('main-content') ?> id="search-results overview">
+	<h1 class="entry-title">Search</h1>
+    <p>You are currently searching the Krieger network. Try searching the <a href="https://www.jhu.edu/search/">JHU network</a> for websites beyond KSAS.</p>
+
 
 	<?php
             try {
@@ -36,11 +35,9 @@ get_header(); ?>
 	?>
 
 	<?php if ($hits > 0 ) { ?>
-                <form class="search-form" action="<?php echo site_url('/search'); ?>" method="get">
+                <form class="search-form" action="<?php echo site_url('/search'); ?>" method="get" aria-label="Search Results Page search bar">
                     <fieldset>
-                        <label>
-                            <input type="text" class="input-text" name="q" value="<?php echo $displayQuery ?>" />
-                        </label>
+                        <input type="text" class="input-text" name="q" aria-label="search" value="<?php echo $displayQuery ?>" />
                         <input type="submit" class="button" id="search_again" value="Search Krieger Network" />
                             <label for="search_again" class="screen-reader-text">
                             Search Again

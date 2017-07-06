@@ -9,22 +9,22 @@
 ?>
 <ul class="menu simple roof-menu">
 	<li class="roof-padding">
-		<form method="GET" action="<?php echo site_url('/search'); ?>" role="search">
+		<form method="GET" action="<?php echo site_url('/search'); ?>" role="search" aria-label="Utility Bar Search">
 			<div class="input-group">
-				<input type="text" value="<?php echo get_search_query(); ?>" name="q" id="s" placeholder="Search this site" aria-label="search"/>
+				<input type="text" value="<?php echo get_search_query(); ?>" name="q" id="utility-search" placeholder="Search this site" aria-label="search"/>
 				<div class="input-group-button">
 	    			<input type="submit" class="button" value="&#xf002;">
 	  			</div>	
-				<label for="s" class="screen-reader-text">
+				<label for="utility-search" class="screen-reader-text">
 	                Search This Website
 	            </label>
 			</div>
 		</form>
 	</li>
-	<li class="roof-padding bar"><a href="https://www.jhu.edu/admissions/visit/">Visit</a></li>
-	<li class="roof-padding"><a href="http://krieger.jhu.edu/magazine/">A&S Magazine</a></li>
-	<li class="button" data-toggle="offCanvasTop1">Explore KSAS <span class="fa fa-bars" aria-hidden="true"></span></li>
-	<div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas>
+	<li class="roof-padding bar"><a href="https://www.jhu.edu/admissions/visit/" target="_blank">Visit</a></li>
+	<li class="roof-padding"><a href="http://krieger.jhu.edu/magazine/" target="_blank">A&S Magazine</a></li>
+	<li><a class="button" href="#" aria-label="Explore KSAS" data-toggle="offCanvasTop1">Explore KSAS <span class="fa fa-bars" aria-hidden="true"></span></a></li>
+	<div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas aria-hidden="true">
 		<div id="global-links" class="row small-up-2 medium-up-3 large-up-3">
 			<div class="column column-block">
 				<h3>Academics</h3>
@@ -33,7 +33,7 @@
 					<li role="menuitem"><a href="<?php echo site_url(); ?>/about/faculty/" onclick="ga('send', 'event', 'Offcanvas', 'Academics', 'Faculty')">Faculty Directory</a></li>
 					<li role="menuitem"><a href="<?php echo site_url(); ?>/academics/fields/" onclick="ga('send', 'event', 'Offcanvas', 'Academics', 'Fields of Study')">Fields of Study</a></li>
 					<li role="menuitem"><a href="http://www.library.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Academics', 'Libraries')">Libraries</a></li>
-					<li role="menuitem"><a href="http://krieger.jhu.edu/academics/majors-minors/" onclick="ga('send', 'event', 'Offcanvas', 'Academics', 'Majors & Minors')">Majors & Minors</a>
+					<li role="menuitem"><a href="http://krieger.jhu.edu/academics/majors-minors/" onclick="ga('send', 'event', 'Offcanvas', 'Academics', 'Majors & Minors')">Majors & Minors</a></li>
 				</ul>
 			</div>
 			<div class="column column-block">
@@ -55,6 +55,9 @@
 					<li role="menuitem"><a href="http://hub.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Campus', 'TheHub')">The Hub</a></li>
 				</ul>
 			</div>
+			<button class="close-button" aria-label="Close menu" type="button" data-close>
+			  <span aria-hidden="true">&times;</span>
+			</button>			
 		</div>
 	</div>
 </ul>

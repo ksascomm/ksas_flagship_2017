@@ -22,9 +22,9 @@
 	$hub_results = json_decode($hub_call['body'], true);
 	$hub_articles = $hub_results['_embedded'];
 	foreach ($hub_articles['articles'] as $hub_article ) { ?>
-		<article class="hub-news" id="post-<?php the_ID(); ?>">
-			<img class="hub-img" src="<?php echo $hub_article['_embedded']['image_thumbnail'][0]['sizes']['thumbnail']; ?>" alt="From The Hub" />
-			<h1><a href="<?php echo $hub_article['url']; ?>"><?php echo $hub_article['headline']; ?></a></h1>
+		<article class="hub-news" aria-labelledby="post-<?php echo $hub_article['id'];?>">
+			<img class="hub-img" src="<?php echo $hub_article['_embedded']['image_thumbnail'][0]['sizes']['thumbnail']; ?>" alt="From The Hub: <?php echo $hub_article['headline']; ?>" />
+			<h1><a href="<?php echo $hub_article['url']; ?>" id="post-<?php echo $hub_article['id'];?>"><?php echo $hub_article['headline']; ?></a></h1>
 			<summary>
 			<p><?php echo $hub_article['subheadline'];
 						if (empty($hub_article['subheadline']) ) {

@@ -10,14 +10,14 @@
 
 ?>
 
-<article class="home-news" id="post-<?php the_ID(); ?>">
+<article class="home-news" aria-label="Spotlight: <?php the_title(); ?>">
 
 <div class="row">
   <div class="large-6 large-push-6 columns">
 
     <?php the_post_thumbnail('full', [
 	   'class' => 'img-responsive large-news',
-	   'title' => 'Feature image',
+	   'alt' =>  get_the_title(),
     ]); ?>
   </div>
   <div class="large-6 large-pull-6 columns">

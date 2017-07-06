@@ -25,7 +25,7 @@ foreach ($string as $items ) : ?>
 	<div class="media-object stack-for-small">
 		<div class="media-object-section hide-for-small-only">
 			<a href="https://twitter.com/<?php echo $items['user']['screen_name'];?>">
-				<img class="avatar" src="<?php echo $items['user']['profile_image_url'];?>">
+				<img alt="<?php echo $items['user']['screen_name'];?> avatar" class="avatar" src="<?php echo $items['user']['profile_image_url'];?>">
 			</a>
 		</div>
 		<div class="media-object-section">

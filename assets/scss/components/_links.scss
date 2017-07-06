@@ -62,7 +62,7 @@
         margin-bottom: 0rem;
       }
       &[type="submit"] {
-        font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: $font-awesome;
       }
     }
   }

@@ -96,12 +96,15 @@
 .roof {
   background-color: $blue;
   width: 100%;
-  padding: 5px 0;
+  padding: .5rem 0;
   li.roof-padding {
     padding-top: .85rem;
   }
   a {
     color: $white;
+  &:hover {
+    color: $black;
+  }
   }
   li.bar {
     a:after { 
@@ -120,7 +123,7 @@
   input {
     height: 1.75rem;
     &[type="submit"] {
-      font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: $font-awesome;
     }
   }
   .button {
@@ -135,6 +138,11 @@
       @include breakpoint (large) {
          float: right;
       }
+  }
+  .menu.simple {
+    a.button {
+      padding: 0.7rem 1rem;
+    }
   }
 }
 .top-bar, .top-bar ul {
@@ -154,7 +162,7 @@
     margin: 0;
   }
   img {
-    padding: .5rem 1rem;
+    padding: .25rem 1rem .75rem;
     //this is when menu breaks line
     @include breakpoint (small) {
       display: block;
@@ -311,7 +319,7 @@ li#menu-item-8798.current_page_item, li#menu-item-8802.current_page_item, li#men
   }
   input {
     &[type="submit"] {
-      font-family: FontAwesome, 'gentona-bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: $font-awesome;
     }
   }
   .input-group-button {

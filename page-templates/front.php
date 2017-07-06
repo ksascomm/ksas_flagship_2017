@@ -14,7 +14,7 @@ get_header(); ?>
 
 if ( $flagship_evergreen_query->have_posts() ) : ?>
 
-<header class="hero" role="banner">
+<header class="hero" role="banner" aria-label="Explore the Krieger School Slider">
 
 	<div class="fullscreen-image-slider show-for-large">
 	  <div class="orbit" role="region" aria-label="FullScreen Pictures" data-orbit>
@@ -25,7 +25,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	      <?php endif;?>
 	      <?php while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
 	      <li class="is-active orbit-slide">
-	        <img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>">
+	        <img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>" alt="<?php the_title(); ?>">
 	        <figcaption class="orbit-caption">
 		        <div class="row">
 			        <div class="small-12 large-push-1 columns">
@@ -44,7 +44,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	      </li>
 	     <?php endwhile;?>
 	    </ul>
-		<nav class="orbit-bullets">
+		<nav class="orbit-bullets" aria-label="Slider Navigation">
 		  <?php $entries = $flagship_evergreen_query->post_count; ?>
 		  <?php for ($i = 0; $i < $entries; $i++ ) { ?>
 		    <button class="<?php echo 0 === $i ? 'is-active' : '' ?>" data-slide="<?php echo $i; ?>"></button>
@@ -73,7 +73,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 
 <div class="texture">
 
-	<section class="news">
+	<section class="news" aria-label="News and Events">
 		
 		<ul class="tabs" data-responsive-accordion-tabs="accordion medium-tabs" id="home-tabs">
 		    <li class="tabs-title is-active"><a href="#spotlight" aria-selected="true">Spotlight</a></li>
@@ -98,13 +98,13 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 		   
 		    </div>
 
-		    <div class="tabs-panel" id="hubnews">
+		    <div class="tabs-panel" id="hubnews" aria-label="Hub News Listing">
 		     
 		     <?php get_template_part( 'template-parts/hub-news' ); ?>
 
 		    </div>
 
-		    <div class="tabs-panel" id="hubevents">
+		    <div class="tabs-panel" id="hubevents" aria-label="Hub Events Listing">
 			
 				<?php get_template_part( 'template-parts/hub-events' ); ?>
 		    
@@ -120,7 +120,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	
 </div>
 
-<section class="connect">
+<section class="connect" aria-label="Connect with the Krieger School">
 	<h2>Connect</h3>
 
 	<div class="social">
@@ -149,7 +149,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 </div>
 
 
-<section class="giving">
+<section class="giving" aria-label="Support the Krieger School">
 
 	<div class="giving-hero">
 	  <div class="giving-hero-content">

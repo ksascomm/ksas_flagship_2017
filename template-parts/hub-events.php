@@ -23,8 +23,8 @@ $hub_event_url = 'https://api.hub.jhu.edu/event_categories/2450,2454,2457,2458,2
 	$hub_event_results = json_decode($hub_event_call['body'], true);
 	$hub_events = $hub_event_results['_embedded'];
 	foreach ($hub_events['events'] as $hub_event ) { ?>
-	<article class="hub-news hub-events end" id="post-<?php the_ID(); ?>">
-		<h1><a href="<?php echo $hub_event['url']; ?>" target="_blank"><?php echo $hub_event['name']; ?></a></h1>
+	<article class="hub-news hub-events end" aria-labelledby="post-<?php echo $hub_event['id'];?>">
+		<h1><a href="<?php echo $hub_event['url']; ?>" target="_blank" id="post-<?php echo $hub_event['id'];?>"><?php echo $hub_event['name']; ?></a></h1>
 		<?php $start = $hub_event['start_time'];
 		$end = $hub_event['end_time'];
 		$date = $hub_event['start_date']; ?>
