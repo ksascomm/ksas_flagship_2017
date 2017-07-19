@@ -13,7 +13,7 @@ get_header(); ?>
 <?php foundationpress_breadcrumb();?>
 <?php while ( have_posts() ) : the_post(); ?>
   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-      <header>
+      <header aria-label="<?php the_title(); ?>">
           <h1 class="entry-title"><?php the_title(); ?></h1>
       </header>
       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>

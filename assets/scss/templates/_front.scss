@@ -525,15 +525,23 @@
 }
 
 .connect {
-  h1 {
-    font-size: 1.25rem;
-    font-family: $font-stack-bold;
+  h1.heading {
+    @include breakpoint(small) {
+      padding-left: 1rem;
+    }
+    @include breakpoint(large) {
+      padding-left: inherit;
+    }
   }
   p {
     font-family: $font-subhead-book;
   }
    @include grid-row();
   .youtube, .twitter, .instagram {
+    h1 {
+      font-size: 1.25rem;
+      font-family: $font-stack-bold;
+    }
     padding: 1rem;
     border: 2px solid $grey;
     @include breakpoint(small) {
@@ -567,6 +575,9 @@
     }
   }
   .instagram {
+    h1 {
+      padding-left: 1rem;
+    }
    img.gram:hover {
       opacity: 0.3;
       filter: alpha(opacity=30);
@@ -593,14 +604,18 @@
     }
   }
   .social {
-    ul.menu.align-right {
+    ul.menu {
       @include breakpoint(small) {
         margin-top: inherit;
+        li {
+          float: left;
+        }
       }
-    }
-    ul.menu.align-right {
       @include breakpoint(large) {
         margin-top: -50px;
+        li {
+            float: right;
+          }
       }
     }
     li.menu-text {

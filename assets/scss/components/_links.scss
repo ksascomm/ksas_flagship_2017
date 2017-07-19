@@ -79,6 +79,20 @@
       }
     }
   }
+  ul.accordion {
+    li.accordion-item {
+      .accordion-content {
+        ul {
+          li {
+            a {
+               @include link;
+            }
+          }
+        }
+      }
+    }
+
+  }
 }
 
 .field {

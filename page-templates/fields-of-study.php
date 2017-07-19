@@ -14,7 +14,7 @@ Template Name: Fields of Study
 	<div class="main-content">
 		<?php while ( have_posts() ) : the_post(); ?>
 		  <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-		      <header>
+		      <header aria-label="<?php the_title(); ?>">
 		          <h1 class="entry-title"><?php the_title(); ?></h1>
 		      </header>
 		      <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
@@ -29,14 +29,14 @@ Template Name: Fields of Study
 			<ul class="menu" id="filters">
 			    <li><a class="button" href="javascript:void(0)" data-filter="*" class="selected">View All</a></li>
 				<li><a class="undergrad_program button" href="javascript:void(0)" data-filter=".undergrad_program" class="selected">Undergraduate</a></li>
-				<li><a class="full_time_program button" href="javascript:void(0)" data-filter=".full_time_program" class="selected">Full-Time Masters & Doctorates</a></li>
-				<li><a class="part_time_program button" href="javascript:void(0)" data-filter=".part_time_program" class="selected">Part-Time/Online Masters & Certificates</a></li>
+				<li><a class="full_time_program button" href="javascript:void(0)" data-filter=".full_time_program" class="selected">Full-Time Master's & Doctorates</a></li>
+				<li><a class="part_time_program button" href="javascript:void(0)" data-filter=".part_time_program" class="selected">Part-Time/Online Master's & Certificates</a></li>
 			</ul>
 
 			<div class="row">
 				<div class="small-12 columns">
 					<label for="id_search">
-						<h4>Search our Fields of Study by keyword:</h4>
+						<h4>Search our fields of study by keyword:</h4>
 					</label>	
 					<div class="input-group">
 						<span class="input-group-label">
@@ -96,6 +96,13 @@ Template Name: Fields of Study
 					<?php endif; ?>
 				</div>
 				<span class="hide"><?php echo get_post_meta($post->ID, 'ecpt_keywords', true); ?></span>
+				
+				<div class="level-color">
+					<div class="small-12 columns">
+						<div class="color <?php echo $termsString; ?>"></div>
+					</div>
+				</div>
+
 			</div>				
 		 </div> <!-- end item -->
 		    <?php endwhile;  ?>

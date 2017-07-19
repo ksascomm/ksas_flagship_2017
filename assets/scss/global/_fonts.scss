@@ -41,3 +41,13 @@
   font-weight: 700;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'gentona-semibold';
+  src: url('../fonts/gentona/Gentona-SemiBold.eot');
+  src: url('../fonts/gentona/Gentona-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gentona/Gentona-SemiBold.woff') format('woff'),
+       url('../fonts/gentona/Gentona-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}

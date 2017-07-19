@@ -121,7 +121,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 </div>
 
 <section class="connect" aria-label="Connect with the Krieger School">
-	<h2>Connect</h3>
+	<h1 class="heading">Connect</h1>
 
 	<div class="social">
 		<ul class="menu align-right">
@@ -132,15 +132,16 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 			<li class="menu-text">#jhuksas</li>
 		</ul>
 	</div>
-		<div class="instagram">
-			<h1>instagram <span class="fa fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
-			<?php get_template_part( 'template-parts/feed-instagram' ); ?>
-			    
-		</div>
-		<div class="twitter">
-			<h1>twitter <span class="fa fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
-			<?php get_template_part( 'template-parts/feed-twitter' ); ?>
-		</div>
+
+	<div class="instagram">
+		<h1>instagram <span class="fa fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
+		<?php get_template_part( 'template-parts/feed-instagram' ); ?>
+		    
+	</div>
+	<div class="twitter">
+		<h1>twitter <span class="fa fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
+		<?php get_template_part( 'template-parts/feed-twitter' ); ?>
+	</div>
 </section>
 
 

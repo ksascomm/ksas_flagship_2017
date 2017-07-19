@@ -111,24 +111,19 @@ li.person {
 .field {
   @include breakpoint(small) {
     margin-bottom: 1.25rem;
-    max-width: 250px;
-    border: .1875em solid black;
-    border-width: .25em;
-    border: none;
+    //max-width: 250px;
+    border: .1875em solid $black;
     min-height: 150px;
   } 
   @include breakpoint(medium) {
-    max-width: 275px;
-    border: .1875em solid black;
+    //max-width: 275px;
     border-width: .25em;
   }
   @include breakpoint(large) {
     min-height: 255px;
     margin-bottom: 30px;
-    max-width: 305px;
-    min-width: 240px;
-    border: .1875em solid black;
-    border-width: .25em;
+    //max-width: 305px;
+    //min-width: 240px;
   }
   p {
     color: $black;
@@ -161,12 +156,42 @@ li.person {
     }
   }
 }
+#isotope-list{
+    .level-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    .color {
+    height: 1em;
+    float: left;
+    background-color: #000;
+    }
+    .color.undergrad_program {
+      background-color: $skyblue;
+    }
+    .color.full_time_program {
+      background-color: $aqua;
+    }
+    .color.part_time_program {
+      background-color: $gold;
+    }
+    .color.full_time_program.undergrad_program {
+      background: linear-gradient(to left, $aqua 50%, $skyblue 50%);
+    }
+  }
+  .color {
+    width: 100%;
+  }
+}
 ul.fields-of-study li {
   font-size: 1rem;
 }
 .field .floatright {
   margin-left: 0;
 }
+/*
 .border-undergrad_program {
   border-top: .75em solid $skyblue;
 }
@@ -187,6 +212,7 @@ ul.fields-of-study li {
 .border-part_time_program {
   border-top: .75em solid $gold;
 }
+*/
 .disciplines {
   height: 15px;
 }

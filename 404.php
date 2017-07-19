@@ -10,7 +10,7 @@ get_header(); ?>
 
  <div class="main-wrap sidebar-left" role="main">
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-		<header>
+		<header aria-label="Page Not Found">
 			<h1 class="entry-title"><?php _e( 'Not Found', 'foundationpress' ); ?></h1>
 		</header>
 		<div class="entry-content">
