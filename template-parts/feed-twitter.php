@@ -14,11 +14,14 @@ if (isset($_GET['count']) ) {$count = $_GET['count'];} else {$count = 2;}
 $getfield = "?screen_name=$user&count=$count";
 $twitter = new TwitterAPIExchange($settings);
 
+if ( false === ( $string = get_transient( 'twitter_query' ) ) ) {    
+
 $string = json_decode($twitter->setGetfield($getfield)
              ->buildOauth($url, $requestMethod)
              ->performRequest(),$assoc = true);
 // if($string["errors"][0]["message"] != "") {echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>".$string[errors][0]["message"]."</em></p>";exit();}
 
+set_transient( 'twitter_query', $string, 86400 ); }
 
 foreach ($string as $items ) : ?>
 

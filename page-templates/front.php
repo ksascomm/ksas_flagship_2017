@@ -5,12 +5,18 @@ Template Name: Front
 get_header(); ?>
 <!--ORBIT SLIDER -->
 
-<?php $flagship_evergreen_query = new WP_Query(array(
+<?php if ( false === ( $flagship_evergreen_query = get_transient( 'flagship_evergreen_query' ) ) ) {
+
+$flagship_evergreen_query = new WP_Query(array(
    'post_type' => 'evergreen',
    'orderby' => 'ID',
    'post_status' => 'publish',
    'posts_per_page' => -1,
 ));
+
+set_transient( 'slider_query', $flagship_evergreen_query, 86400 );
+	
+} 	
 
 if ( $flagship_evergreen_query->have_posts() ) : ?>
 

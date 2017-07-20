@@ -17,9 +17,9 @@
 
 <?php
 $hub_event_url = 'https://api.hub.jhu.edu/event_categories/2450,2454,2457,2458,2459,2460,2461,2519,2520,2521,2522/events?v=0&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&return_format=json&per_page=4';
-// if ( false === ( $hub_call = get_transient( 'flagship_hub_query' ) ) ) {
+if ( false === ( $hub_event_call = get_transient( 'flagship_hub_events_query' ) ) ) {
 	$hub_event_call = wp_remote_get($hub_event_url);
-// set_transient( 'flagship_hub_query', $hub_call, 86400 ); }
+ set_transient( 'flagship_hub_events_query', $hub_event_call, 86400 ); }
 	$hub_event_results = json_decode($hub_event_call['body'], true);
 	$hub_events = $hub_event_results['_embedded'];
 	foreach ($hub_events['events'] as $hub_event ) { ?>

@@ -29,7 +29,7 @@
 				<div class="row hide-for-small-only small-up-1 medium-up-2 large-up-5">	
 						<div class="grid">
 							<figure class="effect-oscar">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes.jpg" class="" alt="">
 								<figcaption>
 									<h2>Departments</h2>
 									<p>Explore 50-plus departments, programs, centers, and institutes</p>
@@ -37,7 +37,7 @@
 								</figcaption>			
 							</figure>
 							<figure class="effect-oscar">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes.jpg" class="" alt="">
 								<figcaption>
 									<h2>Majors & Minors</h2>
 									<p>Choose from more than 60 undergraduate majors and minors</p>							
@@ -45,7 +45,7 @@
 								</figcaption>			
 							</figure>
 							<figure class="effect-oscar">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes.jpg" class="" alt="">
 								<figcaption>
 									<h2>Undergraduate</h2>
 									<p>See all Krieger School undergraduate fields of study</p>
@@ -53,7 +53,7 @@
 								</figcaption>			
 							</figure>
 							<figure class="effect-oscar">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes.jpg" class="" alt="">
 								<figcaption>
 									<h2>Graduate Full-Time</h2>
 									<p>Master's and doctoral programs at the Krieger School</p>
@@ -61,7 +61,7 @@
 								</figcaption>			
 							</figure>
 							<figure class="effect-oscar">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes.jpg" class="" alt="">
 								<figcaption>
 									<h2>Graduate Part-Time</h2>
 									<p>Advanced Academic Programs offers online master's programs and graduate certificates</p>
@@ -69,7 +69,7 @@
 								</figcaption>			
 							</figure>
 							<figure class="effect-oscar">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes616x434px.jpg" class="" alt="">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/frontpage/bg-program-boxes.jpg" class="" alt="">
 								<figcaption>
 									<h2>Explore All of JHU</h2>
 									<p>Search the other 8 divisions at Johns Hopkins University</p>

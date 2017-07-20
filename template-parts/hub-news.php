@@ -16,9 +16,9 @@
 
 	<?php
 	$hub_url = 'https://api.hub.jhu.edu/articles?v=0&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&return_format=json&divisions=426&per_page=4';
-// if ( false === ( $hub_call = get_transient( 'flagship_hub_query' ) ) ) {
+if ( false === ( $hub_call = get_transient( 'flagship_hub_query' ) ) ) {
 		$hub_call = wp_remote_get($hub_url);
-// set_transient( 'flagship_hub_query', $hub_call, 86400 ); }
+set_transient( 'flagship_hub_query', $hub_call, 86400 ); }
 	$hub_results = json_decode($hub_call['body'], true);
 	$hub_articles = $hub_results['_embedded'];
 	foreach ($hub_articles['articles'] as $hub_article ) { ?>

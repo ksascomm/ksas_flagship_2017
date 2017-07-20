@@ -578,10 +578,21 @@
     h1 {
       padding-left: 1rem;
     }
-   img.gram:hover {
-      opacity: 0.3;
-      filter: alpha(opacity=30);
-   }
+    img.gram {
+      padding-top: 1rem;
+      @include breakpoint(small) {
+        display: block;
+        margin: auto;
+      }
+      @include breakpoint (medium) {
+        display: inherit;
+        margin: inherit;
+      }
+      &:hover {
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+      }
+    }
    .gram-link {
     margin-top: 2rem;
    }
@@ -592,9 +603,6 @@
     @include breakpoint (medium) {
       display: inherit;
     }
-   }
-   .card {
-    margin-top: 1rem;
    }
   }
 

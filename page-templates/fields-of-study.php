@@ -51,17 +51,20 @@ Template Name: Fields of Study
 			</div>
 		</div>
 
-		<?php $the_query = new WP_Query(array(
+		<?php if ( false === ( $flagship_studyfields_query = get_transient( 'flagship_studyfields_query' ) ) ) {
+			// It wasn't there, so regenerate the data and save the transient
+			$flagship_studyfields_query = new WP_Query(array(
 			'post_type' => 'studyfields',
 			'orderby' => 'title',
 			'order' => 'ASC',
 			'posts_per_page' => -1,
-			)); ?>
-		<?php if ( $the_query->have_posts() ) : ?>
+			)); set_transient( 'flagship_studyfields_query', $flagship_studyfields_query, 2592000 ); } 
+
+			if ( $flagship_studyfields_query->have_posts() ) : ?>
 		    
 
 		    <div id="isotope-list" role="region" aria-label="Results">
-		    <?php while ( $the_query->have_posts() ) : $the_query->the_post();
+		    <?php while ( $flagship_studyfields_query->have_posts() ) : $flagship_studyfields_query->the_post();
 				 $termsArray = get_the_terms( $post->ID, 'program_type' );  // Get the terms for this particular item
 				 $termsString = ''; // initialize the string that will contain the terms
 				 foreach ( $termsArray as $term ) { // for each term
