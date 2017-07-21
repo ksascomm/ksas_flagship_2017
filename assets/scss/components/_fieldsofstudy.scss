@@ -156,8 +156,40 @@ li.person {
     }
   }
 }
+
+
+.fields-of-study {
+    position: relative;
+    overflow: hidden;
+}
+
+.fields-of-study:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    margin: -24px 0 0 -24px;
+    width: 75px;
+    height: 75px;
+    background: url(../images/icons/loading.gif) no-repeat 0 0;
+}
+
+.fields-of-study.loading .item {
+    opacity: 0;
+}
+.fields-of-study.loading:after {
+    opacity: 1;
+}
+
+.fields-of-study,
+.fields-of-study:after {
+    transition: 750ms opacity;
+}
+
+
 #isotope-list{
-    .level-color {
+  .level-color {
     position: absolute;
     top: 0;
     left: 0;

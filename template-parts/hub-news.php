@@ -15,7 +15,7 @@
 </h1>
 
 	<?php
-	$hub_url = 'https://api.hub.jhu.edu/articles?v=0&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&return_format=json&divisions=426&per_page=4';
+	$hub_url = 'https://api.hub.jhu.edu/articles?v=1&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&divisions=426&per_page=4';
 if ( false === ( $hub_call = get_transient( 'flagship_hub_query' ) ) ) {
 		$hub_call = wp_remote_get($hub_url);
 set_transient( 'flagship_hub_query', $hub_call, 86400 ); }

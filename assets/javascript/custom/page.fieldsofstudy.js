@@ -42,7 +42,6 @@ var $quicksearch = $('#id_search').keyup( debounce( function() {
 
   // display message box if no filtered items
 
-  $('#noResult').hide();
 if ( !$grid.data('isotope').filteredItems.length ) {
   $('#noResult').show();
 } else {
@@ -111,5 +110,20 @@ event.preventDefault();
     onHashChange();
     // Run onHashChange any time the URL hash changes
     window.onhashchange = onHashChange;
+
+    (function($){
+	var $doc = $(document),
+		$win = $(window);
+
+	$win.on('load', function(){
+		// document is fully loaded
+
+		$('#isotope-list').isotope();   
+        // set timeout to fake 1 sec loading
+        setTimeout(function(){
+            $('#isotope-list').removeClass('loading');
+        }, 1000);  
+	});
+})(jQuery);
 
 });

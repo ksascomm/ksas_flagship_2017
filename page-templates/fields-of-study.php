@@ -63,7 +63,7 @@ Template Name: Fields of Study
 			if ( $flagship_studyfields_query->have_posts() ) : ?>
 		    
 
-		    <div id="isotope-list" role="region" aria-label="Results">
+		    <div id="isotope-list" class="fields-of-study loading" role="region" aria-label="Results">
 		    <?php while ( $flagship_studyfields_query->have_posts() ) : $flagship_studyfields_query->the_post();
 				 $termsArray = get_the_terms( $post->ID, 'program_type' );  // Get the terms for this particular item
 				 $termsString = ''; // initialize the string that will contain the terms

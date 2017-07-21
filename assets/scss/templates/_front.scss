@@ -157,8 +157,6 @@
   .home-content {
     padding-bottom: 1rem;
 
-    @include grid-col;
-
     @include breakpoint(large) {
       p {
         font-size: 1.35rem;
@@ -542,6 +540,11 @@
       font-size: 1.25rem;
       font-family: $font-stack-bold;
     }
+    h1.twitter-byline {
+      small {
+        color: $darkgrey;
+      }
+    }
     padding: 1rem;
     border: 2px solid $grey;
     @include breakpoint(small) {
@@ -566,12 +569,6 @@
     }
     .callout {
       //border-width: 2px;
-    }
-    h5 {
-      font-family: $font-stack-bold;
-      small {
-        color: $darkgrey;
-      }
     }
   }
   .instagram {

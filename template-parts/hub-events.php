@@ -16,7 +16,7 @@
 </h1>
 
 <?php
-$hub_event_url = 'https://api.hub.jhu.edu/event_categories/2450,2454,2457,2458,2459,2460,2461,2519,2520,2521,2522/events?v=0&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&return_format=json&per_page=4';
+$hub_event_url = 'https://api.hub.jhu.edu/events?v=1&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&locations=668&include_subterms=668&per_page=4';
 if ( false === ( $hub_event_call = get_transient( 'flagship_hub_events_query' ) ) ) {
 	$hub_event_call = wp_remote_get($hub_event_url);
  set_transient( 'flagship_hub_events_query', $hub_event_call, 86400 ); }
@@ -28,8 +28,8 @@ if ( false === ( $hub_event_call = get_transient( 'flagship_hub_events_query' ) 
 		<?php $start = $hub_event['start_time'];
 		$end = $hub_event['end_time'];
 		$date = $hub_event['start_date']; ?>
-		<h3><span class="fa fa-calendar" aria-hidden="true"></span> <?php echo date('m/d/Y', strtotime($date));?></h3>
-		<h4><span class="fa fa-clock-o" aria-hidden="true"></span> <?php echo date('h:i a', strtotime($start));?> - <?php echo date('h:i a', strtotime($end));?></h4>
+		<h3><span class="fa fa-calendar" aria-label="date"></span> <?php echo date('m/d/Y', strtotime($date));?></h3>
+		<h4><span class="fa fa-clock-o" aria-label="time"></span> <?php echo date('h:i a', strtotime($start));?> - <?php echo date('h:i a', strtotime($end));?></h4>
 		<summary>
 		<p><?php echo $hub_event['description'];
 		if (empty($hub_event['description']) ) {

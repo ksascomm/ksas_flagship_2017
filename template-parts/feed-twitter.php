@@ -32,11 +32,11 @@ foreach ($string as $items ) : ?>
 			</a>
 		</div>
 		<div class="media-object-section">
-			<h5><?php echo $items['user']['name'];?>
+			<h1 class="twitter-byline"><?php echo $items['user']['name'];?>
 			<small><?php $date = $items['created_at'];
 			echo date('m/d/Y', strtotime($date));?>
 			</small>
-			</h5>
+			</h1>
 			<p>
 				<a href="https://twitter.com/<?php echo $items['user']['screen_name'];?>/status/<?php echo $items['id'];?>" target="_blank">
 					<?php $items['text'] = preg_replace('/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', '', $items['text']); echo $items['text'];?>

@@ -14,7 +14,7 @@ $flagship_evergreen_query = new WP_Query(array(
    'posts_per_page' => -1,
 ));
 
-set_transient( 'slider_query', $flagship_evergreen_query, 86400 );
+set_transient( 'flagship_evergreen_query', $flagship_evergreen_query, 86400 );
 	
 } 	
 
@@ -138,15 +138,17 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 			<li class="menu-text">#jhuksas</li>
 		</ul>
 	</div>
+	
+		<div class="instagram" aria-labelledby="instagram-link" role="contentinfo">
+			<h1 id="instagram-link">instagram <span class="fa fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
+			<?php get_template_part( 'template-parts/feed-instagram' ); ?>
+			    
+		</div>
 
-	<div class="instagram">
-		<h1>instagram <span class="fa fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
-		<?php get_template_part( 'template-parts/feed-instagram' ); ?>
-		    
-	</div>
-	<div class="twitter">
-		<h1>twitter <span class="fa fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
-		<?php get_template_part( 'template-parts/feed-twitter' ); ?>
+		<div class="twitter" aria-labelledby="twitter-link" role="contentinfo">
+			<h1 id="twitter-link">twitter <span class="fa fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
+			<?php get_template_part( 'template-parts/feed-twitter' ); ?>
+		</div>
 	</div>
 </section>
 
