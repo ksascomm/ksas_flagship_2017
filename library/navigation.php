@@ -111,13 +111,14 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 		$category = get_the_category();
 
 		// Build the breadcrums
-		echo '<ul id="' . $id . '" class="' . $class . '">';
+		echo '<p class="screen-reader-text" id="breadcrumblabel">You are here:</p>';
+		echo '<ul id="' . $id . '" class="' . $class . '" aria-labelledby="breadcrumblabel">';
 
 		// Do not display on the homepage
 		if ( ! is_front_page() ) {
 
 			// Home page
-			echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';
+			echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '">' . $home_title . '</a></li>';
 			if ( $separatorclass ) {
 				echo '<li class="separator separator-home"> ' . $separator . ' </li>';
 			}
@@ -129,7 +130,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 				if ( $separatorclass ) {
 					echo '<li class="separator separator-' . $category[0]->term_id . '"> ' . $separator . ' </li>';
 				}
-				echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
+				echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '">' . get_the_title() . '</strong></li>';
 
 			} elseif ( is_category() ) {
 
@@ -152,7 +153,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 					// Parent page loop
 					$parents = '';
 					foreach ( $anc as $ancestor ) {
-						$parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li>';
+						$parents .= '<li class="item-parent item-parent-' . $ancestor . '"><a class="bread-parent bread-parent-' . $ancestor . '" href="' . get_permalink($ancestor) . '">' . get_the_title($ancestor) . '</a></li>';
 						if ( $separatorclass ) {
 							$parents .= '<li class="separator separator-' . $ancestor . '"> ' . $separator . ' </li>';
 						}

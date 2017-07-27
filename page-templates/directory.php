@@ -43,17 +43,15 @@ get_header(); ?>
 				<?php while ($flagship_leadership_query->have_posts() ) : $flagship_leadership_query->the_post(); ?>
 						<li class="item person">
 							<div class="media-object">
-								<div class="media-object-section">
-
 								<?php if ( has_post_thumbnail() ) { ?> 
-									<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('directory', array(
-	'class' => 'padding-five floatleft hide-for-small',
-)); ?></a>
+									<div class="media-object-section">
+										<a href="<?php the_permalink();?>"><?php the_post_thumbnail('directory'); ?>
+										</a>							
+									</div>
 								<?php } ?>	
-								</div>
 								<div class="media-object-section">
 								<h4 class="no-margin">
-									<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+									<a href="<?php the_permalink();?>"><?php the_title(); ?></a>
 								</h4>
 								<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
 									<h5 class="no-margin"><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h5>

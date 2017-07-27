@@ -8,7 +8,7 @@
 
 ?>
 
-<nav class="mobile-off-canvas-menu off-canvas position-right" id="<?php foundationpress_mobile_menu_id(); ?>" data-off-canvas data-auto-focus="false" role="navigation" aria-label="Mobile Menu">
+<nav class="mobile-off-canvas-menu off-canvas position-right" id="<?php foundationpress_mobile_menu_id(); ?>" data-off-canvas data-auto-focus="false" role="navigation" aria-label="Mobile Menu" aria-hidden="true">
 	<div class="row">
 		<div class="small-12 columns">
 			<form method="GET" action="<?php echo site_url('/search'); ?>" role="search" aria-label="Mobile Menu Search">

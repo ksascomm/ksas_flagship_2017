@@ -43,9 +43,6 @@ Template Name: Fields of Study
 							<span class="fa fa-search"></span>
 						</span>
 							<input class="quicksearch input-group-field" type="text" name="search" id="id_search" aria-label="Search Fields of Study" placeholder="Enter major/minor, area of study, or description keyword"  /> 
-							<label for="id_search" class="screen-reader-text">
-								Search Fields of Study
-							</label>
 					</div>
 				</div>
 			</div>
@@ -86,13 +83,13 @@ Template Name: Fields of Study
 					</p>
 				<div class="button-group">
 					<?php if (get_post_meta($post->ID, 'ecpt_majors', true) ) : ?>
-						<button type="button" class="button major">Major</button>
+						<div class="button major">Major</div>
 					<?php endif; ?>
 					<?php if (get_post_meta($post->ID, 'ecpt_minors', true) ) : ?>
-						<button type="button" class="button minor">Minor</button>
+						<div class="button minor">Minor</div>
 					<?php endif; ?>
 					<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true) ) : ?>
-						<button type="button" class="button degrees"><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></button>
+						<div class="button degrees"><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></div>
 					<?php endif; ?>
 					<?php if (get_post_meta($post->ID, 'ecpt_pcitext', true) ) : ?>
 						<p><?php echo get_post_meta($post->ID, 'ecpt_pcitext', true); ?></p>

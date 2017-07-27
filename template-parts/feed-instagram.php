@@ -16,6 +16,7 @@ set_transient( 'instagram_query', $obj, 86400 ); }
 foreach ($obj['data'] as $post ) {
 
     $pic_text = $post['caption']['text'];
+    $excerpt_text = substr($pic_text, 0, 45);
     $pic_link = $post['link'];
     $pic_like_count = $post['likes']['count'];
     $pic_comment_count = $post['comments']['count'];
@@ -25,7 +26,7 @@ foreach ($obj['data'] as $post ) {
 
     echo "<div class='small-12 medium-6 large-3 columns instagram-card'>";    
         echo "<a href='{$pic_link}' target='_blank'>";
-            echo "<img class='gram' src='{$pic_src}' alt='{$pic_text}'>";
+            echo "<img class='gram' src='{$pic_src}' alt='{$excerpt_text}...'>";
         echo '</a>';
     echo '</div>';
 }
