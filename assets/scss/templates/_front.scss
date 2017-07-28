@@ -632,6 +632,7 @@
 $giving-hero-height: 50vh;
 
 .giving-hero {
+  background: $blue;
   background: url('../images/frontpage/homepage-giving-image.jpg') top right no-repeat;
   @include breakpoint (large) {
     height: $giving-hero-height;

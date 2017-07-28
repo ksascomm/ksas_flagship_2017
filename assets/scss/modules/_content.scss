@@ -180,12 +180,17 @@ padding: 0 1.25rem .1rem 1.25rem;
   } 
 }
 
-a.skipLink {
-  position: absolute;
-  left: -9999px;
-  background: $white;
-  padding: 5px 10px;
+a.skiplink {
+  font-family: $font-stack-bold;
+  border-bottom: none;
+  padding: .25em;
+  position: fixed;
+  top: -30em;
+  background-color: #FFF;
+  text-align: center;
+  display: block;
   &:focus, &:active, &:hover {
-    left: 0;
+    position: relative;
+    top: 0;
   }
 }

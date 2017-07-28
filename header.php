@@ -17,16 +17,18 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-	<a class="skiplink show-on-focus" href="#page">Skip to Content</a>
+	<a class="skiplink show-on-focus" href="#page">Skip to main content</a>
 
 	<?php do_action( 'foundationpress_after_body' ); ?>
+
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
+	
 	<div class="off-canvas-wrapper">
 	
-
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 
 	<?php endif; ?>
+
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 	
 
@@ -67,5 +69,5 @@
 		</nav>
 	</header>
 
-	<section class="container" aria-label="Main Content Area" id="page" tabindex="0">
+	<section class="container" aria-label="Main Content Area" id="page">
 		<?php do_action( 'foundationpress_after_header' );

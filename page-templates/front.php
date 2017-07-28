@@ -25,15 +25,15 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	<div class="fullscreen-image-slider show-for-large">
 	  <div class="orbit" role="region" aria-label="FullScreen Pictures" data-orbit>
 	    <ul class="orbit-container">
-	     <?php if ($flagship_evergreen_query->post_count > 1 ) : ?>
-	      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true"></span></button>
-	      <button class="orbit-next"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true"></span></button>
-	      <?php endif;?>
-	      <?php while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
-	      <li class="is-active orbit-slide">
-	        <img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>" alt="<?php the_title(); ?>">
-	        <figcaption class="orbit-caption">
-		        <div class="row">
+			<?php if ($flagship_evergreen_query->post_count > 1 ) : ?>
+			<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true"></span></button>
+			<button class="orbit-next"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true"></span></button>
+			<?php endif;?>
+			<?php while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
+			<li class="is-active orbit-slide">
+			<img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>" alt="<?php the_title(); ?>">
+			<figcaption class="orbit-caption">
+			    <div class="row">
 			        <div class="small-12 large-push-1 columns">
 			          <h1><?php the_title(); ?></h1>
 			          	<div class="show-for-medium">
@@ -45,17 +45,20 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 								<?php endif; ?>
 			          	</div>
 			         </div>
-		         </div>
-	        </figcaption>
-	      </li>
-	     <?php endwhile;?>
+			     </div>
+			</figcaption>
+			</li>
+			<?php endwhile;?>
 	    </ul>
-		<nav class="orbit-bullets" aria-label="Slider Navigation">
-		  <?php $entries = $flagship_evergreen_query->post_count; ?>
-		  <?php for ($i = 0; $i < $entries; $i++ ) { ?>
-		    <button class="<?php echo 0 === $i ? 'is-active' : '' ?>" data-slide="<?php echo $i; ?>"></button>
-		  <?php } ?>
-		</nav>   
+		<nav class="orbit-bullets">
+			<?php $bullet_counter = 0; while( $flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post();
+			 $slide_image = get_post_meta($post->ID, 'ecpt_fullimage', true); ?>
+				<button<?php if( $bullet_counter === 0 ) : echo ' class="is-active"'; endif; ?> data-slide="<?php echo $bullet_counter; ?>">
+					<span class="show-for-sr">Slide of <?php echo the_title(); ?></span>
+					<?php if( $bullet_counter === 0 ) :?><span class="show-for-sr">Current Slide</span><?php endif; ?>
+				</button>
+			<?php $bullet_counter++; endwhile; ?>
+		</nav>		
 	  </div>
 	</div>
 
@@ -74,8 +77,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 </div>
 
-<div class="section-divider"> 
-</div>
+<div class="section-divider"></div>
 
 <div class="texture">
 
@@ -122,9 +124,9 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 
 	</section>
 </div>
-<div class="section-divider">
-	
-</div>
+
+
+<div class="section-divider"></div>
 
 <section class="connect" aria-label="Connect with the Krieger School">
 	<h1 class="heading">Connect</h1>
@@ -137,26 +139,21 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 			<li><a href="http://facebook.com/jhuksas"><span class="fi-list fa fa-facebook-official fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
 			<li class="menu-text">#jhuksas</li>
 		</ul>
+	</div>	
+	<div class="instagram" aria-labelledby="instagram-link" role="contentinfo">
+		<h1 id="instagram-link">instagram <span class="fa fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
+		<?php get_template_part( 'template-parts/feed-instagram' ); ?>
+		    
 	</div>
-	
-		<div class="instagram" aria-labelledby="instagram-link" role="contentinfo">
-			<h1 id="instagram-link">instagram <span class="fa fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
-			<?php get_template_part( 'template-parts/feed-instagram' ); ?>
-			    
-		</div>
 
-		<div class="twitter" aria-labelledby="twitter-link" role="contentinfo">
-			<h1 id="twitter-link">twitter <span class="fa fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
-			<?php get_template_part( 'template-parts/feed-twitter' ); ?>
-		</div>
+	<div class="twitter" aria-labelledby="twitter-link" role="contentinfo">
+		<h1 id="twitter-link">twitter <span class="fa fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
+		<?php get_template_part( 'template-parts/feed-twitter' ); ?>
 	</div>
+
 </section>
 
-
-<div class="section-divider">
-
-</div>
-
+<div class="section-divider"></div>
 
 <section class="giving" aria-label="Support the Krieger School">
 
