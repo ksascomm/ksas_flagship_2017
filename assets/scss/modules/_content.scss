@@ -120,6 +120,19 @@ padding: 0 1.25rem .1rem 1.25rem;
     &:last-of-type {
       padding-bottom: 1rem;
     }
+    ul {
+      li {
+        margin-left: 1.25rem;
+      }
+    }
+    a.button{
+      color: $white;
+      margin-top: .5rem;
+      border: none;
+      &:hover {
+        border: none;
+      }
+    }
   }
   .sidebar_header, h5 {
     background-color: $skyblue;

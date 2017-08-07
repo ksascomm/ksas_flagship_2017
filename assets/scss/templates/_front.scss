@@ -359,7 +359,6 @@
 .section-divider {
   margin: 2rem 0;
   @include grid-row();
-
   hr {
     @include grid-column(12);
     @extend .dotted;
