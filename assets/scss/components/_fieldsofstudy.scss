@@ -75,11 +75,18 @@ li.person {
   .button {
     margin: .5rem;
     font-family: $font-stack-bold;
+    font-size: .88rem;
     &.is-checked {
       background-color: transparent;
       border: 1px solid $blue;
       color: $blue;
-    } 
+    }
+    @include breakpoint(medium only) {
+      font-size: 1.25rem;
+    }
+    @include breakpoint(large) {
+      //padding: 1rem;
+    }
   }
   .button.undergrad_program {
     background: $skyblue;
@@ -281,7 +288,7 @@ ul.fields-of-study li {
     @include breakpoint(small) {
       display: list-item;
     }
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       display: table-cell;
     }
   }

@@ -23,7 +23,7 @@
   <div class="large-6 large-pull-6 columns">
       <h1><small><?php echo get_the_category( $id )[0]->name; ?></small><br>
       <?php the_title(); ?></h1> 
-      <p><?php the_excerpt(); ?></p>
+      <?php the_excerpt(); ?>
 
      <?php if ( get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
       	<a href="<?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>" target="_blank" class="button" title="<?php the_title(); ?>">Read the Full Story</a>

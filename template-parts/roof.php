@@ -28,6 +28,7 @@
 
 <div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas aria-hidden="true">
 	<div id="global-links" class="row small-up-2 medium-up-3 large-up-3">
+	<h1 class="show-for-sr">Explore KSAS</h1>
 		<div class="column column-block">
 			<h3>Academics</h3>
 			<ul class="vertical menu" role="menu">
