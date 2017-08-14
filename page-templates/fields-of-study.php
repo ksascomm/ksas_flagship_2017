@@ -62,17 +62,20 @@ Template Name: Fields of Study
 
 		    <div id="isotope-list" class="fields-of-study loading" role="region" aria-label="Results">
 		    <?php while ( $flagship_studyfields_query->have_posts() ) : $flagship_studyfields_query->the_post();
-				 $termsArray = get_the_terms( $post->ID, 'program_type' );  // Get the terms for this particular item
-				 $termsString = ''; // initialize the string that will contain the terms
-				 foreach ( $termsArray as $term ) { // for each term
-							   $termsString .= $term->slug . ' '; // create a string that has all the slugs
-				 }
+				$program_types = get_the_terms( $post->ID, 'program_type' );
+					if ( $program_types && ! is_wp_error( $program_types ) ) : 
+						$program_type_names = array();
+							foreach ( $program_types as $program_type ) {
+								$program_type_names[] = $program_type->slug;
+							}
+					$program_type_name = join( " ", $program_type_names );
+				endif;
 			?> 
 
 
-		 <div class="small-12 medium-6 large-4 columns item <?php echo $termsString; ?>" role="listitem" aria-label="<?php echo the_title();?>"> 
+		 <div class="small-12 medium-6 large-4 columns item <?php echo $program_type_name; ?>" role="listitem" aria-label="<?php echo the_title();?>"> 
 		 <?php // 'item' is used as an identifier (see Step 5, line 6) ?>
-		 	<div class="small-12 columns field border-<?php echo $termsString; ?>">
+		 	<div class="small-12 columns field border-<?php echo $program_type_name; ?>">
 	 			<h3><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a></h3>
 					<p class="contact">
 						<span class="fa fa-envelope"></span>
@@ -99,7 +102,7 @@ Template Name: Fields of Study
 				
 				<div class="level-color">
 					<div class="small-12 columns">
-						<div class="color <?php echo $termsString; ?>"></div>
+						<div class="color <?php echo $program_type_name; ?>"></div>
 					</div>
 				</div>
 
