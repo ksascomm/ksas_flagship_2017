@@ -9,7 +9,7 @@ get_header(); ?>
 
 $flagship_evergreen_query = new WP_Query(array(
    'post_type' => 'evergreen',
-   'orderby' => 'ID',
+   'orderby' => 'rand',
    'post_status' => 'publish',
    'posts_per_page' => -1,
 ));
