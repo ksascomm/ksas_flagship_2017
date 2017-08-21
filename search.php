@@ -48,9 +48,9 @@ get_header(); ?>
                 <p>Results <strong><?php echo $results->getFirstResultNum() ?> - <?php echo $results->getLastResultNum() ?></strong> of about <strong><?php echo $hits ?></strong></p>
            
             <?php if (empty($sponsored_result) == false ) { ?>
-    	        <div class="panel callout radius10" id="sponsored">
-                    <h2 class="black">Featured Result</h2>
-                    <h3><a href="<?php echo $sponsored_result['sponsored_url']; ?>"><?php echo $sponsored_result['sponsored_title']; ?></a><small class="italic"> &mdash;<?php echo $sponsored_result['sponsored_url']; ?></small></h3>
+    	        <div class="callout primary">
+                    <h1>Featured Result</h1>
+                    <h3><a href="<?php echo $sponsored_result['sponsored_url']; ?>"><?php echo $sponsored_result['sponsored_title']; ?></a><small class="black"> &mdash;<?php echo $sponsored_result['sponsored_url']; ?></small></h3>
     	        </div>
              <?php } ?>   
             <div id="search-results">
