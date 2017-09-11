@@ -31,8 +31,8 @@ get_header(); ?>
 	  </div>
 	</div>
 	<?php endif; ?>
-	<div class="front-hero hide-for-large video"></div>
-		<div class="row">
+	<div class="front-hero hide-for-large"></div>
+		<div class="row hide-for-large">
 	        <div class="small-12 large-push-1 columns">
 	          <h1>Discovery Is...</h1>
 	          	<p>Innovative research takes place every day at the Krieger School of Arts and Sciences.</p>
