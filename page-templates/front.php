@@ -38,8 +38,9 @@ get_header(); ?>
 	          	<p>Innovative research takes place every day at the Krieger School of Arts and Sciences.</p>
 	          	<p><a class="button orbit" href="#">Watch Now <span class="fa fa-play-circle" aria-hidden="true"></span></a></p>
 	         </div>
+	         <hr>
 	     </div>
-		<hr>
+
 </header>
 
 
