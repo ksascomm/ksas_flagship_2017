@@ -22,7 +22,7 @@ get_header(); ?>
 				        <div class="small-12 large-push-1 columns">
 				          <h1>Discovery Is...</h1>
 				          	<p>Innovative research takes place every day at the Krieger School of Arts and Sciences.</p>
-				          	<p><a class="button orbit" href="https://www.youtube.com/watch?v=wJYtZiCWtK4">Watch Now <span class="fa fa-play-circle" aria-hidden="true"></span></a></p>
+				          	<p><a class="button orbit" href="https://www.youtube.com/watch?v=wJYtZiCWtK4" target="_blank">Watch Now <span class="fa fa-play-circle" aria-hidden="true"></span></a></p>
 				         </div>
 				     </div>
 				</figcaption>
