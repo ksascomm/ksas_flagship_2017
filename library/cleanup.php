@@ -135,3 +135,11 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wr
 add_action('woocommerce_before_main_content', 'foundationpress_before_content', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 add_action('woocommerce_after_main_content', 'foundationpress_after_content', 10);
+
+
+//CometCache clear Home Page cache every 18 hours
+add_action('wp_loaded', function() {
+   if ( false === ( $homepage_cache = get_transient( 'homepage_eighteen_hour_cache' ) ) ) {
+        $homepage_cache = comet_cache::clearPost(807);
+	set_transient( 'homepage_eighteen_hour_cache', $homepage_cache, 64800 ); }
+});
