@@ -1,6 +1,6 @@
 # Flagship 2017 version.
 
-Built off [FoundationPress](https://github.com/olefredrik/FoundationPress).
+Built off [FoundationPress](https://github.com/olefredrik/FoundationPress). Uses Foundation 6.3.1!
 
 
 
@@ -9,8 +9,8 @@ Built off [FoundationPress](https://github.com/olefredrik/FoundationPress).
 ### 1. Clone the repository and install with npm
 ```bash
 $ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/ksascomm/Flagship-2017.git
-$ cd Flagship-2017
+$ git clone https://github.com/ksascomm/ksas_flagship_2017.git
+$ cd ksas_flagship_2017
 $ npm install -g bower (if not already installed)
 $ npm install
 ```
@@ -52,3 +52,20 @@ Running this command will build and minify the theme's assets and place a `.zip`
 
 
 You **must** run `npm run build` or `npm run watch` in your terminal for the styles & scripts to be copied and concatenated.
+
+#### Using WPCS
+This theme comes with tools to check for WordPress Coding Standards. To enable this feature you'll first need to make sure  [Composer](https://getcomposer.org/) is installed. Then to install PHP Codesniffer and the WordPress Coding Standards set of "Sniffs", simply run:
+```bash
+$ composer create-project wp-coding-standards/wpcs:dev-master --no-dev
+```
+When prompted to remove existing VCS, answer Yes by typing `Y` if you are forking this project.
+
+Once you have installed the packages, check the theme by running:
+```bash
+$ gulp phpcs
+```
+
+Code Sniffer can fix errors automatically! Simply run the following command to fix them:
+```bash
+$ gulp phpcbf
+```
