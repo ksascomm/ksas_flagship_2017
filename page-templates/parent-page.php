@@ -23,9 +23,9 @@ get_header(); ?>
     'sort_order' => 'asc',
 	);
 	$pages = get_pages($args); ?>
-	<?php if (is_page(array('Academics', 'Giving')) ) : ?>
+	<?php if (is_page('Academics') ) : ?>
 		<div class="row small-up-1 medium-up-5" id="parent-menu">	
-	<?php elseif (is_page('About') ) : ?>
+	<?php elseif (is_page(array('About','Giving')) ) : ?>
 		<div class="row small-up-1 medium-up-4" id="parent-menu">		
 	<?php endif; ?>
 		<?php foreach ( $pages as $page ) { ?>
