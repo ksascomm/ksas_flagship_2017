@@ -5,43 +5,66 @@ Template Name: Front
 get_header(); ?>
 <!--ORBIT SLIDER -->
 
+<?php if ( false === ( $flagship_evergreen_query = get_transient( 'flagship_evergreen_query' ) ) ) {
+$flagship_evergreen_query = new WP_Query(array(
+   'post_type' => 'evergreen',
+   'orderby' => 'rand',
+   'post_status' => 'publish',
+   'posts_per_page' => -1,
+));
+set_transient( 'flagship_evergreen_query', $flagship_evergreen_query, 86400 );
+	
+} 	
+if ( $flagship_evergreen_query->have_posts() ) : ?>
 
 <header class="hero" role="banner" aria-label="Explore the Krieger School Slider">
-	<?php if (!is_mobile()) : ?> 
+
 	<div class="fullscreen-image-slider show-for-large">
-	  <div class="orbit" role="region" aria-label="Research Video" data-orbit>
+	  <div class="orbit" role="region" aria-label="FullScreen Pictures" data-orbit>
 	    <ul class="orbit-container">
+			<?php if ($flagship_evergreen_query->post_count > 1 ) : ?>
+			<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true"></span></button>
+			<button class="orbit-next"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true"></span></button>
+			<?php endif;?>
+			<?php while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
 			<li class="is-active orbit-slide">
-				<div class="responsive-embed widescreen">
-			  	    <video loop muted autoplay poster="http://krieger2.jhu.edu/flagship/homepage-video/screenGrab-BennettStudents.jpg" id="video">
-				        <source src="http://krieger2.jhu.edu/flagship/homepage-video/highlight_540p.mp4" type="video/mp4">
-				    </video>
-				</div>
-				<figcaption class="orbit-caption">
-				    <div class="row">
-				        <div class="small-12 large-push-1 columns">
-				          <h1>Discovery Is...</h1>
-				          	<p>Innovative research takes place every day at the Krieger School of Arts and Sciences.</p>
-				          	<p><a class="button orbit" href="https://www.youtube.com/watch?v=wJYtZiCWtK4" target="_blank">Watch Now <span class="fa fa-play-circle" aria-hidden="true"></span></a></p>
-				         </div>
-				     </div>
-				</figcaption>
+			<img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>" alt="<?php the_title(); ?>">
+			<figcaption class="orbit-caption">
+			    <div class="row">
+			        <div class="small-12 large-push-1 columns">
+			          <h1><?php the_title(); ?></h1>
+			          	<div class="show-for-medium">
+			          		<?php the_content(); ?>
+				  				<?php if (get_post_meta($post->ID, 'ecpt_link_destination', true) ) : ?>
+							   		<p>
+							   			<a href="<?php echo get_post_meta($post->ID, 'ecpt_link_destination', true);?>" class="button orbit" target="_blank"><?php echo get_post_meta($post->ID, 'ecpt_link_button_text', true);?></a>
+							   		</p>
+								<?php endif; ?>
+			          	</div>
+			         </div>
+			     </div>
+			</figcaption>
 			</li>
+			<?php endwhile;?>
 	    </ul>
+		<nav class="orbit-bullets">
+			<?php $bullet_counter = 0; while( $flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post();
+			 $slide_image = get_post_meta($post->ID, 'ecpt_fullimage', true); ?>
+				<button<?php if( $bullet_counter === 0 ) : echo ' class="is-active"'; endif; ?> data-slide="<?php echo $bullet_counter; ?>">
+					<span class="show-for-sr">Slide of <?php echo the_title(); ?></span>
+					<?php if( $bullet_counter === 0 ) :?><span class="show-for-sr">Current Slide</span><?php endif; ?>
+				</button>
+			<?php $bullet_counter++; endwhile; ?>
+		</nav>		
 	  </div>
 	</div>
-	<?php endif; ?>
-	<div class="front-hero hide-for-large"></div>
-		<div class="row hide-for-large">
-	        <div class="small-12 large-push-1 columns">
-	          <h1>Discovery Is...</h1>
-	          	<p>Innovative research takes place every day at the Krieger School of Arts and Sciences.</p>
-	          	<p><a class="button orbit" href="#">Watch Now <span class="fa fa-play-circle" aria-hidden="true"></span></a></p>
-	         </div>
-	         <hr>
-	     </div>
+
+	<div class="front-hero hide-for-large">
+		<!--static slider image-->
+	</div>
 
 </header>
+<?php endif; ?>
 
 
 <div class="find-program">
