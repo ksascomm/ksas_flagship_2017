@@ -12,12 +12,15 @@
 
 <article class="home-news" aria-label="Video Spotlight: <?php the_title(); ?>">
 	<div class="row">		
-		<div class="small-12 large-6 columns">
-			<?php the_content(); ?>
+		<div class="large-6 large-push-6 columns">
+			<div class="home-video">
+				<!--get video ID and place in data-id-->
+				<div class="youtube-player" data-id="K5tcqutCXZg"></div>
+			</div>
 		</div>
-		<div class="small-12 large-6 columns">
-			<h4><?php the_title(); ?></h4>
-			<?php the_excerpt(); ?>
+		<div class="large-6 large-pull-6 columns">
+		  <h1><?php the_title(); ?></h1> 
+		  <?php the_excerpt(); ?>
 		</div>
 	</div>
 </article>
