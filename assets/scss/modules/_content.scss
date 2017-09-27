@@ -158,6 +158,14 @@ padding: 0 1.25rem .1rem 1.25rem;
       }
     }
   }
+  .parent-not-in-menu {
+    padding: .75rem .93rem .62rem 1rem;
+    background-color: #005eb8;
+    h5 {
+      background-color: inherit;
+      font-size: 1.25rem;
+    }
+  }
 }
 
 .widget_text {
