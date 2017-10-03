@@ -24,6 +24,7 @@
 					</div>
 					<div class="small-12 medium-4 columns">
 						<ul id="menu-footer-links" class="menu simple hide-for-small-only" role="menu">
+							<li role="menuitem"><a href="http://krieger.jhu.edu/agora-search/">Agora Institute</a></li>	
 							<li role="menuitem"><a href="http://krieger.jhu.edu/faculty-jobs/">Employment</a></li>	
 							<li role="menuitem"><a href="https://www.jhu.edu/alert/">Emergency Alerts</a></li>
 						</ul>
