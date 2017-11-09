@@ -1,27 +1,20 @@
 <?php
 /**
- * The default template for displaying events via the hub's api
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
-
+* The default template for displaying events via the hub's api
+*
+* @package FoundationPress
+* @since FoundationPress 1.0.0
+*/
 ?>
-
-
 <div class="row">
-
-<h1 class="hub-title">
-	<a href="https://hub.jhu.edu/events/">Events from The Hub</a>
-</h1>
-
-<?php
-$hub_event_url = 'https://api.hub.jhu.edu/events?v=1&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&locations=668&include_subterms=668&per_page=4';
-if ( false === ( $hub_event_call = get_transient( 'flagship_hub_events_query' ) ) ) {
-	$hub_event_call = wp_remote_get($hub_event_url);
- set_transient( 'flagship_hub_events_query', $hub_event_call, 86400 ); }
-	$hub_event_results = json_decode($hub_event_call['body'], true);
-	$hub_events = $hub_event_results['_embedded'];
+	<h1 class="hub-title"><a href="https://hub.jhu.edu/events/">Events from The Hub</a></h1>
+	<?php
+	$hub_event_url = 'https://api.hub.jhu.edu/events?v=1&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&locations=668&include_subterms=668&per_page=4';
+	if ( false === ( $hub_event_call = get_transient( 'flagship_hub_events_query' ) ) ) {
+		$hub_event_call = wp_remote_get($hub_event_url);
+	set_transient( 'flagship_hub_events_query', $hub_event_call, 86400 ); }
+		$hub_event_results = json_decode($hub_event_call['body'], true);
+		$hub_events = $hub_event_results['_embedded'];
 	foreach ($hub_events['events'] as $hub_event ) { ?>
 	<article class="hub-news hub-events end" aria-labelledby="post-<?php echo $hub_event['id'];?>">
 		<h1><a href="<?php echo $hub_event['url']; ?>" target="_blank" id="post-<?php echo $hub_event['id'];?>"><?php echo $hub_event['name']; ?></a></h1>
@@ -32,8 +25,8 @@ if ( false === ( $hub_event_call = get_transient( 'flagship_hub_events_query' ) 
 		<h4><span class="fa fa-clock-o" aria-label="time"></span> <?php echo date('h:i a', strtotime($start));?> - <?php echo date('h:i a', strtotime($end));?></h4>
 		<summary>
 		<p><?php echo $hub_event['description'];
-		if (empty($hub_event['description']) ) {
-			echo $hub_event['excerpt'];
+			if (empty($hub_event['description']) ) {
+				echo $hub_event['excerpt'];
 			} ?>
 		</p>
 		</summary>
