@@ -104,13 +104,13 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 		   
 		    </div>
 
-		    <div class="tabs-panel" id="hubnews" aria-label="Hub News">
+		    <div class="tabs-panel" id="hubnews">
 		     
 		     <?php get_template_part( 'template-parts/hub-news' ); ?>
 
 		    </div>
 
-		    <div class="tabs-panel" id="hubevents" aria-label="Hub Events">
+		    <div class="tabs-panel" id="hubevents">
 			
 				<?php get_template_part( 'template-parts/hub-events' ); ?>
 		    
