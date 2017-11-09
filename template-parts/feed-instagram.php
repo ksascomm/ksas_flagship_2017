@@ -26,7 +26,7 @@ foreach ($obj['data'] as $post ) {
 
     echo "<div class='small-12 medium-6 large-3 columns instagram-card'>";    
         echo "<a href='{$pic_link}' target='_blank'>";
-            echo "<img class='gram' src='{$pic_src}' alt='{$excerpt_text}...'>";
+            echo "<img class='gram lazy' data-src='{$pic_src}' alt='{$excerpt_text}...'>";
         echo '</a>';
     echo '</div>';
 }
