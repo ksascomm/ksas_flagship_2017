@@ -380,7 +380,6 @@
   }
 }
 
-
 // News
 .news {
   @include grid-row();
@@ -465,7 +464,12 @@
         @include breakpoint(large) {
           height: 300px;
         }
-      }      
+      }
+      .hub-news.story {
+        @include breakpoint(large) {
+          height: 475px;
+        } 
+      }     
   }
   .tabs-title > a, a.accordion-title {
     font-size: 1rem;
