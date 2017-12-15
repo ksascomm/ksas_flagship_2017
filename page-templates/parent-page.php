@@ -33,13 +33,18 @@ get_header(); ?>
 			<div class="card">
 				<?php echo get_the_post_thumbnail($page->ID, 'child-bucket'); ?>
 				<div class="card-section">
-					<a href="<?php echo  get_permalink($page->ID); ?>" rel="bookmark" title="<?php echo $page->post_title; ?>">
-						<h1><?php echo $page->post_title; ?></h1>
-					</a>
+					<h1>
+						<a href="<?php echo  get_permalink($page->ID); ?>" rel="bookmark" title="<?php echo $page->post_title; ?>">
+						<?php echo $page->post_title; ?>
+						</a>
+					</h1>	
 				</div>
 			</div>
 		</div>
 		<?php } ?>
+	<?php if (is_page('Apply') ) : ?>
+		<?php echo get_post_meta($post->ID, 'ecpt_content', true); ?>
+	<?php endif;?>
 	</div>
 </div>
 <?php get_footer();
