@@ -1,7 +1,7 @@
 {
   "name": "foundationpress",
   "title": "FoundationPress",
-  "version": "2.9.0",
+  "version": "2.9.3",
   "description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb",
   "keywords": [
     "FoundationPress",
@@ -54,8 +54,8 @@
     "gulp-phpcbf": "latest",
     "gulp-phpcs": "^1.0.0",
     "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^1.5.1",
     "gulp-uncss": "^1.0.4",
     "gulp-util": "^3.0.7",
@@ -74,5 +74,8 @@
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
     "watch": "gulp"
+  },
+  "dependencies": {
+    "jquery-lazy": "^1.7.5"
   }
 }

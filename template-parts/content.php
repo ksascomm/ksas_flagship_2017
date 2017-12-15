@@ -24,7 +24,7 @@
 				<small><?php echo get_the_category( $id )[0]->name; ?></small><br>
 					<?php if ( get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
 							<a href="<?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>" target="_blank" title="<?php the_title(); ?>"><?php the_title(); ?> <span class="icon-new-tab2" aria-hidden="true"></span>
-</a>
+							</a>
 					<?php else : ?>
 						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 					<?php endif;?>
