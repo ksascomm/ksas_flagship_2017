@@ -9,7 +9,7 @@
 
 $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
 $requestMethod = 'GET';
-if (isset($_GET['user']) ) {$user = $_GET['user'];}  else {$user  = 'JHUKSAS';}
+if (isset($_GET['user']) ) {$user = $_GET['user'];}  else {$user  = 'JHUArtsSciences';}
 if (isset($_GET['count']) ) {$count = $_GET['count'];} else {$count = 2;}
 $getfield = "?screen_name=$user&count=$count";
 $twitter = new TwitterAPIExchange($settings);

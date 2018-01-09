@@ -132,9 +132,9 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	<div class="social">
 		<ul class="menu align-right">
 			<li><a href="https://www.youtube.com/user/jhuksas"><span class="fi-list fa fa-youtube-square fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
-			<li><a href="https://twitter.com/JHUKSAS"><span class="fi-list fa fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
-			<li><a href="https://www.instagram.com/jhuksas/"><span class="fi-list fa fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
-			<li><a href="http://facebook.com/jhuksas"><span class="fi-list fa fa-facebook-official fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
+			<li><a href="https://twitter.com/JHUArtsSciences"><span class="fi-list fa fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
+			<li><a href="https://www.instagram.com/JHUArtsSciences/"><span class="fi-list fa fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
+			<li><a href="http://facebook.com/JHUArtsSciences"><span class="fi-list fa fa-facebook-official fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
 			<li class="menu-text">#jhuksas</li>
 		</ul>
 	</div>	
