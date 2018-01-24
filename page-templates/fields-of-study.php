@@ -76,7 +76,13 @@ Template Name: Fields of Study
 		 <div class="small-12 medium-6 large-4 columns item <?php echo $program_type_name; ?>" role="listitem" aria-label="<?php echo the_title();?>"> 
 		 <?php // 'item' is used as an identifier (see Step 5, line 6) ?>
 		 	<div class="small-12 columns field border-<?php echo $program_type_name; ?>">
-	 			<h3><a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a></h3>
+	 			<h3>
+	 				<?php if ($post->post_title == 'Pre-Med'):?>
+	 					<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+	 				<?php else: ?>
+	 				<a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a>
+					<?php endif;?>
+	 			</h3>
 					<p class="contact">
 						<span class="fa fa-envelope"></span>
 							<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
