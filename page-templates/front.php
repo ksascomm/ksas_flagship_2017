@@ -135,7 +135,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 			<li><a href="https://twitter.com/JHUArtsSciences"><span class="fi-list fa fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
 			<li><a href="https://www.instagram.com/JHUArtsSciences/"><span class="fi-list fa fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
 			<li><a href="http://facebook.com/JHUArtsSciences"><span class="fi-list fa fa-facebook-official fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
-			<li class="menu-text">#jhuksas</li>
+			<li class="menu-text">#JHUArtsSciences</li>
 		</ul>
 	</div>	
 	<div class="instagram" aria-labelledby="instagram-link" role="contentinfo">
