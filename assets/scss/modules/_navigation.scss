@@ -1,3 +1,20 @@
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+  .nav-shield {
+    display: none;
+  }
+}
+
 /// Navigation breakpoints
 .mobile-menu,
 .site-title-bar {

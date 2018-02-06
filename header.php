@@ -90,7 +90,7 @@
 
 		<nav class="site-navigation top-bar" role="navigation" aria-label="Main Navigation">
 		
-				<div class="top-bar-title">
+				<div class="top-bar-title nav-shield">
 					<h1><span class="screen-reader-text"><?php echo get_bloginfo( 'title' ); ?></span></h1>
 			
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
