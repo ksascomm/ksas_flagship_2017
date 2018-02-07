@@ -2,6 +2,7 @@
 	float: right;
 	border: none;
 	font-family: $font-stack-bold;
+	font-weight: $font-stack-bold-weight;
 	background: $powderblue;
 	@include breakpoint (medium) {
 		width: 45%;

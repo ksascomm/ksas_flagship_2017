@@ -19,14 +19,23 @@ $grey: #e5e2e0;       //grey
 $darkgrey: #b4b2ad;   //dark grey
 $fa-font-path: "../fonts";
 
-$font-header: 'quadon', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$font-subhead-book: 'gentona-book', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$font-subhead-light: 'gentona-extralight', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$font-stack: 'gentona-light', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$font-stack-bold: 'gentona-bold', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$font-stack-semibold: 'gentona-semibold', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$flagship-icon: 'icomoon', 'gentona-light', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-$font-awesome: FontAwesome, 'gentona-bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-header: 'quadon', 'Helvetica Neue', Roboto, sans-serif;
+$font-header-weight: 400;
+
+$font-subhead-light: 'gentona-extralight', 'Helvetica Neue', Roboto, sans-serif;
+$font-subhead-light-weight: 200;
+$font-subhead-book: 'gentona-book', 'Helvetica Neue', Roboto, sans-serif;
+$font-subhead-book-weight: 400;
+
+$font-stack: 'gentona-light', 'Helvetica Neue', Roboto, sans-serif;
+$font-stack-weight: 300;
+$font-stack-semibold: 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
+$font-stack-semibold-weight: 600;
+$font-stack-bold: 'gentona-bold', 'Helvetica Neue', Roboto, sans-serif;
+$font-stack-bold-weight: 700;
+
+$flagship-icon: 'icomoon', 'gentona-light', 'Helvetica Neue', Roboto, sans-serif;
+$font-awesome: FontAwesome, 'gentona-bold', 'Helvetica Neue', Roboto, sans-serif;
 
 $radius: 10px;
 

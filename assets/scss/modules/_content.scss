@@ -67,6 +67,7 @@ padding: 0 1.25rem .1rem 1.25rem;
 		margin-bottom:0;
 		color: $white;
 		font-family: $font-stack-bold;
+    font-weight: $font-stack-bold-weight;
 	}
   ul.nav {
   	margin-left: inherit;
@@ -83,6 +84,7 @@ padding: 0 1.25rem .1rem 1.25rem;
     		font-size: 1.25rem;
     		color: $black;
     		font-family: $font-subhead-book;
+        font-weight: $font-subhead-book-weight;
     	}
       &.current_page_item {
         background: $powderblue;
@@ -187,6 +189,7 @@ padding: 0 1.25rem .1rem 1.25rem;
       h1 {
         font-size: 1.25rem;
         font-family: $font-stack-bold;
+        font-weight: $font-stack-bold-weight;
         a {
           &:hover, &:active {
           color: $black;
@@ -199,6 +202,7 @@ padding: 0 1.25rem .1rem 1.25rem;
 
 a.skiplink {
   font-family: $font-stack-bold;
+  font-weight: $font-stack-bold-weight;
   border-bottom: none;
   padding: .25em;
   position: fixed;

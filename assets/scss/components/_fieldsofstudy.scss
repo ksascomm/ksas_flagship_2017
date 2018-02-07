@@ -75,6 +75,7 @@ li.person {
   .button {
     margin: .5rem;
     font-family: $font-stack-bold;
+    font-weight: $font-stack-bold-weight;
     font-size: .88rem;
     &.is-checked {
       background-color: transparent;
@@ -137,6 +138,7 @@ li.person {
     font-size: .9rem;
     line-height: 1.3;
     font-family: $font-subhead-book;
+    font-weight: $font-subhead-book-weight;
   }
   p.contact {
     font-size: 13px;
@@ -144,6 +146,7 @@ li.person {
   }
   h3 {
     font-family: $font-stack-bold;
+    font-weight: $font-stack-bold-weight;
     font-size: 1.4rem;
     margin-top: 1rem;
   }
@@ -152,6 +155,7 @@ li.person {
     cursor: auto;
     //border-radius: .25rem;
     font-family: $font-subhead-book;
+    font-weight: $font-subhead-book-weight;
     font-size: 1rem !important;
     &.button.major, &.button.minor {
       background-color: transparent;

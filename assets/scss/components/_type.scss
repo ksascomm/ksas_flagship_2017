@@ -1,11 +1,13 @@
 body {
   font-family: $font-stack;
+  font-weight: $font-stack-weight;
   font-style: normal;
   font-size: $global-font-size * 1.125
 }
 
 h1, h2 {
   font-family: $font-header;
+  font-weight: $font-header-weight;
   font-style: normal;
 }
 
@@ -15,11 +17,13 @@ h1 {
 
 h3 {
   font-family: $font-stack-semibold;
+  font-weight: $font-stack-semibold-weight;
   font-size: 1.6rem;
 }
 
 h4, h5, h6, .semibold, blockquote {
   font-family: $font-subhead-book;
+  font-weight: $font-subhead-book-weight;
 }
 
 .main-content {
@@ -35,12 +39,14 @@ h4, h5, h6, .semibold, blockquote {
   p {
     strong {
       font-family: $font-stack-bold;
+      font-weight: $font-stack-bold-weight;
     }
   }
   .blogpost-entry {
     h1, h2 {
       font-size: 2rem;
       font-family: $font-stack-bold;
+      font-weight: $font-stack-bold-weight;
       small {
         text-transform: uppercase;
         font-size: 55%;
@@ -54,6 +60,7 @@ h4, h5, h6, .semibold, blockquote {
     }
     time.updated {
       font-family: $font-stack-bold;
+      font-weight: $font-stack-bold-weight;
     }
   }
 }
@@ -62,12 +69,13 @@ h4, h5, h6, .semibold, blockquote {
   h1 {
     font-size: 1.25rem;
     font-family: $font-stack-bold;
+    font-weight: $font-stack-bold-weight;
   }
 }
 .tabs-title > a, a.accordion-title {
   font-size: 1rem;
   font-family: $font-subhead-book;
-  font-weight: bold;
+  font-weight: $font-subhead-book-weight;
 }
 
 .ecpt-page-sidebar {
@@ -79,6 +87,7 @@ h4, h5, h6, .semibold, blockquote {
       }
       strong {
         font-family: $font-stack-bold;
+        font-weight: $font-stack-bold-weight;
       }
     }
   }

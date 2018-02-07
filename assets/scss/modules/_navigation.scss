@@ -38,9 +38,8 @@
 }
 
 .site-desktop-title a {
-  font-weight: bold;
+  font-weight: inherit;
 }
-
 
 
 // Mobile menu
@@ -66,7 +65,7 @@
 
   // current page
   .current_page_item > a {
-    font-weight: bold;
+    font-weight: inherit;
   }
 }
 
@@ -235,6 +234,7 @@
       a {
         color: $black;
         font-family: $font-subhead-book;
+        font-weight: $font-subhead-book-weight;
         &:hover:not(.button) {
           background-color: $skyblue;
           color: $white;
@@ -291,6 +291,7 @@ div#offCanvasTop1 {
       a {
         padding: 0.35rem 1rem; 
         font-family: $font-stack-bold;
+        font-weight: $font-stack-bold-weight;
         color: $blue;
         &:hover, &:active {
             color: $black;
