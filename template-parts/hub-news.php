@@ -13,7 +13,11 @@
 	if ( false === ( $hub_call = get_transient( 'flagship_hub_query' ) ) ) {
 		$hub_call = wp_remote_get($hub_url);
 	set_transient( 'flagship_hub_query', $hub_call, 86400 ); }
+	if (is_array($hub_call) && !empty($hub_call['body'])) {
 	$hub_results = json_decode($hub_call['body'], true);
+	} else {
+		return false; // wp_remote_get failed somehow
+	}
 	$hub_articles = $hub_results['_embedded'];
 	foreach ($hub_articles['articles'] as $hub_article ) { ?>
 	<article class="hub-news story end" aria-labelledby="post-<?php echo $hub_article['id'];?>">
