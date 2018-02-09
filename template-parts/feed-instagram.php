@@ -1,33 +1,38 @@
 <?php
-// use this instagram access token generator http://instagram.pixelunion.net/
-$access_token = '5470676444.1677ed0.ac76a8915e084f649aa9bc5da7af1e83';
-$photo_count = 4;
 
-$json_link = 'https://api.instagram.com/v1/users/self/media/recent/?';
-$json_link .= "access_token={$access_token}&count={$photo_count}";
+function rudr_instagram_api_curl_connect( $api_url ){
+    $connection_c = curl_init(); // initializing
+    curl_setopt( $connection_c, CURLOPT_URL, $api_url ); // API URL to connect
+    curl_setopt( $connection_c, CURLOPT_RETURNTRANSFER, 1 ); // return the result, do not print
+    curl_setopt( $connection_c, CURLOPT_TIMEOUT, 20 );
+    $json_return = curl_exec( $connection_c ); // connect and get json data
+    curl_close( $connection_c ); // close connection
+    return json_decode( $json_return ); // decode and return
+}
 
-if ( false === ( $obj = get_transient( 'instagram_query' ) ) ) {    
+// use this instagram access token generator https://rudrastyh.com/tools/access-token
+$access_token = '5470676444.1941e00.2371c1e663ef417397cd14fa04ff3b38';
+$username = 'JHUArtsSciences';
+$user_search = rudr_instagram_api_curl_connect("https://api.instagram.com/v1/users/search?q=" . $username . "&access_token=" . $access_token);
+// $user_search is an array of objects of all found users
+// we need only the object of the most relevant user - $user_search->data[0]
+// $user_search->data[0]->id - User ID
+// $user_search->data[0]->first_name - User First name
+// $user_search->data[0]->last_name - User Last name
+// $user_search->data[0]->profile_picture - User Profile Picture URL
+// $user_search->data[0]->username - Username
 
-$json = file_get_contents($json_link);
-$obj = json_decode($json, true, 512, JSON_BIGINT_AS_STRING);
+//userid = 5470676444
 
-set_transient( 'instagram_query', $obj, 86400 ); }
+$user_id = $user_search->data[0]->id; // or use string 'self' to get your own media
+$return = rudr_instagram_api_curl_connect("https://api.instagram.com/v1/users/" . $user_id . "/media/recent?access_token=" . $access_token);
 
-foreach ($obj['data'] as $post ) {
+//print_r( $return ); // if you want to display everything the function returns
 
-    $pic_text = $post['caption']['text'];
-    $excerpt_text = substr($pic_text, 0, 45);
-    $pic_link = $post['link'];
-    $pic_like_count = $post['likes']['count'];
-    $pic_comment_count = $post['comments']['count'];
-    $pic_src = str_replace('http://', 'https://', $post['images']['thumbnail']['url']);
-    $pic_created_time = date('F j, Y', $post['caption']['created_time']);
-    $pic_created_time = date('F j, Y', strtotime($pic_created_time . ' +1 days'));
-
-    echo "<div class='small-12 medium-6 large-3 columns instagram-card'>";    
-        echo "<a href='{$pic_link}' target='_blank'>";
-            echo "<img class='gram' src='{$pic_src}' alt='{$excerpt_text}...'>";
-        echo '</a>';
+$returndata = array_slice( $return->data, 0, 4 );
+foreach ($returndata as $post) {
+    echo '<div class="small-12 medium-6 large-3 columns instagram-card">';   
+    echo '<a href="' . $post->link . '"><img class="gram" alt="'. substr($post->caption->text, 0, 45) . '" src="' . $post->images->thumbnail->url . '" /></a>';
     echo '</div>';
 }
 
