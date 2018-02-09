@@ -209,6 +209,7 @@
   }
   .menu {
     font-family: $font-stack-bold;
+    font-weight: $font-stack-bold-weight;
     a {
       font-size: 1.125rem;
       color: $white;
@@ -233,8 +234,8 @@
     li {
       a {
         color: $black;
-        font-family: $font-subhead-book;
-        font-weight: $font-subhead-book-weight;
+        font-family: $font-stack-semibold;
+        font-weight: $font-stack-semibold-weight;
         &:hover:not(.button) {
           background-color: $skyblue;
           color: $white;
