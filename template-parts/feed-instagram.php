@@ -1,9 +1,9 @@
 <script>
     var token = '5470676444.1941e00.2371c1e663ef417397cd14fa04ff3b38',
-    username = 'JHUArtsSciences', // rudrastyh - my username :)
-    num_photos = 4;
+    username = 'JHUArtsSciences',
+    num_photos = 3;
 
-    $.ajax({ // the first ajax request returns the ID of user rudrastyh
+    $.ajax({ // the first ajax request returns the ID of user JHUArtsSciences
     url: 'https://api.instagram.com/v1/users/search',
     dataType: 'jsonp',
     type: 'GET',
@@ -18,7 +18,7 @@
             success: function(data2){
                ///console.log(data2);
                 for(x in data2.data){
-                    $('.instagram-images').append('<div class="small-12 medium-6 large-3 columns instagram-card"><img class="gram" alt="'+data2.data[x].caption.text+'" src="'+data2.data[x].images.thumbnail.url+'"></div>');  
+                    $('.instagram-images').append('<div class="small-12 medium-4 columns instagram-card"><a href="'+data2.data[x].link+'"><img class="gram" alt="'+data2.data[x].caption.text+'" src="'+data2.data[x].images.thumbnail.url+'"></a></div>'); 
                 }
                 },
             error: function(data2){
