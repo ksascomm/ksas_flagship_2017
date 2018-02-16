@@ -15,12 +15,12 @@
 		<div class="large-6 large-push-6 columns">
 			<div class="home-video">
 				<!--get video ID and place in data-id-->
-				<div class="youtube-player" data-id="S0THWEdtt0s"></div>
+				<div class="youtube-player" data-id="RhRIMgW8GIo"></div>
 			</div>
 		</div>
 		<div class="large-6 large-pull-6 columns">
 		  <h1><?php the_title(); ?></h1> 
-		  <?php the_excerpt(); ?>
+		  <?php the_content(); ?>
 		</div>
 	</div>
 </article>
