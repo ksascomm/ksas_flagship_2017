@@ -32,7 +32,7 @@
 			<?php foundationpress_entry_meta(); ?>
 		</header>
 		
- 		<div class="entry-content" itemprop="articleBody">
+ 		<div class="entry-content">
 			<?php the_excerpt(); ?>
 		</div> <!-- end article section -->
 	</div>

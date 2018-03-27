@@ -32,7 +32,7 @@ get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header class="article-header">	
-			<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+			<h1 class="entry-title single-title"><?php the_title(); ?></h1>
 		</header>
 
 		<div class="row bio">
@@ -124,7 +124,7 @@ get_header(); ?>
 			
 			<div class="tabs-content" data-tabs-content="profile-tabs">		
 				<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) : ?>
-					<div class="tabs-panel is-active" id="bioTab" itemprop="articleBody">
+					<div class="tabs-panel is-active" id="bioTab">
 						<?php echo get_post_meta($post->ID, 'ecpt_bio', true); ?>
 					</div>
 				<?php endif; ?>

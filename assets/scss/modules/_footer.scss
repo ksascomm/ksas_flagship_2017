@@ -1,4 +1,4 @@
-.footer-container {
+.footer {
   background-color: $black;
   max-width: 100%;
   width: 100%;
@@ -6,7 +6,7 @@
   //border-top: 1px solid #ccc;
   //margin-top: rem-calc(60);
 
-  .footer {
+  .footer-container {
     text-align:center;
     @include grid-row();
     padding: rem-calc(30) 0;

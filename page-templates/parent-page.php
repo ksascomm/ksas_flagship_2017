@@ -28,7 +28,7 @@ get_header(); ?>
 	<?php elseif (is_page(array('About','Giving')) ) : ?>
 		<div class="row small-up-1 medium-up-4" id="parent-menu">		
 	<?php endif; ?>
-		<?php foreach ( $pages as $page ) { ?>
+	<?php foreach ( $pages as $page ) { ?>
 		<div class="column">
 			<div class="card">
 				<?php echo get_the_post_thumbnail($page->ID, 'child-bucket'); ?>
@@ -42,9 +42,8 @@ get_header(); ?>
 			</div>
 		</div>
 		<?php } ?>
+	</div>
 	<?php if (is_page('Apply') ) : ?>
 		<?php echo get_post_meta($post->ID, 'ecpt_content', true); ?>
 	<?php endif;?>
-	</div>
-</div>
 <?php get_footer();

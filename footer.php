@@ -11,8 +11,8 @@
 ?>
 
 		</section>
-		<div class="footer-container" data-sticky-footer>
-			<footer class="footer">
+		<footer class="footer">
+			<div class="footer-container">
 				<?php do_action( 'foundationpress_before_footer' ); ?>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>
@@ -41,13 +41,12 @@
 						<p>&copy; <?php print date('Y'); ?> Johns Hopkins University, Zanvyl Krieger School of Arts & Sciences, 3400 N. Charles St, Baltimore, MD 21218</p>
 					</div>
 				</div>
-			</footer>
-		</div>
+			</div>
+		</footer>	
 
 		<?php do_action( 'foundationpress_layout_end' ); ?>
 
 <?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
-		</div><!-- Close off-canvas content -->
 	</div><!-- Close off-canvas wrapper -->
 <?php endif; ?>
 

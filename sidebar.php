@@ -26,7 +26,7 @@
 		'theme_location' => 'top-bar-r',
 		'menu_class' => 'nav',
 		'container_class' => '',
-		'items_wrap' => '<div id="sidebar_header"><h5 class="white">Also in <span class="grey bold">' . $page_name . '</span></h5></div><ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+		'items_wrap' => '<div id="sidebar_header"><h5 class="white">Also in <span class="grey bold">' . $page_name . '</span></h5></div><ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 		'submenu' => $page_name,
 		'depth' => 1,
 			));
@@ -47,7 +47,7 @@
 		'theme_location' => 'top-bar-r',
 		'menu_class' => 'nav',
 		'submenu' => $parent_name,
-		'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+		'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 		'depth' => 2,
 		));
 		}
@@ -65,7 +65,7 @@
 					'theme_location' => 'top-bar-r',
 					'menu_class' => 'nav',
 					'container_class' => '',
-					'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+					'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 					'depth' => 1,
 				)); ?>
 
@@ -83,7 +83,7 @@
 				'menu_class' => 'nav',
 				'container_class' => '',
 				'submenu' => 'About',
-				'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+				'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 				'depth' => 2,
 			)); ?>
 
@@ -101,7 +101,7 @@
 				'menu_class' => 'nav',
 				'container_class' => '',
 				'submenu' => 'People',
-				'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+				'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 				'depth' => 2,
 			));
 	if (has_term('', 'role') && ! has_term('job-market-candidate', 'role') ) : ?>
@@ -140,22 +140,22 @@
 				'menu_class' => 'nav',
 				'container_class' => '',
 				'submenu' => 'Academics',
-				'items_wrap' => '<ul class="%2$s" role="navigation" aria-label="Sidebar Menu">%3$s</ul>',
+				'items_wrap' => '<ul class="%2$s" role="menu" aria-label="Sidebar Menu">%3$s</ul>',
 				'depth' => 2,
 			)); ?>
 	
 		<?php $field = get_post_meta($post->ID, 'ecpt_field_level', true);?>
 		<div class="ecpt-page-sidebar">
 			<div class="sidebar_header">
-			<label for="jump">
-					<h5 class="white">
-					<?php if ( ('undergraduate' === $field ) || ('full-graduate' === $field ) ) : ?>
-						Other Undergraduate &  Full-Time Graduate Programs
-					<?php elseif ('part-graduate' === $field ) : ?>
-						Other Part Time Graduate Programs
-					<?php endif;?>
-					</h5>
-			</label>
+				<h5 class="white">
+					<label for="jump">
+						<?php if ( ('undergraduate' === $field ) || ('full-graduate' === $field ) ) : ?>
+							Other Undergraduate &  Full-Time Graduate Programs
+						<?php elseif ('part-graduate' === $field ) : ?>
+							Other Part Time Graduate Programs
+						<?php endif;?>
+					</label>
+				</h5>
 			</div>
 			<br>	
 	        <select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">

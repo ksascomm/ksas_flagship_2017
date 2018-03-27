@@ -35,9 +35,9 @@ Template Name: Fields of Study
 
 			<div class="row">
 				<div class="small-12 columns">
-					<label for="id_search">
-						<h4>Search our fields of study by keyword:</h4>
-					</label>	
+					<h4>
+						<label class="heading" for="id_search">Search our fields of study by keyword:</label>
+					</h4>
 					<div class="input-group">
 						<span class="input-group-label">
 							<span class="fa fa-search"></span>
@@ -60,62 +60,62 @@ Template Name: Fields of Study
 			if ( $flagship_studyfields_query->have_posts() ) : ?>
 		    
 
-		    <div id="isotope-list" class="fields-of-study loading" role="region" aria-label="Results">
-		    <?php while ( $flagship_studyfields_query->have_posts() ) : $flagship_studyfields_query->the_post();
-				$program_types = get_the_terms( $post->ID, 'program_type' );
-					if ( $program_types && ! is_wp_error( $program_types ) ) : 
-						$program_type_names = array();
-							foreach ( $program_types as $program_type ) {
-								$program_type_names[] = $program_type->slug;
-							}
-					$program_type_name = join( " ", $program_type_names );
-				endif;
-			?> 
+		    <div id="isotope-list" class="fields-of-study loading" role="list" aria-label="Results">
+			    <?php while ( $flagship_studyfields_query->have_posts() ) : $flagship_studyfields_query->the_post();
+					$program_types = get_the_terms( $post->ID, 'program_type' );
+						if ( $program_types && ! is_wp_error( $program_types ) ) : 
+							$program_type_names = array();
+								foreach ( $program_types as $program_type ) {
+									$program_type_names[] = $program_type->slug;
+								}
+						$program_type_name = join( " ", $program_type_names );
+					endif;
+				?> 
 
 
-		 <div class="small-12 medium-6 large-4 columns item <?php echo $program_type_name; ?>" role="listitem" aria-label="<?php echo the_title();?>"> 
-		 <?php // 'item' is used as an identifier (see Step 5, line 6) ?>
-		 	<div class="small-12 columns field border-<?php echo $program_type_name; ?>">
-	 			<h3>
-	 				<?php if ($post->post_title == 'Pre-Med'):?>
-	 					<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-	 				<?php else: ?>
-	 				<a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a>
-					<?php endif;?>
-	 			</h3>
-					<p class="contact">
-						<span class="fa fa-envelope"></span>
-							<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
-								<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>
-							</a>
+				<div class="small-12 medium-6 large-4 columns item <?php echo $program_type_name; ?>" role="listitem" aria-label="<?php echo the_title();?>"> 
+				 <?php // 'item' is used as an identifier (see Step 5, line 6) ?>
+				 	<div class="small-12 columns field border-<?php echo $program_type_name; ?>">
+			 			<h3>
+			 				<?php if ($post->post_title == 'Pre-Med'):?>
+			 					<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+			 				<?php else: ?>
+			 				<a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a>
+							<?php endif;?>
+			 			</h3>
+							<p class="contact">
+								<span class="fa fa-envelope"></span>
+									<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
+										<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>
+									</a>
+								
+							</p>
+						<div class="button-group">
+							<?php if (get_post_meta($post->ID, 'ecpt_majors', true) ) : ?>
+								<div class="button major">Major</div>
+							<?php endif; ?>
+							<?php if (get_post_meta($post->ID, 'ecpt_minors', true) ) : ?>
+								<div class="button minor">Minor</div>
+							<?php endif; ?>
+							<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true) ) : ?>
+								<div class="button degrees"><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></div>
+							<?php endif; ?>
+							<?php if (get_post_meta($post->ID, 'ecpt_pcitext', true) ) : ?>
+								<p><?php echo get_post_meta($post->ID, 'ecpt_pcitext', true); ?></p>
+							<?php endif; ?>
+						</div>
+						<span class="hide"><?php echo get_post_meta($post->ID, 'ecpt_keywords', true); ?></span>
 						
-					</p>
-				<div class="button-group">
-					<?php if (get_post_meta($post->ID, 'ecpt_majors', true) ) : ?>
-						<div class="button major">Major</div>
-					<?php endif; ?>
-					<?php if (get_post_meta($post->ID, 'ecpt_minors', true) ) : ?>
-						<div class="button minor">Minor</div>
-					<?php endif; ?>
-					<?php if (get_post_meta($post->ID, 'ecpt_degreesoffered', true) ) : ?>
-						<div class="button degrees"><?php echo get_post_meta($post->ID, 'ecpt_degreesoffered', true); ?></div>
-					<?php endif; ?>
-					<?php if (get_post_meta($post->ID, 'ecpt_pcitext', true) ) : ?>
-						<p><?php echo get_post_meta($post->ID, 'ecpt_pcitext', true); ?></p>
-					<?php endif; ?>
-				</div>
-				<span class="hide"><?php echo get_post_meta($post->ID, 'ecpt_keywords', true); ?></span>
-				
-				<div class="level-color">
-					<div class="small-12 columns">
-						<div class="color <?php echo $program_type_name; ?>"></div>
-					</div>
-				</div>
+						<div class="level-color">
+							<div class="small-12 columns">
+								<div class="color <?php echo $program_type_name; ?>"></div>
+							</div>
+						</div>
 
-			</div>				
-		 </div> <!-- end item -->
-		    <?php endwhile;  ?>
-		</div> <!-- end isotope-list -->
+					</div>				
+				 </div> <!-- end item -->
+				    <?php endwhile;  ?>
+			</div> <!-- end isotope-list -->
 		<?php endif; ?>
 	
 		<div id="noResult">
