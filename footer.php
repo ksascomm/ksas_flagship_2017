@@ -10,7 +10,7 @@
 
 ?>
 
-		</section>
+		</div>
 		<footer class="footer">
 			<div class="footer-container">
 				<?php do_action( 'foundationpress_before_footer' ); ?>

@@ -107,5 +107,5 @@
 		</nav>
 	</header>
 
-	<section class="container" aria-label="Main Content Area" id="page">
+	<div class="container" aria-label="Main Content Area" id="page">
 		<?php do_action( 'foundationpress_after_header' );
