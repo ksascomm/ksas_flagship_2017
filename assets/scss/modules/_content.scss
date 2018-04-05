@@ -102,6 +102,12 @@ padding: 0 1.25rem .1rem 1.25rem;
   		color: $white;
   	}
   }
+  label {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
 }  
 
 //added by TG 5-17
