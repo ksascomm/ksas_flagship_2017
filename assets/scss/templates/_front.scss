@@ -656,7 +656,7 @@
     }
   }
   .social {
-    /*ul.menu {
+    ul.menu {
       @include breakpoint(small) {
         margin-top: inherit;
         li {
@@ -669,7 +669,7 @@
             float: right;
           }
       }
-    }*/
+    }
     li.menu-text {
       font-size: 1.6rem;
       font-family: $font-stack-semibold;
