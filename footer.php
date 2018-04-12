@@ -17,12 +17,12 @@
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>
 				<div class="row">
-					<div class="small-12 medium-5 columns">
+					<div class="small-12 medium-5 large-4 columns">
 						<a href="https://www.jhu.edu/">
 							<img class="jhushield" src="<?php echo get_template_directory_uri() ?>/assets/images/jhu-horizontal.png" alt="Johns Hopkins University">
 						</a>
 					</div>
-					<div class="small-12 medium-4 columns">
+					<div class="small-12 medium-4 large-5 columns">
 						<ul id="menu-footer-links" class="menu simple hide-for-small-only" role="menu">
 							<li role="menuitem"><a href="http://agora.jhu.edu">Agora Institute</a></li>	
 							<li role="menuitem"><a href="https://jobs.jhu.edu/">Employment</a></li>	
