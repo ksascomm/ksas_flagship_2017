@@ -11,14 +11,16 @@
 ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
-
+	<?php if ( has_post_thumbnail() ) : ?>
 	<div class="large-4 columns">
 		<?php the_post_thumbnail('full', array(
 			'class'	=> 'floatleft',
 		)); ?>
 	</div>
-
 	<div class="large-8 columns">
+		<?php else: ?>
+	<div class="large-12 columns">
+		<?php endif;?>
 		<header>
 			<h2>
 				<small><?php echo get_the_category( $id )[0]->name; ?></small><br>
