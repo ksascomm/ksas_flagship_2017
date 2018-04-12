@@ -141,7 +141,10 @@
     }
   }
   .button {
-    background-color: $skyblue;
+    background-color: $accessiblue;
+    &:hover {
+       background-color: $skyblue;
+    }
   }
   .roof-menu {
     font-size: 1rem;
@@ -245,7 +248,7 @@
         background-color: $skyblue;
       }
       &:not(:last-child) {
-        border-bottom: 1px solid $darkgrey;
+        border-bottom: 1px solid $medium-gray;
       }
     }
   }
@@ -309,7 +312,7 @@ div#offCanvasTop1 {
   .menu > li > a {
     color: $white;
     &:hover {
-      background: $darkgrey;
+      background: $medium-gray;
     }
   }
 }

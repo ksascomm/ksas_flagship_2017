@@ -75,7 +75,7 @@ padding: 0 1.25rem .1rem 1.25rem;
   	li {
   		list-style-type: none;
   		padding: .5rem 1rem;
-    	border-bottom: 1px solid $darkgrey;
+    	border-bottom: 1px solid $dark-gray;
     	&:hover {
     		background-color: lighten($skyblue, 10%);
     		color: $white;
@@ -121,7 +121,7 @@ padding: 0 1.25rem .1rem 1.25rem;
 }
 
 .widget_text, .ecpt-page-sidebar {
-  font-size: 1rem;
+  font-size: 1.125rem;
   background-color: $powderblue;
   padding-bottom: .5rem;
   .sidebar-content {
@@ -145,7 +145,7 @@ padding: 0 1.25rem .1rem 1.25rem;
   .sidebar_header, h5 {
     background-color: $skyblue;
     padding: .5rem;
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
   p {
     padding-left: .5rem;

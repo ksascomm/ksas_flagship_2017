@@ -470,7 +470,7 @@
     font-weight: $font-stack-bold-weight;
   }
   .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
-    background: $skyblue;
+    background: $accessiblue;
     color: $white;
   }
   .tabs-title > a {
@@ -590,7 +590,7 @@
     }
     h1.twitter-byline {
       small {
-        color: $darkgrey;
+        color: $dark-gray;
       }
     }
     padding: 1rem;
