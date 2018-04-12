@@ -63,7 +63,7 @@
 					<figcaption>
 						<h2>Graduate Part-Time</h2>
 						<p>Advanced Academic Programs offers online master's programs and graduate certificates</p>
-						<a href="academics/fields/#filter=.full_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT');"><p>Online Masters & Certificates</p></a>
+						<a href="academics/fields/#filter=.part_time_program" onclick="ga('send', 'event', 'Fields', 'Homepage', 'Graduate PT');"><p>Online Masters & Certificates</p></a>
 					</figcaption>			
 				</figure>
 				<figure class="effect-oscar">
