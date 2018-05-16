@@ -14,15 +14,6 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />		
-	    <meta property="og:site_name" content="Krieger School of Arts and Sciences" />
-	    <meta property="og:title" content="Krieger School of Arts and Sciences | Johns Hopkins University" />
-	    <meta property="og:url" content="https://www.krieger.jhu.edu/" />
-	    <meta property="og:description" content="The Zanvyl Krieger School of Arts and Sciences is the core institution of Johns Hopkins University’s Homewood campus" />
-
-
-	    <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/gilman.jpg" />
-		<meta property="og:image:width" content="1600" />
-		<meta property="og:image:height" content="400" />
 
 			<!-- Icons & Favicons -->
 	        <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/assets/images/icons/apple-icon-57x57.png">
