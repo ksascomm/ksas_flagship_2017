@@ -5,16 +5,14 @@ Template Name: Front
 get_header(); ?>
 <!--ORBIT SLIDER -->
 
-<?php if ( false === ( $flagship_evergreen_query = get_transient( 'flagship_evergreen_query' ) ) ) {
+<?php 
 $flagship_evergreen_query = new WP_Query(array(
    'post_type' => 'evergreen',
    'orderby' => 'rand',
    'post_status' => 'publish',
-   'posts_per_page' => -1,
+   'posts_per_page' => 10,
 ));
-set_transient( 'flagship_evergreen_query', $flagship_evergreen_query, 86400 );
-	
-} 	
+
 if ( $flagship_evergreen_query->have_posts() ) : ?>
 
 <header class="hero" role="banner" aria-label="Explore the Krieger School Slider">
