@@ -14,3 +14,10 @@
     text-decoration: none;
   }
 }
+
+.main-content {
+  .button {
+    font-family: $font-stack-semibold;
+    font-weight: $font-stack-semibold-weight;
+  }
+}
