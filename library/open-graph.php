@@ -7,10 +7,20 @@
 	        return;
 		if($excerpt = $post->post_content) 
 	        {
- 				$excerpt = strip_tags($post->post_content);
-				$excerpt = str_replace("", "'", $excerpt);
-				$excerpt = wp_trim_words($post->post_content, 25, '...');
+ 				$uglyexcerpt = strip_tags($post->post_content);
+				$uglyexcerpt = str_replace("", "'", $uglyexcerpt);
+				$excerpt = wp_trim_words($uglyexcerpt, 25, '...');
         	} 
+        	elseif (is_singular('people')) {
+        		$longexcerpt = strip_tags(get_post_meta($post->ID, 'ecpt_bio', true));
+        		$longexcerpt = str_replace("", "'", $longexcerpt);
+        		$excerpt = wp_trim_words($longexcerpt, 15, '...');
+        	}
+        	elseif (is_singular('studyfields')) {
+        		$longexcerpt = strip_tags(get_post_meta($post->ID, 'ecpt_section1', true));
+        		$longexcerpt = str_replace("", "'", $longexcerpt);
+        		$excerpt = wp_trim_words($longexcerpt, 15, '...');
+        	}
         	else 
         	{
             	$excerpt = get_bloginfo('title');
@@ -27,7 +37,11 @@
 	        echo '<meta property="og:site_name" content="'. get_bloginfo( 'title' ) .'"/>';
 	        if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
 	    //Create a default image on your server or an image in your media library, and insert it's URL here
-	        $default_image=  get_template_directory_uri() . '/assets/images/gilman.jpg';
+	        	if (is_singular('studyfields')) {
+	        		$default_image=  get_post_meta($post->ID, 'ecpt_image', true);
+	        	} else {
+	        		$default_image=  get_template_directory_uri() . '/assets/images/gilman.jpg';
+	    	}
 	        echo '<meta property="og:image" content="' . $default_image . '"/>';
 	    }
 	    else{
