@@ -46,8 +46,9 @@
 		</script>
 	</head>
 	<body <?php body_class(); ?>>
-	<a class="skiplink show-on-focus" href="#page">Skip to main content</a>
-
+	<div role="navigation" aria-label="Skip to main content">
+		<a class="skiplink show-on-focus" href="#page">Skip to main content</a>
+	</div>
 	<?php do_action( 'foundationpress_after_body' ); ?>
 
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
