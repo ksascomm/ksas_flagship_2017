@@ -45,7 +45,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 			</li>
 			<?php endwhile;?>
 	    </ul>
-		<nav class="orbit-bullets">
+		<nav class="orbit-bullets" aria-label="Slider Buttons">
 			<?php $bullet_counter = 0; while( $flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post();
 			 $slide_image = get_post_meta($post->ID, 'ecpt_fullimage', true); ?>
 				<button<?php if( $bullet_counter === 0 ) : echo ' class="is-active"'; endif; ?> data-slide="<?php echo $bullet_counter; ?>">
