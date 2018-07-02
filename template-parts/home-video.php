@@ -15,7 +15,7 @@
 		<div class="large-6 large-push-6 columns">
 			<div class="home-video">
 				<!--get video ID and place in data-id-->
-				<div class="youtube-player" data-id="EGCtT9m0NDk"></div>
+				<div class="youtube-player" data-id="9Ivh-63QpCM"></div>
 			</div>
 		</div>
 		<div class="large-6 large-pull-6 columns">
