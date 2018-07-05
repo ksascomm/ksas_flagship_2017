@@ -20,7 +20,7 @@
 		</div>
 		<div class="large-6 large-pull-6 columns">
 		  <h1><?php the_title(); ?></h1> 
-		  <?php the_content(); ?>
+		  <?php the_excerpt(); ?>
 		</div>
 	</div>
 </article>
