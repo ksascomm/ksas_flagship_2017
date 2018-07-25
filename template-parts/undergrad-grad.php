@@ -37,7 +37,7 @@
 			
 			<?php if ( get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
 				<div class="office">
-					<span class="fa fa-map-marker"></span>  <?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>
+					<span class="fa fa-map-marker-alt"></span>  <?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>
 				</div>
 			<?php endif; ?>	
 		</div>

@@ -30,6 +30,8 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// Enqueue jQuery migrate. Uncomment the line below to enable.
 		// wp_enqueue_script( 'jquery-migrate' );
 
+		// Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
+		wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.1.0/css/all.css', array(), '5.1.0', 'all' );
 
 	// If you'd like to cherry-pick the foundation components you need in your project, head over to gulpfile.js and see lines 35-54.
 	// It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)
@@ -57,3 +59,6 @@ if (!(is_admin() )) {
     }
     add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
 }
+
+//remove Tablepress default styles; use Foundation
+add_filter( 'tablepress_use_default_css', '__return_false' );

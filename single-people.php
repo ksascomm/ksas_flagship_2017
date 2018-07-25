@@ -54,7 +54,7 @@ get_header(); ?>
 			   <?php endif; ?>
 			    <p class="listing">
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
-			    		<span class="fa fa-map-marker" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br>
+			    		<span class="fa fa-map-marker-alt" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br>
 			    	<?php endif; ?>
 			    
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_hours', true) ) : ?>
@@ -76,7 +76,7 @@ get_header(); ?>
 						<?php endif; ?>
 
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_cv', true) ) : ?>
-			    		<span class="fa fa-file-pdf-o" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_cv', true); ?>">Curriculum Vitae</a><br>
+			    		<span class="fa fa-file-pdf" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_cv', true); ?>">Curriculum Vitae</a><br>
 			    	<?php endif; ?>
 			    
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
@@ -86,10 +86,10 @@ get_header(); ?>
 			    		<span class="fa fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>" target="_blank">Group/Lab Website</a><br>
 			    	<?php endif; ?>
 			    	<?php if (get_post_meta($post->ID, 'ecpt_google_id', true) ) : ?>
-			    		<span class="fa fa-google"></span> <a href="http://scholar.google.com/citations?user=<?php echo get_post_meta($post->ID, 'ecpt_google_id', true); ?>" target="_blank">Google Scholar Profile</a><br>
+			    		<span class="fab fa-google"></span> <a href="http://scholar.google.com/citations?user=<?php echo get_post_meta($post->ID, 'ecpt_google_id', true); ?>" target="_blank">Google Scholar Profile</a><br>
 			    	<?php endif; ?>
 			    	<?php if (get_post_meta($post->ID, 'ecpt_microsoft_id', true) ) : ?>
-			    		<span class="fa fa-windows"></span> <a href="https://academic.microsoft.com/#/detail/<?php echo get_post_meta($post->ID, 'ecpt_microsoft_id', true); ?>" target="_blank"> Microsoft Academic Profile</a>
+			    		<span class="fab fa-windows"></span> <a href="https://academic.microsoft.com/#/detail/<?php echo get_post_meta($post->ID, 'ecpt_microsoft_id', true); ?>" target="_blank"> Microsoft Academic Profile</a>
 					<?php endif; ?>
 			    </p>
 		</div>

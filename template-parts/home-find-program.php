@@ -16,7 +16,7 @@
 			<h1>
 				<span class="fa-stack fa-lg hide-for-small-only">
 					<span class="fa fa-circle fa-stack-2x"></span>
-					<span class="fa fa-lightbulb-o fa-stack-1x fa-inverse" aria-hidden="true"></span>
+					<span class="far fa-lightbulb fa-stack-1x fa-inverse" aria-hidden="true"></span>
 				</span>
 				Find Your Program. <span class="skyblue">Pursue Your Passions.</span>
 			</h1>

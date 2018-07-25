@@ -167,11 +167,7 @@ gulp.task('javascript', function() {
 
 // Copy task
 gulp.task('copy', function() {
-  // Font Awesome
-  var fontAwesome = gulp.src('assets/components/fontawesome/fonts/**/*.*')
-      .pipe(gulp.dest('assets/fonts'));
 
-  return merge(fontAwesome);
 });
 
 // Package task

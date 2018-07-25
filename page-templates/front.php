@@ -128,19 +128,19 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	<h1 class="heading">Connect</h1>
 	<div class="social">
 		<ul class="menu align-right">
-			<li><a href="https://www.youtube.com/user/jhuksas"><span class="fi-list fa fa-youtube-square fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
-			<li><a href="https://twitter.com/JHUArtsSciences"><span class="fi-list fa fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
-			<li><a href="https://www.instagram.com/JHUArtsSciences/"><span class="fi-list fa fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
-			<li><a href="http://facebook.com/JHUArtsSciences"><span class="fi-list fa fa-facebook-official fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
+			<li><a href="https://www.youtube.com/user/jhuksas"><span class="fi-list fab fa-youtube fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
+			<li><a href="https://twitter.com/JHUArtsSciences"><span class="fi-list fab fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
+			<li><a href="https://www.instagram.com/JHUArtsSciences/"><span class="fi-list fab fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
+			<li><a href="http://facebook.com/JHUArtsSciences"><span class="fi-list fab fa-facebook fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
 			<li class="menu-text">#JHUArtsSciences</li>
 		</ul>
 	</div>		
 	<div class="twitter" aria-labelledby="twitter-link" role="contentinfo">
-		<h1 id="twitter-link">twitter <span class="fa fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
+		<h1 id="twitter-link">twitter <span class="fab fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
 		<?php get_template_part( 'template-parts/feed-twitter' ); ?>
 	</div>
 	<div class="instagram" aria-labelledby="instagram-link" role="contentinfo">
-		<h1 id="instagram-link">instagram <span class="fa fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
+		<h1 id="instagram-link">instagram <span class="fab fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
 		<?php get_template_part( 'template-parts/feed-instagram' ); ?>   
 	</div>
 </section>
