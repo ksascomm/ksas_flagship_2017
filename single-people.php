@@ -22,7 +22,7 @@ get_header(); ?>
 				<a class="bread-parent" href="<?php echo site_url();?>/people/" title="People">People</a>
 			</li>
 			<li class="item-parent">
-				<a class="bread-parent" href="<?php echo site_url();?>/people/leadership/" title="Dean and Leadership">Dean & Leadership</a>
+				<a class="bread-parent" href="<?php echo site_url();?>/people/dean-leadership/" title="Dean and Leadership">Dean & Leadership</a>
 			</li>
 			<li class="current item"><?php echo the_title();?></li>
 		</ul>
