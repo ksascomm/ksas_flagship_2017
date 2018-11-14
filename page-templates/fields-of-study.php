@@ -80,7 +80,7 @@ Template Name: Fields of Study
 			 				<?php if ($post->post_title == 'Pre-Med'):?>
 			 					<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 			 				<?php else: ?>
-			 				<a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a>
+			 				<a href="https://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')"><?php the_title(); ?></a>
 							<?php endif;?>
 			 			</h3>
 							<p class="contact">
