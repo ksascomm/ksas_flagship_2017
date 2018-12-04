@@ -14,6 +14,12 @@
  * @since FoundationPress 1.0.0
  */
 
+add_action('init', function () {
+  if (!session_id()) {
+    session_start();
+  }
+}, 1);
+
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
 

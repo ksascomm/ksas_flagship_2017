@@ -14,7 +14,7 @@
 				<label for="utility-search" class="screen-reader-text">
 	                Search This Website
 	            </label>
-				<input type="text" value="<?php echo get_search_query(); ?>" name="q" id="utility-search" placeholder="Search this site" aria-label="Search This Website"/>
+				<input type="text" name="q" id="utility-search" placeholder="Search this site" aria-label="Search This Website"/>
 				<div class="input-group-button">
 	    			<input type="submit" class="button" value="&#xf002;" aria-label="search">
 	  			</div>	

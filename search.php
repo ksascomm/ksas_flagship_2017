@@ -5,128 +5,117 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-require_once TEMPLATEPATH . '/library/GoogleSearch.php';
+
+
+require __DIR__ . '/vendor/autoload.php';
+/** Mindbreeze Search */
+require_once( 'library/mindbreeze-search.php');
+
+// http client 
+//find way to not do "array..." on prod!
+$http = new HttpExchange\Adapters\Guzzle6(new \GuzzleHttp\Client(array("verify"=> false )));
+
 get_header(); ?>
 
-<div class="main-wrap" role="main">
+<div class="main-wrap sidebar-right" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 
+
 <article <?php post_class('main-content') ?> id="search-results overview">
-	<h1 class="entry-title">Search</h1>
-    <p>You are currently searching the Krieger network. Try searching the <a href="https://www.jhu.edu/search/">JHU network</a> for websites beyond KSAS.</p>
 
 
-	<?php
-            try {
-		$search = new KSAS_GoogleSearch();
-		$resultsPageNum = 1;
-		if (array_key_exists('resultsPageNum', $_REQUEST) ) {
-			$resultsPageNum = $_REQUEST['resultsPageNum'];
-		}
-		$resultsPerPage = 10;
-		$baseQueryURL = 'https://search.johnshopkins.edu/search?site=krieger_collection&client=ksas_frontend';
-		$results = $search->query($_REQUEST['q'], $baseQueryURL, $resultsPageNum, $resultsPerPage);
+    <?php
 
-		$hits = $results->getNumHits();
-		$displayQuery = $results->getDisplayQuery();
-		$docTitle = 'Search Results';
-		$sponsored_result = $results->getSponsoredResult();
-	?>
+    try {
 
-	<?php if ($hits > 0 ) { ?>
-                <form class="search-form" action="<?php echo site_url('/search'); ?>" method="get" aria-label="Search Results Page search bar">
-                    <fieldset>
-                        <input type="text" class="input-text" name="q" aria-label="search" value="<?php echo $displayQuery ?>" />
-                        <input type="submit" class="button" id="search_again" value="Search Krieger Network" />
-                            <label for="search_again" class="screen-reader-text">
-                            Search Again
-                            </label>
-                    </fieldset>
-                </form>     
-                <h2><?php _e( 'Results for:', 'foundationpress' ); ?> "<?php echo $displayQuery ?>"</h2>  
-                <p>Results <strong><?php echo $results->getFirstResultNum() ?> - <?php echo $results->getLastResultNum() ?></strong> of about <strong><?php echo $hits ?></strong></p>
-           
-            <?php if (empty($sponsored_result) == false ) { ?>
-    	        <div class="callout primary">
-                    <h1>Featured Result</h1>
-                    <h3><a href="<?php echo $sponsored_result['sponsored_url']; ?>"><?php echo $sponsored_result['sponsored_title']; ?></a><small class="black"> &mdash;<?php echo $sponsored_result['sponsored_url']; ?></small></h3>
-    	        </div>
-             <?php } ?>   
-            <div id="search-results">
-                <ul>
-           
-                <?php while ($result = $results->getNextResult() ) {
-                    // note what results are PDFs
-                    $pdfNote = '';
-                    if (preg_match('{application/pdf}', $result['mimeType']) ) {
-                        $pdfNote = '<span class="black"><span class="fa fa-file-pdf-o" aria-hidden="true"></span> [PDF]</span>  ';
-                } ?>
-                    <li>
-                        <h5><?php echo $pdfNote ?><a href="<?php echo $result['path'] ?>"><?php echo $result['title'] ?></a></h5>
-                            <?php if (array_key_exists('description', $result) && $result['description'] ) { ?>
-                                <p><?php echo $result['description'] ?></p>
-                            <?php } ?>
-                        <div class="url"><?php echo $result['path'] ?> - <?php echo $result['sizeHumanReadable'] ?></div>
-                    </li>
-                    <hr>
-            <?php } ?>
-                </ul>
-            </div>
-             
-            <div class="section">
+      $query = urlencode($_REQUEST['q']);
+      
+      // default page number
+          $page = 1;
 
-                <?php $notices = $results->getNotices(); foreach ($notices as $notice ) { ?>
-                    <p class="notice"><?php echo $notice ?></p>
-                <?php } ?>
+          if (isset($_REQUEST['resultsPageNum']) && $pageAsInt = (int) $_REQUEST['resultsPageNum']) {
+            // valid number set in query string
+            $page = $pageAsInt;
+          }
 
-                <ul class="pagination text-center">
-                         
-                     <?php foreach ($results->getResultsetLinks() as $resultsetLink ) { echo '<li>' . $resultsetLink . '</li>'; } ?>
-                    <?php echo '<li>' . $results->getNextLink() . '</li>'; ?> 
-                
-                </ul>
-                 
-            </div>
-        <?php } else {
-        // no hits
-        ?>
-             
-        <?php $notices = $results->getNotices(); foreach ($notices as $notice ) { ?>
-            <p class="notice"><?php echo $notice ?></p>
-         <?php } ?>
-             
-             <h3 class="black">There are no pages matching your search.</h3>
-                <form class="search-form" action="<?php echo site_url('/search'); ?>" method="get">
-                    <fieldset>
-                        <label>
-                            Search:
-                            <input type="text" class="input-text" name="q" value="<?php echo $displayQuery ?>" />
-                        </label>
-                        <input type="submit" class="button" id="search_again" value="Search Krieger Network" />
-                            <label for="search_again" class="screen-reader-text">
-                            Search Again
-                            </label>
-                    </fieldset>
-                </form>        
 
-        <?php }// End if().
-        } catch (KSAS_GoogleSearchException $e ) {
-        $docTitle = 'Search Temporarily Unavailable';
-        ?>
-        
-    <div class="section">
-        <p>We're sorry, the search engine is temporarily unavailable. Please try your search again later.</p>
-    </div>
+      // create mindbreeze request
+      $request = new MindBreezeRequest($http);
+      $request->setQuery($query)->setPage($page);
 
-    <?php }// End try().
- ?>
+      $response = $request->send();
+      $response->parse(); ?>
+
+      <h1 class="entry-title">Search Results: <strong><?php echo $query; ?></strong></h1>
+      <h3>Your Search Returned <?php echo $response->pagination['total'];?> Results</h3>
+      
+        <ol>
+            <?php 
+
+            // display each result
+            foreach ($response->records as $record) {
+              //print_r($record); die();
+            ?>
+              <li class="search-result <?php if($record->data->datasource_fqcategory->value->str === 'BestBets:bestbets') : echo 'best-bet'; endif;?>"> 
+                <?php if($record->data->datasource_fqcategory->value->str === 'BestBets:bestbets') : ?>
+                  <div class="ribbon"><span>FEATURED</span></div>
+                <?php endif;?>
+                <h4 class="result-title"><a href='<?php echo $record->data->url->value->str; ?>'><?php echo $record->data->title->html; ?></a></h4>
+                <p class="result-details">
+                  <?php if (!empty ($record->data->description->value->str)) : echo $record->data->description->value->str .'<br />'; endif; ?>
+                  <cite><?php echo $record->data->url->value->str; ?></cite>
+                  <!--<?php echo $record->data->datasource_fqcategory->value->str;?>-->
+                </p>
+              <!--<?php echo $record->data->icon->html;?>-->
+              </li>
+            <hr>
+        <?php } ?>
+
+      </ol>
+      <?php $site_path = site_url('/search'); ?>
+    
+      <nav aria-label="Pagination">
+         <ul class="pagination">
+          <?php 
+          if ($response->pagination["prev"]) :
+            $newPage = $page - 1 ;
+             // an associative array containing the query var and its value
+            $params = array('q' => $query, 'resultsPageNum' => $newPage);?>
+            <li class="pagination-previous"><a href="<?php echo add_query_arg($params, $site_path);?>">PREV</a></li>
+          <?php endif;
+          if ($response->pagination["next"]) :
+            $newPage = $page + 1 ;
+            $params = array('q' => $query, 'resultsPageNum' => $newPage);?>
+            <li class="pagination-next"><a href="<?php echo add_query_arg($params, $site_path);?>">NEXT</a></li>
+          <?php endif;?>
+        </ul>
+      </nav>
+  <?php } catch (\Exception $e) {
+
+      print_r($e->getMessage());
+
+      // use eceptions to react differently to different errors
+      if ($e instanceof Mindbreeze\Exceptions\RequestException) {
+        die('qeng undefined');
+      } else if ($e instanceOf Mindbreeze\Exceptions\ResponseException) {
+        die('error from guzzle');
+      }
+
+    }?>
 
 </article>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
-<?php get_sidebar(); ?>
-
-</div>
+<aside class="sidebar">
+      <div class="ecpt-page-sidebar">
+          <div class="sidebar-content">
+            <div class="sidebar_header">
+              <h5 class="white">Search JHU Network</h5>
+            </div>
+            <p>You are currently searching the Krieger network. Try searching the <a href="https://www.jhu.edu/search/">JHU network</a> for websites beyond KSAS.</p>
+          </div>
+    </div>
+</aside>
 
 <?php get_footer();

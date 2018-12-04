@@ -1,0 +1,111 @@
+.result-title a {
+  &[href$=".pdf"]:before, &[href$=".doc"]:before, &[href$=".docx"]:before, &[href$=".xls"]:before, &[href$=".xlsx"]:before, &[href$=".ppt"]:before, &[href$=".pptx"]:before {
+    font-family: FontAwesome;
+    font-size: 85%;
+    padding-right: .4rem;
+  }
+  &[href$=".pdf"]:before {
+    content: '\f1c1';
+  }
+  &[href$=".doc"]:before {
+    content: '\f1c2';
+  }
+}
+
+section.main a[href$=".docx"]:before {
+  content: '\f1c2';
+}
+
+.result-title a[href$=".xls"]:before, section.main a[href$=".xlsx"]:before {
+  content: '\f1c3';
+}
+
+.result-title a[href$=".ppt"]:before, section.main a[href$=".pptx"]:before {
+  content: '\f1c4';
+}
+
+li.search-result {
+  list-style: none;
+}
+
+.result-details cite {
+  font-size: 1rem;
+  color: $dark-gray;
+  &::before {
+    font-family: FontAwesome;
+    content: '\f0ac';
+    font-style: normal;
+    padding-right: .4rem;
+  }
+}
+
+.best-bet {
+  background: $light-gray;
+  padding: .75rem;
+  position: relative;
+  .result-details cite {
+    font-style: normal;
+    font-weight: $font-stack-semibold-weight;
+    font-style: normal;
+    font-family: $font-stack-semibold;
+  }
+  .ribbon {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+    text-align: right;
+    span {
+      font-size: .8rem;
+      font-weight: 700;
+      color: #fefefe;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 20px;
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      width: 100px;
+      display: block;
+      background: $blue;
+      background: linear-gradient($blue 0, $blue 100%);
+      box-shadow: 0 3px 10px -5px #000;
+      position: absolute;
+      top: 19px;
+      right: -21px;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: -1;
+        border-left: 3px solid $blue;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid $blue;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: -1;
+        border-left: 3px solid transparent;
+        border-right: 3px solid $blue;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid $blue;
+      }
+    }
+  }
+  h4 {
+    a em {
+      font-style: normal;
+    }
+    font-family: $font-header;
+    font-weight: $font-header-weight;
+    font-style: normal;
+  }
+}
