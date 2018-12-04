@@ -65,9 +65,7 @@ get_header(); ?>
                 <p class="result-details">
                   <?php if (!empty ($record->data->description->value->str)) : echo $record->data->description->value->str .'<br />'; endif; ?>
                   <cite><?php echo $record->data->url->value->str; ?></cite>
-                  <!--<?php echo $record->data->datasource_fqcategory->value->str;?>-->
                 </p>
-              <!--<?php echo $record->data->icon->html;?>-->
               </li>
             <hr>
         <?php } ?>
