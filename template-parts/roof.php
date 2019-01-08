@@ -16,7 +16,7 @@
 	            </label>
 				<input type="text" name="q" id="utility-search" placeholder="Search this site" aria-label="Search This Website"/>
 				<div class="input-group-button">
-	    			<input type="submit" class="button" value="&#xf002;" aria-label="search">
+	    			<button type="submit" class="button" aria-label="search"><span class="fas fa-search"></span></button>
 	  			</div>	
 			</div>
 		</form>

@@ -37,7 +37,7 @@ get_header(); ?>
 							<div class="input-group">
 								<input type="text" value="<?php echo get_search_query(); ?>" name="q" id="s" placeholder="Search this site" aria-label="search"/>
 								<div class="input-group-button">
-					    			<input type="submit" class="button" value="&#xf002;">
+					    			<button type="submit" class="button" aria-label="search"><span class="fas fa-search"></span></button>
 					  			</div>	
 								<label for="s" class="screen-reader-text">
 					                Search This Website

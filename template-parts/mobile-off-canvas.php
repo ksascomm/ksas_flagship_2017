@@ -18,7 +18,7 @@
 		                Search This Website
 		            </label>
 		            <div class="input-group-button">
-		    			<input type="submit" class="button" value="Search &#xf002;">
+		    			<button type="submit" class="button" aria-label="search">Search <span class="fas fa-search"></span></button>
 		  			</div>	
 				</div>
 			</form>
