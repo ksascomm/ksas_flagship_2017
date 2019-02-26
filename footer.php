@@ -27,6 +27,7 @@
 							<li role="menuitem"><a href="http://agora.jhu.edu">Agora Institute</a></li>	
 							<li role="menuitem"><a href="https://jobs.jhu.edu/">Employment</a></li>	
 							<li role="menuitem"><a href="https://www.jhu.edu/alert/">Emergency Alerts</a></li>
+							<li role="menuitem"><a href="https://it.johnshopkins.edu/policies/privacystatement">Privacy Statement</a></li>
 						</ul>
 					</div>
 					<div class="small-12 medium-3 columns social-media hide-for-small-only">
