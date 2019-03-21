@@ -96,10 +96,3 @@ function foundationpress_remove_recent_comments_style() {
 		}
 }
 endif;
-
-//CometCache clear Home Page cache every 18 hours
-add_action('wp_loaded', function() {
-   if ( false === ( $homepage_cache = get_transient( 'homepage_eighteen_hour_cache' ) ) ) {
-        $homepage_cache = comet_cache::clearPost(807);
-	set_transient( 'homepage_eighteen_hour_cache', $homepage_cache, 64800 ); }
-});
