@@ -30,7 +30,7 @@ Template Name: Fields of Study
 			    <li><a class="button" href="javascript:void(0)" data-filter="*" class="selected">View All</a></li>
 				<li><a class="undergrad_program button" href="javascript:void(0)" data-filter=".undergrad_program" class="selected">Undergraduate</a></li>
 				<li><a class="full_time_program button" href="javascript:void(0)" data-filter=".full_time_program" class="selected">Master's & Doctorates</a></li>
-				<li><a class="part_time_program button" href="javascript:void(0)" data-filter=".part_time_program" class="selected">Professional Graduate Programs</a></li>
+				<li><a class="part_time_program button" href="javascript:void(0)" data-filter=".part_time_program" class="selected">Professional Master’s and Certificates (AAP)</a></li>
 			</ul>
 
 			<div class="row">

@@ -150,9 +150,9 @@
 				<h5 class="white">
 					<label for="jump">
 						<?php if ( ('undergraduate' === $field ) || ('full-graduate' === $field ) ) : ?>
-							Other Undergraduate &  Full-Time Graduate Programs
+							Other Undergraduate, Master's, and Doctorate Programs
 						<?php elseif ('part-graduate' === $field ) : ?>
-							Other Part Time Graduate Programs
+							Other Professional Master’s and Certificate Programs
 						<?php endif;?>
 					</label>
 				</h5>
