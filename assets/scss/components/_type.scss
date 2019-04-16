@@ -85,7 +85,7 @@ h3 {
     p {
       a {
         @include link;
-        color: darken($blue, 20%);
+        color: $heritageblue;
       }
       strong {
         font-family: $font-stack-bold;
