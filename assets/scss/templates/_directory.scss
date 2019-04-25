@@ -24,11 +24,24 @@
 }
 
 .bio {
+  margin-bottom: 1rem;
   h2 {
     font-family: $font-stack-semibold;
     font-weight: $font-stack-semibold-weight;
-    color: $blue;
     font-size: 1.5rem;
+  }
+  img {
+    &.headshot {
+      @include breakpoint (small only) {
+        max-width: rem-calc(250px);
+      }
+    }
+  }
+}
+
+.row.bio {
+  @include breakpoint(medium) {
+      margin-left: -1rem;
   }
 }
 
@@ -42,7 +55,7 @@ ul.contact {
 
 		}
 		@include breakpoint(medium) {
-			font-size: 1rem;
+			font-size: 1.125rem;
 		}
 	}	
 }

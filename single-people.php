@@ -155,7 +155,7 @@ get_header(); ?>
 	
 	<?php else :?>
 
-		<p><?php echo get_post_meta($post->ID, 'ecpt_bio', true); ?></p>
+		<?php echo get_post_meta($post->ID, 'ecpt_bio', true); ?>
 		
 	<?php endif; endif; ?>
 	</article>
