@@ -80,7 +80,7 @@
 
 		
 
-		<nav class="site-navigation top-bar" role="navigation" aria-label="Main Navigation">
+		<nav class="site-navigation top-bar" aria-label="Main Navigation">
 		
 				<div class="top-bar-title nav-shield">
 					<h1><span class="screen-reader-text"><?php echo get_bloginfo( 'title' ); ?></span></h1>
