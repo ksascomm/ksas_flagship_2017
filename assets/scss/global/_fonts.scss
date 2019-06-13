@@ -15,7 +15,7 @@
   src: url('../fonts/gentona/Gentona-Book.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-Book.woff') format("woff"), url('../fonts/gentona/Gentona-Book.ttf') format("truetype");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 
@@ -25,7 +25,7 @@
   src: url('../fonts/gentona/Gentona-SemiBold.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-SemiBold.woff') format("woff"), url('../fonts/gentona/Gentona-SemiBold.ttf') format("truetype");
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 
@@ -35,7 +35,7 @@
   src: url('../fonts/gentona/Gentona-Light.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-Light.woff') format("woff"), url('../fonts/gentona/Gentona-Light.ttf') format("truetype");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -44,7 +44,7 @@
   src: url('../fonts/gentona/Gentona-ExtraLight.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-ExtraLight.woff') format("woff"), url('../fonts/gentona/Gentona-ExtraLight.ttf') format("truetype");
   font-weight: 200;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -55,7 +55,7 @@
        url('../fonts/gentona/Gentona-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+font-display: fallback;
 }
 
 @font-face {
@@ -66,5 +66,5 @@
        url('../fonts/gentona/Gentona-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
