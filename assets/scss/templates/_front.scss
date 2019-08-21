@@ -49,6 +49,10 @@
           background-color: $blue;
         }
       }
+      [data-whatinput="mouse"] a:focus, button:focus [data-whatinput="touch"] a:focus, button:focus {
+        background-color: $blue;
+        outline: -webkit-focus-ring-color auto 5px;
+      }      
     }
     .orbit-previous, .orbit-next {
       .fa {
