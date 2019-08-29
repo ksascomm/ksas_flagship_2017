@@ -5182,11 +5182,11 @@ li#menu-item-8798.current_page_item, li#menu-item-8802.current_page_item, li#men
   #off-canvas-menu .input-group-button:last-child:not(:first-child) {
     float: right; }
   #off-canvas-menu .input-group-button .button {
-    background-color: #418fde;
+    background-color: #002d72;
     width: 100%;
     font-family: "gentona-light", "Helvetica Neue", Roboto, sans-serif; }
     #off-canvas-menu .input-group-button .button:focus {
-      background: #418fde;
+      background: #002d72;
       outline: -webkit-focus-ring-color auto 5px; }
 
 .main-wrap {
