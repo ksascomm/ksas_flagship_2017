@@ -81,11 +81,13 @@ h3 {
 }
 
 .ecpt-page-sidebar {
-  .sidebar-content {
+  .sidebar-content, .offset-gutter {
     p {
       a {
         @include link;
         color: $heritageblue;
+        font-family: $font-stack-bold;
+        font-weight: $font-stack-bold-weight;
       }
       strong {
         font-family: $font-stack-bold;
