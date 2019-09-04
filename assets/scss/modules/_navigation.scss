@@ -141,7 +141,10 @@
     }
   }
   .button {
-    background-color: $accessiblue;
+    background-color: $white;
+    color: $blue;
+    font-family: $font-stack-semibold;
+    font-weight: $font-stack-semibold-weight;
     &:hover {
        background-color: $heritageblue;
        color: $white;
