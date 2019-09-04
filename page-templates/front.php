@@ -18,43 +18,45 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 <header class="hero" role="banner" aria-label="Explore the Krieger School Slider">
 
 	<div class="fullscreen-image-slider show-for-large">
-	  <div class="orbit" role="region" aria-label="FullScreen Pictures" data-orbit>
-	    <ul class="orbit-container">
-			<?php if ($flagship_evergreen_query->post_count > 1 ) : ?>
-			<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true"></span></button>
-			<button class="orbit-next"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true"></span></button>
-			<?php endif;?>
-			<?php while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
-			<li class="is-active orbit-slide">
-			<img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>" alt="<?php the_title(); ?>">
-			<figcaption class="orbit-caption">
-			    <div class="row">
-			        <div class="small-12 large-push-1 columns">
-			          <h1><?php the_title(); ?></h1>
-			          	<div class="show-for-medium">
-			          		<?php the_content(); ?>
-				  				<?php if (get_post_meta($post->ID, 'ecpt_link_destination', true) ) : ?>
-							   		<p>
-							   			<a href="<?php echo get_post_meta($post->ID, 'ecpt_link_destination', true);?>" class="button orbit" target="_blank"><?php echo get_post_meta($post->ID, 'ecpt_link_button_text', true);?></a>
-							   		</p>
-								<?php endif; ?>
-			          	</div>
-			         </div>
-			     </div>
-			</figcaption>
-			</li>
-			<?php endwhile;?>
-	    </ul>
-		<nav class="orbit-bullets" aria-label="Slider Buttons">
-			<?php $bullet_counter = 0; while( $flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post();
-			 $slide_image = get_post_meta($post->ID, 'ecpt_fullimage', true); ?>
-				<button<?php if( $bullet_counter === 0 ) : echo ' class="is-active"'; endif; ?> data-slide="<?php echo $bullet_counter; ?>">
-					<span class="show-for-sr">Slide of <?php echo the_title(); ?></span>
-					<?php if( $bullet_counter === 0 ) :?><span class="show-for-sr">Current Slide</span><?php endif; ?>
-				</button>
-			<?php $bullet_counter++; endwhile; ?>
-		</nav>		
-	  </div>
+	  	<div class="orbit" role="region" aria-label="Homepage Slider" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+	  		<div class="orbit-wrapper">	
+			    <ul class="orbit-container">
+					<?php if ($flagship_evergreen_query->post_count > 1 ) : ?>
+						<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true"></span></button>
+						<button class="orbit-next"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true"></span></button>
+					<?php endif;?>
+					<?php while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
+						<li class="is-active orbit-slide">
+							<img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>" alt="<?php the_title(); ?>">
+							<figcaption class="orbit-caption" aria-hidden="true">
+							    <div class="row">
+							        <div class="small-12 large-push-1 columns">
+							          <h1><?php the_title(); ?></h1>
+							          	<div class="show-for-medium">
+							          		<?php the_content(); ?>
+								  				<?php if (get_post_meta($post->ID, 'ecpt_link_destination', true) ) : ?>
+											   		<p>
+											   			<a href="<?php echo get_post_meta($post->ID, 'ecpt_link_destination', true);?>" class="button orbit" target="_blank"><?php echo get_post_meta($post->ID, 'ecpt_link_button_text', true);?></a>
+											   		</p>
+												<?php endif; ?>
+							          	</div>
+							         </div>
+							     </div>
+							</figcaption>
+						</li>
+					<?php endwhile;?>
+			    </ul>
+				<nav class="orbit-bullets" aria-label="Slider Buttons">
+				<?php $bullet_counter = 0; while( $flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post();
+					 $slide_image = get_post_meta($post->ID, 'ecpt_fullimage', true); ?>
+					<button<?php if( $bullet_counter === 0 ) : echo ' class="is-active"'; endif; ?> data-slide="<?php echo $bullet_counter; ?>">
+						<span class="show-for-sr">Slide of <?php echo the_title(); ?></span>
+						<?php if( $bullet_counter === 0 ) :?><span class="show-for-sr">Current Slide</span><?php endif; ?>
+					</button>
+				<?php $bullet_counter++; endwhile; ?>
+				</nav>
+			</div>
+		</div>
 	</div>
 
 	<div class="front-hero hide-for-large">
