@@ -5155,7 +5155,8 @@ div#offCanvasTop1 {
   .off-canvas .menu > li > a {
     color: #fefefe; }
     .off-canvas .menu > li > a:hover {
-      background: #d6d6d6; }
+      color: #4A484C;
+      background: #f4f4f4; }
 
 @media print, screen and (min-width: 40em) {
   .sticky-container {

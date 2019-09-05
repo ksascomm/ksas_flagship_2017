@@ -321,7 +321,8 @@ div#offCanvasTop1 {
   .menu > li > a {
     color: $white;
     &:hover {
-      background: $medium-gray;
+      color: $dark-gray;
+      background: $light-gray;
     }
   }
 }
