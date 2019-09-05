@@ -71,6 +71,9 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 	}
 }
 
+// remove menu-item-id from <li> in navigation. ksasaca_css_attributes_filter is in ksas_global_functions.php plugin.
+add_filter('nav_menu_item_id', 'ksasaca_css_attributes_filter', 100, 1);
+
 
 /**
  * Add support for buttons in the top-bar menu:
