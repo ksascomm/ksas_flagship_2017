@@ -44,7 +44,7 @@
     border: none;
   }
   .current {
-    background: $powderblue;
+    background: $blue;
     a:hover {
       background: transparent;
       border: none;
@@ -68,8 +68,8 @@
   }
 }
 
-.entry-content {
-  p, .tablepress {
+.entry-content, #noResult {
+  p {
     a {
     @include link;
       &.button {
@@ -91,6 +91,5 @@
         }
       }
     }
-
   }
 }

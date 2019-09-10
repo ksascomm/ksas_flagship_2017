@@ -6,9 +6,9 @@ $purple: #24135f;     //purple
 $red: #8a2a2b;        //red
 $yellow: #cba052;     //yellow
 $rust: #6f2c3f;		  //rust
-$black: #2C2C33;      //black
+$black: #31261D;      //black
+$oldblack: #2C2C33;
 $accessiblue: #2A78C7;
-$heritageblue: #002d72;
 $skyblue: #418fde;
 $powderblue: lighten($skyblue, 30%);
 $grey: #E5E2E0;
@@ -23,6 +23,12 @@ $dark-gray: #4A484C;   //dark grey
 $medium-gray: #d6d6d6;
 $light-gray: #f4f4f4;
 $fa-font-path: "../fonts";
+
+$heritageblue: #002d72;
+$spiritblue: #68ace5;
+$secondaryblue: #0072ce;
+$accentgreen: #286140;
+$secondarymaroon: #76232F;
 
 $font-header: 'quadon', 'Helvetica Neue', Roboto, sans-serif;
 $font-header-weight: 400;

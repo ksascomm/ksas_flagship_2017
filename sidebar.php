@@ -40,7 +40,7 @@
 		?>
 	<!--Below is displayed when on a child page --> 
 		<div id="sidebar_header">
-			<h5>Also in <?php echo $parent_name ?></h5>
+			<h4>Also in <?php echo $parent_name ?></h4>
 		</div>
 		<?php
 		wp_nav_menu( array(
@@ -57,7 +57,7 @@
 	 <?php if (is_404() ) : ?>
 
 	 	<div id="sidebar_header">
-			<h5>Explore This Website</h5>
+			<h4>Explore This Website</h4>
 		</div>
 
 		<?php
@@ -75,7 +75,7 @@
 	 <?php if (is_home() || is_single() && ! is_singular(array( 'studyfields', 'ai1ec_event', 'people' )) ) : ?>
 
 		<div id="sidebar_header">
-			<h5>Also in About</h5>
+			<h4>Also in About</h4>
 		</div>
 		<?php
 			wp_nav_menu( array(
@@ -93,7 +93,7 @@
 	<?php if ( is_singular('people') ) : ?>
 	
 		<div id="sidebar_header">
-			<h5>Also in People</h5>
+			<h4>Also in People</h4>
 		</div>
 		<?php
 			wp_nav_menu( array(
@@ -106,11 +106,11 @@
 			));
 	if (has_term('', 'role') && ! has_term('job-market-candidate', 'role') ) : ?>
 		<div class="ecpt-page-sidebar">
-		<div class="sidebar_header">
-		<label for="jump">
-		<h5>View Other Profiles</h5>
-		</label>
-		</div>
+			<div class="sidebar_header">
+				<label for="jump">
+					<h4>View Other Profiles</h4>
+				</label>
+			</div>
 		<br>
 		<select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -132,7 +132,7 @@
 
 	<?php if ( is_singular('studyfields') ) : ?>
 		<div id="sidebar_header">
-			<h5>Also in Academics</h5>
+			<h4>Also in Academics</h4>
 		</div>
 		<?php
 			wp_nav_menu( array(
@@ -147,7 +147,7 @@
 		<?php $field = get_post_meta($post->ID, 'ecpt_field_level', true);?>
 		<div class="ecpt-page-sidebar">
 			<div class="sidebar_header">
-				<h5 class="white">
+				<h4 class="white">
 					<label for="jump">
 						<?php if ( ('undergraduate' === $field ) || ('full-graduate' === $field ) ) : ?>
 							Other Undergraduate, Master's, and Doctorate Programs
@@ -155,7 +155,7 @@
 							Other Professional Master’s and Certificate Programs
 						<?php endif;?>
 					</label>
-				</h5>
+				</h4>
 			</div>
 			<br>	
 	        <select name="jump" id="jump" onchange="window.open(this.options[this.selectedIndex].value,'_top')">

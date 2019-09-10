@@ -116,9 +116,9 @@
   margin-top: 2rem;
   .fp-intro {
     h1 {
-      color: $blue;
+      color: $heritageblue;
       span.skyblue {
-        color: $skyblue;
+        color: $blue;
       }
       @include breakpoint(small) { 
         font-size: 1.25rem;
@@ -474,7 +474,7 @@
     font-weight: $font-stack-bold-weight;
   }
   .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
-    background: $accessiblue;
+    background: $blue;
     color: $white;
   }
   .tabs-title > a {

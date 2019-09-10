@@ -21,8 +21,8 @@
 			</div>
 		</form>
 	</li>
-	<li class="roof-padding bar"><a href="https://www.jhu.edu/admissions/visit/" target="_blank" rel="noopener">Visit</a></li>
-	<li class="roof-padding"><a href="https://krieger.jhu.edu/magazine/" target="_blank" rel="noopener">A&S Magazine</a></li>
+	<li class="roof-padding bar"><a href="https://www.jhu.edu/admissions/visit/" target="_blank" rel="noopener" aria-label="Visit Us">Visit</a></li>
+	<li class="roof-padding"><a href="https://krieger.jhu.edu/magazine/" target="_blank" rel="noopener" aria-label="Arts & Sciences Magazine">A&S Magazine</a></li>
 	<li><a class="button" href="#" aria-label="Explore KSAS" data-toggle="offCanvasTop1">Explore KSAS <span class="fa fa-bars" aria-hidden="true"></span></a></li>
 </ul>
 
@@ -30,7 +30,7 @@
 	<div id="global-links" class="row small-up-2 medium-up-3 large-up-3">
 	<h1 class="show-for-sr">Explore KSAS</h1>
 		<div class="column column-block">
-			<h3>Academics</h3>
+			<h2>Academics</h2>
 			<ul class="vertical menu" role="menu">
 				<li role="menuitem"><a href="<?php echo site_url(); ?>/academics/departments-programs-and-centers/" onclick="ga('send', 'event', 'Offcanvas', 'Academics', 'Departments')">Departments, Programs, and Centers</a></li>
 				<li role="menuitem"><a href="<?php echo site_url(); ?>/people/faculty-directory/" onclick="ga('send', 'event', 'Offcanvas', 'Academics', 'Faculty')">Faculty Directory</a></li>
@@ -40,7 +40,7 @@
 			</ul>
 		</div>
 		<div class="column column-block">
-			<h3>Student & Faculty Resources</h3>
+			<h2>Student & Faculty Resources</h2>
 			<ul class="vertical menu" role="menu">
 				<li role="menuitem"><a href="https://sis.jhu.edu/sswf/" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'ISIS')">Course Listings & Registration</a></li>
 				<li role="menuitem"><a href="https://www.jhu.edu/admissions/financial-aid/" onclick="ga('send', 'event', 'Offcanvas', 'Resources', 'Financial Aid')">Financial Aid</a></li>
@@ -50,7 +50,7 @@
 			</ul>
 		</div>
 		<div class="column column-block">
-			<h3>Across Campus</h3>
+			<h2>Across Campus</h2>
 			<ul class="vertical menu" role="menu">
 				<li role="menuitem"><a href="https://www.jhu.edu/admissions/" onclick="ga('send', 'event', 'Offcanvas', 'Campus', 'Admissions')">Admissions Information</a></li>
 				<li role="menuitem"><a href="https://www.jhu.edu/" onclick="ga('send', 'event', 'Offcanvas', 'Campus', 'JHU Home')">Johns Hopkins University Website</a></li>

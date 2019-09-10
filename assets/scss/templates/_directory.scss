@@ -7,7 +7,19 @@
   	//box-shadow: 0 5px 0 -4px currentColor;
   	@include breakpoint(medium) {
 		margin-bottom: 1.75rem;
-	}
+	 }
+  }
+  h2 {
+    font-size: 1.125rem;
+    @include breakpoint (medium) {
+      font-size: 1.5625rem;
+    }
+  }
+  h3 {
+    font-size: 1.0625rem;
+    @include breakpoint (medium) {
+      font-size: 1.25rem;
+    }    
   }
 }
 

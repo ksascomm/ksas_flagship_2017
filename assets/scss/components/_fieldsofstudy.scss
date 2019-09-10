@@ -77,10 +77,12 @@ li.person {
     font-family: $font-stack-bold;
     font-weight: $font-stack-bold-weight;
     font-size: .88rem;
+    background-color: $black;
+    color: $white;
     &.is-checked {
       background-color: transparent;
-      border: 1px solid $blue;
-      color: $blue;
+      border: 1px solid $black;
+      color: $black;
     }
     @include breakpoint(medium only) {
       font-size: 1.25rem;
@@ -90,27 +92,29 @@ li.person {
     }
   }
   .button.undergrad_program {
-    background: $skyblue;
+    background: $heritageblue;
     &.is-checked {
       background-color: transparent;
-      border: 1px solid $skyblue;
-      color: $skyblue;
+      border: 1px solid $heritageblue;
+      color: $heritageblue;
     }    
   }
   .button.full_time_program {
-    background: $aqua;
+    background: $spiritblue;
+    color: black;
     &.is-checked {
       background-color: transparent;
-      border: 1px solid $aqua;
-      color: $aqua;
+      border: 1px solid $spiritblue;
+      color: $black;
     }      
   }
   .button.part_time_program {
-    background: $gold;
+    background: $powderblue;
+    color: $black;
     &.is-checked {
       background-color: transparent;
-      border: 1px solid $gold;
-      color: $gold;
+      border: 1px solid $powderblue;
+      color: $black;
     }     
   }
   label.heading {
@@ -215,16 +219,16 @@ li.person {
     background-color: #000;
     }
     .color.undergrad_program {
-      background-color: $skyblue;
+      background-color: $heritageblue;
     }
     .color.full_time_program {
-      background-color: $aqua;
+      background-color: $spiritblue;
     }
     .color.part_time_program {
-      background-color: $gold;
+      background-color: $powderblue;
     }
     .color.full_time_program.undergrad_program {
-      background: linear-gradient(to left, $aqua 50%, $skyblue 50%);
+      background: linear-gradient(to left, $spiritblue 50%, $heritageblue 50%);
     }
   }
   .color {

@@ -62,7 +62,15 @@ padding: 0 1.25rem .1rem 1.25rem;
  .sidebar p {
     padding: .5rem;
   }
-	h5 {
+  #sidebar_header {
+    h4, h5 {
+      font-size: 1.0625rem;
+      @include breakpoint (medium) {
+        font-size: 1.25rem;
+      }
+    }   
+  }
+	h4, h5 {
 		margin-top:0;
 		margin-bottom:0;
 		color: $white;
@@ -155,6 +163,10 @@ padding: 0 1.25rem .1rem 1.25rem;
     }
     a > span.fa {
       color: $blue;
+    }
+    a {
+      @include link;
+      color: $heritageblue;
     }
   }
   ul.nav {

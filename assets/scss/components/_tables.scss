@@ -4,6 +4,20 @@
 
 .tablepress {
 	font-size: 1rem;
+  p, td {
+    a {
+    @include link;
+      &.button {
+        &:hover, &:active {
+        border: none;
+        } 
+      }
+    }
+  }  
+}
+
+.tablepress tbody tr:nth-child(even) {
+  background-color: $light-gray;
 }
 
 

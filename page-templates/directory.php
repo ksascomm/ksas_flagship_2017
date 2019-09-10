@@ -48,11 +48,11 @@ get_header(); ?>
 								</div>
 							<?php } ?>	
 							<div class="media-object-section">
-								<h4 class="no-margin">
+								<h2 class="no-margin">
 									<a href="<?php the_permalink();?>"><?php the_title(); ?></a>
-								</h4>
+								</h2>
 								<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>
-									<h5 class="no-margin"><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h5>
+									<h3 class="no-margin"><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h3>
 								<?php endif; ?>
 								<ul class="contact">
 									<?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>

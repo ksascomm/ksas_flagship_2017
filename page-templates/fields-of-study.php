@@ -27,10 +27,10 @@ Template Name: Fields of Study
 
 		<div class="study-fields callout lightgrey" role="region" aria-label="Filters">
 			<ul class="menu" id="filters">
-			    <li><a class="button" href="javascript:void(0)" data-filter="*" class="selected">View All</a></li>
-				<li><a class="undergrad_program button" href="javascript:void(0)" data-filter=".undergrad_program" class="selected">Undergraduate</a></li>
-				<li><a class="full_time_program button" href="javascript:void(0)" data-filter=".full_time_program" class="selected">Master's & Doctorates</a></li>
-				<li><a class="part_time_program button" href="javascript:void(0)" data-filter=".part_time_program" class="selected">Professional Master’s and Certificates (AAP)</a></li>
+			    <li><a class="button" href="javascript:void(0)" data-filter="*" class="selected" aria-label="View All Programs">View All</a></li>
+				<li><a class="undergrad_program button" href="javascript:void(0)" data-filter=".undergrad_program" class="selected" aria-label="Sort Undergraduate Programs">Undergraduate</a></li>
+				<li><a class="full_time_program button" href="javascript:void(0)" data-filter=".full_time_program" class="selected" aria-label="Sort Master & Doctorate Programs">Master's & Doctorates</a></li>
+				<li><a class="part_time_program button" href="javascript:void(0)" data-filter=".part_time_program" class="selected" aria-label="Professional Master’s and Certificate Programs">Professional Master’s and Certificates (AAP)</a></li>
 			</ul>
 
 			<div class="row">
@@ -122,7 +122,7 @@ Template Name: Fields of Study
 			<div class="small-12 small-centered medium-6 columns end">	
 				<div class="callout warning">
 				  <h5>Sorry, No Results Found</h5>
-				  <p>Try changing your search terms, or explore <a href="https://www.jhu.edu/academics/">all of JHU's academic programs</a></p>
+				  <p>Try changing your search terms, or explore <a href="https://www.jhu.edu/academics/" target="_blank" rel="noopener">all of JHU's academic programs</a></p>
 				</div>
 			</div>
 		</div>
