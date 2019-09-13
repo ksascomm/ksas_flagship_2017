@@ -69,7 +69,7 @@
 }
 
 .entry-content, #noResult {
-  p {
+  p, li {
     a {
     @include link;
       &.button {
