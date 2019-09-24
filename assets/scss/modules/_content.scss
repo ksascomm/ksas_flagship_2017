@@ -62,7 +62,7 @@ padding: 0 1.25rem .1rem 1.25rem;
  .sidebar p {
     padding: .5rem;
   }
-  #sidebar_header {
+  #sidebar_header, .sidebar_header {
     h4, h5 {
       font-size: 1.0625rem;
       @include breakpoint (medium) {

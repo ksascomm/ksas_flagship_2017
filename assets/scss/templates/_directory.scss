@@ -49,6 +49,11 @@
       }
     }
   }
+  p.listing {
+    a {
+      @include link;
+    }
+  }
 }
 
 .row.bio {
