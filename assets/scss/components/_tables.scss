@@ -81,6 +81,9 @@
     &:last-child {
       margin-right: 0;
     }
+    &:focus {
+      outline: -webkit-focus-ring-color auto 5px;
+    }    
   }
   &.paging_simple {
     padding: 0 15px;
@@ -143,4 +146,7 @@
     content: "\f054";
     left: auto;
   }
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  }  
 }
