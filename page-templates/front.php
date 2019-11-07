@@ -149,6 +149,16 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 
 <div class="section-divider"></div>
 
+<div class="magazine-background">
+	<section class="magazine" aria-label="From A&S Magazine">
+		<h1 class="heading">
+			Arts & Sciences Magazine
+		</h1>
+		<div class="row">
+			<?php get_template_part( 'template-parts/magazine-api' ); ?>
+		</div>
+	</section>
+</div>
 <section class="giving" aria-label="Support the Krieger School">
 
 	<div class="giving-hero">

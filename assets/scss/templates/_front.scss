@@ -573,6 +573,7 @@
 }
 
 .connect {
+  @include grid-row();
   h1.heading {
     @include breakpoint(small) {
       padding-left: 1rem;
@@ -585,7 +586,6 @@
     font-family: $font-subhead-book;
     font-weight: $font-subhead-book-weight;
   }
-   @include grid-row();
   .youtube, .twitter, .instagram {
     h1 {
       font-size: 1.25rem;
@@ -678,6 +678,62 @@
       font-size: 1.6rem;
       font-family: $font-stack-semibold;
       font-weight: $font-stack-semibold-weight;
+    }
+  }
+}
+
+.magazine-background {
+background-color: #fefefe;
+background-image: url('../images/frontpage/ag-square.png');
+  .magazine {
+    @include grid-row();
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    h1.heading {
+      @include breakpoint(small) {
+        padding-left: 1rem;
+      }
+      @include breakpoint(xlarge) {
+        padding-left: inherit;
+      }
+    }    
+    .issue-cover {
+      @include breakpoint (xlarge) {
+        margin-left: -0.9375rem;
+      }
+      .card {
+        @include breakpoint (medium down) {
+        border: none;
+        background: none;
+        }
+        .cover {
+          @include breakpoint (small only) {
+          width: 75%;
+          }
+        }
+      }
+    }
+    .cover {
+      //height: 500px;
+    }
+   .issue-stories {
+      h2 {
+        padding-left: 1rem;
+        font-family: $font-stack-bold;
+        font-weight: $font-stack-bold-weight;
+        font-size: 1.6rem;
+      }
+      .media-object-section {
+        h3 {
+          font-size: 1.4rem;
+          margin-bottom: 0;
+          font-family: $font-stack-bold;
+          font-weight: $font-stack-bold-weight;
+        }
+        p {
+          line-height: 1.3;
+        }
+      }
     }
   }
 }
