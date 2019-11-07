@@ -16,6 +16,6 @@
 		<h1><?php echo get_the_category( $id )[0]->name; ?></h1>
 		<p><?php the_excerpt();?></p>
 		<hr>
-		<p>Watch more videos on our <a href="https://www.youtube.com/user/jhuksas" title="YouTube"><strong>Youtube Channel</strong></a>.</p>
+		<p>Watch more videos on our <a href="https://www.youtube.com/jhuartssciences" title="YouTube"><strong>Youtube Channel</strong></a>.</p>
 	</div>
 </article>
