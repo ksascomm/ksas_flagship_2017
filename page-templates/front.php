@@ -18,7 +18,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 <header class="hero" role="banner" aria-label="Explore the Krieger School Slider">
 
 	<div class="fullscreen-image-slider show-for-large">
-	  	<div class="orbit" role="region" aria-label="Homepage Slider" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+	  	<div class="orbit" role="region" aria-label="Homepage Slider" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out; autoPlay: false;">
 	  		<div class="orbit-wrapper">	
 			    <ul class="orbit-container">
 					<?php if ($flagship_evergreen_query->post_count > 1 ) : ?>
