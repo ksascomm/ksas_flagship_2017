@@ -1,8 +1,9 @@
 .result-title a {
   &[href$=".pdf"]:before, &[href$=".doc"]:before, &[href$=".docx"]:before, &[href$=".xls"]:before, &[href$=".xlsx"]:before, &[href$=".ppt"]:before, &[href$=".pptx"]:before {
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free", 'gentona-semibold', 'Helvetica Neue', Roboto, sans-serif;
     font-size: 85%;
     padding-right: .4rem;
+    font-style: normal;
   }
   &[href$=".pdf"]:before {
     content: '\f1c1';
@@ -32,8 +33,9 @@ li.search-result {
   font-size: 1rem;
   color: $dark-gray;
   &::before {
-    font-family: FontAwesome;
-    content: '\f0ac';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f57d';
     font-style: normal;
     padding-right: .4rem;
   }
