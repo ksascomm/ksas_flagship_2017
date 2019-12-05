@@ -23,8 +23,8 @@
 						</a>
 					</div>
 					<div class="small-12 medium-4 large-5 columns">
-						<ul id="menu-footer-links" class="menu simple hide-for-small-only" role="menu">
-							<li role="menuitem"><a href="http://agora.jhu.edu">Agora Institute</a></li>	
+						<ul id="menu-footer-links" class="menu simple" role="menu">
+							<li role="menuitem"><a href="https://livejohnshopkins.sharepoint.com/sites/KSASFacultyHandbook">Faculty Handbook</a></li>	
 							<li role="menuitem"><a href="https://jobs.jhu.edu/">Employment</a></li>	
 							<li role="menuitem"><a href="https://www.jhu.edu/alert/">Emergency Alerts</a></li>
 							<li role="menuitem"><a href="https://it.johnshopkins.edu/policies/privacystatement">Privacy Statement</a></li>
