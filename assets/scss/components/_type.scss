@@ -74,15 +74,15 @@ h3 {
   font-size: 1.125rem;
   font-family: $font-stack-semibold;
   font-weight: $font-stack-semibold-weight;
-  color: $blue;
+  color: $heritageblue;
   &:focus, &[aria-selected='true'] {
-    color: $blue;
+    color: $heritageblue;
   }
 }
 
 .entry-content {
   .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
-    background: $blue;
+    background: $heritageblue;
     color: $white;
   }
 }

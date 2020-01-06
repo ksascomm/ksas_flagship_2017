@@ -108,7 +108,7 @@
 
 //added by TG 5-17
 .roof {
-  background-color: $blue;
+  background-color: $heritageblue;
   width: 100%;
   padding: .5rem 0;
   li.roof-padding {
@@ -116,9 +116,9 @@
   }
   a {
     color: $white;
-  &:hover {
-    color: $black;
-  }
+    &:hover {
+      color: $black;
+    }
   }
   li.bar {
     a:after { 
@@ -142,12 +142,13 @@
   }
   .button {
     background-color: $white;
-    color: $blue;
+    color: $heritageblue;
     font-family: $font-stack-semibold;
     font-weight: $font-stack-semibold-weight;
     &:hover {
        background-color: $heritageblue;
        color: $white;
+       border: 1px solid $white;
     }
     &:focus {
       background: $heritageblue;
@@ -172,7 +173,7 @@
   }
 }
 .top-bar, .top-bar ul {
-  background-color: $blue;
+  background-color: $heritageblue;
 }
 
 .top-bar-title {
@@ -305,7 +306,7 @@ div#offCanvasTop1 {
         padding: 0.35rem 1rem; 
         font-family: $font-stack-bold;
         font-weight: $font-stack-bold-weight;
-        color: $blue;
+        color: $heritageblue;
         &:hover, &:active {
             color: $black;
         }

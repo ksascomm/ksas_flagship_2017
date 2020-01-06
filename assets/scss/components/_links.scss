@@ -19,7 +19,7 @@
     	}
     }
     a {
-        color: $blue;
+        color: $heritageblue;
         &:hover {
           color: $black;
         }
@@ -44,7 +44,7 @@
     border: none;
   }
   .current {
-    background: $blue;
+    background: $heritageblue;
     a:hover {
       background: transparent;
       border: none;
@@ -81,6 +81,9 @@
   }
   ul.accordion {
     li.accordion-item {
+      a {
+       border-bottom: 1px solid #e6e6e6;
+      }
       .accordion-content {
         ul {
           li {

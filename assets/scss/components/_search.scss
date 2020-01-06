@@ -72,7 +72,7 @@ li.search-result {
       -webkit-transform: rotate(45deg);
       width: 100px;
       display: block;
-      background: $blue;
+      background: $heritageblue;
       background: linear-gradient($blue 0, $blue 100%);
       box-shadow: 0 3px 10px -5px #000;
       position: absolute;
@@ -84,10 +84,10 @@ li.search-result {
         left: 0;
         top: 100%;
         z-index: -1;
-        border-left: 3px solid $blue;
+        border-left: 3px solid $heritageblue;
         border-right: 3px solid transparent;
         border-bottom: 3px solid transparent;
-        border-top: 3px solid $blue;
+        border-top: 3px solid $heritageblue;
       }
       &::after {
         content: "";
@@ -96,9 +96,9 @@ li.search-result {
         top: 100%;
         z-index: -1;
         border-left: 3px solid transparent;
-        border-right: 3px solid $blue;
+        border-right: 3px solid $heritageblue;
         border-bottom: 3px solid transparent;
-        border-top: 3px solid $blue;
+        border-top: 3px solid $heritageblue;
       }
     }
   }

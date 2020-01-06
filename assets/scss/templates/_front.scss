@@ -46,11 +46,11 @@
       button {
         background-color: $white;
         &.is-active {
-          background-color: $blue;
+          background-color: $heritageblue;
         }
       }
       [data-whatinput="mouse"] a:focus, button:focus [data-whatinput="touch"] a:focus, button:focus {
-        background-color: $blue;
+        background-color: $heritageblue;
         outline: -webkit-focus-ring-color auto 5px;
       }      
     }
@@ -118,7 +118,7 @@
     h1 {
       color: $heritageblue;
       span.skyblue {
-        color: $blue;
+        color: $heritageblue;
       }
       @include breakpoint(small) { 
         font-size: 1.25rem;
@@ -202,7 +202,7 @@
         max-height: 215px;
         width: 31%;
       }
-      background: $blue;
+      background: $heritageblue;
       text-align: center;
       cursor: pointer;
       img {
@@ -475,11 +475,11 @@
     font-weight: $font-stack-bold-weight;
   }
   .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
-    background: $blue;
+    background: $heritageblue;
     color: $white;
   }
   .tabs-title > a {
-    color: $blue;
+    color: $heritageblue;
   }
 
   li.is-active.accordion-item > a.accordion-title {
@@ -742,7 +742,7 @@ background-image: url('../images/frontpage/ag-square.png');
 $giving-hero-height: 50vh;
 
 .giving-hero {
-  background: $blue;
+  background: $heritageblue;
   background: url('../images/frontpage/homepage-giving-image.jpg') top right no-repeat;
   @include breakpoint (large) {
     height: $giving-hero-height;
