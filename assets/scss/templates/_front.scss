@@ -623,6 +623,11 @@
     .callout {
       //border-width: 2px;
     }
+    a {
+      &:hover {
+        color: $black;
+      }
+    }    
   }
   .instagram {
     h1 {
@@ -714,8 +719,12 @@ background-image: url('../images/frontpage/ag-square.png');
         }
       }
     }
-    .cover {
-      //height: 500px;
+    button, .button {
+      &:hover {
+        background-color: $white;
+        color: $heritageblue;
+        border: 1px solid $heritageblue;
+      }
     }
    .issue-stories {
       h2 {
@@ -730,6 +739,11 @@ background-image: url('../images/frontpage/ag-square.png');
           margin-bottom: 0;
           font-family: $font-stack-bold;
           font-weight: $font-stack-bold-weight;
+          a {
+            &:hover {
+              color: $black;
+            }
+          }
         }
         p {
           line-height: 1.3;
@@ -781,5 +795,12 @@ $giving-hero-height: 50vh;
     @media screen and (min-width: 64em) {
       padding-left: 35%;
     }
+    button, .button {
+      &:hover {
+        background-color: $white;
+        color: $heritageblue;
+        border: 1px solid $heritageblue;
+      }
+    }    
   }
 }
