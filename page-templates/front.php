@@ -22,10 +22,12 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	  		<div class="orbit-wrapper">	
 			    <ul class="orbit-container">
 					<?php if ($flagship_evergreen_query->post_count > 1 ) : ?>
-						<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true"></span></button>
-						<button class="orbit-next"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true"></span></button>
+						<button class="orbit-previous" onclick="ga('send', 'event', 'Homepage Slider', 'Previous Slide Click');"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true"></span></button>
+						<button class="orbit-next" onclick="ga('send', 'event', 'Homepage Slider', 'Next Slide Click');"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true"></span></button>
 					<?php endif;?>
-					<?php while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
+					<?php 
+					$slidernumber = 0;
+					while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); $slidernumber++;?>
 						<li class="is-active orbit-slide">
 							<img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>" alt="<?php the_title(); ?>">
 							<figcaption class="orbit-caption" aria-hidden="true">
@@ -36,7 +38,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 							          		<?php the_content(); ?>
 								  				<?php if (get_post_meta($post->ID, 'ecpt_link_destination', true) ) : ?>
 											   		<p>
-											   			<a href="<?php echo get_post_meta($post->ID, 'ecpt_link_destination', true);?>" class="button orbit" target="_blank"><?php echo get_post_meta($post->ID, 'ecpt_link_button_text', true);?></a>
+											   			<a href="<?php echo get_post_meta($post->ID, 'ecpt_link_destination', true);?>" target="_blank" class="button orbit" onclick="ga('send', 'event', 'Homepage Slider', 'Read More Click, Slide: <?php echo $slidernumber;?>', 'Destination: <?php echo get_post_meta($post->ID, 'ecpt_link_destination', true); ?>');"><?php echo get_post_meta($post->ID, 'ecpt_link_button_text', true);?></a>
 											   		</p>
 												<?php endif; ?>
 							          	</div>
