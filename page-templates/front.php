@@ -38,7 +38,7 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 							          		<?php the_content(); ?>
 								  				<?php if (get_post_meta($post->ID, 'ecpt_link_destination', true) ) : ?>
 											   		<p>
-											   			<a href="<?php echo get_post_meta($post->ID, 'ecpt_link_destination', true);?>" target="_blank" class="button orbit" onclick="ga('send', 'event', 'Homepage Slider', 'Read More Click, Slide: <?php echo $slidernumber;?>', 'Destination: <?php echo get_post_meta($post->ID, 'ecpt_link_destination', true); ?>');"><?php echo get_post_meta($post->ID, 'ecpt_link_button_text', true);?></a>
+											   			<a href="<?php echo get_post_meta($post->ID, 'ecpt_link_destination', true);?>" class="button orbit" onclick="ga('send', 'event', 'Homepage Slider', 'Read More Click, Slide: <?php echo $slidernumber;?>', 'Destination: <?php echo get_post_meta($post->ID, 'ecpt_link_destination', true); ?>');"><?php echo get_post_meta($post->ID, 'ecpt_link_button_text', true);?></a>
 											   		</p>
 												<?php endif; ?>
 							          	</div>
