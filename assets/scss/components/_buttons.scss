@@ -22,3 +22,10 @@
     background-color: $heritageblue;
   }
 }
+
+.button.hollow.gram-link {
+  &:hover, &:focus {
+    background-color: $heritageblue;
+    color: $white;
+  }
+}
