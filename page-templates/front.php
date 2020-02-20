@@ -3,70 +3,47 @@
 Template Name: Front
 */
 get_header(); ?>
-<!--ORBIT SLIDER -->
 
 <?php 
-$flagship_evergreen_query = new WP_Query(array(
-   'post_type' => 'evergreen',
-   'orderby' => 'rand',
-   'post_status' => 'publish',
-   'posts_per_page' => 10,
-));
+// Get any existing copy of our transient data
+if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship_evergreen_query' ) ) ) {
+    // It wasn't there, so regenerate the data and save the transient
+	$flagship_evergreen_query = new WP_Query(array(
+	   'post_type' => 'evergreen',
+	   'orderby' => 'rand',
+	   'post_status' => 'publish',
+	   'posts_per_page' => 1,
+	));
+	//set a 24 hour transient
+	set_transient( 'flagship_evergreen_query', $flagship_evergreen_query, 86400 );
+}
+?>
 
-if ( $flagship_evergreen_query->have_posts() ) : ?>
 
 <header class="hero" role="banner" aria-label="Explore the Krieger School Slider">
 
 	<div class="fullscreen-image-slider show-for-large">
-	  	<div class="orbit" role="region" aria-label="Homepage Slider" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out; autoPlay: false;">
-	  		<div class="orbit-wrapper">	
-			    <ul class="orbit-container">
-					<?php if ($flagship_evergreen_query->post_count > 1 ) : ?>
-						<button class="orbit-previous" onclick="ga('send', 'event', 'Homepage Slider', 'Previous Slide Click');"><span class="show-for-sr">Previous Slide</span><span class="fa fa-angle-left fa-4x" aria-hidden="true"></span></button>
-						<button class="orbit-next" onclick="ga('send', 'event', 'Homepage Slider', 'Next Slide Click');"><span class="show-for-sr">Next Slide</span><span class="fa fa-angle-right fa-4x" aria-hidden="true"></span></button>
-					<?php endif;?>
-					<?php 
-					$slidernumber = 0;
-					while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); $slidernumber++;?>
-						<li class="is-active orbit-slide">
-							<img class="orbit-image" src="<?php echo get_post_meta($post->ID, 'ecpt_fullimage', true); ?>" alt="<?php the_title(); ?>">
-							<figcaption class="orbit-caption" aria-hidden="true">
-							    <div class="row">
-							        <div class="small-12 large-push-1 columns">
-							          <h1><?php the_title(); ?></h1>
-							          	<div class="show-for-medium">
-							          		<?php the_content(); ?>
-								  				<?php if (get_post_meta($post->ID, 'ecpt_link_destination', true) ) : ?>
-											   		<p>
-											   			<a href="<?php echo get_post_meta($post->ID, 'ecpt_link_destination', true);?>" class="button orbit" onclick="ga('send', 'event', 'Homepage Slider', 'Read More Click, Slide: <?php echo $slidernumber;?>', 'Destination: <?php echo get_post_meta($post->ID, 'ecpt_link_destination', true); ?>');"><?php echo get_post_meta($post->ID, 'ecpt_link_button_text', true);?></a>
-											   		</p>
-												<?php endif; ?>
-							          	</div>
-							         </div>
-							     </div>
-							</figcaption>
-						</li>
-					<?php endwhile;?>
-			    </ul>
-				<nav class="orbit-bullets" aria-label="Slider Buttons">
-				<?php $bullet_counter = 0; while( $flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post();
-					 $slide_image = get_post_meta($post->ID, 'ecpt_fullimage', true); ?>
-					<button<?php if( $bullet_counter === 0 ) : echo ' class="is-active"'; endif; ?> data-slide="<?php echo $bullet_counter; ?>">
-						<span class="show-for-sr">Slide of <?php echo the_title(); ?></span>
-						<?php if( $bullet_counter === 0 ) :?><span class="show-for-sr">Current Slide</span><?php endif; ?>
-					</button>
-				<?php $bullet_counter++; endwhile; ?>
-				</nav>
+		<?php  if ( $flagship_evergreen_query->have_posts() ) : while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
+				<div class="front-hero" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('full'); ?>, xlarge]" aria-label="<?php the_title(); ?> Banner">
+			<div class="small-12 large-5 large-push-7 columns">
+				<div class="caption">
+					<h1><?php the_title(); ?></h1>
+		<?php endwhile; endif;  wp_reset_postdata();?>
+		
+				<?php //Reset to content loop
+				while ( have_posts() ) : the_post(); ?>
+					<?php the_content(); ?>
+				<?php endwhile;?>
+				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="front-hero hide-for-large">
-		<!--static slider image-->
-	</div>
-
+		<?php if ( $flagship_evergreen_query->have_posts() ) : while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
+			<div class="front-hero-featured-image show-for-medium-only hide-for-print" role="banner" aria-label="Mobile Hero Image">
+				<?php the_post_thumbnail('featured-large');?>
+			</div>
+	<?php endwhile; endif; ?>	
 </header>
-<?php endif; ?>
 
 
 <div class="find-program">
@@ -132,10 +109,11 @@ if ( $flagship_evergreen_query->have_posts() ) : ?>
 	<h1 class="heading">Connect</h1>
 	<div class="social">
 		<ul class="menu align-right">
-			<li><a href="https://www.youtube.com/user/jhuksas"><span class="fi-list fab fa-youtube fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
-			<li><a href="https://twitter.com/JHUArtsSciences"><span class="fi-list fab fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
-			<li><a href="https://www.instagram.com/JHUArtsSciences/"><span class="fi-list fab fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
-			<li><a href="http://facebook.com/JHUArtsSciences"><span class="fi-list fab fa-facebook fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
+			<li><a href="https://www.tiktok.com/@jhuartssciences"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="-32 0 512 512" width="2rem"><g><path d="m432.734375 112.464844c-53.742187 0-97.464844-43.722656-97.464844-97.464844 0-8.285156-6.714843-15-15-15h-80.335937c-8.28125 0-15 6.714844-15 15v329.367188c0 31.59375-25.707032 57.296874-57.300782 57.296874s-57.296874-25.703124-57.296874-57.296874c0-31.597657 25.703124-57.300782 57.296874-57.300782 8.285157 0 15-6.714844 15-15v-80.335937c0-8.28125-6.714843-15-15-15-92.433593 0-167.632812 75.203125-167.632812 167.636719 0 92.433593 75.199219 167.632812 167.632812 167.632812 92.433594 0 167.636719-75.199219 167.636719-167.632812v-145.792969c29.851563 15.917969 63.074219 24.226562 97.464844 24.226562 8.285156 0 15-6.714843 15-15v-80.335937c0-8.28125-6.714844-15-15-15zm0 0" data-original="#000000" class="active-path" data-old_color="#000000" fill="#002D72"/></g></svg></a></li>			
+			<li><a href="https://www.youtube.com/user/jhuksas"><span class="fab fa-youtube fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
+			<li><a href="https://twitter.com/JHUArtsSciences"><span class="fab fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
+			<li><a href="https://www.instagram.com/JHUArtsSciences/"><span class="fab fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
+			<li><a href="https://facebook.com/JHUArtsSciences"><span class="fab fa-facebook fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
 			<li class="menu-text">#JHUArtsSciences</li>
 		</ul>
 	</div>		

@@ -13,12 +13,26 @@
 	if ( false === ( $hub_call = get_transient( 'flagship_hub_query' ) ) ) {
 		$hub_call = wp_remote_get($hub_url);
 	set_transient( 'flagship_hub_query', $hub_call, 86400 ); }
+	
+	// Display a error nothing is returned.
+	if ( is_wp_error( $hub_call ) ) {
+		$error_string = $hub_call->get_error_message();
+		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+
+	}
+
+	// Get the body.
 	if (is_array($hub_call) && !empty($hub_call['body'])) {
 	$hub_results = json_decode($hub_call['body'], true);
 	} else {
 		return false; // wp_remote_get failed somehow
 	}
 	$hub_articles = $hub_results['_embedded'];
+
+	// Display a warning nothing is returned.
+	if ( empty( $hub_articles ) ) {
+		echo '<div class="callout warning"><p>There are no upcoming events</p></div>';
+	}
 	foreach ($hub_articles['articles'] as $hub_article ) { ?>
 	<article class="hub-news story end" aria-labelledby="post-<?php echo $hub_article['id'];?>">
 		<img class="hub-img" src="<?php echo $hub_article['_embedded']['image_thumbnail'][0]['sizes']['thumbnail']; ?>" alt="From The Hub: <?php echo $hub_article['headline']; ?>" />

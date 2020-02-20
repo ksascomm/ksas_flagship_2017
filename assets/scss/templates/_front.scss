@@ -80,7 +80,7 @@
     @include breakpoint(medium) {
       background-size: cover;
       background-position: center;
-      height: rem-calc(365);
+      height: rem-calc(475);
     }
 
 
@@ -107,6 +107,26 @@
         font-size: 2.875rem;
       }
     }
+    .caption {
+      color: #fefefe;
+     
+      background-color: rgba(44,44,51,.66);
+      @include breakpoint(large) {
+        padding: 1rem 2rem;
+        h1 {
+          font-size: 2.125rem;
+        }
+        p {
+           font-size: 1.125rem;
+        }        
+      }
+      @include breakpoint (xlarge) {
+        padding: 2rem 4rem;
+        p {
+           font-size: 1.25rem;
+        }
+      }
+    }
   }
 }
 
@@ -118,7 +138,7 @@
     h1 {
       color: $heritageblue;
       span.skyblue {
-        color: $heritageblue;
+        color: $black;
       }
       @include breakpoint(small) { 
         font-size: 1.25rem;
@@ -158,7 +178,6 @@
   }
   .home-content {
     padding-bottom: 1rem;
-
     @include breakpoint(large) {
       p {
         font-size: 1.35rem;
@@ -168,6 +187,9 @@
 
       // Changes position only
       @include grid-col-pos(1);
+      h1 {
+       text-align: center;
+      }
     }
   }
   .programs {
@@ -176,7 +198,11 @@
       font-size: 1.5rem;
       font-family: $font-stack-bold;
       font-weight: $font-stack-bold-weight;
-      background-color: $skyblue;
+      background-color: $heritageblue;
+      &:hover {
+        background-color: $spiritblue;
+        color: $black;
+      }
     }
   }
   .grid {
@@ -679,12 +705,21 @@
             float: right;
           }
       }
+      a {
+      svg {
+        &:hover {
+          //https://css-tricks.com/change-color-of-svg-on-hover/
+          filter: invert(62%) sepia(60%) saturate(364%) hue-rotate(168deg) brightness(91%) contrast(97%);
+        }
+      } 
+      }     
     }
     li.menu-text {
       font-size: 1.6rem;
       font-family: $font-stack-semibold;
       font-weight: $font-stack-semibold-weight;
     }
+
   }
 }
 
@@ -804,3 +839,67 @@ $giving-hero-height: 50vh;
     }    
   }
 }
+
+/*
+.hero {
+  &.front-c {
+    //background-color: $white;
+    //background-color: #fefefe;
+    //background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23fefefe' stroke-width='0.32' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(13.95) translate(-928.32 -696.24)'%3E%3Cuse fill='%23f9f9f9' href='%23s' y='2'/%3E%3Cuse fill='%23f9f9f9' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23f4f4f4' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23f4f4f4' href='%23s'/%3E%3Cuse fill='%23efefef' href='%23s' x='2'/%3E%3Cuse fill='%23efefef' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(13.95) translate(-928.32 -696.24)'%3E%3Cg fill='%23eaeaea'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(13.95) translate(-928.32 -696.24)'%3E%3Cg fill='%23eaeaea'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(13.95) translate(-928.32 -696.24)'%3E%3Cg fill='%23e5e5e5'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(13.95) translate(-928.32 -696.24)'%3E%3Cg fill='%23fefefe'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23e0e0e0'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(13.95) translate(-928.32 -696.24)'%3E%3Cg fill='%230022dd'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(13.95) translate(-928.32 -696.24)'%3E%3Cg fill='%230022dd'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(13.95) translate(-928.32 -696.24)'%3E%3Cg fill='%230022dd'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    //background-attachment: fixed;
+    //background-size: cover;
+    background-color: #fefefe;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23fefefe' stroke-width='0.5' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='rotate(19 1000 750) scale(14.2) translate(-929.58 -697.18)'%3E%3Cuse fill='%23f9f9f9' href='%23s' y='2'/%3E%3Cuse fill='%23f9f9f9' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23f4f4f4' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23f4f4f4' href='%23s'/%3E%3Cuse fill='%23efefef' href='%23s' x='2'/%3E%3Cuse fill='%23efefef' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='rotate(19 1000 750) scale(14.2) translate(-929.58 -697.18)'%3E%3Cg fill='%23eaeaea'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='rotate(19 1000 750) scale(14.2) translate(-929.58 -697.18)'%3E%3Cg fill='%23eaeaea'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='rotate(19 1000 750) scale(14.2) translate(-929.58 -697.18)'%3E%3Cg fill='%23e5e5e5'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='rotate(19 1000 750) scale(14.2) translate(-929.58 -697.18)'%3E%3Cg fill='%23fefefe'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23e0e0e0'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='rotate(19 1000 750) scale(14.2) translate(-929.58 -697.18)'%3E%3Cg fill='%2368ace5'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='rotate(19 1000 750) scale(14.2) translate(-929.58 -697.18)'%3E%3Cg fill='%2368ace5'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='rotate(19 1000 750) scale(14.2) translate(-929.58 -697.18)'%3E%3Cg fill='%2368ace5'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  @include breakpoint(small) {
+    .image-wrapper {
+      order: 1;
+      background-size: cover;
+      background-position: center center;
+      height: 18rem;
+      display: block;
+      width: 100%;
+    }
+    .content-wrapper {
+      order: 2;
+      display: block;
+      margin-left: 0;
+      padding: 3rem;
+      text-align: left;
+      width: 100%;
+      .content-wrapper-text {
+        //background: rgba(255,255,255, .55);
+        backdrop-filter: blur(2px);
+        p {
+          font-size: 1.35rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  @include breakpoint (large) {
+    .image-wrapper {
+      background-size: cover;
+      background-position: center center;
+      display: table-cell;
+      width: 60%;
+      height: rem-calc(475);
+    }
+    .content-wrapper {
+      display: table-cell;
+      padding: 2.25rem 3rem 2.25rem;
+      width: 40%;
+    }
+  }
+
+  @include breakpoint(xlarge) {
+    .image-wrapper {
+      width: 66%;
+    }
+    .content-wrapper {
+      width: 33%;
+    }
+  }  
+}*/

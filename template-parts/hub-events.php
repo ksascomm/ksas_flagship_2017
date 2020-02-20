@@ -10,11 +10,27 @@
 	<h1 class="hub-title"><a href="https://hub.jhu.edu/events/">Events from The Hub</a></h1>
 	<?php
 	$hub_event_url = 'https://api.hub.jhu.edu/events?v=1&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&locations=668&include_subterms=668&per_page=4';
+
 	if ( false === ( $hub_event_call = get_transient( 'flagship_hub_events_query' ) ) ) {
 		$hub_event_call = wp_remote_get($hub_event_url);
 	set_transient( 'flagship_hub_events_query', $hub_event_call, 86400 ); }
+
+	// Display a error nothing is returned.
+	if ( is_wp_error( $hub_event_call ) ) {
+		$error_string = $hub_event_call->get_error_message();
+		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+
+	}
+
+	// Get the body.
 		$hub_event_results = json_decode($hub_event_call['body'], true);
 		$hub_events = $hub_event_results['_embedded'];
+
+	// Display a warning nothing is returned.
+	if ( empty( $hub_events ) ) {
+		echo '<div class="callout warning"><p>There are no upcoming events</p></div>';
+	}
+
 	foreach ($hub_events['events'] as $hub_event ) { ?>
 	<article class="hub-news hub-events end" aria-labelledby="post-<?php echo $hub_event['id'];?>">
 		<h1><a href="<?php echo $hub_event['url']; ?>" target="_blank" id="post-<?php echo $hub_event['id'];?>"><?php echo $hub_event['name']; ?></a></h1>

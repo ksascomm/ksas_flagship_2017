@@ -42,10 +42,18 @@
 .social-media {
   a {
     float: right;
-    .fa, .fab, .fas, .far {
+    .fa, .fab, .fas, .far, {
       padding: 0 .5rem;
       color: $white;
     }
+    svg {
+      margin: 0 .5rem;
+    }
+    &:hover {
+      color: $white;
+      border-bottom: 0.0625rem dashed;
+      transition: color 0.5s ease; 
+    }    
   }
 }
 
@@ -68,5 +76,9 @@
     font-family: $font-stack-bold;
     font-weight: $font-stack-bold-weight;
     color: $white;
+    &:hover {
+      border-bottom: 0.0625rem dashed;
+      transition: color 0.5s ease; 
+    }
   }
 }

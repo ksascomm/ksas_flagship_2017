@@ -20,7 +20,7 @@
 				</span>
 				Find Your Program. <span class="skyblue">Pursue Your Passions.</span>
 			</h1>
-			<div class="hide-for-small-only">
+			<div class="hide-for-large">
 				<?php the_content(); ?>
 			</div>
 		</article>
