@@ -23,10 +23,14 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 <header class="hero" role="banner" aria-label="Explore the Krieger School Slider">
 
 	<div class="fullscreen-image-slider show-for-large">
-		<?php  if ( $flagship_evergreen_query->have_posts() ) : while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
-				<div class="front-hero" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('featured-large'); ?>, large], [<?php echo the_post_thumbnail_url('full'); ?>, xlarge]" aria-label="<?php the_title(); ?> Banner">
+		<?php if ( $flagship_evergreen_query->have_posts() ) :  while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
+		<div class="front-hero" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('featured-small'); ?>, small], [<?php echo the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php echo the_post_thumbnail_url('full'); ?>, large], [<?php echo the_post_thumbnail_url('full'); ?>, xlarge]" aria-label="<?php the_title(); ?> Banner">
+		<?php endwhile; else :?>
+		<div class="front-hero" role="banner" style="background: url('<?php echo get_template_directory_uri(); ?>/assets/images/frontpage/homepage-slider-hero.jpg') bottom center; background-size: cover;" aria-label="Homepage Banner">>
+		<?php endif; ?>
 			<div class="small-12 large-5 large-push-7 columns">
 				<div class="caption">
+		 <?php  if ( $flagship_evergreen_query->have_posts() ) : while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
 					<h1><?php the_title(); ?></h1>
 		<?php endwhile; endif;  wp_reset_postdata();?>
 		

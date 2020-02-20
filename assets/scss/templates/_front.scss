@@ -67,9 +67,9 @@
     }
 
     @include breakpoint(small) {
-      background: url('../images/frontpage/homepage-slider-hero.jpg') bottom center;
+      //background: url('../images/frontpage/homepage-slider-hero.jpg') bottom center;
       background-size: cover;
-      background-position: bottom;
+      background-position: top;
       padding: rem-calc(65%) 0;
       margin: 0 0 rem-calc(32);
       height: rem-calc(200);
@@ -79,8 +79,8 @@
 
     @include breakpoint(medium) {
       background-size: cover;
-      background-position: center;
-      height: rem-calc(475);
+      background-position: top;
+      height: 55vh;
     }
 
 
@@ -183,10 +183,10 @@
         font-size: 1.35rem;
       }
       // Changes size only
-      @include grid-col-size(10);
+      //@include grid-col-size(10);
 
       // Changes position only
-      @include grid-col-pos(1);
+      //@include grid-col-pos(1);
       h1 {
        text-align: center;
       }
