@@ -61,6 +61,7 @@
     }
   }
   .front-hero {
+    color: $white;
     .marketing {
       @include grid-row();
       max-width: 55rem;
@@ -83,7 +84,6 @@
       height: 55vh;
     }
 
-
     .tagline {
       @include breakpoint(small) {
         @include grid-column(8);
@@ -94,38 +94,30 @@
         padding-top: 6rem;
       }
     }
-
-    h1 {
-      color: $white;
-      text-shadow: 2px 2px 2px #000;
-      text-shadow: 2px 2px 2px rgba(0,0,0,0.75);
-      @include breakpoint(small) {
-        font-size: 2.2rem;
-      }
-
-      @include breakpoint(medium) {
-        font-size: 2.875rem;
-      }
-    }
     .caption {
       color: #fefefe;
      
       background-color: rgba(44,44,51,.66);
       @include breakpoint(large) {
         padding: 1rem 2rem;
-        h1 {
-          font-size: 2.125rem;
-        }
         p {
-           font-size: 1.125rem;
-        }        
+          font-size: 1.125rem;
+          font-family: $font-stack-semibold;
+          font-weight: $font-stack-semibold-weight;
+          line-height: 1.25;
+        }
+        h1 {
+          font-size: 2rem;
+          text-shadow: 2px 2px 2px #000;
+          text-shadow: 2px 2px 2px rgba(0,0,0,0.75);
+        }
       }
       @include breakpoint (xlarge) {
         padding: 2rem 4rem;
         p {
            font-size: 1.25rem;
         }
-      }
+      }     
     }
   }
 }
