@@ -379,8 +379,9 @@
 
 .texture {
   @include breakpoint (large) {
-    background: url(../images/frontpage/bg-campus-students.jpg) no-repeat fixed;
-    background-size: cover;
+    //background: url(../images/frontpage/bg-campus-students.jpg) no-repeat fixed;
+    //background-size: cover;
+    background: url('https://krieger.jhu.edu/wp-content/uploads/2020/02/topography-400px.png');
   }
   margin-bottom: 2rem;
   hr {
@@ -592,7 +593,6 @@
 }
 
 .connect {
-  @include grid-row();
   h1.heading {
     @include breakpoint(small) {
       padding-left: 1rem;
@@ -605,6 +605,77 @@
     font-family: $font-subhead-book;
     font-weight: $font-subhead-book-weight;
   }
+  .links {
+    @include grid-row();
+  }
+
+  .feed {
+
+    .feeds {
+       $row-width: em-calc(1000);
+    }
+    .insta {
+      border: 2px solid $grey;
+    }
+    .tiktok {
+      //position: relative;
+      border: 2px solid $grey;
+      padding: .5rem;
+      
+     .tiktok-thumb {
+        //position: absolute;
+        position: relative;
+        overflow: hidden;
+        @include breakpoint (medium) {
+          max-height: 570px;
+        }
+        img {
+          //max-height: 560px;
+          //-webkit-transition: 0.6s ease;
+          //transition: 0.6s ease;
+        }
+        .image {
+            opacity: 1;
+            display: block;
+            @include breakpoint (medium only) {
+            width: 50%;
+            }
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+        .overlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: .5s ease;
+          background-color: rgba(0,45,114,0.85);
+        }        
+      }
+    }
+    .tiktok-thumb:hover .overlay {
+      opacity: 1;
+    }    
+    .text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+
+
   .youtube, .twitter, .instagram {
     h1 {
       font-size: 1.25rem;
