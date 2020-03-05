@@ -456,7 +456,7 @@
         }
         @include breakpoint(large) {
             @include grid-column(3);
-            height: 400px;
+            //height: 400px;
         }  
       }
       .hub-events {
@@ -479,12 +479,12 @@
           }
         }
         @include breakpoint(large) {
-          height: 300px;
+          //height: 300px;
         }
       }
       .hub-news.story {
         @include breakpoint(large) {
-          height: 475px;
+          //height: 475px;
         } 
       }     
   }

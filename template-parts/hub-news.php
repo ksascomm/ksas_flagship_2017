@@ -6,7 +6,7 @@
 * @since FoundationPress 1.0.0
 */
 ?>
-<div class="row">
+<div class="row" data-equalize-on="large">
 	<h1 class="hub-title"><a href="https://hub.jhu.edu/">News from The Hub</a></h1>
 	<?php
 	$hub_url = 'https://api.hub.jhu.edu/articles?v=1&key=bed3238d428c2c710a65d813ebfb2baa664a2fef&divisions=426&per_page=4';
@@ -34,7 +34,7 @@
 		echo '<div class="callout warning"><p>There are no upcoming events</p></div>';
 	}
 	foreach ($hub_articles['articles'] as $hub_article ) { ?>
-	<article class="hub-news story end" aria-labelledby="post-<?php echo $hub_article['id'];?>">
+	<article class="hub-news story end" aria-labelledby="post-<?php echo $hub_article['id'];?>" data-equalizer-watch>
 		<img class="hub-img" src="<?php echo $hub_article['_embedded']['image_thumbnail'][0]['sizes']['thumbnail']; ?>" alt="From The Hub: <?php echo $hub_article['headline']; ?>" />
 		<h1><a href="<?php echo $hub_article['url']; ?>" id="post-<?php echo $hub_article['id'];?>"><?php echo $hub_article['headline']; ?></a></h1>
 		<summary>
