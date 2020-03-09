@@ -39,7 +39,7 @@
 	$tiktok_vid_url = $matches[1];?>
 	<div class="tiktok-thumb">
 		<a href="<?php echo $tiktok_vid_url;?>">
-			<img src="<?php echo $tiktok_results['thumbnail_url'];?>" class="float-center image" alt="<?php echo $tiktok_results['title'];?>">
+			<img src="<?php echo $tiktok_results['thumbnail_url'];?>" class="float-center image" alt="Tiktok Thumbnail for: <?php echo $tiktok_results['title'];?>">
 			<div class="overlay">
     			<div class="text">
     				<?php echo $tiktok_results['title'];?>
