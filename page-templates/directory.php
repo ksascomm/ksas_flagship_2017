@@ -56,16 +56,16 @@ get_header(); ?>
 								<?php endif; ?>
 								<ul class="contact">
 									<?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>
-										<li><span class="fa fa-phone-square"></span> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?></li>
+										<li><span class="fas fa-phone-square-alt"></span> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?></li>
 									<?php endif; ?>
 									<?php if ( get_post_meta($post->ID, 'ecpt_fax', true) ) : ?>
-										<li><span class="fa fa-fax"></span> <?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?></li>
+										<li><span class="fas fa-fax"></span> <?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?></li>
 									<?php endif; ?>
 									<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?>
-										<li><span class="fa fa-envelope"></span> <a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a></li>
+										<li><span class="fas fa-envelope"></span> <a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a></li>
 									<?php endif; ?>
 									<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
-										<li><span class="fa fa-map-marker"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?></li>
+										<li><span class="fas fa-map-marker"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?></li>
 									<?php endif; ?>
 								</ul>
 							</div>

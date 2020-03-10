@@ -40,7 +40,7 @@ Template Name: Fields of Study
 					</h4>
 					<div class="input-group">
 						<span class="input-group-label">
-							<span class="fa fa-search"></span>
+							<span class="fas fa-search"></span>
 						</span>
 							<input class="quicksearch input-group-field" type="text" name="search" id="id_search" aria-label="Search Fields of Study" placeholder="Enter major/minor, area of study, or description keyword"  /> 
 					</div>
@@ -84,7 +84,7 @@ Template Name: Fields of Study
 							<?php endif;?>
 			 			</h3>
 							<p class="contact">
-								<span class="fa fa-envelope"></span>
+								<span class="fas fa-envelope"></span>
 									<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
 										<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>
 									</a>

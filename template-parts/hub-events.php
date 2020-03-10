@@ -37,8 +37,8 @@
 		<?php $start = $hub_event['start_time'];
 		$end = $hub_event['end_time'];
 		$date = $hub_event['start_date']; ?>
-		<h3><span class="fa fa-calendar" aria-label="date"></span> <?php echo date('m/d/Y', strtotime($date));?></h3>
-		<h4><span class="fa fa-clock-o" aria-label="time"></span> <?php echo date('h:i a', strtotime($start));?> - <?php echo date('h:i a', strtotime($end));?></h4>
+		<h3><span class="far fa-calendar-alt" aria-label="date"></span> <?php echo date('m/d/Y', strtotime($date));?></h3>
+		<h4><span class="far fa-clock" aria-label="time"></span> <?php echo date('h:i a', strtotime($start));?> - <?php echo date('h:i a', strtotime($end));?></h4>
 		<summary>
 		<p><?php $description =  $hub_event['description'];
 		$excerpt = $hub_event['excerpt'];

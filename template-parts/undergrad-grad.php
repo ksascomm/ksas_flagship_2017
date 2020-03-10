@@ -20,7 +20,7 @@
 		<div class="row study-fields-contact">			
 			<?php if ( get_post_meta($post->ID, 'ecpt_homepage', true) ) : ?>
 				<div class="website">
-					<span class="fa fa-globe"></span> 
+					<span class="fas fa-globe"></span> 
 					<a href="http://<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>" onclick="ga('send','event','Outgoing Links','<?php echo get_post_meta($post->ID, 'ecpt_homepage', true); ?>')">
 						<?php the_title(); ?> Website
 					</a>
@@ -28,7 +28,7 @@
 			<?php endif; ?>
 			<?php if ( get_post_meta($post->ID, 'ecpt_emailaddress', true) ) : ?>
 				<div class="email">
-					<span class="fa fa-envelope"></span> 
+					<span class="fas fa-envelope"></span> 
 					<a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true); ?>">
 						<?php echo get_post_meta($post->ID, 'ecpt_emailaddress', true);?>
 					</a>
@@ -37,7 +37,7 @@
 			
 			<?php if ( get_post_meta($post->ID, 'ecpt_location', true) ) : ?>
 				<div class="office">
-					<span class="fa fa-map-marker-alt"></span>  <?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>
+					<span class="fas fa-map-marker-alt"></span>  <?php echo get_post_meta($post->ID, 'ecpt_location', true); ?>
 				</div>
 			<?php endif; ?>	
 		</div>

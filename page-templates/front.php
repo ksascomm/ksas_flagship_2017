@@ -118,7 +118,7 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 				<li><a href="https://www.youtube.com/user/jhuksas"><span class="fab fa-youtube fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
 				<li><a href="https://twitter.com/JHUArtsSciences"><span class="fab fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
 				<li><a href="https://www.instagram.com/JHUArtsSciences/"><span class="fab fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
-				<li><a href="https://facebook.com/JHUArtsSciences"><span class="fab fa-facebook fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
+				<li><a href="https://facebook.com/JHUArtsSciences"><span class="fab fa-facebook-square fa-2x"></span><span class="screen-reader-text">Facebook</span></a></li>
 				<li class="menu-text">#JHUArtsSciences</li>
 			</ul>
 		</div>
@@ -138,14 +138,6 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 			</div>
 		</div>
 	</div>
-	<!--<div class="twitter" aria-labelledby="twitter-link" role="contentinfo">
-		<h1 id="twitter-link">twitter <span class="fab fa-twitter"></span><span class="screen-reader-text">Twitter</span></h1>
-		<?php get_template_part( 'template-parts/feed-twitter' ); ?>
-	</div>
-	<div class="instagram" aria-labelledby="instagram-link" role="contentinfo">
-		<h1 id="instagram-link">instagram <span class="fab fa-instagram"></span><span class="screen-reader-text">Instagram</span></h1>
-		<?php get_template_part( 'template-parts/feed-instagram' ); ?>   
-	</div>-->
 </section>
 
 <div class="section-divider"></div>

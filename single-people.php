@@ -54,36 +54,36 @@ get_header(); ?>
 			   <?php endif; ?>
 			    <p class="listing">
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
-			    		<span class="fa fa-map-marker-alt" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br>
+			    		<span class="fas fa-map-marker-alt" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br>
 			    	<?php endif; ?>
 			    
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_hours', true) ) : ?>
-			    		<span class="fa fa-calendar" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_hours', true); ?><br>
+			    		<span class="fas fa-calendar" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_hours', true); ?><br>
 			    	<?php endif; ?>
 			    
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>
-			    		<span class="fa fa-phone-square" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?><br>
+			    		<span class="fas fa-phone-square" aria-hidden="true"></span> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?><br>
 			    	<?php endif; ?>
 			    
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_fax', true) ) : ?>
-			    		<span class="fa fa-fax" aria-hidden="true"></span>  <?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?><br>
+			    		<span class="fas fa-fax" aria-hidden="true"></span>  <?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?><br>
 			    	<?php endif; ?>
 			    
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : $email = get_post_meta($post->ID, 'ecpt_email', true); ?>
-							<span class="fa fa-envelope" aria-hidden="true"></span> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge($email); ?>">
+							<span class="fas fa-envelope" aria-hidden="true"></span> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge($email); ?>">
 							
 								<?php echo email_munge($email); ?> </a><br>
 						<?php endif; ?>
 
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_cv', true) ) : ?>
-			    		<span class="fa fa-file-pdf" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_cv', true); ?>">Curriculum Vitae</a><br>
+			    		<span class="fas fa-file-pdf" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_cv', true); ?>">Curriculum Vitae</a><br>
 			    	<?php endif; ?>
 			    
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_website', true) ) : ?>
-			    		<span class="fa fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank">Personal Website</a><br>
+			    		<span class="fas fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank">Personal Website</a><br>
 			    	<?php endif; ?>
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_lab_website', true) ) : ?>
-			    		<span class="fa fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>" target="_blank">Group/Lab Website</a><br>
+			    		<span class="fas fa-globe" aria-hidden="true"></span> <a href="<?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>" target="_blank">Group/Lab Website</a><br>
 			    	<?php endif; ?>
 			    	<?php if (get_post_meta($post->ID, 'ecpt_google_id', true) ) : ?>
 			    		<span class="fab fa-google"></span> <a href="http://scholar.google.com/citations?user=<?php echo get_post_meta($post->ID, 'ecpt_google_id', true); ?>" target="_blank">Google Scholar Profile</a><br>

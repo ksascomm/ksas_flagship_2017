@@ -23,7 +23,7 @@
 	</li>
 	<li class="roof-padding bar"><a href="https://www.jhu.edu/admissions/visit/" target="_blank" rel="noopener" aria-label="Visit Us">Visit</a></li>
 	<li class="roof-padding"><a href="https://krieger.jhu.edu/magazine/" target="_blank" rel="noopener" aria-label="Arts & Sciences Magazine">A&S Magazine</a></li>
-	<li><a class="button" href="#" aria-label="Explore KSAS" data-toggle="offCanvasTop1">Explore JHU <span class="fa fa-bars" aria-hidden="true"></span></a></li>
+	<li><a class="button" href="#" aria-label="Explore KSAS" data-toggle="offCanvasTop1">Explore JHU <span class="fas fa-bars" aria-hidden="true"></span></a></li>
 </ul>
 
 <div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas aria-hidden="true">
