@@ -18,7 +18,7 @@
 		<div class="small-12 large-8 columns">
 		<?php foundationpress_breadcrumb();?>
 		 <?php while ( have_posts() ) : the_post(); ?>	
-		   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
+		   <article <?php post_class('main-content covid') ?> id="post-<?php the_ID(); ?>">
 		       <h1 class="entry-title"><?php the_title(); ?></h1>
 		       	<div class="callout warning">
 		   			<p>Page last modified: <strong><?php the_modified_time('F j, Y'); ?> at <?php the_modified_time('g:i a'); ?></strong></p>
@@ -34,7 +34,7 @@
 
 		<?php do_action( 'foundationpress_after_content' ); ?>
 		</div>
-		<?php get_sidebar('sidebar-1'); ?>
+		<?php get_sidebar(); ?>
  	</div>
  </div>
  <?php get_footer();

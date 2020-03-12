@@ -37,3 +37,15 @@
         }
     }
 }
+
+.main-content.covid {
+    .entry-content {
+        h4 {
+            line-height: 1.6;
+            font-family: $font-stack-bold;
+            font-weight: $font-stack-bold-weight;
+            font-size: 1.25rem;
+            margin-bottom: 0;
+        }
+    }
+}
