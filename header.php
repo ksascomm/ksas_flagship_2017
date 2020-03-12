@@ -46,7 +46,7 @@
 		</script>
 	</head>
 	<body <?php body_class(); ?>>
-	<div class="alert" role="navigation" aria-label="COVID-19 Alerts">
+	<div class="alert-bar" role="navigation" aria-label="COVID-19 Alerts">
     	<a class="alert-message" href="https://hub.jhu.edu/novel-coronavirus-information/">Suspension of classes and other COVID-19 updates</a>
 	</div>
 	<div role="navigation" aria-label="Skip to main content">

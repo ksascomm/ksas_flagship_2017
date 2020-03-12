@@ -1,5 +1,5 @@
 /* Alert */
-.alert {
+.alert-bar {
     background-color: $secondarymaroon;
     color: $white;
     text-align: center;
@@ -20,4 +20,20 @@
             outline: -webkit-focus-ring-color auto 5px;
         }              
     }    
+}
+
+.schema-faq.wp-block-yoast-faq-block {
+    .schema-faq-section {
+        border-bottom: 1px solid $grey;
+        padding-top: 1rem;
+        .schema-faq-question {
+            line-height: 1.6;
+            font-family: $font-stack-bold;
+            font-weight: $font-stack-bold-weight;
+            font-size: 1.25rem;
+        }
+        .schema-faq-answer {
+
+        }
+    }
 }
