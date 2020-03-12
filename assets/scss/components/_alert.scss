@@ -47,5 +47,9 @@
             font-size: 1.25rem;
             margin-bottom: 0;
         }
+        .wp-block-group {
+            border-bottom: 1px solid $grey;
+            padding-top: 1rem;
+        }
     }
 }
