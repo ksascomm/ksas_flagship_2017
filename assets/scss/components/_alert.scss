@@ -50,6 +50,9 @@
         .wp-block-group {
             border-bottom: 1px solid $grey;
             padding-top: 1rem;
+            &.new-faq {
+                @include callout($warning-color);
+            }
         }
     }
 }
