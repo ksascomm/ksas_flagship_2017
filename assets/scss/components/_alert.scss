@@ -51,8 +51,29 @@
             border-bottom: 1px solid $grey;
             padding-top: 1rem;
             &.new-faq {
-                @include callout($warning-color);
+                .wp-block-group__inner-container {
+                    //@include callout($warning-color);
+                    h4 {
+                        &::before {
+                            font-family: "Font Awesome 5 Free", $font-stack-bold; 
+                            font-weight: 900; 
+                            content: "\f06a" " NEW";
+                            margin-right: .5rem;
+                            color: $green;
+                            display: block;
+                        }
+                    }
+                }
+                
+            }
+            &.callout {
+                border: 1px solid rgba(10,10,10,.25);
             }
         }
     }
+    .callout.secondary.resources {
+        h2 {
+            font-size: 1.6rem;
+        }
+    }    
 }
