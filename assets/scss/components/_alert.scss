@@ -75,5 +75,15 @@
         h2 {
             font-size: 1.6rem;
         }
-    }    
+    }
+    .wp-block-columns.expanded.button-group {
+        a.wp-block-button__link {
+            &:hover {
+                background: $white;
+                color: $heritageblue;
+                border: 1px solid $heritageblue;
+                padding: .75rem;
+            }
+        }
+    }
 }
