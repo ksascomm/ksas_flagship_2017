@@ -23,6 +23,10 @@
 		       	<div class="callout warning">
 		   			<p>Page last modified: <strong><?php the_modified_time('F j, Y'); ?> at <?php the_modified_time('g:i a'); ?></strong></p>
 		   		</div>
+		   		<div class="callout alert">
+		   			<h2>Johns Hopkins to finish spring semester online, hold virtual Commencement ceremony.</h2>
+		   			<p>Read the <a href="https://hub.jhu.edu/2020/03/18/university-operations-update/">full text of the message</a> from Ronald J. Daniels and Sunil Kumar.</p>
+		   		</div>
 				<div class="callout secondary resources">
 					<h2>University Resources</h2>
 					<ul>

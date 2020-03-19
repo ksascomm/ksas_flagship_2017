@@ -71,9 +71,20 @@
             }
         }
     }
-    .callout.secondary.resources {
+    .callout.secondary.resources, .callout.alert {
         h2 {
             font-size: 1.6rem;
+        }
+        p, li {
+            a {
+                @include link;
+            }
+        }
+    }
+    .callout.alert {
+        p {
+            font-family: $font-stack-semibold;
+            font-weight: $font-stack-semibold-weight;
         }
     }
     .wp-block-columns.expanded.button-group {
