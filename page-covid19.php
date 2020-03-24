@@ -30,7 +30,7 @@
 				<div class="callout secondary resources">
 					<h2>University Resources</h2>
 					<ul>
-						<li><strong><a href="https://hub.jhu.edu/novel-coronavirus-information/" target="_blank" rel="noopener noreferrer">University Novel coronavirus hub</a></strong> has resources and frequent updates for entire the Johns Hopkins University community</li>
+						<li><strong><a href="https://hub.jhu.edu/novel-coronavirus-information/" target="_blank" rel="noopener noreferrer">University Novel coronavirus hub</a></strong> has resources and frequent updates for the entire Johns Hopkins University community</li>
 						<li><strong><a href="https://coronavirus.jhu.edu/" target="_blank" rel="noopener noreferrer">Johns Hopkins Coronavirus Resource Center</a></strong> has resources to help advance the understanding of the virus, inform the public, and brief policymakers in order to guide a response, improve care, and save lives.</li>
 						<li><strong><a href="https://ois.jhu.edu/Immigration_and_Visas/Travel_Information/COVID-19_Immigration-Related_FAQs/index.html">OIS Immigration and Visa Travel Information</a></strong> has immigration-related FAQs.</li>
 						<li><strong><a href="https://hr.jhu.edu/coronavirus/">HR Information Regarding Novel Coronavirus</a></strong> is a guide for university employees and leaders regarding JHU Human Resources (HR) policies and procedures as the situation evolves.</li>
