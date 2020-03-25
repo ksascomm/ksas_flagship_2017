@@ -22,21 +22,7 @@
 		       <h1 class="entry-title"><?php the_title(); ?></h1>
 		       	<div class="callout warning">
 		   			<p>Page last modified: <strong><?php the_modified_time('F j, Y'); ?> at <?php the_modified_time('g:i a'); ?></strong></p>
-		   		</div>
-		   		<div class="callout alert">
-		   			<h2>Johns Hopkins to finish spring semester online, hold virtual Commencement ceremony.</h2>
-		   			<p>Read the <a href="https://hub.jhu.edu/2020/03/18/university-operations-update/">full text of the message</a> from Ronald J. Daniels and Sunil Kumar.</p>
-		   		</div>
-				<div class="callout secondary resources">
-					<h2>University Resources</h2>
-					<ul>
-						<li><strong><a href="https://hub.jhu.edu/novel-coronavirus-information/" target="_blank" rel="noopener noreferrer">University Novel coronavirus hub</a></strong> has resources and frequent updates for the entire Johns Hopkins University community</li>
-						<li><strong><a href="https://coronavirus.jhu.edu/" target="_blank" rel="noopener noreferrer">Johns Hopkins Coronavirus Resource Center</a></strong> has resources to help advance the understanding of the virus, inform the public, and brief policymakers in order to guide a response, improve care, and save lives.</li>
-						<li><strong><a href="https://ois.jhu.edu/Immigration_and_Visas/Travel_Information/COVID-19_Immigration-Related_FAQs/index.html">OIS Immigration and Visa Travel Information</a></strong> has immigration-related FAQs.</li>
-						<li><strong><a href="https://hr.jhu.edu/coronavirus/">HR Information Regarding Novel Coronavirus</a></strong> is a guide for university employees and leaders regarding JHU Human Resources (HR) policies and procedures as the situation evolves.</li>
-						<li><strong><a href="https://studentaffairs.jhu.edu/coronavirus-information/">Undergraduate Student Services</a></strong> provides updates with information regarding the operations of undergraduate student services.</li>
-					</ul>
-				  </div>		   		
+		   		</div>	   		
 		       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 		       <div class="entry-content">
 
