@@ -49,7 +49,7 @@ $article_title = $post->post_title;
 	 				<p><?php the_excerpt();?></p>
 	 			<?php endif;?>
 				<?php the_content(); ?>
-				<?php edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_post_link( __( 'Edit', 'ksasflagship' ), '<span class="edit-link">', '</span>' ); ?>
 			</div> <!-- end article section -->
 		</div>
 	</article>

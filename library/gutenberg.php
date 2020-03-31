@@ -4,22 +4,22 @@ if ( ! function_exists( 'foundationpress_gutenberg_support' ) ) :
     // Add foundation color palette to the editor
     add_theme_support( 'editor-color-palette', array(
         array(
-            'name' => __( 'Heritage Blue', 'ksasacademic' ),
+            'name' => __( 'Heritage Blue', 'ksasflagship' ),
             'slug' => 'heritage',
             'color' => '#002d72',
         ),
         array(
-            'name' => __( 'Spirit Blue', 'ksasacademic' ),
+            'name' => __( 'Spirit Blue', 'ksasflagship' ),
             'slug' => 'spirit',
             'color' => '#68ace5',
         ),
         array(
-            'name' => __( 'Black', 'ksasacademic' ),
+            'name' => __( 'Black', 'ksasflagship' ),
             'slug' => 'black',
             'color' => '#31261d',
         ),
         array(
-            'name' => __( 'White', 'ksasacademic' ),
+            'name' => __( 'White', 'ksasflagship' ),
             'slug' => 'white',
             'color' => '#fefefe',
         ),
@@ -33,8 +33,8 @@ if ( ! function_exists( 'foundationpress_gutenberg_support' ) ) :
 	// Set normal font size
 	add_theme_support( 'editor-font-sizes', array(
 		array(
-			'name' => __( 'Normal', 'ksasacademic' ),
-			'shortName' => __( 'N', 'ksasacademic' ),
+			'name' => __( 'Normal', 'ksasflagship' ),
+			'shortName' => __( 'N', 'ksasflagship' ),
 			'size' => 16,
 			'slug' => 'normal'
 		),

@@ -10,8 +10,8 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 function foundationpress_sidebar_widgets() {
 		register_sidebar(array(
 		  'id' => 'sidebar-widgets',
-		  'name' => __( 'Sidebar widgets', 'foundationpress' ),
-		  'description' => __( 'Drag widgets to this sidebar container.', 'foundationpress' ),
+		  'name' => __( 'Sidebar widgets', 'ksasflagship' ),
+		  'description' => __( 'Drag widgets to this sidebar container.', 'ksasflagship' ),
 		  'before_widget' => '<article id="%1$s" class="widget %2$s">',
 		  'after_widget' => '</article>',
 		  'before_title' => '<h6>',
@@ -20,8 +20,8 @@ function foundationpress_sidebar_widgets() {
 
 			register_sidebar(array(
 			  'id' => 'footer-widgets',
-			  'name' => __( 'Footer widgets', 'foundationpress' ),
-			  'description' => __( 'Drag widgets to this footer container', 'foundationpress' ),
+			  'name' => __( 'Footer widgets', 'ksasflagship' ),
+			  'description' => __( 'Drag widgets to this footer container', 'ksasflagship' ),
 			  'before_widget' => '<article id="%1$s" class="large-4 columns widget %2$s">',
 			  'after_widget' => '</article>',
 			  'before_title' => '<h6>',
@@ -29,8 +29,8 @@ function foundationpress_sidebar_widgets() {
 			));
 			register_sidebar( array(
 			'id' => 'sidebar-1',
-			'name' => __('Sidebar 1', 'foundationpress'),
-			'description' => __('Sidebar #1. Call this sidebar on each page you want it to appear', 'foundationpress'),
+			'name' => __('Sidebar 1', 'ksasflagship'),
+			'description' => __('Sidebar #1. Call this sidebar on each page you want it to appear', 'ksasflagship'),
 			'before_widget' => '<article id="%1$s" class="large-4 columns widget %2$s">',
 			'after_widget' => '</article>',
 			'before_title' => '<h6>',

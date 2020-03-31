@@ -61,7 +61,7 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 	function foundationpress_mobile_nav() {
 		wp_nav_menu( array(
 			'container'      => false,                         // Remove nav container
-			'menu'           => __( 'mobile-nav', 'foundationpress' ),
+			'menu'           => __( 'mobile-nav', 'ksasflagship' ),
 			'menu_class'     => 'vertical menu',
 			'theme_location' => 'mobile-nav',
 			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',
@@ -259,7 +259,7 @@ if ( ! function_exists( 'foundationpress_breadcrumb' ) ) {
 			} elseif ( get_query_var('paged') ) {
 
 				// Paginated archives
-				echo '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'foundationpress' ) . ' ' . get_query_var('paged') . '</li>';
+				echo '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'ksasflagship' ) . ' ' . get_query_var('paged') . '</li>';
 
 			} elseif ( is_search() ) {
 

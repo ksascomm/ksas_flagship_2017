@@ -9,6 +9,6 @@
 if ( ! function_exists( 'foundationpress_entry_meta' ) ) :
 	function foundationpress_entry_meta() {
 		/* translators: %1$s: current date, %2$s: current time */
-		echo '<time class="updated" datetime="' . get_the_time( 'c' ) . '">' . sprintf( __( 'Posted on %1$s', 'foundationpress' ), get_the_date() ) . '</time>';
+		echo '<time class="updated" datetime="' . get_the_time( 'c' ) . '">' . sprintf( __( 'Posted on %1$s', 'ksasflagship' ), get_the_date() ) . '</time>';
 	}
 endif;
