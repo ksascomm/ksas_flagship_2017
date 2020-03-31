@@ -7,7 +7,7 @@
  */
 
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/mindbreeze/autoload.php';
 /** Mindbreeze Search */
 require_once( 'library/mindbreeze-search.php');
 
