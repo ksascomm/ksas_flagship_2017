@@ -13,9 +13,9 @@
 	$video_id = get_post_meta($frontid, 'ecpt_tiktok_video', true);
 	$tiktok_video_url = 'https://www.tiktok.com/oembed?url='. $video_id;
 
-	if ( WP_DEBUG or false === ( $tiktok_video = get_transient( 'tiktok_video_query' ) ) ) {
-		$tiktok_video = wp_remote_get($tiktok_video_url);
-	set_transient( 'tiktok_video_query', $tiktok_video, 86400 ); }
+		//if ( WP_DEBUG or false === ( $tiktok_video = get_transient( 'tiktok_video_query' ) ) ) {
+	$tiktok_video = wp_remote_get($tiktok_video_url);
+		//set_transient( 'tiktok_video_query', $tiktok_video, 86400 ); }
 
 	// Display a error nothing is returned.
 	if ( is_wp_error( $tiktok_video ) ) {
