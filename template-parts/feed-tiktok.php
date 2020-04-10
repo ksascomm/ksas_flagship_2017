@@ -18,11 +18,10 @@
 		//set_transient( 'tiktok_video_query', $tiktok_video, 86400 ); }
 
 	// Display a error nothing is returned.
-	if ( is_wp_error( $tiktok_video ) ) {
-		$error_string = $tiktok_video->get_error_message();
-		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
-
-	}
+	//if ( is_wp_error( $tiktok_video ) ) {
+	//	$error_string = $tiktok_video->get_error_message();
+	//	echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+	//}
 
 	$tiktok_results = json_decode($tiktok_video['body'], true);
 	//print_r($url);
