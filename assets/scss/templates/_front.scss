@@ -113,6 +113,12 @@
         }
       }
       @include breakpoint (xlarge) {
+        padding: 1.5rem 3rem;
+        p {
+           font-size: 1.2rem;
+        }
+      }
+      @include breakpoint (xxlarge) {
         padding: 2rem 4rem;
         p {
            font-size: 1.25rem;
