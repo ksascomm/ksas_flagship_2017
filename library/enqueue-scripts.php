@@ -32,7 +32,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// wp_enqueue_script( 'jquery-migrate' );
 
 	// Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
-	wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.12.1/css/all.css', array(), '5.12.1', 'all' );
+	wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(), '5.13.0', 'all' );
 
 	// If you'd like to cherry-pick the foundation components you need in your project, head over to gulpfile.js and see lines 35-54.
 	// It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)
