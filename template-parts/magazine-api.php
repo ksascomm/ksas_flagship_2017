@@ -27,7 +27,7 @@
 		<div class="small-12 medium-4 xlarge-3 columns">
 			<div class="issue-cover">
 				<div class="card">
-					<img class="cover" src="<?php echo $front->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->{'cover-story-large'}->source_url;?>" alt="<?php echo $front->_embedded->{'wp:featuredmedia'}[0]->alt_text;?>">
+					<img class="cover" src="<?php echo $front->_embedded->{'wp:featuredmedia'}[0]->media_details->sizes->{'cover-story-medium'}->source_url;?>" alt="<?php echo $front->_embedded->{'wp:featuredmedia'}[0]->alt_text;?>">
 				</div>
 			</div>
 		</div>
@@ -36,7 +36,7 @@
 <?php
 
 	//get the Feature taxonomy ID
-	$latest_features_url = 'https://magazine.krieger.jhu.edu/wp-json/wp/v2/pages?per_page=4&volume=114';
+	$latest_features_url = 'https://magazine.krieger.jhu.edu/wp-json/wp/v2/pages?per_page=4&volume=190';
 
 	if ( false === ( $latest_features = get_transient( 'asmagazine_features_query' ) ) ) {
 		$latest_features = wp_remote_get($latest_features_url);
@@ -60,7 +60,7 @@
 		
 		<div class="small-12 medium-8 xlarge-9 columns">
 			<div class="issue-stories">
-				<h2>Fall 2019 Features</h2>
+				<h2>Spring 2020 Features</h2>
 			<?php foreach ( $features as $feature ) : ?>
 				<div class="media-object">
 					<div class="media-object-section">
