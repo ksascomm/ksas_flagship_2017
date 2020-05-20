@@ -1138,7 +1138,7 @@ $giving-hero-height: 50vh;
     line-height: 1;
 
     opacity: .75;
-    color: white;
+    color: $black;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1146,11 +1146,11 @@ $giving-hero-height: 50vh;
 
 .slick-prev
 {
-    left: -25px;
+    left: -12px;
 }
 [dir='rtl'] .slick-prev
 {
-    right: -25px;
+    right: -12px;
     left: auto;
 }
 .slick-prev:before
@@ -1164,12 +1164,12 @@ $giving-hero-height: 50vh;
 
 .slick-next
 {
-    right: -25px;
+    right: -12px;
 }
 [dir='rtl'] .slick-next
 {
     right: auto;
-    left: -25px;
+    left: -12px;
 }
 .slick-next:before
 {
