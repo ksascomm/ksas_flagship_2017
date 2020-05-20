@@ -12,9 +12,9 @@
 if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	function foundationpress_scripts() {
 
-	// Enqueue the main Stylesheet.
-	//wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/foundation.css', array(), '4.2.1', 'all' );
-	wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/foundation.css', array(), filemtime(get_template_directory() . '/assets/scss'), 'all' );
+		// Enqueue the main Stylesheet.
+	
+		wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/foundation.css', array(), filemtime(get_template_directory() . '/assets/scss'), 'all' );
 
 		// Deregister the jquery version bundled with WordPress.
 		//wp_deregister_script( 'jquery' );
@@ -31,8 +31,11 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// Enqueue jQuery migrate. Uncomment the line below to enable.
 		// wp_enqueue_script( 'jquery-migrate' );
 
-	// Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
-	//wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(), '5.13.0', 'all' );
+		//Slick JS
+		wp_enqueue_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array(), '1.8.1', true);
+
+		// Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
+		//wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', array(), '5.13.0', 'all' );	
 
 	// If you'd like to cherry-pick the foundation components you need in your project, head over to gulpfile.js and see lines 35-54.
 	// It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)

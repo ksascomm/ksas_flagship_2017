@@ -8,27 +8,6 @@
   font-display: swap;
 }
 
-
-@font-face {
-  font-family: 'gentona-book';
-  src: url('../fonts/gentona/Gentona-Book.eot');
-  src: url('../fonts/gentona/Gentona-Book.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-Book.woff') format("woff"), url('../fonts/gentona/Gentona-Book.ttf') format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: fallback;
-}
-
-
-@font-face {
-  font-family: 'gentona-semibold';
-  src: url('../fonts/gentona/Gentona-SemiBold.eot');
-  src: url('../fonts/gentona/Gentona-SemiBold.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-SemiBold.woff') format("woff"), url('../fonts/gentona/Gentona-SemiBold.ttf') format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: fallback;
-}
-
-
 @font-face {
   font-family: 'gentona-light';
   src: url('../fonts/gentona/Gentona-Light.eot');
@@ -39,10 +18,21 @@
 }
 
 @font-face {
-  font-family: 'gentona-extralight';
-  src: url('../fonts/gentona/Gentona-ExtraLight.eot');
-  src: url('../fonts/gentona/Gentona-ExtraLight.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-ExtraLight.woff') format("woff"), url('../fonts/gentona/Gentona-ExtraLight.ttf') format("truetype");
-  font-weight: 200;
+  font-family: 'gentona-book';
+  src: url('../fonts/gentona/Gentona-Book.eot');
+  src: url('../fonts/gentona/Gentona-Book.eot?#iefix') format("embedded-opentype"), url('../fonts/gentona/Gentona-Book.woff') format("woff"), url('../fonts/gentona/Gentona-Book.ttf') format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'gentona-semibold';
+  src: url('../fonts/gentona/Gentona-SemiBold.eot');
+  src: url('../fonts/gentona/Gentona-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gentona/Gentona-SemiBold.woff') format('woff'),
+       url('../fonts/gentona/Gentona-SemiBold.ttf') format('truetype');
+  font-weight: 600;
   font-style: normal;
   font-display: fallback;
 }
@@ -54,17 +44,6 @@
        url('../fonts/gentona/Gentona-Bold.woff') format('woff'),
        url('../fonts/gentona/Gentona-Bold.ttf') format('truetype');
   font-weight: 700;
-  font-style: normal;
-font-display: fallback;
-}
-
-@font-face {
-  font-family: 'gentona-semibold';
-  src: url('../fonts/gentona/Gentona-SemiBold.eot');
-  src: url('../fonts/gentona/Gentona-SemiBold.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/gentona/Gentona-SemiBold.woff') format('woff'),
-       url('../fonts/gentona/Gentona-SemiBold.ttf') format('truetype');
-  font-weight: 600;
   font-style: normal;
   font-display: fallback;
 }

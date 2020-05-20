@@ -1,0 +1,39 @@
+<?php
+
+	//get the Feature taxonomy ID
+	$latest_big_ideas_url = 'https://magazine.krieger.jhu.edu/wp-json/wp/v2/posts?_fields=title,link,excerpt&volume=190&categories=70';
+
+	if ( false === ( $latest_big_ideas = get_transient( 'asmagazine_big_ideas_query' ) ) ) {
+		$latest_big_ideas = wp_remote_get($latest_big_ideas_url);
+		set_transient( 'asmagazine_big_ideas_query', $latest_big_ideas, 2419200 ); 
+	}	
+	
+	// Display a error nothing is returned.
+	if ( is_wp_error( $latest_big_ideas ) ) {
+		$error_string = $latest_big_ideas->get_error_message();
+		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+	}
+
+	// Get the body.
+	$big_ideas = json_decode( wp_remote_retrieve_body( $latest_big_ideas ) );
+	// Display a warning nothing is returned.
+	if ( empty( $big_ideas ) ) {
+		echo '<div class="callout warning"><p>There is no content</p></div>';
+	}
+	// If there are posts then display them!
+	if ( ! empty( $big_ideas ) ) :?>
+	
+			<div class="issue-stories slicker" id="ideas" data-equalizer>
+			<?php foreach ( $big_ideas as $ideas ) : ?>
+				<div data-equalizer-watch>
+					<div class="media-object">
+						<div class="media-object-section">
+					 		<h3><a href="<?php echo $ideas->link;?>"><?php echo $ideas->title->rendered;?></a></h3>
+					 		<p><?php echo $ideas->excerpt->rendered;?></p>
+						</div>
+					</div>
+				</div>
+			<?php endforeach;?>
+			</div>
+	
+	<?php endif;?>

@@ -60,52 +60,58 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 
 <div class="section-divider"></div>
 
-<div class="texture">
-
-	<section class="news" aria-label="News and Events">
-		
-		<ul class="tabs" data-responsive-accordion-tabs="accordion medium-tabs" id="home-tabs">
-		    <li class="tabs-title is-active"><a href="#spotlight" aria-selected="true">Spotlight</a></li>
-		    <li class="tabs-title"><a href="#hubnews">News</a></li>
-		    <li class="tabs-title"><a href="#hubevents">Events</a></li>
-		</ul>
-
-		<div class="tabs-content" data-tabs-content="home-tabs">
-
-		    <div class="tabs-panel is-active" id="spotlight">
-		   
-			    <?php $homepage_query = new WP_Query(array(
-					'post_type' => array('deptextra', 'post'),
-					'posts_per_page' => '1',
-					));
-			    	if ( $homepage_query->have_posts() ) : while ( $homepage_query->have_posts() ) : $homepage_query->the_post();
-			    	$format = get_post_format();
-					if ( false === $format ) { $format = 'standard'; }
-					if ( 'video' === $format ) : locate_template('template-parts/home-video.php', true, false); endif;
-					if ( 'standard' === $format ) : locate_template('template-parts/home-news.php', true, false); endif;?>
-				<?php endwhile; endif; ?>
-		   
-		    </div>
-
-		    <div class="tabs-panel" id="hubnews">
-		     
-		     <?php get_template_part( 'template-parts/hub-news' ); ?>
-
-		    </div>
-
-		    <div class="tabs-panel" id="hubevents">
-			
-				<?php get_template_part( 'template-parts/hub-events' ); ?>
-		    
-		    </div>
-
-	    </div>
-	
-		<hr>
-
+<div class="magazine-background">
+	<section class="magazine" aria-label="From A&S Magazine">
+		<div class="row">
+			<div class="small-12 columns">
+				<h1 class="heading">
+					Arts & Sciences Magazine <small>Spring 2020 Issue</small>
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 large-4 columns">
+				<?php get_template_part( 'template-parts/magazine-cover' ); ?>
+			</div>
+			<div class="small-12 large-8 columns">
+				<ul class="tabs" data-tabs id="magazine-tabs">
+			    	<li class="tabs-title is-active"><a href="#mag-features">Features</a></li>
+			    	<li class="tabs-title"><a href="#mag-dean">Dean's Desktop</a></li>
+			    	<li class="tabs-title slickTrigger" data-tab-target="slickNews"><a href="#mag-news">News</a></li>
+			    	<li class="tabs-title slickTrigger"><a href="#mag-ideas" data-tab-target="slickIdeas">Big Ideas</a></li>
+			    	<li class="tabs-title slickTrigger" data-tab-target="slickDigest"><a href="#mag-digest">Student Digest</a></li>
+			    	<li class="tabs-title slickTrigger" data-tab-target="slickAlumni"><a href="#mag-alumni">Alumni</a></li>
+				</ul>
+				<div class="tabs-content" data-tabs-content="magazine-tabs">
+					<div class="tabs-panel is-active" id="mag-features">
+					 	<?php get_template_part( 'template-parts/magazine-feature' ); ?>
+					</div>
+					<div class="tabs-panel" id="mag-dean">
+					 	<?php get_template_part( 'template-parts/magazine-dean' ); ?>
+					</div>
+					<div class="tabs-panel" id="mag-news">
+					 	<?php get_template_part( 'template-parts/magazine-news' ); ?>
+					</div>
+					<div class="tabs-panel" id="mag-ideas">
+					 	<?php get_template_part( 'template-parts/magazine-big-ideas' ); ?>
+					</div>
+					<div class="tabs-panel" id="mag-digest">
+					 	<?php get_template_part( 'template-parts/magazine-student-digest' ); ?>
+					</div>
+					<div class="tabs-panel" id="mag-alumni">
+					 	<?php get_template_part( 'template-parts/magazine-alumni' ); ?>
+					</div>								
+				</div>
+   			</div>
+				
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				
+			</div>	
+		</div>
 	</section>
 </div>
-
 
 <div class="section-divider"></div>
 
@@ -123,7 +129,6 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 			</ul>
 		</div>
 	</div>
-
 	<div class="feed">
 		<div class="row feeds">
 			<div class="small-12 large-8 columns">
@@ -142,16 +147,6 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 
 <div class="section-divider"></div>
 
-<div class="magazine-background">
-	<section class="magazine" aria-label="From A&S Magazine">
-		<h1 class="heading">
-			Arts & Sciences Magazine
-		</h1>
-		<div class="row">
-			<?php get_template_part( 'template-parts/magazine-api' ); ?>
-		</div>
-	</section>
-</div>
 <section class="giving" aria-label="Support the Krieger School">
 
 	<div class="giving-hero">
