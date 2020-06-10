@@ -166,12 +166,12 @@ button.gsc-search-button.gsc-search-button-v2 {
   font-size: 1.5rem !important; 
   a.gs-title {
     font-family: $font-stack;
-    font-weight: 400;
+    font-weight: $font-stack-weight;
     font-style: normal;
     font-size: 1.5rem !important; 
     b {
       font-family: $font-stack-semibold;
-      font-weight: 600;
+      font-weight: $font-stack-semibold-weight;
       font-style: normal;
       font-size: 1.5rem !important; 
     }
@@ -180,7 +180,8 @@ button.gsc-search-button.gsc-search-button-v2 {
     font-size: 1.25rem;
     .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-long {
       &::before {
-        font-family: FontAwesome;
+        font-family: $font-awesome;
+        font-weight: 900;
         content: '\f0ac';
         font-style: normal;
         padding-right: .4rem;
@@ -210,7 +211,7 @@ input#gsc-i-id1 {
 
 .gsc-cursor-page.gsc-cursor-current-page {
   font-family: $font-stack-semibold;
-  font-weight: 600;
+  font-weight: $font-stack-semibold-weight;
   font-style: normal;
 }
 
@@ -307,3 +308,21 @@ button.gsc-search-button
   background-color: $heritageblue !important;
 }
 
+.gsc-webResult.gsc-result.gsc-promotion {
+  margin: 1rem 0rem .5rem;
+  .gs-promotion {
+    a.gs-title {
+      font-size: 1.125rem;
+      font-family: $font-header;
+      font-weight: $font-header-weight;
+    }
+    .gs-visibleUrl {
+      font-size: 1rem;
+      font-family: $font-stack-semibold;
+      font-weight: $font-stack-semibold-weight;
+    }
+    .gs-promotion-text-cell .gs-visibleUrl, .gs-promotion-text-cell .gs-snippet {
+      font-size: 1rem;
+    }
+  }
+}

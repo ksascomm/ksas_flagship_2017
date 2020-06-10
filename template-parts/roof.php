@@ -9,7 +9,7 @@
 ?>
 <ul class="menu simple roof-menu">
 	<li class="roof-padding">
-		<form method="GET" action="<?php echo site_url('/search'); ?>" role="search" aria-label="Utility Bar Search">
+		<form method="GET" action="<?php echo esc_url( home_url( '/search' ) ); ?>" role="search" aria-label="Utility Bar Search">
 			<div class="input-group">
 				<label for="utility-search" class="screen-reader-text">
 	                Search This Website

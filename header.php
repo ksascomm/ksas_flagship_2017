@@ -25,8 +25,7 @@
 		<script type="text/javascript">
 		!function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="//siteimproveanalytics.com/js/siteanalyze_11464.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();
 		</script>
-
-		<!--script async src="https://cse.google.com/cse.js?cx=016683031895928592670:8f6rfzkpvwg"></script>-->
+		<script async src="https://cse.google.com/cse.js?cx=012258670098148303364:zptrsb24qaq"></script>
 	</head>
 	<body <?php body_class(); ?>>
 	<div class="alert-bar" role="navigation" aria-label="COVID-19 Alerts">
