@@ -10,15 +10,15 @@
 	
 	// Display a error nothing is returned.
 	if ( is_wp_error( $latest_cover_story ) ) {
-		$error_string = $latest_cover_story->get_error_message();
-		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+		$cover_story_error_string = $latest_cover_story->get_error_message();
+		echo '<script>console.log("Error:' . $cover_story_error_string . '")</script>';
 	}
 
 	// Get the body.
 	$cover_story = json_decode( wp_remote_retrieve_body( $latest_cover_story ) );
 	// Display a warning nothing is returned.
 	if ( empty( $cover_story ) ) {
-		echo '<div class="callout warning"><p>There is no content</p></div>';
+		echo '<script>console.log("Error: There is no Cover Story content")</script>';
 	}
 	// If there are posts then display them!
 	if ( ! empty( $cover_story ) ) :?>

@@ -10,15 +10,15 @@
 	
 	// Display a error nothing is returned.
 	if ( is_wp_error( $latest_news ) ) {
-		$error_string = $latest_news->get_error_message();
-		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+		$news_error_string = $latest_news->get_error_message();
+		echo '<script>console.log("Error:' . $news_error_string . '")</script>';
 	}
 
 	// Get the body.
 	$news = json_decode( wp_remote_retrieve_body( $latest_news ) );
 	// Display a warning nothing is returned.
 	if ( empty( $news ) ) {
-		echo '<div class="callout warning"><p>There is no content</p></div>';
+		echo '<script>console.log("Error: There is no News content")</script>';
 	}
 	// If there are posts then display them!
 	if ( ! empty( $news ) ) :?>

@@ -10,15 +10,15 @@
 	
 	// Display a error nothing is returned.
 	if ( is_wp_error( $latest_student_digest ) ) {
-		$error_string = $latest_student_digest->get_error_message();
-		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+		$student_digest_error_string = $latest_student_digest->get_error_message();
+		echo '<script>console.log("Error:' . $student_digest_error_string . '")</script>';
 	}
 
 	// Get the body.
 	$student_digest = json_decode( wp_remote_retrieve_body( $latest_student_digest ) );
 	// Display a warning nothing is returned.
 	if ( empty( $student_digest ) ) {
-		echo '<div class="callout warning"><p>There is no content</p></div>';
+		echo '<script>console.log("Error: There is no Student Digest content")</script>';
 	}
 	// If there are posts then display them!
 	if ( ! empty( $student_digest ) ) :?>

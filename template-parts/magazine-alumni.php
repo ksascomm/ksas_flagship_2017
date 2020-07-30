@@ -10,15 +10,15 @@
 	
 	// Display a error nothing is returned.
 	if ( is_wp_error( $latest_alumni ) ) {
-		$error_string = $latest_alumni->get_error_message();
-		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+		$alumni_error_string = $latest_alumni->get_error_message();
+		echo '<script>console.log("Error:' . $alumni_error_string . '")</script>';
 	}
 
 	// Get the body.
 	$alumni = json_decode( wp_remote_retrieve_body( $latest_alumni ) );
 	// Display a warning nothing is returned.
 	if ( empty( $alumni ) ) {
-		echo '<div class="callout warning"><p>There is no content</p></div>';
+		echo '<script>console.log("Error: There is no Alumni content")</script>';
 	}
 	// If there are posts then display them!
 	if ( ! empty( $alumni ) ) :?>

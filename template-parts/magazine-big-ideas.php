@@ -10,15 +10,15 @@
 	
 	// Display a error nothing is returned.
 	if ( is_wp_error( $latest_big_ideas ) ) {
-		$error_string = $latest_big_ideas->get_error_message();
-		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+		$big_ideas_error_string = $latest_big_ideas->get_error_message();
+		echo '<script>console.log("Error:' . $big_ideas_error_string . '")</script>';
 	}
 
 	// Get the body.
 	$big_ideas = json_decode( wp_remote_retrieve_body( $latest_big_ideas ) );
 	// Display a warning nothing is returned.
 	if ( empty( $big_ideas ) ) {
-		echo '<div class="callout warning"><p>There is no content</p></div>';
+		echo '<script>console.log("Error: There is no Big Ideas content")</script>';
 	}
 	// If there are posts then display them!
 	if ( ! empty( $big_ideas ) ) :?>

@@ -8,8 +8,8 @@
 	
 	// Display a error nothing is returned.
 	if ( is_wp_error( $frontpagecover ) ) {
-		$error_string = $frontpagecover->get_error_message();
-		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+		$front_error_string = $frontpagecover->get_error_message();
+		echo '<script>console.log("Error:' . $front_error_string . '")</script>';
 
 	}
 	// Get the body.
@@ -18,7 +18,7 @@
 
 	// Display a warning nothing is returned.
 	if ( empty( $frontcover ) ) {
-		echo '<div class="callout warning"><p>There is no home page featured image</p></div>';
+		echo '<script>console.log("Error: There is no Front Cover content")</script>';
 	}
 	
 	// If there is a featured image for the home page, display it!

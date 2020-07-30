@@ -10,15 +10,15 @@
 	
 	// Display a error nothing is returned.
 	if ( is_wp_error( $latest_features ) ) {
-		$error_string = $latest_features->get_error_message();
-		echo '<div class="callout alert"><p>' . $error_string . '</p></div>';
+		$feature_error_string = $latest_features->get_error_message();
+		echo '<script>console.log("Error:' . $feature_error_string . '")</script>';
 	}
 
 	// Get the body.
 	$features = json_decode( wp_remote_retrieve_body( $latest_features ) );
 	// Display a warning nothing is returned.
 	if ( empty( $features ) ) {
-		echo '<div class="callout warning"><p>There is no content</p></div>';
+		echo '<script>console.log("Error: There is no Features content")</script>';
 	}
 	// If there are posts then display them!
 	if ( ! empty( $features ) ) :?>
