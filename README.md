@@ -3,55 +3,51 @@
 Built off [FoundationPress](https://github.com/olefredrik/FoundationPress). Uses Foundation 6.3.1!
 
 
+### Getting Started With Gulp
+- Install [node.js](https://nodejs.org).
+- Using the command line, navigate to your theme directory
+- Run npm install
 
-## Quickstart
-
-### 1. Clone the repository and install with npm
-```bash
-$ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/ksascomm/ksas_flagship_2017.git
-$ cd ksas_flagship_2017
-$ npm install -g bower (if not already installed)
-$ npm install
-```
-
-### 2. While you're working on your project, run:
-
+### Watching for Changes
 ```bash
 $ npm run watch
 ```
+* Watches for changes in the `assets/styles/scss` directory. When a change is made the SCSS files are compiled, concatenated with Foundation files and saved to the `/styles` directory. Sourcemaps will be created.
+* Watches for changes in the `assets/scripts/js` directory. When a change is made the JS files are compiled, concatenated with Foundation JS files and saved to the `/scripts` directory. Sourcemaps will be created.
+* Watches for changes in the `assets/images` directory. When a change is made the image files are optimized and saved over the original image.
 
-If you want to take advantage of browser-sync (automatic browser refresh when a file is saved), simply open your Gulpfile.js and put your local dev-server address (e.g localhost) in this field ```var URL = '';``` , save the Gulpfile and run
+### Watching for Changes with Browsersync
 ```bash
-$ npm run watch
+$ npm run browsersync
 ```
+This will watch the same files as `npm run watch`, but utilizes browsersync for live reloading and style injection. Be sure to update the `URL` variable in the `gulpfile.js` to your local install URL. 
 
-### 3. For building all the assets, run:
-
+## Compile and Minify All Theme Assets
 ```bash
 $ npm run build
 ```
+Compiles and minifies all scripts and styles.
 
-Build all assets minified and without sourcemaps:
-```bash
-$ npm run production
-```
+### Compile Specific Assets
+* `$ npm run styles` - to compile all SCSS files in the `assets/styles/scss` directory.
+* `$ npm run scripts` - to compile all JS files in the `assets/scripts/js` directory.
+* `$ npm run images` - to optimize all image files in the `assets/images` directory.
 
-### 4. To create a .zip file of your theme, run:
+## File Structure - "Where to Put Stuff"
 
-```bash
-$ npm run package
-```
+### Custom Styles
+* `style.css` - this file is never actually loaded, however, this is where you set your theme name and is required by WordPress
+* `assets/styles/scss/style.scss` - import all of your styles here. If you create an additional SCSS file, be sure to import it here.
+* `assets/styles/scss/_main.scss` - place all of your custom styles here.
+* `assets/styles/scss/_settings.scss` - adjust Foundation style settings here.
+* `assets/styles/scss/login.scss` - place custom login styles here. This will generate it's own stylesheet.
+### Custom Scripts
+* `assets/scripts/js/` - place your custom scripts here. Each .JS file will be compiled and concatenated when the build process is ran.
 
-Running this command will build and minify the theme's assets and place a `.zip` archive of the theme in the `packaged` directory. This excludes the developer files/directories from your theme like `node_modules`, `assets/components`, etc. to keep the theme lightweight for transferring the theme to a staging or production server.
-
-### Styles & Scripts
-
- * `style.css`: All styles are handled in the Sass files within /assets/scss/*
- * `assets/javascript/custom`: Put all your custom scripts here. They will be minified and concatenated one single .js file.
+### Images
+* `assets/images/` - place your theme images here. Each image will be optimized when the build process is ran.
 
 
-You **must** run `npm run build` or `npm run watch` in your terminal for the styles & scripts to be copied and concatenated.
 
 #### Using WPCS
 This theme comes with tools to check for WordPress Coding Standards. To enable this feature you'll first need to make sure  [Composer](https://getcomposer.org/) is installed. Then to install PHP Codesniffer and the WordPress Coding Standards set of "Sniffs", simply run:

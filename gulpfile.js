@@ -1,37 +1,24 @@
-/*jslint node: true */
-"use strict";
-
-var $           = require('gulp-load-plugins')();
-var argv        = require('yargs').argv;
+// GULP PACKAGES
+// Most packages are lazy loaded
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
-var merge       = require('merge-stream');
-var sequence    = require('run-sequence');
-var colors      = require('colors');
-var dateFormat  = require('dateformat');
-var del         = require('del');
-var cleanCSS    = require('gulp-clean-css');
+var plugin      = require('gulp-load-plugins')();
+var touch       = require('gulp-touch-cmd');
+var filter      = require('gulp-filter');
+var gutil       = require('gulp-util');
+var imagemin    = require('gulp-imagemin');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = 'krieger.local/';
-
-// Check for --production flag
-var isProduction = !!(argv.production);
-
-// Browsers to target when prefixing CSS.
-var COMPATIBILITY = [
-  'last 2 versions',
-  'ie >= 9',
-  'Android >= 2.3'
-];
+const LOCAL_URL = 'krieger.local/';
 
 // File paths to various assets are defined here.
-var PATHS = {
+const SOURCE = {
   sass: [
     'assets/components/foundation-sites/scss',
     'assets/components/motion-ui/src',
     'assets/components/fontawesome/scss',
+    'assets/scss/**/*.scss'
   ],
   javascript: [
     'assets/components/what-input/what-input.js',
@@ -67,6 +54,11 @@ var PATHS = {
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js',
   ],
+
+    // Images placed here will be optimized
+  images: 'assets/images/**/*',
+
+
   phpcs: [
     '**/*.php',
     '!wpcs',
@@ -87,171 +79,121 @@ var PATHS = {
   ]
 };
 
-// Browsersync task
-gulp.task('browser-sync', ['build'], function() {
+const ASSETS = {
+  styles: 'assets/scss/',
+  scripts: 'assets/javascript/',
+  images: 'assets/images/',
+  all: 'assets/'
+};
 
-  var files = [
-            '**/*.php',
-            'assets/images/**/*.{png,jpg,gif}',
-          ];
-
-  browserSync.init(files, {
-    // Proxy address
-    proxy: URL,
-
-    // Port #
-    // port: PORT
-  });
-});
-
-// Compile Sass into CSS
-// In production, the CSS is compressed
-gulp.task('sass', function() {
-  return gulp.src('assets/scss/foundation.scss')
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      includePaths: PATHS.sass
-    }))
-    .on('error', $.notify.onError({
-        message: "<%= error.message %>",
-        title: "Sass Error"
-    }))
-    .pipe($.autoprefixer({
-      browsers: COMPATIBILITY
-    }))
-    // Minify CSS if run with --production flag
-    .pipe($.if(isProduction, cleanCSS()))
-    .pipe($.if(!isProduction, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('assets/stylesheets'))
-    .pipe(browserSync.stream({match: '**/*.css'}));
-});
-
-// Lint all JS files in custom directory
-gulp.task('lint', function() {
-  return gulp.src('assets/javascript/custom/*.js')
-    .pipe($.jshint())
-    .pipe($.notify(function (file) {
-      if (file.jshint.success) {
-        return false;
-      }
-
-      var errors = file.jshint.results.map(function (data) {
-        if (data.error) {
-          return "(" + data.error.line + ':' + data.error.character + ') ' + data.error.reason;
-        }
-      }).join("\n");
-      return file.relative + " (" + file.jshint.results.length + " errors)\n" + errors;
-    }));
-});
-
-// Combine JavaScript into one file
-// In production, the file is minified
-gulp.task('javascript', function() {
-  var uglify = $.uglify()
-    .on('error', $.notify.onError({
-      message: "<%= error.message %>",
-      title: "Uglify JS Error"
-    }));
-
-  return gulp.src(PATHS.javascript)
-    .pipe($.sourcemaps.init())
-    .pipe($.babel())
-    .pipe($.concat('foundation.js', {
-      newLine:'\n;'
-    }))
-    .pipe($.if(isProduction, uglify))
-    .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('assets/javascript'))
-    .pipe(browserSync.stream());
-});
-
-// Copy task
-gulp.task('copy', function() {
-
-});
-
-// Package task
-gulp.task('package', ['build'], function() {
-  var fs = require('fs');
-  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM");
-  var pkg = JSON.parse(fs.readFileSync('./package.json'));
-  var title = pkg.name + '_' + time + '.zip';
-
-  return gulp.src(PATHS.pkg)
-    .pipe($.zip(title))
-    .pipe(gulp.dest('packaged'));
-});
-
-// Build task
-// Runs copy then runs sass & javascript in parallel
-gulp.task('build', ['clean'], function(done) {
-  sequence('copy',
-          ['sass', 'javascript', 'lint'],
-          done);
-});
-
-// PHP Code Sniffer task
-gulp.task('phpcs', function() {
-  return gulp.src(PATHS.phpcs)
-    .pipe($.phpcs({
-      bin: 'wpcs/vendor/bin/phpcs',
-      standard: './codesniffer.ruleset.xml',
-      showSniffCode: true,
-    }))
-    .pipe($.phpcs.reporter('log'));
-});
-
-// PHP Code Beautifier task
-gulp.task('phpcbf', function () {
-  return gulp.src(PATHS.phpcs)
-  .pipe($.phpcbf({
-    bin: 'wpcs/vendor/bin/phpcbf',
-    standard: './codesniffer.ruleset.xml',
-    warningSeverity: 0
-  }))
-  .on('error', $.util.log)
-  .pipe(gulp.dest('.'));
-});
-
-// Clean task
-gulp.task('clean', function(done) {
-  sequence(['clean:javascript', 'clean:css'],
-            done);
-});
-
-// Clean JS
-gulp.task('clean:javascript', function() {
-  return del([
-      'assets/javascript/foundation.js'
-    ]);
-});
-
-// Clean CSS
-gulp.task('clean:css', function() {
-  return del([
-      'assets/stylesheets/foundation.css',
-      'assets/stylesheets/foundation.css.map'
-    ]);
-});
-
-// Default gulp task
-// Run build task and watch for file changes
-gulp.task('default', ['build', 'browser-sync'], function() {
-  // Log file changes to console
-  function logFileChange(event) {
-    var fileName = require('path').relative(__dirname, event.path);
-    console.log('[' + 'WATCH'.green + '] ' + fileName.magenta + ' was ' + event.type + ', running tasks...');
+const JSHINT_CONFIG = {
+  "node": true,
+  "globals": {
+    "document": true,
+    "window": true,
+    "jQuery": true,
+    "$": true,
+    "Foundation": true
   }
+};
 
-  // Sass Watch
-  gulp.watch(['assets/scss/**/*.scss'], ['clean:css', 'sass'])
-    .on('change', function(event) {
-      logFileChange(event);
-    });
+// GULP FUNCTIONS
+// JSHint, concat, and minify JavaScript
+gulp.task('javascript', function() {
 
-  // JS Watch
-  gulp.watch(['assets/javascript/custom/**/*.js'], ['clean:javascript', 'javascript', 'lint'])
-    .on('change', function(event) {
-      logFileChange(event);
-    });
+  // Use a custom filter so we only lint custom JS
+  const CUSTOMFILTER = filter(ASSETS.javascript + 'js/**/*.js', {restore: true});
+
+  return gulp.src(SOURCE.javascript, {allowEmpty: true})
+    .pipe(plugin.plumber(function(error) {
+            gutil.log(gutil.colors.red(error.message));
+            this.emit('end');
+        }))
+    .pipe(plugin.sourcemaps.init())
+    .pipe(plugin.babel({
+      presets: ['@babel/preset-env'],
+      compact: true,
+      ignore: ['what-input.js']
+    }))
+    .pipe(CUSTOMFILTER)
+      .pipe(plugin.jshint(JSHINT_CONFIG))
+      .pipe(plugin.jshint.reporter('jshint-stylish'))
+      .pipe(CUSTOMFILTER.restore)
+    .pipe(plugin.concat('foundation.js'))
+    .pipe(plugin.uglify())
+    .pipe(plugin.sourcemaps.write('.')) // Creates sourcemap for minified JS
+    .pipe(gulp.dest('assets/javascript'))
+    .pipe(touch());
 });
+
+// Compile Sass, Autoprefix and minify
+gulp.task('sass', function() {
+  return gulp.src(SOURCE.sass)
+    .pipe(plugin.plumber(function(error) {
+            gutil.log(gutil.colors.red(error.message));
+            this.emit('end');
+        }))
+    .pipe(plugin.sourcemaps.init())
+    .pipe(plugin.sass())
+    .pipe(plugin.autoprefixer())
+    .pipe(plugin.cssnano({safe: true, minifyFontValues: {removeQuotes: false}}))
+    .pipe(plugin.sourcemaps.write('.'))
+    .pipe(gulp.dest('assets/stylesheets'))
+    .pipe(touch());
+});
+
+// Optimize images, move into assets directory
+gulp.task('images', function() {
+  return gulp.src(SOURCE.images)
+    .pipe(imagemin([
+    imagemin.gifsicle({interlaced: true}),
+    imagemin.mozjpeg({quality: 75, progressive: true}),
+    imagemin.optipng({optimizationLevel: 5}),
+    imagemin.svgo({
+        plugins: [
+            {removeViewBox: true},
+            {cleanupIDs: false}
+        ]
+    })]))
+    .pipe(gulp.dest(ASSETS.images))
+    .pipe(touch());
+});
+
+// Browser-Sync watch files and inject changes
+gulp.task('browsersync', function() {
+
+    // Watch these files
+    var files = [
+      SOURCE.php,
+    ];
+
+    browserSync.init(files, {
+      proxy: LOCAL_URL,
+      /*https: {
+        key: "/Volumes/Macintosh HD 2/pineapple/localhost.key",
+        cert: "/Volumes/Macintosh HD 2/pineapple/localhost.crt"
+      }*/
+    });
+
+    gulp.watch(SOURCE.sass, gulp.parallel('sass')).on('change', browserSync.reload);
+    gulp.watch(SOURCE.javascript, gulp.parallel('javascript')).on('change', browserSync.reload);
+    gulp.watch(SOURCE.images, gulp.parallel('images')).on('change', browserSync.reload);
+
+});
+
+// Watch files for changes (without Browser-Sync)
+gulp.task('watch', function() {
+
+  // Watch .scss files
+  gulp.watch(SOURCE.sass, gulp.parallel('sass'));
+
+  // Watch scripts files
+  gulp.watch(SOURCE.javascript, gulp.parallel('javascript'));
+
+  // Watch images files
+  gulp.watch(SOURCE.images, gulp.parallel('images'));
+  browserSync.reload();
+});
+
+// Run styles, scripts and foundation-js
+gulp.task('default', gulp.parallel('sass', 'javascript', 'images'));
