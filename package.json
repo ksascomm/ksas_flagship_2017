@@ -20,10 +20,10 @@
     "url": "https://github.com/ksascomm/ksas_flagship_2017.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
-    "@babel/register": "^7.10.5",
+    "@babel/register": "^7.11.5",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.12",
@@ -36,7 +36,7 @@
     "gulp-filter": "^6.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-jshint": "^2.1.0",
-    "gulp-load-plugins": "^2.0.3",
+    "gulp-load-plugins": "^2.0.4",
     "gulp-notify": "^3.2.0",
     "gulp-phpcbf": "latest",
     "gulp-phpcs": "^3.1.0",
