@@ -60,6 +60,46 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 
 <div class="section-divider"></div>
 
+<div class="texture">
+	<section class="news" aria-label="News and Events">
+		
+		<ul class="tabs" data-responsive-accordion-tabs="accordion medium-tabs" id="home-tabs">
+		    <li class="tabs-title is-active"><a href="#spotlight" aria-selected="true">Spotlight</a></li>
+		    <li class="tabs-title"><a href="#hubnews">News</a></li>
+		</ul>
+
+		<div class="tabs-content" data-tabs-content="home-tabs">
+
+		    <div class="tabs-panel is-active" id="spotlight">
+		   
+			    <?php $homepage_query = new WP_Query(array(
+					'post_type' => array('deptextra', 'post'),
+					'posts_per_page' => '1',
+					));
+			    	if ( $homepage_query->have_posts() ) : while ( $homepage_query->have_posts() ) : $homepage_query->the_post();
+			    	$format = get_post_format();
+					if ( false === $format ) { $format = 'standard'; }
+					if ( 'video' === $format ) : locate_template('template-parts/home-video.php', true, false); endif;
+					if ( 'standard' === $format ) : locate_template('template-parts/home-news.php', true, false); endif;?>
+				<?php endwhile; endif; ?>
+		   
+		    </div>
+
+		    <div class="tabs-panel" id="hubnews">
+		     
+		     	<?php get_template_part( 'template-parts/hub-news' ); ?>
+
+		    </div>
+
+	    </div>
+	
+		<hr>
+
+	</section>
+</div>
+
+<div class="section-divider"></div>
+
 <div class="magazine-background">
 	<section class="magazine" aria-label="From A&S Magazine">
 		<div class="row">
@@ -104,11 +144,6 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 				</div>
    			</div>
 				
-		</div>
-		<div class="row">
-			<div class="small-12 columns">
-				
-			</div>	
 		</div>
 	</section>
 </div>
