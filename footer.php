@@ -24,8 +24,7 @@
 					</div>
 					<div class="small-12 medium-4 large-5 columns">
 						<ul id="menu-footer-links" class="menu simple" role="menu">
-							<li role="menuitem"><a href="https://accessibility.jhu.edu/" target="_blank">Accessibility</a></li>	
-							<li role="menuitem"><a href="https://jobs.jhu.edu/" target="_blank">Careers</a></li>
+							<li role="menuitem"><a href="https://accessibility.jhu.edu/">Accessibility</a></li>
 							<li role="menuitem"><a href="https://livejohnshopkins.sharepoint.com/sites/KSASFacultyHandbook">Faculty Handbook</a></li>
 							<li role="menuitem"><a href="https://it.johnshopkins.edu/policies/privacystatement">Privacy Statement</a></li>
 						</ul>
@@ -51,7 +50,6 @@
 <?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 	</div><!-- Close off-canvas wrapper -->
 <?php endif; ?>
-
 
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
