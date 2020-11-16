@@ -4,7 +4,7 @@ Template Name: Front
 */
 get_header(); ?>
 
-<?php 
+<?php
 // Get any existing copy of our transient data
 if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship_evergreen_query' ) ) ) {
     // It wasn't there, so regenerate the data and save the transient
@@ -33,7 +33,7 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 		 <?php  if ( $flagship_evergreen_query->have_posts() ) : while ($flagship_evergreen_query->have_posts() ) : $flagship_evergreen_query->the_post(); ?>
 					<h1><?php the_title(); ?></h1>
 		<?php endwhile; endif;  wp_reset_postdata();?>
-		
+
 				<?php //Reset to content loop
 				while ( have_posts() ) : the_post(); ?>
 					<?php the_content(); ?>
@@ -46,7 +46,7 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 			<div class="front-hero-featured-image show-for-medium-only hide-for-print" role="banner" aria-label="Mobile Hero Image">
 				<?php the_post_thumbnail('featured-large');?>
 			</div>
-	<?php endwhile; endif; ?>	
+	<?php endwhile; endif; ?>
 </header>
 
 
@@ -62,7 +62,7 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 
 <div class="texture">
 	<section class="news" aria-label="News and Events">
-		
+
 		<ul class="tabs" data-responsive-accordion-tabs="accordion medium-tabs" id="home-tabs">
 		    <li class="tabs-title is-active"><a href="#spotlight" aria-selected="true">Spotlight</a></li>
 		    <li class="tabs-title"><a href="#hubnews">News</a></li>
@@ -71,7 +71,7 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 		<div class="tabs-content" data-tabs-content="home-tabs">
 
 		    <div class="tabs-panel is-active" id="spotlight">
-		   
+
 			    <?php $homepage_query = new WP_Query(array(
 					'post_type' => array('deptextra', 'post'),
 					'posts_per_page' => '1',
@@ -82,17 +82,17 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 					if ( 'video' === $format ) : locate_template('template-parts/home-video.php', true, false); endif;
 					if ( 'standard' === $format ) : locate_template('template-parts/home-news.php', true, false); endif;?>
 				<?php endwhile; endif; ?>
-		   
+
 		    </div>
 
 		    <div class="tabs-panel" id="hubnews">
-		     
+
 		     	<?php get_template_part( 'template-parts/hub-news' ); ?>
 
 		    </div>
 
 	    </div>
-	
+
 		<hr>
 
 	</section>
@@ -140,10 +140,10 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 					</div>
 					<div class="tabs-panel" id="mag-alumni">
 					 	<?php get_template_part( 'template-parts/magazine-alumni' ); ?>
-					</div>								
+					</div>
 				</div>
    			</div>
-				
+
 		</div>
 	</section>
 </div>
@@ -155,7 +155,7 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 		<h1 class="heading">Connect</h1>
 		<div class="social">
 			<ul class="menu align-right">
-				<li><a href="https://www.tiktok.com/@jhuartssciences"><svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="-32 0 512 512" width="2rem"><g><path d="m432.734375 112.464844c-53.742187 0-97.464844-43.722656-97.464844-97.464844 0-8.285156-6.714843-15-15-15h-80.335937c-8.28125 0-15 6.714844-15 15v329.367188c0 31.59375-25.707032 57.296874-57.300782 57.296874s-57.296874-25.703124-57.296874-57.296874c0-31.597657 25.703124-57.300782 57.296874-57.300782 8.285157 0 15-6.714844 15-15v-80.335937c0-8.28125-6.714843-15-15-15-92.433593 0-167.632812 75.203125-167.632812 167.636719 0 92.433593 75.199219 167.632812 167.632812 167.632812 92.433594 0 167.636719-75.199219 167.636719-167.632812v-145.792969c29.851563 15.917969 63.074219 24.226562 97.464844 24.226562 8.285156 0 15-6.714843 15-15v-80.335937c0-8.28125-6.714844-15-15-15zm0 0" data-original="#000000" class="active-path" data-old_color="#000000" fill="#002D72"/></g></svg></a></li>			
+				<li><a href="https://www.tiktok.com/@jhuartssciences"><span class="fab fa-tiktok fa-2x"></span><span class="screen-reader-text">TikTok</span></a></li>
 				<li><a href="https://www.youtube.com/user/jhuksas"><span class="fab fa-youtube fa-2x"></span><span class="screen-reader-text">YouTube</span></a></li>
 				<li><a href="https://twitter.com/JHUArtsSciences"><span class="fab fa-twitter fa-2x"></span><span class="screen-reader-text">Twitter</span></a></li>
 				<li><a href="https://www.instagram.com/JHUArtsSciences/"><span class="fab fa-instagram fa-2x"></span><span class="screen-reader-text">Instagram</span></a></li>
@@ -173,7 +173,7 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 			</div>
 			<div class="small-12 large-4 columns">
 				<div class="tiktok">
-					<?php get_template_part( 'template-parts/feed-tiktok' ); ?>
+					<?php echo do_shortcode( '[tiktok-feed id="1"]' ); ?>
 				</div>
 			</div>
 		</div>
