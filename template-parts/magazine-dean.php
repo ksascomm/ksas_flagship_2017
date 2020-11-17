@@ -5,9 +5,9 @@
 
 	if ( false === ( $latest_from_dean = get_transient( 'asmagazine_from_dean_query' ) ) ) {
 		$latest_from_dean = wp_remote_get($latest_from_dean_url);
-		set_transient( 'asmagazine_from_dean_query', $latest_from_dean, 2419200 ); 
-	}	
-	
+		set_transient( 'asmagazine_from_dean_query', $latest_from_dean, 2419200 );
+	}
+
 	// Display a error nothing is returned.
 	if ( is_wp_error( $latest_from_dean ) ) {
 		$dean_error_string = $latest_from_dean->get_error_message();
@@ -22,7 +22,7 @@
 	}
 	// If there are posts then display them!
 	if ( ! empty( $from_dean ) ) :?>
-	
+
 			<div class="issue-stories">
 			<?php foreach ( $from_dean as $dean ) : ?>
 				<div class="media-object stack-for-small">
@@ -31,10 +31,10 @@
 					</div>
 					<div class="media-object-section">
 				 		<p><?php echo strip_tags($dean->excerpt->rendered);?></p>
-				 		<p><a class="button" href="<?php echo $dean->link;?>">More from Dean Wendland</a></p>
+				 		<p><a class="button" href="<?php echo $dean->link;?>">More from the Dean</a></p>
 					</div>
-				</div> 
+				</div>
 			<?php endforeach;?>
 			</div>
-	
+
 	<?php endif;?>
