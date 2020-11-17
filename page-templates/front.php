@@ -116,7 +116,7 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 			<div class="small-12 large-8 columns">
 				<ul class="tabs" data-tabs id="magazine-tabs">
 			    	<li class="tabs-title is-active"><a href="#mag-features">Features</a></li>
-			    	<li class="tabs-title"><a href="#mag-dean">Dean's Desktop</a></li>
+			    	<li class="tabs-title"><a href="#mag-dean">From the Dean</a></li>
 			    	<li class="tabs-title slickTrigger" data-tab-target="slickNews"><a href="#mag-news">News</a></li>
 			    	<li class="tabs-title slickTrigger"><a href="#mag-ideas" data-tab-target="slickIdeas">Big Ideas</a></li>
 			    	<li class="tabs-title slickTrigger" data-tab-target="slickDigest"><a href="#mag-digest">Student Digest</a></li>
