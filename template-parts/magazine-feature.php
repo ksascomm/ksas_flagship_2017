@@ -1,13 +1,13 @@
 <?php
 
 	//get the Feature taxonomy ID
-	$latest_features_url = 'https://magazine.krieger.jhu.edu/wp-json/wp/v2/pages?_fields=title,link,acf,categories&volume=195&categories=141';
+	$latest_features_url = 'https://magazine.krieger.jhu.edu/wp-json/wp/v2/pages?_fields=title,link,acf,categories&volume=195&categories=141&orderby=modified';
 
 	if ( false === ( $latest_features = get_transient( 'asmagazine_features_query' ) ) ) {
 		$latest_features = wp_remote_get($latest_features_url);
-		set_transient( 'asmagazine_features_query', $latest_features, 2419200 ); 
-	}	
-	
+		set_transient( 'asmagazine_features_query', $latest_features, 2419200 );
+	}
+
 	// Display a error nothing is returned.
 	if ( is_wp_error( $latest_features ) ) {
 		$feature_error_string = $latest_features->get_error_message();
@@ -22,7 +22,7 @@
 	}
 	// If there are posts then display them!
 	if ( ! empty( $features ) ) :?>
-	
+
 			<div class="issue-stories">
 			<?php foreach ( $features as $feature ) : ?>
 				<div class="media-object">
@@ -38,8 +38,8 @@
 						</h3>
 				 		<p><?php echo $feature->acf->ecpt_tagline;?></p>
 					</div>
-				</div> 
+				</div>
 			<?php endforeach;?>
 			</div>
-	
+
 	<?php endif;?>
