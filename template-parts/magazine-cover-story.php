@@ -1,7 +1,7 @@
 <?php
 
 	//get the Feature taxonomy ID
-	$latest_cover_story_url = 'https://magazine.krieger.jhu.edu/wp-json/wp/v2/pages?_fields=title,link,acf,categories,excerpt&_embed&categories=136&volume=190';
+	$latest_cover_story_url = 'https://magazine.krieger.jhu.edu/wp-json/wp/v2/pages?_fields=title,link,acf,categories,excerpt&_embed&categories=136&volume=195';
 
 	if ( false === ( $latest_cover_story = get_transient( 'asmagazine_cover_story_query' ) ) ) {
 		$latest_cover_story = wp_remote_get($latest_cover_story_url);
