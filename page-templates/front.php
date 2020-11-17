@@ -105,7 +105,7 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 		<div class="row">
 			<div class="small-12 columns">
 				<h1 class="heading">
-					Arts & Sciences Magazine <small>Spring 2020 Issue</small>
+					Arts & Sciences Magazine <small>Fall 2020 Issue</small>
 				</h1>
 			</div>
 		</div>
@@ -166,14 +166,9 @@ if ( WP_DEBUG or false === ($flagship_evergreen_query = get_transient( 'flagship
 	</div>
 	<div class="feed">
 		<div class="row feeds">
-			<div class="small-12 large-8 columns">
+			<div class="small-12 large-12 columns">
 				<div class="insta">
 					<?php echo do_shortcode('[instagram-feed]');?>
-				</div>
-			</div>
-			<div class="small-12 large-4 columns">
-				<div class="tiktok">
-					<?php echo do_shortcode( '[tiktok-feed id="1"]' ); ?>
 				</div>
 			</div>
 		</div>
